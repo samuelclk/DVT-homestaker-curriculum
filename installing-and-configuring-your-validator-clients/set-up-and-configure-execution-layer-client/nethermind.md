@@ -147,6 +147,10 @@ sudo journalctl -fu nethermind -o cat | ccze -A
 
 Press `CTRL-C` to exit.
 
+**Note:** You will also see the following error related to Pushgateway. This is expected because we have not installed and configured the Pushgateway service used for monitoring at this point.
+
+<figure><img src="../../.gitbook/assets/image (154).png" alt=""><figcaption></figcaption></figure>
+
 {% hint style="info" %}
 For more details on interpreting the Nethermind journalctl logs, head [here](https://docs.nethermind.io/nethermind/first-steps-with-nethermind/getting-started).
 {% endhint %}

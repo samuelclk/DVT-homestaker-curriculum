@@ -156,6 +156,10 @@ sudo journalctl -fu nimbusbeacon -o cat | ccze -A
 
 Press `Ctrl+C` to exit monitoring.
 
+**Note:** You will see some warnings around `"Block failed to load unexpectedly"` if your execution client has yet to fully sync. The following output is expected initially and should go away after a few hours.
+
+<figure><img src="../../.gitbook/assets/image (155).png" alt=""><figcaption></figcaption></figure>
+
 If the Nimbus Consensus Client service is running smoothly, we can now enable it to fire up automatically when rebooting the system.
 
 ```bash
