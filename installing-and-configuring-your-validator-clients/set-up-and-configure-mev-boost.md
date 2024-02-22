@@ -2,6 +2,50 @@
 
 ### Install and configure MEV-boost
 
+{% tabs %}
+{% tab title="Build from source" %}
+Install dependencies - Make, Git
+
+```sh
+sudo apt install make git
+```
+
+Install dependencies - Go
+
+```sh
+wget go1.22.0.linux-amd64.tar.gz
+sudo tar xvf go1.22.0.linux-amd64.tar.gz -C /usr/local
+echo "export PATH=$PATH:/usr/local/go/bin" >> ~/.profile
+source ~./profile
+```
+
+Download latest version of MEV-boost.
+
+```sh
+cd
+curl -LO https://github.com/flashbots/mev-boost/archive/refs/tags/v1.7-alpha1.tar.gz
+sudo tar xvf v1.7-alpha1.tar.gz
+```
+
+Build the executable file.
+
+```sh
+cd mev-boost-1.7-alpha1/
+make build
+```
+
+Copy the executable file to the `/usr/local/bin` folder.
+
+```sh
+sudo cp mev-boost /usr/local/bin
+```
+{% endtab %}
+
+{% tab title="Using binaries" %}
+{% hint style="info" %}
+This method does not support Holesky yet. Use the **Build from source** method for now
+{% endhint %}
+
 Download latest version of MEV-boost [here](https://github.com/flashbots/mev-boost/releases) and run the checksum verification process to ensure that the downloaded file has not been tampered with.
 
 ```bash
@@ -32,6 +76,8 @@ sudo cp mev-boost /usr/local/bin
 rm mev-boost LICENSE README.md mev-boost_1.6_linux_amd64.tar.gz
 
 ```
+{% endtab %}
+{% endtabs %}
 
 Create an account (`mevboost`) without server access for MEV Boost to run as a background service. This restricts potential attackers to only the MEV Boost service in the unlikely event that they manage to infiltrate via a compromised client update.
 

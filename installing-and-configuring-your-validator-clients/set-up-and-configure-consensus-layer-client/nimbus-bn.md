@@ -170,4 +170,4 @@ sudo systemctl enable nimbusbeacon.service
 
 * Releases: [https://github.com/status-im/nimbus-eth2/releases](https://github.com/status-im/nimbus-eth2/releases)
 * Documentation: [https://nimbus.guide/install.html](https://nimbus.guide/install.html)
-* Discord: [https://discord.gg/BWKx5Xta](https://discord.gg/BWKx5Xta)
+* Discord: [https://discord.gg/qnjVyhatUa](https://discord.gg/qnjVyhatUa)
