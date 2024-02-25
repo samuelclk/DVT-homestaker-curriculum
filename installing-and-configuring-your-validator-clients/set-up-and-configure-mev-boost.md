@@ -10,27 +10,28 @@ Install dependencies - Make, Git
 sudo apt install make git
 ```
 
-Install dependencies - Go
+Install dependencies - Go (download page [here](https://go.dev/dl/)) - and make sure the latest version (1.22.0) is output at the end of this command batch.
 
 ```sh
-wget go1.22.0.linux-amd64.tar.gz
+curl -LO https://go.dev/dl/go1.22.0.linux-amd64.tar.gz
+echo "f6c8a87aa03b92c4b0bf3d558e28ea03006eb29db78917daec5cfb6ec1046265 go1.22.0.linux-amd64.tar.gz" sha256sum --check
 sudo tar xvf go1.22.0.linux-amd64.tar.gz -C /usr/local
-echo "export PATH=$PATH:/usr/local/go/bin" >> ~/.profile
-source ~./profile
+echo "export PATH=$PATH:/usr/local/go/bin"
+go version
 ```
 
 Download latest version of MEV-boost.
 
 ```sh
 cd
-curl -LO https://github.com/flashbots/mev-boost/archive/refs/tags/v1.7-alpha1.tar.gz
-sudo tar xvf v1.7-alpha1.tar.gz
+git clone https://github.com/flashbots/mev-boost.git
+cd mev-boost
+git check out tags/v1.7-alpha1
 ```
 
 Build the executable file.
 
 ```sh
-cd mev-boost-1.7-alpha1/
 make build
 ```
 
