@@ -16,6 +16,7 @@ Install dependencies - Go (download page [here](https://go.dev/dl/)) - and make 
 curl -LO https://go.dev/dl/go1.22.0.linux-amd64.tar.gz
 echo "f6c8a87aa03b92c4b0bf3d558e28ea03006eb29db78917daec5cfb6ec1046265 go1.22.0.linux-amd64.tar.gz" sha256sum --check
 sudo tar xvf go1.22.0.linux-amd64.tar.gz -C /usr/local
+export PATH=$PATH:/usr/local/go/bin
 echo "export PATH=$PATH:/usr/local/go/bin"
 go version
 ```
