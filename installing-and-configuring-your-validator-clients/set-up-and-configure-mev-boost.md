@@ -36,10 +36,11 @@ Build the executable file.
 make build
 ```
 
-Copy the executable file to the `/usr/local/bin` folder.
+Copy the executable file to the `/usr/local/bin` folder. Then change the owner of this executable file to your user.
 
 ```sh
 sudo cp mev-boost /usr/local/bin
+sudo chown <user>:<user> /usr/local/bin/mev-boost
 ```
 {% endtab %}
 
