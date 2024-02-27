@@ -27,7 +27,7 @@ Download latest version of MEV-boost.
 cd
 git clone https://github.com/flashbots/mev-boost.git
 cd mev-boost
-git check out tags/v1.7-alpha1
+git checkout tags/v1.7-alpha1
 ```
 
 Build the executable file.
