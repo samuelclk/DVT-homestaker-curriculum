@@ -155,13 +155,15 @@ sudo systemctl enable grafana-server
 1. go to `http://<yourserverip>:3000/`
 2. Enter `admin` for both username and password
 3. Select `Data Sources` and click on `Add data source` , then choose **Prometheus** and enter [**http://localhost:9090**](http://localhost:9090) for the URL
-4. Setup the execution client dashboard - On the left menu bar, click on **Dashboards >> Import**
-   * **Nethermind:** Paste the JSON text from [here](https://github.com/samuelclk/ETH\_full\_home\_staking\_guide/blob/main/monitoring-maintenance-and-updates/set-up-monitoring-suite/Nethermind-grafana-JSON)
-   * `Besu:` Enter the dashboard ID - `10273`
-5. Setup the consensus client dashboard - On the left menu bar, click on **Dashboards >> Import**
-   * **Teku:** Enter the dashboard ID - `16737`
-   * **Nimbus:** Paste the JSON text from [here](https://github.com/metanull-operator/eth2-grafana/blob/master/nimbus/eth2-grafana-nimbus-dashboard.json)
-   * **Lodestar:** Paste the JSON text from [here](https://raw.githubusercontent.com/ChainSafe/lodestar/stable/dashboards/lodestar\_summary.json)
-   * **Lighthouse**: Paste the JSON text from [here](https://raw.githubusercontent.com/sigp/lighthouse-metrics/master/dashboards/Summary.json)
-   * **Prysm:** Paste the JSON text from [here](https://raw.githubusercontent.com/GuillaumeMiralles/prysm-grafana-dashboard/master/less\_10\_validators.json)
-6. Select `Prometheus` from the "Select a Prometheus data source here" drop down field.
+4. Setup dashboards - On the left menu bar, click on **Dashboards >> Import**
+   * Execution client dashboard&#x20;
+     * **Nethermind:** Paste the JSON text from [here](https://github.com/samuelclk/ETH\_full\_home\_staking\_guide/blob/main/monitoring-maintenance-and-updates/set-up-monitoring-suite/Nethermind-grafana-JSON)
+       * **Besu:** Enter the dashboard ID - `10273`
+   * Consensus client dashboard&#x20;
+     * **Teku:** Enter the dashboard ID - `16737`
+       * **Nimbus:** Paste the JSON text from [here](https://github.com/metanull-operator/eth2-grafana/blob/master/nimbus/eth2-grafana-nimbus-dashboard.json)
+       * **Lodestar:** Paste the JSON text from [here](https://raw.githubusercontent.com/ChainSafe/lodestar/stable/dashboards/lodestar\_summary.json)
+       * **Lighthouse**: Paste the JSON text from [here](https://raw.githubusercontent.com/sigp/lighthouse-metrics/master/dashboards/Summary.json)
+       * **Prysm:** Paste the JSON text from [here](https://raw.githubusercontent.com/GuillaumeMiralles/prysm-grafana-dashboard/master/less\_10\_validators.json)
+   * Node Exporter dashboard - Paste the JSON text [here](https://github.com/samuelclk/ETH\_full\_home\_staking\_guide/blob/main/monitoring-maintenance-and-updates/set-up-monitoring-suite/Node-exporter-grafana-json)
+5. Select `Prometheus` from the "Select a Prometheus data source here" drop down field.
