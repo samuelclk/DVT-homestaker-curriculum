@@ -6,8 +6,8 @@
 
 ```bash
 cd
-curl -LO https://github.com/prometheus/prometheus/releases/download/v2.45.0/prometheus-2.45.0.linux-amd64.tar.gz
-echo "1c7f489a3cc919c1ed0df2ae673a280309dc4a3eaa6ee3411e7d1f4bdec4d4c5 prometheus-2.45.0.linux-amd64.tar.gz" | sha256sum --check
+curl -LO https://github.com/prometheus/prometheus/releases/download/v2.50.1/prometheus-2.50.1.linux-amd64.tar.gz
+echo "936f3777f8c3a4a90d3c58a6f410350d5932c79367b99771d002bd36e48bd05b prometheus-2.50.1.linux-amd64.tar.gz" | sha256sum --check
 ```
 
 {% hint style="info" %}
@@ -21,19 +21,18 @@ Make sure to choose the amd64 version. Right click on the linked text and select
 _**Expected output:** Verify output of the checksum verification_
 
 ```
-prometheus-2.45.0.linux-amd64.tar.gz: OK
+prometheus-2.50.1.linux-amd64.tar.gz: OK
 ```
 
 If checksum is verified, extract the files and move them into the `/usr/local/bin` and `/etc/prometheus` directories for neatness and best practice. Then, clean up the duplicated copies.
 
 ```bash
-tar xvf prometheus-2.45.0.linux-amd64.tar.gz
-sudo cp prometheus-2.45.0.linux-amd64/prometheus /usr/local/bin/
-sudo cp prometheus-2.45.0.linux-amd64/promtool /usr/local/bin/
-sudo cp -r prometheus-2.45.0.linux-amd64/consoles /etc/prometheus
-sudo cp -r prometheus-2.45.0.linux-amd64/console_libraries /etc/prometheus
-sudo rm prometheus-2.45.0.linux-amd64.tar.gz
-sudo rm -r prometheus-2.45.0.linux-amd64
+tar xvf prometheus-2.50.1.linux-amd64.tar.gz
+sudo cp prometheus-2.50.1.linux-amd64/prometheus /usr/local/bin/
+sudo cp prometheus-2.50.1.linux-amd64/promtool /usr/local/bin/
+sudo cp -r prometheus-2.50.1.linux-amd64/consoles /etc/prometheus
+sudo cp -r prometheus-2.50.1.linux-amd64/console_libraries /etc/prometheus
+sudo rm -r prometheus-2.50.1.linux-amd64 prometheus-2.50.1.linux-amd64.tar.gz
 ```
 
 ### Configure Prometheus&#x20;
@@ -79,15 +78,15 @@ scrape_configs:
     static_configs:
       - targets: ["localhost:8008"]
   - job_name: 'Nimbus'
-    metrics_path: /metrics    
+    metrics_path: /metrics
     static_configs:
       - targets: ['localhost:8008']
   - job_name: 'lodestar_beacon'
-    metrics_path: /metrics    
+    metrics_path: /metrics
     static_configs:
       - targets: ['localhost:8008']
   - job_name: 'lodestar_validator'
-    metrics_path: /metrics    
+    metrics_path: /metrics
     static_configs:
       - targets: ['localhost:5064']
   - job_name: nethermind

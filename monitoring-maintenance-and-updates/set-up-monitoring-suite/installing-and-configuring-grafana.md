@@ -7,8 +7,8 @@ This dependency is specific to the Nethermind execution layer client to enable t
 Download the latest version and the checksums list.
 
 ```sh
-curl -LO https://github.com/prometheus/pushgateway/releases/download/v1.6.2/pushgateway-1.6.2.linux-amd64.tar.gz
-curl -LO https://github.com/prometheus/pushgateway/releases/download/v1.6.2/sha256sums.txt
+curl -LO https://github.com/prometheus/pushgateway/releases/download/v1.7.0/pushgateway-1.7.0.linux-amd64.tar.gz
+curl -LO https://github.com/prometheus/pushgateway/releases/download/v1.7.0/sha256sums.txt
 ```
 
 Print the checksums list and look for the corresponding sha256 checksum according to your downloaded version - e.g.
@@ -20,20 +20,20 @@ cat sha256sums.txt
 Copy the checksum string and replace it in the first string component below to verify the checksum of your downloaded zip file. For your convenience, the actual string has been pre-filled.
 
 ```sh
-echo "1622ef23cb7f9120ee29e3469d0d4ea513118e53e7a713c129f65ee93ffb0cd1 pushgateway-1.6.2.linux-amd64.tar.gz" | sha256sum --check
+echo "6fedc802c07f4d83a70d45b73bae9d3ab026f827ecf99c026fc896335e5211b7  pushgateway-1.7.0.linux-amd64.tar.gz" | sha256sum --check
 ```
 
 _**Expected output:** Verify output of the checksum verification_
 
 ```
-pushgateway-1.6.2.linux-amd64.tar.gz: OK
+pushgateway-1.7.0.linux-amd64.tar.gz: OK
 ```
 
 If checksum is verified, extract the files and move them into the `(/usr/local/bin)` directory for neatness and best practice.&#x20;
 
 ```sh
-tar xvf pushgateway-1.6.2.linux-amd64.tar.gz
-cd pushgateway-1.6.2.linux-amd64
+tar xvf pushgateway-1.7.0.linux-amd64.tar.gz
+cd pushgateway-1.7.0.linux-amd64
 sudo cp pushgateway /usr/local/bin
 ```
 
@@ -41,7 +41,7 @@ Then, clean up the duplicated copies.
 
 ```sh
 cd
-rm -r pushgateway-1.6.2.linux-amd64 pushgateway-1.6.2.linux-amd64.tar.gz
+rm -r pushgateway-1.7.0.linux-amd64 pushgateway-1.7.0.linux-amd64.tar.gz
 ```
 
 Create an account (`pushgateway`) without server access for Pushgateway to run as a background service.
@@ -139,7 +139,7 @@ The output should say Grafana is **“active (running)”.** Press CTRL-C to exi
 Use the following command to check the logs for any warnings or errors:
 
 ```bash
-sudo journalctl -fu grafana-server
+sudo journalctl -fu grafana-server -o cat | ccze -A
 ```
 
 Press `CTRL-C` to exit.
@@ -155,7 +155,13 @@ sudo systemctl enable grafana-server
 1. go to `http://<yourserverip>:3000/`
 2. Enter `admin` for both username and password
 3. Select `Data Sources` and click on `Add data source` , then choose **Prometheus** and enter [**http://localhost:9090**](http://localhost:9090) for the URL
-4. Setup the execution client (Nethermind) dashboard - On the left menu bar, click on **Dashboards >> Import**
-   * On the Import screen, paste the JSON text from [here](https://raw.githubusercontent.com/NethermindEth/metrics-infrastructure/master/grafana/dashboards/nethermind.json)
-5. Setup the consensus client (Teku) dashboard - On the left menu bar, click on **Dashboards >> Import**
-   * On the Import screen, paste the JSON text from [here](https://raw.githubusercontent.com/sigp/lighthouse-metrics/master/dashboards/Summary.json)
+4. Setup the execution client dashboard - On the left menu bar, click on **Dashboards >> Import**
+   * **Nethermind:** Paste the JSON text from [here](https://github.com/samuelclk/ETH\_full\_home\_staking\_guide/blob/main/monitoring-maintenance-and-updates/set-up-monitoring-suite/Nethermind-grafana-JSON)
+   * `Besu:` Enter the dashboard ID - `10273`
+5. Setup the consensus client dashboard - On the left menu bar, click on **Dashboards >> Import**
+   * **Teku:** Enter the dashboard ID - `16737`
+   * **Nimbus:** Paste the JSON text from [here](https://github.com/metanull-operator/eth2-grafana/blob/master/nimbus/eth2-grafana-nimbus-dashboard.json)
+   * **Lodestar:** Paste the JSON text from [here](https://raw.githubusercontent.com/ChainSafe/lodestar/stable/dashboards/lodestar\_summary.json)
+   * **Lighthouse**: Paste the JSON text from [here](https://raw.githubusercontent.com/sigp/lighthouse-metrics/master/dashboards/Summary.json)
+   * **Prysm:** Paste the JSON text from [here](https://raw.githubusercontent.com/GuillaumeMiralles/prysm-grafana-dashboard/master/less\_10\_validators.json)
+6. Select `Prometheus` from the "Select a Prometheus data source here" drop down field.
