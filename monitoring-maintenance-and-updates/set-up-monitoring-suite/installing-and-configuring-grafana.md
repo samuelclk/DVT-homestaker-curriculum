@@ -158,7 +158,8 @@ sudo systemctl enable grafana-server
 4. Setup dashboards - On the left menu bar, click on **Dashboards >> Import**
    * Execution client dashboard&#x20;
      * **Nethermind:** Paste the JSON text from [here](https://github.com/samuelclk/ETH\_full\_home\_staking\_guide/blob/main/monitoring-maintenance-and-updates/set-up-monitoring-suite/Nethermind-grafana-JSON)
-       * **Besu:** Enter the dashboard ID - `10273`
+     * **Besu:** Enter the dashboard ID - `10273`
+     * **Geth:** Enter the dashboard ID - `13877`
    * Consensus client dashboard&#x20;
      * **Teku:** Enter the dashboard ID - `16737`
        * **Nimbus:** Paste the JSON text from [here](https://github.com/metanull-operator/eth2-grafana/blob/master/nimbus/eth2-grafana-nimbus-dashboard.json)
