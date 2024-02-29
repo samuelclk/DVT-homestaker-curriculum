@@ -48,12 +48,12 @@ sudo cp mev-boost /usr/local/bin
 This method does not support Holesky yet. Use the **Build from source** method for now
 {% endhint %}
 
-Download latest version of MEV-boost [here](https://github.com/flashbots/mev-boost/releases) and run the checksum verification process to ensure that the downloaded file has not been tampered with.
+Download latest version of MEV-boost [here](https://github.com/flashbots/mev-boost/releases) and run the checksum verification process to ensure that the downloaded file has not been tampered with. The checksums can be found in the `checksums.txt` file - open it up and copy the `linux_amd64` version to use below.
 
 ```bash
 cd 
-curl -LO https://github.com/flashbots/mev-boost/releases/download/v1.6/mev-boost_1.6_linux_amd64.tar.gz
-echo "03ac6cfb13d8f8b6d59f9de5de753412b0840024ef354399bcb4aa4ee8fe5c3b mev-boost_1.6_linux_amd64.tar.gz" | sha256sum --check
+curl -LO https://github.com/flashbots/mev-boost/releases/download/v1.7/mev-boost_1.7_linux_amd64.tar.gz
+echo "92b435d200451e190000c4f8d82eef0b3ce72d2759153357883e81261ffe98e3 mev-boost_1.7_linux_amd64.tar.gz" | sha256sum --check
 ```
 
 {% hint style="info" %}
@@ -67,15 +67,15 @@ Make sure to choose the amd64 version. Right click on the linked text and select
 _**Expected output:** Verify output of the checksum verification_
 
 ```
-mev-boost_1.6_linux_amd64.tar.gz: Ok
+mev-boost_1.7_linux_amd64.tar.gz: Ok
 ```
 
 If checksum is verified, extract the files and move them into the `(/usr/local/bin)` directory for neatness and best practice. Then, clean up the duplicated copies.
 
 ```bash
-tar xvf mev-boost_1.6_linux_amd64.tar.gz
+tar xvf mev-boost_1.7_linux_amd64.tar.gz
 sudo cp mev-boost /usr/local/bin
-rm mev-boost LICENSE README.md mev-boost_1.6_linux_amd64.tar.gz
+rm mev-boost LICENSE README.md mev-boost_1.7_linux_amd64.tar.gz
 
 ```
 {% endtab %}
