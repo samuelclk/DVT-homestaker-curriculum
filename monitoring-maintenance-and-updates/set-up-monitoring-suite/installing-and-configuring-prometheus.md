@@ -100,7 +100,7 @@ scrape_configs:
     scheme: http
     static_configs:
       - targets:
-          - localhost:6060
+          - localhost:9545
 ```
 
 Once you're done, save with `Ctrl+O` and `Enter`, then exit with `Ctrl+X`.
