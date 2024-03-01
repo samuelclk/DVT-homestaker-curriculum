@@ -59,7 +59,11 @@ sudo nano /etc/prometheus/prometheus.yml
 
 Paste the configuration parameters below into the file:
 
-```yaml
+**1) General + execution client parameters:**
+
+{% tabs %}
+{% tab title="Nethermind" %}
+```
 global:
   scrape_interval: 15s
 scrape_configs:
@@ -71,28 +75,26 @@ scrape_configs:
     static_configs:
       - targets:
           - localhost:9100
-  - job_name: "teku-dev"
-    scrape_timeout: 10s
-    metrics_path: /metrics
-    scheme: http
-    static_configs:
-      - targets: ["localhost:8008"]
-  - job_name: 'Nimbus'
-    metrics_path: /metrics
-    static_configs:
-      - targets: ['localhost:8008']
-  - job_name: 'lodestar_beacon'
-    metrics_path: /metrics
-    static_configs:
-      - targets: ['localhost:8008']
-  - job_name: 'lodestar_validator'
-    metrics_path: /metrics
-    static_configs:
-      - targets: ['localhost:5064']
   - job_name: nethermind
     static_configs:
       - targets:
           - localhost:9091
+```
+{% endtab %}
+
+{% tab title="Besu" %}
+```
+global:
+  scrape_interval: 15s
+scrape_configs:
+  - job_name: prometheus
+    static_configs:
+      - targets:
+          - localhost:9090
+  - job_name: node_exporter
+    static_configs:
+      - targets:
+          - localhost:9100
   - job_name: 'besu'
     scrape_interval: 15s
     scrape_timeout: 10s
@@ -102,6 +104,47 @@ scrape_configs:
       - targets:
           - localhost:9545
 ```
+{% endtab %}
+{% endtabs %}
+
+**2) Consensus client parameters:**
+
+According to your selected consensus client, append the following block to the general + exection client parameters above.
+
+{% tabs %}
+{% tab title="Teku" %}
+```
+  - job_name: "teku-dev"
+    scrape_timeout: 10s
+    metrics_path: /metrics
+    scheme: http
+    static_configs:
+      - targets: ["localhost:8008"]
+```
+{% endtab %}
+
+{% tab title="Nimbus" %}
+```
+  - job_name: 'Nimbus'
+    metrics_path: /metrics
+    static_configs:
+      - targets: ['localhost:8008']
+```
+{% endtab %}
+
+{% tab title="Lodestar" %}
+```
+  - job_name: 'lodestar_beacon'
+    metrics_path: /metrics
+    static_configs:
+      - targets: ['localhost:8008']
+  - job_name: 'lodestar_validator'
+    metrics_path: /metrics
+    static_configs:
+      - targets: ['localhost:5064']
+```
+{% endtab %}
+{% endtabs %}
 
 Once you're done, save with `Ctrl+O` and `Enter`, then exit with `Ctrl+X`.
 
