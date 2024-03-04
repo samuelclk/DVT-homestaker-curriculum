@@ -2,35 +2,38 @@
 
 ## Updating Besu
 
-### Download the latest version
+### Download Besu and configure the service
 
 [Download](https://github.com/hyperledger/besu/releases) the latest version of Besu and run the checksum verification process to ensure that the downloaded file has not been tampered with.
 
 ```bash
 cd
-curl -LO https://hyperledger.jfrog.io/artifactory/besu-binaries/besu/23.10.2/besu-23.10.2.tar.gz
-echo "255818a5c6067a38aa8b565d8f32a49a172a7536a1d370673bbb75f548263c2c besu-23.10.2.tar.gz" | sha256sum --check
+curl -LO https://hyperledger.jfrog.io/artifactory/besu-binaries/besu/24.1.2/besu-24.1.2.tar.gz
+echo "082db8cf4fb67527aa0dd757e5d254b3b497f5027c23287f9c0a74a6a743bf08 besu-24.1.2.tar.gz" | sha256sum --check
 ```
+
+{% hint style="info" %}
+Each downloadable file comes with it's own checksum (see below). Replace the actual checksum and URL of the download link in the code block above.
+
+{% hint style="info" %}
+Make sure to verify the correct checksum according to the downloaded version. Right click on the linked text and select "copy link address" to get the URL of the download link to `curl`.
+{% endhint %}
+{% endhint %}
+
+<figure><img src="../../.gitbook/assets/image (137).png" alt=""><figcaption></figcaption></figure>
 
 _**Expected output:** Verify output of the checksum verification_
 
 ```
-besu-23.10.2.tar.gz: OK
+besu-24.1.2.tar.gz: OK
 ```
 
-Stop the Besu service
-
-```
-sudo systemctl stop besu.service
-```
-
-Extract the files, delete the previous version, and move the new version into the `(/usr/local/bin)` directory. Then, clean up the duplicated copies.
+If checksum is verified, extract the files and move them into the `(/usr/local/bin)` directory for neatness and best practice. Then, clean up the duplicated copies.
 
 ```bash
-tar xvf besu-23.10.2.tar.gz
-sudo rm -r /usr/local/bin/besu
-sudo cp -a besu-23.10.2 /usr/local/bin/besu
-rm -r besu-23.10.2.tar.gz besu-23.10.2
+tar xvf besu-24.1.2.tar.gz
+sudo cp -a besu-24.1.2 /usr/local/bin/besu
+sudo rm -r besu-24.1.2.tar.gz besu-24.1.2
 ```
 
 ### Restart the Besu service

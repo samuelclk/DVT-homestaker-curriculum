@@ -1,36 +1,35 @@
 # Teku
 
-## Updating Teku
-
-### Download the latest version
+## Download Teku
 
 [Download](https://github.com/ConsenSys/teku/releases) the latest version of Teku and run the checksum verification process to ensure that the downloaded file has not been tampered with.
 
 ```bash
 cd
-curl -LO https://artifacts.consensys.net/public/teku/raw/names/teku.tar.gz/versions/23.12.1/teku-23.12.1.tar.gz
-echo "0dcb49ac758b79779324b28c600d299bd9b30ed6b505e4a66fbb7a8797b9832f teku-23.12.1.tar.gz" | sha256sum --check
+curl -LO https://artifacts.consensys.net/public/teku/raw/names/teku.tar.gz/versions/24.2.0/teku-24.2.0.tar.gz
+echo "f7da4109b180e1f1118d6fa13e4d48a964d0f58724d1e6d3fd4a92ddccabab58 teku-24.2.0.tar.gz" | sha256sum --check
 ```
+
+{% hint style="info" %}
+Each downloadable file comes with it's own checksum. Replace the actual checksum and URL of the download link in the code block above.
+
+{% hint style="info" %}
+Make sure to choose the amd64 version. Right click on the linked text and select "copy link address" to get the URL of the download link to `curl`.
+{% endhint %}
+{% endhint %}
 
 _**Expected output:** Verify output of the checksum verification._
 
 ```
-teku-23.12.1.tar.gz: OK
+teku-24.2.0.tar.gz: OK
 ```
 
-Stop the Teku beacon node and validator client services.
+If checksum is verified, extract the files and move them into the `(/usr/local/bin)` directory for neatness and best practice. Then, clean up the duplicated copies.
 
 ```bash
-sudo systemctl stop tekubeacon.service tekuvalidator.service
-```
-
-Extract the files, delete the previous version, and move the new version into the `(/usr/local/bin)` directory. Then, clean up the duplicated copies.
-
-```bash
-tar xvf teku-23.12.1.tar.gz
-sudo rm -r /usr/local/bin/teku
-sudo cp -a teku-23.12.1 /usr/local/bin/teku
-rm -r teku-23.12.1.tar.gz teku-23.12.1
+tar xvf teku-24.2.0.tar.gz
+sudo cp -a teku-24.2.0 /usr/local/bin/teku
+rm -r teku-24.2.0.tar.gz teku-24.2.0
 ```
 
 ### Restart the Teku services

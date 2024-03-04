@@ -2,35 +2,38 @@
 
 ## Updating Nethermind
 
-### Download the latest version
+### Download Nethermind and configure the service
 
 [Download](https://downloads.nethermind.io/) the latest version of Nethermind and run the checksum verification process to ensure that the downloaded file has not been tampered with.
 
 ```bash
 cd
-curl -LO https://nethdev.blob.core.windows.net/builds/nethermind-1.24.0-9c1d76b5-linux-x64.zip
-echo "ee100b481e741a9262bc057f0a91db3d nethermind-1.24.0-9c1d76b5-linux-x64.zip" | md5sum --check
+curl -LO https://github.com/NethermindEth/nethermind/releases/download/1.25.4/nethermind-1.25.4-20b10b35-linux-x64.zip
+echo "05848eaab4b1b621054ff507e8592d17 nethermind-1.25.4-20b10b35-linux-x64.zip" | md5sum --check
 ```
+
+{% hint style="info" %}
+Each downloadable file comes with it's own checksum (see below). Replace the actual checksum and URL of the download link in the code block above.
+
+{% hint style="info" %}
+Make sure to choose the amd64 version. Right click on the linked text and select "copy link address" to get the URL of the download link to `curl`.
+{% endhint %}
+{% endhint %}
+
+<figure><img src="../../.gitbook/assets/image (107).png" alt=""><figcaption></figcaption></figure>
 
 _**Expected output:** Verify output of the checksum verification_
 
 ```
-nethermind-1.24.0-9c1d76b5-linux-x64.zip: OK
+nethermind-1.25.4-20b10b35-linux-x64.zip: OK
 ```
 
-Stop the Nethermind service
-
-```
-sudo systemctl stop nethermind.service
-```
-
-Extract the files, delete the previous version, and move the new version into the `(/usr/local/bin)` directory. Then, clean up the duplicated copies.
+If checksum is verified, extract the files and move them into the `(/usr/local/bin)` directory for neatness and best practice. Then, clean up the duplicated copies.
 
 ```bash
-unzip nethermind-1.24.0-9c1d76b5-linux-x64.zip -d nethermind
-sudo rm -r /usr/local/bin/nethermind
+unzip nethermind-1.25.4-20b10b35-linux-x64.zip -d nethermind
 sudo cp -a nethermind /usr/local/bin/nethermind
-rm -r nethermind-1.24.0-9c1d76b5-linux-x64.zip nethermind
+rm -r nethermind-1.25.4-20b10b35-linux-x64.zip nethermind
 ```
 
 ### Restart the Nethermind service
