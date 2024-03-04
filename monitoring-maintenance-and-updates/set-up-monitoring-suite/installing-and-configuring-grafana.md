@@ -168,3 +168,17 @@ sudo systemctl enable grafana-server
        * **Prysm:** Paste the JSON text from [here](https://raw.githubusercontent.com/GuillaumeMiralles/prysm-grafana-dashboard/master/less\_10\_validators.json)
    * Node Exporter dashboard - Paste the JSON text [here](https://github.com/samuelclk/ETH\_full\_home\_staking\_guide/blob/main/monitoring-maintenance-and-updates/set-up-monitoring-suite/Node-exporter-grafana-json)
 5. Select `Prometheus` from the "Select a Prometheus data source here" drop down field.
+
+### Screenshot samples of Grafana Dashboard
+
+#### Execution client:
+
+<figure><img src="../../.gitbook/assets/image (156).png" alt=""><figcaption></figcaption></figure>
+
+#### Consensus client:
+
+<figure><img src="../../.gitbook/assets/image (157).png" alt=""><figcaption></figcaption></figure>
+
+#### Node Exporter:
+
+<figure><img src="../../.gitbook/assets/image (158).png" alt=""><figcaption></figcaption></figure>
