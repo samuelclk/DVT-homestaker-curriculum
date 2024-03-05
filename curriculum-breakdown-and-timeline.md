@@ -83,7 +83,32 @@ description: Curriculum breakdown by week
 
 ## Week 6 - 11th Mar 2024
 
-12\) Diva Staking setup
+12\) Validator key generation
+
+* Setting up an air-gapped machine&#x20;
+* SOPs during key generation and storage&#x20;
+* Key generation process
+
+13\) Validator client setup
+
+* Prepare validator client configuration file
+* Running the validator client
+
+14\) Depositing ETH
+
+* Get Holesky ETH from faucets
+* Complete the deposit process
+
+15\) Tips and other best practices
+
+* Slashing prevention
+* Maximising uptime
+* Optimising security
+* Managing your withdrawal wallet
+
+## Week 6 - 18th Mar 2024
+
+16\) Diva Staking setup
 
 * Installing docker&#x20;
 * Manual installation
@@ -91,31 +116,6 @@ description: Curriculum breakdown by week
 * Registering your Diva node
 * Updating your Diva node&#x20;
 * Monitoring your Diva service
-
-## Week 7 - 18th Mar 2024
-
-13\) Validator key generation
-
-* Setting up an air-gapped machine&#x20;
-* SOPs during key generation and storage&#x20;
-* Key generation process
-
-14\) Validator client setup
-
-* Prepare validator client configuration file
-* Running the validator client
-
-15\) Depositing ETH
-
-* Get Holesky ETH from faucets
-* Complete the deposit process
-
-16\) Tips and other best practices
-
-* Slashing prevention
-* Maximising uptime
-* Optimising security
-* Managing your withdrawal wallet
 
 ## Week 8 to 9 - 25th Mar to 5th Apr 2024&#x20;
 
