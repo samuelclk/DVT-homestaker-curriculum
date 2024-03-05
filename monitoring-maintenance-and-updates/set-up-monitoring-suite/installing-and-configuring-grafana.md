@@ -162,7 +162,9 @@ sudo systemctl enable grafana-server
      * **Geth:** Enter the dashboard ID - `13877`
    * Consensus client dashboard&#x20;
      * **Teku:** Enter the dashboard ID - `16737`
-       * **Nimbus:** Paste the JSON text from [here](https://github.com/metanull-operator/eth2-grafana/blob/master/nimbus/eth2-grafana-nimbus-dashboard.json)
+       * **Nimbus:** Paste the JSON text from the options below
+         * [Option 1](https://github.com/metanull-operator/eth2-grafana/blob/master/nimbus/eth2-grafana-nimbus-dashboard.json)
+         * [Option 2](https://raw.githubusercontent.com/status-im/nimbus-eth2/stable/grafana/beacon\_nodes\_Grafana\_dashboard.json)
        * **Lodestar:** Paste the JSON text from [here](https://raw.githubusercontent.com/ChainSafe/lodestar/stable/dashboards/lodestar\_summary.json)
        * **Lighthouse**: Paste the JSON text from [here](https://raw.githubusercontent.com/sigp/lighthouse-metrics/master/dashboards/Summary.json)
        * **Prysm:** Paste the JSON text from [here](https://raw.githubusercontent.com/GuillaumeMiralles/prysm-grafana-dashboard/master/less\_10\_validators.json)
