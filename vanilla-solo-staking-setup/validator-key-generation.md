@@ -47,6 +47,8 @@
 
 <figure><img src="../.gitbook/assets/image (67).png" alt=""><figcaption></figcaption></figure>
 
+{% tabs %}
+{% tab title="Build from source" %}
 ## Building the validator key generation tool from source
 
 Connect your OS-on-a-stick to a trusted WiFi network and fire up the Linux terminal using `Ctrl + Alt + T` .
@@ -96,6 +98,46 @@ Run the following command to generate your validator keys. Replace `<number>` wi
 ```bash
 python3 ./staking_deposit/deposit.py new-mnemonic --num_validators <number> --chain holesky --eth1_withdrawal_address <YourWithdrawalAaddress>
 ```
+{% endtab %}
+
+{% tab title="Executable binaries" %}
+## Downloading the executable binary file
+
+Download the latest version of the Ethereum validator deposit key generation binary file [here](https://github.com/ethereum/staking-deposit-cli/releases) and verify the checksum of the downloaded zipped file.
+
+```sh
+cd
+curl -LO https://github.com/ethereum/staking-deposit-cli/releases/download/v2.7.0/staking_deposit-cli-fdab65d-linux-amd64.tar.gz
+echo "ac3151843d681c92ae75567a88fbe0e040d53c21368cc1ed1a8c3d9fb29f2a3a staking_deposit-cli-fdab65d-linux-amd64.tar.gz" | sha256sum --check
+```
+
+**Expected output:**
+
+```
+staking_deposit-cli-fdab65d-linux-amd64.tar.gz: OK
+```
+
+After the checksum verification, extract the contents of the zipped file and change directory into the extracted folder.
+
+```sh
+tar xvf staking_deposit-cli-fdab65d-linux-amd64.tar.gz
+cd staking_deposit-cli-fdab65d-linux-amd64
+```
+
+## Generate your validator signing keys
+
+### \*BEFORE PROCEEDING TO THE NEXT STEP
+
+1. #### TURN OFF YOUR ETHERNET, WIFI, AND BLUETOOTH ACCESS&#x20;
+2. #### PHYSICALLY COVER ALL CAMERA DEVICES - e.g. PHONES, WEBCAMS, LAPTOP CAMERAS, PEOPLE STANDING BEHIND YOU
+
+Next, run the deposit key generation process.
+
+```
+./deposit new-mnemonic --num_validators <number> --chain holesky --eth1_withdrawal_address <YourWithdrawalAaddress>
+```
+{% endtab %}
+{% endtabs %}
 
 You will be prompted to key in the following. Select accordingly.
 
