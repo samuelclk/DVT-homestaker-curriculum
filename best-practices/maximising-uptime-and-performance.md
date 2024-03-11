@@ -1,15 +1,5 @@
 # Maximising uptime and performance
 
-## Hardware
-
-In general, don't overly scrimp on hardware otherwise you will miss more attestations than normal or even be unable to sync your node - especially if you want to run minority clients. Some recommendations for hardware and system requirements below given the recent increase in load on ETH validator nodes.
-
-1. **CPU:** Get something that is fast enough
-   1. Compare the list of CPU speeds [here](https://sech.me/boinc/Amicable/cpu\_list.php). Try to choose something with >5.0 GFLOPS/core
-2. **RAM:** At least 32GB&#x20;
-3. **Storage:** 2TB NVME SSD equivalent
-   1. Choose from the "good" list [here](https://gist.github.com/yorickdowne/f3a3e79a573bf35767cd002cc977b038)
-
 ## SOPs
 
 1. Update your clients in a timely manner as these usually come with performance improvement fixes
