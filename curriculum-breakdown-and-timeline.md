@@ -106,7 +106,7 @@ description: Curriculum breakdown by week
 * Optimising security
 * Managing your withdrawal wallet
 
-## Week 6 - 18th Mar 2024
+## Week 7 - 18th Mar 2024
 
 16\) Diva Staking setup
 
