@@ -1,5 +1,11 @@
 # Teku VC
 
+### Create a new user account
+
+```sh
+sudo useradd --no-create-home --shell /bin/false teku_validator
+```
+
 ### Prepare the validator keystores
 
 1\) Create 3 new folders to store the validator client data, validator keystore, and the validator keystore password
@@ -14,9 +20,13 @@
 sudo mkdir -p /var/lib/teku_validator/validator_keystores /var/lib/teku_validator/keystore_password
 sudo cp ~/validator_keys/<validator_keystore.json> /var/lib/teku_validator/validator_keystores
 sudo cp ~/validator_keys/<validator_keystore_password.txt> /var/lib/teku_validator/keystore_password
-sudo chown -R teku:teku /var/lib/teku_validator
+sudo chown -R teku_validator:teku_validator /var/lib/teku_validator
 sudo chmod 700 /var/lib/teku_validator
 ```
+
+{% hint style="info" %}
+**Aside from the file extension, the validator\_keystore\_password file will need to be named identically as the validator signing keystore file (e.g. keystore-m-123.json, keystore-m-123.txt)**
+{% endhint %}
 
 ### Configure the validator client service
 
@@ -34,8 +44,8 @@ Description=Teku Validator Client (Holesky)
 Wants=network-online.target
 After=network-online.target
 [Service]
-User=teku
-Group=teku
+User=teku_validator
+Group=teku_validator
 Type=simple
 Restart=always
 RestartSec=5

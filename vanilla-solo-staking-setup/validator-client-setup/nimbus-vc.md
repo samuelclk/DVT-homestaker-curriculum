@@ -1,5 +1,11 @@
 # Nimbus VC
 
+### Create a new user account
+
+```sh
+sudo useradd --no-create-home --shell /bin/false nimbus_validator
+```
+
 ### Prepare the validator data directory
 
 1\) Create 3 new folders to store the validator client data, validator keystore, and the validator keystore password
@@ -14,9 +20,13 @@
 sudo mkdir -p /var/lib/nimbus_validator/validator_keystores /var/lib/nimbus_validator/keystore_password
 sudo cp ~/validator_keys/<validator_keystore.json> /var/lib/nimbus_validator/validator_keystores
 sudo cp ~/validator_keys/<validator_keystore_password.txt> /var/lib/nimbus_validator/keystore_password
-sudo chown -R nimbus:nimbus /var/lib/nimbus_validator
+sudo chown -R nimbus_validator:nimbus_validator /var/lib/nimbus_validator
 sudo chmod 700 /var/lib/nimbus_validator
 ```
+
+{% hint style="info" %}
+**Aside from the file extension, the validator\_keystore\_password file will need to be named identically as the validator signing keystore file (e.g. keystore-m-123.json, keystore-m-123.txt)**
+{% endhint %}
 
 ### Configure the validator client service
 
@@ -35,8 +45,8 @@ Wants=network-online.target
 After=network-online.target
 
 [Service]
-User=nimbus
-Group=nimbus
+User=nimbus_validator
+Group=nimbus_validator
 Type=simple
 Restart=always
 RestartSec=5

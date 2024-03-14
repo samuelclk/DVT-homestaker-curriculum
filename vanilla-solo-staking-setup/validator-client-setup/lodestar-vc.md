@@ -1,5 +1,11 @@
 # Lodestar VC
 
+### Create a new user account
+
+```sh
+sudo useradd --no-create-home --shell /bin/false lodestar_validator
+```
+
 ## Installing dependencies - Docker
 
 The script below performs the following:
@@ -49,10 +55,14 @@ sudo useradd --no-create-home --shell /bin/false lodestar
 <pre class="language-sh"><code class="lang-sh">sudo mkdir -p /var/lib/lodestar_validator/validator_keystores /var/lib/lodestar_validator/keystore_password
 <strong>sudo cp ~/validator_keys/&#x3C;validator_keystore.json> /var/lib/lodestar_validator/validator_keystores
 </strong>sudo cp ~/validator_keys/&#x3C;validator_keystore_password.txt> /var/lib/lodestar_validator/keystore_password
-sudo chown -R lodestar:lodestar /var/lib/lodestar_validator
+sudo chown -R lodestar_validator:lodestar_validator /var/lib/lodestar_validator
 sudo chmod 700 /var/lib/lodestar_validator
-id lodestar
+id lodestar_validator
 </code></pre>
+
+{% hint style="info" %}
+**Aside from the file extension, the validator\_keystore\_password file will need to be named identically as the validator signing keystore file (e.g. keystore-m-123.json, keystore-m-123.txt)**
+{% endhint %}
 
 _**Expected output:**_
 
@@ -101,7 +111,7 @@ services:
       - --dataDir
       - /var/lib/lodestar_validator
       - --importKeystores
-      - /var/lib/lodestar_validator/validator_keystore
+      - /var/lib/lodestar_validator/validator_keystores
       - --importKeystoresPassword
       - /var/lib/lodestar_validator/keystore_password/<validator_signing_keystore_password_file_name>.txt
       - --network
