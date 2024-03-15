@@ -32,7 +32,7 @@ Add in the flag you copied earlier into the configuration file.
 
 ```bash
 [Unit]
-Description=Teku Beacon Node (Mainnet)
+Description=Teku Beacon Node (Holesky)
 Wants=network-online.target
 After=network-online.target
 [Service]
@@ -44,7 +44,7 @@ RestartSec=5
 Environment="JAVA_OPTS=-Xmx6g"
 Environment="TEKU_OPTS=-XX:-HeapDumpOnOutOfMemoryError"
 ExecStart=/usr/local/bin/teku/bin/teku \
-  --network=mainnet \
+  --network=holesky \
   --data-path=/var/lib/teku \
   --ee-endpoint=http://127.0.0.1:8551 \
   --ee-jwt-secret-file=/var/lib/jwtsecret/jwt.hex \
@@ -71,7 +71,7 @@ Add in the same flag you copied earlier into the configuration file.
 
 ```
 [Unit]
-Description=Teku Validator Client (Mainnet)
+Description=Teku Validator Client (Holesky)
 Wants=network-online.target
 After=network-online.target
 [Service]
@@ -83,7 +83,7 @@ RestartSec=5
 Environment="JAVA_OPTS=-Xmx6g"
 Environment="TEKU_OPTS=-XX:-HeapDumpOnOutOfMemoryError"
 ExecStart=/usr/local/bin/teku/bin/teku vc \
-  --network=mainnet \
+  --network=holesky \
   --data-path=/var/lib/teku \
   --validators-external-signer-public-keys=<validator pubkeys> \
   --validators-external-signer-url=http://<external_signer_IP_address> \

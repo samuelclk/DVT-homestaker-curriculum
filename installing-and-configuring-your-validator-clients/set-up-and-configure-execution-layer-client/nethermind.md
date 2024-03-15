@@ -89,7 +89,7 @@ Restart=always
 RestartSec=5
 WorkingDirectory=/var/lib/nethermind
 Environment="DOTNET_BUNDLE_EXTRACT_BASE_DIR=/var/lib/nethermind"
-ExecStart=/usr/local/bin/nethermind/Nethermind.Runner \
+ExecStart=/usr/local/bin/nethermind/nethermind \
   --config holesky \
   --datadir /var/lib/nethermind \
   --JsonRpc.JwtSecretFile /var/lib/jwtsecret/jwt.hex \
