@@ -150,7 +150,7 @@ docker logs <CONTAINER_ID> -f --tail 5
 
 This prints out the last 5 lines of the monitoring logs and new lines as they appear. You can change the number of lines as needed. Check the output for warnings or errors and troubleshoot them against the list of common errors in the next section.
 
-If none of the scenarios matches your issue, you can raise them in the <mark style="color:red;">Diva Staking discord channel (TBC)</mark> for targeted support.
+If none of the scenarios matches your issue, you can raise them in the [Diva Staking discord channel](https://discord.gg/A4tfy6t3) for targeted support.
 
 ### Expected outputs
 
