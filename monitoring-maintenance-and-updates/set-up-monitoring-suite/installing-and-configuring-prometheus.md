@@ -141,7 +141,7 @@ According to your selected consensus client, append the following block to the g
   - job_name: 'Nimbus-validator'
     metrics_path: /metrics
     static_configs:
-      - targets: ['localhost:8009']
+      - targets: ['localhost:8108']
 ```
 {% endtab %}
 
