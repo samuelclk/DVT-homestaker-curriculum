@@ -114,21 +114,34 @@ According to your selected consensus client, append the following block to the g
 {% tabs %}
 {% tab title="Teku" %}
 ```
-  - job_name: "teku-dev"
+  - job_name: "teku-bn"
     scrape_timeout: 10s
     metrics_path: /metrics
     scheme: http
     static_configs:
       - targets: ["localhost:8008"]
+
+  - job_name: "teku-vc"
+    scrape_timeout: 10s
+    metrics_path: /metrics
+    scheme: http
+    static_configs:
+      - targets: ["localhost:8009"]
+
 ```
 {% endtab %}
 
 {% tab title="Nimbus" %}
 ```
-  - job_name: 'Nimbus'
+  - job_name: 'Nimbus_beacon'
     metrics_path: /metrics
     static_configs:
       - targets: ['localhost:8008']
+      
+  - job_name: 'Nimbus_validator'
+    metrics_path: /metrics
+    static_configs:
+      - targets: ['localhost:8009']
 ```
 {% endtab %}
 
