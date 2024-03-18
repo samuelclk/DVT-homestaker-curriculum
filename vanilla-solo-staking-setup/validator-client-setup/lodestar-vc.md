@@ -117,7 +117,7 @@ services:
       - --network
       - holesky
       - --beaconNodes
-      - http://127.0.0.1:5052,http://<backup_nodes>:<REST_port>
+      - http://127.0.0.1:5052
       - --builder
       - --suggestedFeeRecipient
       - "<your_designated_ETH_wallet_address>"

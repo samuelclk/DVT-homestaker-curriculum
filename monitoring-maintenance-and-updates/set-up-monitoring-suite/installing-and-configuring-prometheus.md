@@ -109,39 +109,27 @@ scrape_configs:
 
 **2) Consensus client parameters:**
 
-According to your selected consensus client, append the following block to the general + exection client parameters above.
+According to your selected consensus client, append the following block to the general + execution client parameters above.
 
 {% tabs %}
 {% tab title="Teku" %}
 ```
-  - job_name: "teku-bn"
+  - job_name: "teku-dev"
     scrape_timeout: 10s
     metrics_path: /metrics
     scheme: http
     static_configs:
       - targets: ["localhost:8008"]
 
-  - job_name: "teku-vc"
-    scrape_timeout: 10s
-    metrics_path: /metrics
-    scheme: http
-    static_configs:
-      - targets: ["localhost:8009"]
-
 ```
 {% endtab %}
 
 {% tab title="Nimbus" %}
 ```
-  - job_name: 'Nimbus_beacon'
+  - job_name: 'Nimbus'
     metrics_path: /metrics
     static_configs:
       - targets: ['localhost:8008']
-      
-  - job_name: 'Nimbus_validator'
-    metrics_path: /metrics
-    static_configs:
-      - targets: ['localhost:8009']
 ```
 {% endtab %}
 
