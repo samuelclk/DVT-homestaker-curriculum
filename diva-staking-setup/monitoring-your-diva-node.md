@@ -187,8 +187,6 @@ If none of the scenarios matches your issue, you can raise them in the <mark sty
 
 {% tab title="Prometheus" %}
 <figure><img src="../.gitbook/assets/image (130).png" alt=""><figcaption></figcaption></figure>
-
-TBC: Error connecting to remote server - [http://37.27.6.77](http://37.27.6.77/)
 {% endtab %}
 
 {% tab title="Grafana" %}
@@ -196,11 +194,11 @@ TBC: Error connecting to remote server - [http://37.27.6.77](http://37.27.6.77/)
 {% endtab %}
 
 {% tab title="Jaegar" %}
-TBC: Error connecting to remote server - [http://37.27.6.77](http://37.27.6.77/)
+<figure><img src="../.gitbook/assets/Screenshot 2024-03-18 at 11.20.07 AM.png" alt=""><figcaption></figcaption></figure>
 {% endtab %}
 
 {% tab title="Vector" %}
-TBC: Error connecting to remote server - [http://37.27.6.77](http://37.27.6.77/)
+<figure><img src="../.gitbook/assets/Screenshot 2024-03-18 at 11.23.34 AM.png" alt=""><figcaption></figcaption></figure>
 {% endtab %}
 {% endtabs %}
 
@@ -231,17 +229,3 @@ Dec-16 15:34:07.793[]                 info: Connecting to LevelDB database path=
 
 * Make sure your Diva client is active by running `docker ps -a`
 * Ensure that you have [registered your Diva node via the Operator UI](registering-your-diva-node.md)
-
-### Prometheus
-
-TBC: Error connecting to remote server - [http://37.27.6.77](http://37.27.6.77/)
-
-<figure><img src="../.gitbook/assets/image (130).png" alt=""><figcaption></figcaption></figure>
-
-### Jaegar
-
-TBC: Error connecting to remote server - [http://37.27.6.77](http://37.27.6.77/)
-
-### Vector
-
-TBC: Error connecting to remote server - [http://37.27.6.77](http://37.27.6.77/)

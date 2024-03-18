@@ -44,8 +44,6 @@ ssh -L 8080:<internal_ip_address>:80 -L 30000:<internal_ip_address>:30000 <user>
 
 Once you are logged in, you can now open a new browser on your laptop and key in `http://127.0.0.1:8080` to access the Web UI.
 
-**Logic:**
-
 ## Register your node
 
 Once you are able to access the Web UI, follow the steps in this short video below.
