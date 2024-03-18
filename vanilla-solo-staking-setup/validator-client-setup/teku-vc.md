@@ -60,7 +60,7 @@ ExecStart=/usr/local/bin/teku/bin/teku vc \
   --validators-proposer-blinded-blocks-enabled=true \
   --validators-graffiti="<your_graffiti_of_choice>" \
   --metrics-enabled=true \
-  --metrics-port=8008 \
+  --metrics-port=8108 \
   --doppelganger-detection-enabled=true 
 
 [Install]
