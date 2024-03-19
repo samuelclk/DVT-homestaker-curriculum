@@ -55,7 +55,7 @@ ExecStart=/usr/local/bin/nimbus_validator_client \
   --validators-dir=/var/lib/nimbus_validator/validator_keystores \
   --secrets-dir=/var/lib/nimbus_validator/keystore_password \
   --payload-builder=true \
-  --beacon-node=http://127.0.0.1:5052 \
+  --beacon-node=http://<Internal_IP_address>:5052 \
   --metrics \
   --metrics-port=8108 \
   --suggested-fee-recipient=0x9188DC42d33ad7d14cE460AADfcE00C2eeC19BbD \
@@ -74,7 +74,7 @@ Once you're done, save with `Ctrl+O` and `Enter`, then exit with `Ctrl+X`. Under
 2. `--validators-dir`: Specify the directory for Nimbus to retrieve the validator keystores
 3. `--secrets-dir`: Specify the directory for Nimbus to retrieve the password decrypting the validator keystores
 4. `--payload-builder`: Required when using external builders to build blocks (e.g. MEV relays)
-5. `--beacon-node`: URLs to connect to the main and backup consensus clients if any.&#x20;
+5. `--beacon-node`: URLs to connect to the main and backup consensus clients if any. This needs to be the same IP address set in your consensus client. Refer back [here](../../installing-and-configuring-your-validator-clients/set-up-and-configure-consensus-layer-client/) if you don't remember it.&#x20;
 6. `--metrics`: Enable metrics for monitoring
 7. `--metrics-port`: Set the port for retrieving metrics
 8. `--suggested-fee-recipient`: ETH wallet address to receive rewards from block proposals and MEV bribes

@@ -55,7 +55,7 @@ ExecStart=/usr/local/bin/teku/bin/teku vc \
   --network=holesky \
   --data-path=/var/lib/teku_validator \
   --validator-keys=/var/lib/teku_validator/validator_keystores:/var/lib/teku_validator/keystore_password \
-  --beacon-node-api-endpoint=http://localhost:5052 \
+  --beacon-node-api-endpoint=http://<Internal_IP_address>:5052 \
   --validators-proposer-default-fee-recipient=<your_designated_ETH_wallet address> \
   --validators-proposer-blinded-blocks-enabled=true \
   --validators-graffiti="<your_graffiti_of_choice>" \
@@ -76,7 +76,7 @@ Once you're done, save with `Ctrl+O` and `Enter`, then exit with `Ctrl+X`. Under
 3.  `--validator-keys`: File path to the directory where your validator signing keystore and corresponding plain text password file are stored. **Aside from the file extension (e.g. .json vs .txt), the password file will need to be named identically as the validator signing keystore file.** For example:
 
     <figure><img src="../../.gitbook/assets/image (109).png" alt=""><figcaption></figcaption></figure>
-4. `--beacon-node-api-endpoint`: URLs to connect to the main and backup beacon nodes if any.
+4. `--beacon-node-api-endpoint`: URLs to connect to the main and backup consensus clients if any. This needs to be the same IP address set in your consensus client. Refer back [here](../../installing-and-configuring-your-validator-clients/set-up-and-configure-consensus-layer-client/) if you don't remember it.&#x20;
 5. `--validators-proposer-default-fee-recipient`: ETH wallet address to receive rewards from block proposals and MEV bribes
 6. `--validators-proposer-blinded-blocks-enabled`: Required when using external builders to build blocks (e.g. MEV relays)
 7. `--validators-graffiti`: Optional text to display on-chain when your validator proposes a block
