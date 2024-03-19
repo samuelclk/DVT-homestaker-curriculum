@@ -8,25 +8,25 @@ sudo useradd --no-create-home --shell /bin/false nimbus_validator
 
 ### Prepare the validator data directory
 
-1\) Create 3 new folders to store the validator client data, validator keystore, and the validator keystore password
+1\) Create a new folders to store the validator client data, validator keystore, and the validator keystore password
 
-2\) Copy the validator keystores and it's password file into their respective folders
+```sh
+sudo mkdir -p /var/lib/nimbus_validator
+```
+
+2\) Run the validator key import process.
+
+<pre class="language-sh"><code class="lang-sh"><strong>sudo /usr/local/bin/nimbus_beacon_node deposits import --data-dir:/var/lib/nimbus_validator/ ~/validator_keys
+</strong></code></pre>
 
 3\) Change the owner of this new folder to the `nimbus` user
 
 4\) Restrict permissions on this new folder such that only the owner is able to read, write, and execute files in this folder
 
 ```sh
-sudo mkdir -p /var/lib/nimbus_validator/validator_keystores /var/lib/nimbus_validator/keystore_password
-sudo cp ~/validator_keys/<validator_keystore.json> /var/lib/nimbus_validator/validator_keystores
-sudo cp ~/validator_keys/<validator_keystore_password.txt> /var/lib/nimbus_validator/keystore_password
 sudo chown -R nimbus_validator:nimbus_validator /var/lib/nimbus_validator
 sudo chmod 700 /var/lib/nimbus_validator
 ```
-
-{% hint style="info" %}
-**Aside from the file extension, the validator\_keystore\_password file will need to be named identically as the validator signing keystore file (e.g. keystore-m-123.json, keystore-m-123.txt)**
-{% endhint %}
 
 ### Configure the validator client service
 
@@ -52,8 +52,6 @@ Restart=always
 RestartSec=5
 ExecStart=/usr/local/bin/nimbus_validator_client \
   --data-dir=/var/lib/nimbus_validator \
-  --validators-dir=/var/lib/nimbus_validator/validator_keystores \
-  --secrets-dir=/var/lib/nimbus_validator/keystore_password \
   --payload-builder=true \
   --beacon-node=http://<Internal_IP_address>:5052 \
   --metrics \
