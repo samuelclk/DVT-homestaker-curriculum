@@ -23,7 +23,7 @@
 
 ## Reviewing mandatory disclaimers
 
-Go to [https://holesky.launchpad.ethereum.org/](https://holesky.launchpad.ethereum.org/) on your browser and click on **"Become a validator"**
+Go to [https://holesky.launchpad.ethstaker.cc/](https://holesky.launchpad.ethstaker.cc/) on your browser and click on **"Become a validator"**
 
 <figure><img src="../.gitbook/assets/image (41).png" alt=""><figcaption></figcaption></figure>
 
