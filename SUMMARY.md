@@ -56,7 +56,9 @@
 
 ## Diva Staking Setup
 
-* [Diva Staking client setup](diva-staking-setup/diva-staking-client-setup.md)
+* [Diva Staking client setup](diva-staking-setup/diva-staking-client-setup/README.md)
+  * [Default - All-in-one setup](diva-staking-setup/diva-staking-client-setup/default-all-in-one-setup.md)
+  * [Experimental - with standalone Lodestar VC](diva-staking-setup/diva-staking-client-setup/experimental-with-standalone-lodestar-vc.md)
 * [Registering your Diva node](diva-staking-setup/registering-your-diva-node.md)
 * [Updating your Diva client](diva-staking-setup/updating-your-diva-client.md)
 * [Monitoring your Diva Node](diva-staking-setup/monitoring-your-diva-node.md)

@@ -1,10 +1,10 @@
-# Diva Staking client setup
+# Experimental - with standalone Lodestar VC
 
 ## Overview
 
 1. You will be running a series of docker containers that collective forms the Diva service with the command: `docker compose up -d`
    * [Diva client](https://hub.docker.com/r/diva/diva) written in Golang
-   * A Lodestar validator client&#x20;
+   * A Lodestar validator client
    * [Reloader script](https://hub.docker.com/r/diva/reloader) service that syncs the public keys between the validator client and Diva
    * [Diva Operator](https://hub.docker.com/r/diva/operator-ui) web UI for the Diva client API
    * [Prometheus](https://prometheus.io/), [Grafana](https://grafana.com/), [Jaeger](https://www.jaegertracing.io/) and [Vector](https://vector.dev/) for monitoring the testnet
@@ -13,7 +13,7 @@
 4. &#x20;The Diva client comes together with a Prysm validator client - indicated as "Diva client" in the diagram below. Together, they sit on top of and connects to your execution + consensus client set via the , replacing the need for you to run your own validator client for this purpose
 5. You will configure this connection via the `.env` file
 
-<figure><img src="../.gitbook/assets/telegram-cloud-photo-size-2-5301219013684221545-y.jpg" alt="" width="375"><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/telegram-cloud-photo-size-2-5301219013684221545-y.jpg" alt="" width="375"><figcaption></figcaption></figure>
 
 {% hint style="info" %}
 You can run the Diva service on top of your existing home staking hardware to boost your yields by being assigned validator keys from Diva Staking!
@@ -103,6 +103,7 @@ Replace the value `http://HOST_IP:PORT` of `CONSENSUS_CLIENT_URL` with the REST 
 
 ```
 CONSENSUS_CLIENT_URL=http://HOST_IP:PORT  # Change this (consensus REST API, prysm example: http://HOST_IP:3500)
+
 ```
 
 4\) Choose a strong password to log into your Diva node API.
@@ -223,8 +224,8 @@ sudo ufw allow 30000
 
 If you are running a machine on a local network, remember to also configure port forwarding on your router to port 5050 on your node. Refer to the port forwarding section on how to do this.
 
-{% content-ref url="../tips/advanced-networking.md" %}
-[advanced-networking.md](../tips/advanced-networking.md)
+{% content-ref url="../../tips/advanced-networking.md" %}
+[advanced-networking.md](../../tips/advanced-networking.md)
 {% endcontent-ref %}
 
 ## Run the Diva client
@@ -246,7 +247,7 @@ docker logs -f diva
 
 **Expected output:** There are 3 things to look out for - "connected to execution client", "consensus client available", and "running diva client".
 
-<figure><img src="../.gitbook/assets/image (29).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (29).png" alt=""><figcaption></figcaption></figure>
 
 **Note:** There will be a warning that says "cannot start p2p network without identity". This is expected as your Diva node is yet to be registered at this point.
 

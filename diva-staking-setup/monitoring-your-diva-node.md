@@ -161,8 +161,8 @@ If none of the scenarios matches your issue, you can raise them in the [Diva Sta
 <figure><img src="../.gitbook/assets/image (134).png" alt=""><figcaption></figcaption></figure>
 {% endtab %}
 
-{% tab title="Lodestar" %}
-<figure><img src="../.gitbook/assets/image (20).png" alt=""><figcaption></figcaption></figure>
+{% tab title="Lodestar/Prysm VC" %}
+<figure><img src="../.gitbook/assets/image (20).png" alt=""><figcaption><p>Lodestar VC</p></figcaption></figure>
 
 **Note:** suggestedFeeRecipeint is set to the "zero" address and burnt during this testnet phase but will be set to a designated pooling address on the mainnet.
 {% endtab %}

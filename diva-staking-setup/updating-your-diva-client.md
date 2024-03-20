@@ -80,6 +80,10 @@ cp -r ~/diva-alpha-net-bak/.diva ~/diva-alpha-net/.diva
 
 ### 7. Prepare the Lodestar docker compose file
 
+{% hint style="info" %}
+Skip this Step 7 for the Default method.
+{% endhint %}
+
 Open up the `docker-compose-lodestar-vc.yml` file.
 
 ```sh
@@ -143,10 +147,11 @@ docker rm -f $(docker ps -a -q)
 
 ### 9. Run the new Diva containers
 
-```sh
-cd ~/diva-alpha-net
-docker compose -f docker-compose-lodestar-vc.yml up -d
-```
+<pre class="language-sh"><code class="lang-sh">cd ~/diva-alpha-net
+<strong># Choose one of the following to run according to the setup method you are on 
+</strong>docker compose -f up -d #For Default method
+docker compose -f docker-compose-lodestar-vc.yml up -d #For Experimental method
+</code></pre>
 
 Monitor the logs to make sure there are no errors.
 
