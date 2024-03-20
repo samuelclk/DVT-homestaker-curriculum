@@ -2,7 +2,7 @@
 
 ## Important update:
 
-As of 20th March 2024, the recommended setup method for the Holesky testnet version is the **"Default - All-in-one"** method. This method requires you to stop your external execution and consensus clients and run Geth + Prysm consensus + Prysm validator clients as part of Diva's docker stack.&#x20;
+The recommended setup method for the Holesky testnet version is the **"Default - All-in-one"** method for the smoothest experience. This method requires you to stop your external execution and consensus clients and run Geth + Prysm consensus + Prysm validator clients as part of Diva's docker stack.&#x20;
 
 {% content-ref url="default-all-in-one-setup.md" %}
 [default-all-in-one-setup.md](default-all-in-one-setup.md)
