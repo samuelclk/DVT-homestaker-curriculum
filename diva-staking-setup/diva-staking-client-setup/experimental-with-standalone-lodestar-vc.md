@@ -170,7 +170,7 @@ services:
       - --keymanager.port
       - "7500"
       - --network
-      <a data-footnote-ref href="#user-content-fn-1">- goerli</a>
+      <a data-footnote-ref href="#user-content-fn-1">- </a>holesky
       - --externalSigner.url
       - http://diva:9000
       - --externalSigner.fetch
