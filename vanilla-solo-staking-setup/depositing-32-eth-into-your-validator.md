@@ -51,6 +51,12 @@ Additionally, you can also check the address against the following sources:
 2. [Consensys](https://consensys.net/blog/news/eth2-phase-0-deposit-contract-address/)
 3. [Ethereum Foundation](https://ethereum.org/en/staking/deposit-contract/)
 
+{% hint style="info" %}
+The checks you perform above will point you to the deposit contract address for Mainnet. The deposit contract address on Holesky is:
+
+**`0x4242424242424242424242424242424242424242`**
+{% endhint %}
+
 Once you are ready, click on **"Send Deposit"** and follow the instructions on Metamask or your other wallets.
 
 <figure><img src="../.gitbook/assets/image (46).png" alt=""><figcaption></figcaption></figure>
