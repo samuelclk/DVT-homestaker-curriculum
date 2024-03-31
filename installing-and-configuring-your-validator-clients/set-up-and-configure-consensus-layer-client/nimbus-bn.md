@@ -117,7 +117,7 @@ sudo /usr/local/bin/nimbus_beacon_node trustedNodeSync --network=holesky --data-
 ```
 
 * Checkpoint sync URL list: [https://eth-clients.github.io/checkpoint-sync-endpoints/](https://eth-clients.github.io/checkpoint-sync-endpoints/)
-* Go to [beaconcha.in](https://beaconcha.in/) on your browser and search for the slot number (`slot`)
+* Go to [holesky.beaconcha.in ](https://holesky.beaconcha.in/)on your browser and search for the slot number (`slot`)
 * Verify the `Block Root` and `State Root` with your output
 
 **Expected output:**
