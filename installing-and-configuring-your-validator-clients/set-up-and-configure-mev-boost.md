@@ -44,10 +44,6 @@ sudo cp mev-boost /usr/local/bin
 {% endtab %}
 
 {% tab title="Using binaries" %}
-{% hint style="info" %}
-This method does not support Holesky yet. Use the **Build from source** method for now
-{% endhint %}
-
 Download latest version of MEV-boost [here](https://github.com/flashbots/mev-boost/releases) and run the checksum verification process to ensure that the downloaded file has not been tampered with. The checksums can be found in the `checksums.txt` file - open it up and copy the `linux_amd64` version to use below.
 
 ```bash

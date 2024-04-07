@@ -58,7 +58,7 @@ sudo nano /etc/systemd/system/pushgateway.service
 
 Paste the following contents into the configuration file.
 
-```sh
+```
 [Unit]
 Description=Prometheus Pushgateway
 After=network.target

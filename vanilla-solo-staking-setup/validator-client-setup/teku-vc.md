@@ -1,5 +1,13 @@
 # Teku VC
 
+### Download Teku
+
+Follow the steps in this previous section to download Teku if you have not done so.
+
+{% content-ref url="../../installing-and-configuring-your-validator-clients/set-up-and-configure-consensus-layer-client/teku-bn.md" %}
+[teku-bn.md](../../installing-and-configuring-your-validator-clients/set-up-and-configure-consensus-layer-client/teku-bn.md)
+{% endcontent-ref %}
+
 ### Create a new user account
 
 ```sh

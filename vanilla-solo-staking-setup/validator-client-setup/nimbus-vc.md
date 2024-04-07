@@ -1,5 +1,13 @@
 # Nimbus VC
 
+### Download Nimbus
+
+Follow the steps in this previous section to download Nimbus if you have not done so.
+
+{% content-ref url="../../installing-and-configuring-your-validator-clients/set-up-and-configure-consensus-layer-client/nimbus-bn.md" %}
+[nimbus-bn.md](../../installing-and-configuring-your-validator-clients/set-up-and-configure-consensus-layer-client/nimbus-bn.md)
+{% endcontent-ref %}
+
 ### Create a new user account
 
 ```sh
@@ -56,7 +64,7 @@ ExecStart=/usr/local/bin/nimbus_validator_client \
   --beacon-node=http://<Internal_IP_address>:5051 \
   --metrics \
   --metrics-port=8108 \
-  --suggested-fee-recipient=0x9188DC42d33ad7d14cE460AADfcE00C2eeC19BbD \
+  --suggested-fee-recipient=<your_designated_ETH_wallet address> \
   --graffiti="<your_graffiti_of_choice>" \
   --doppelganger-detection
 

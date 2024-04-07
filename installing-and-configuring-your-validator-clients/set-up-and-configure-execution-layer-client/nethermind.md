@@ -95,6 +95,7 @@ ExecStart=/usr/local/bin/nethermind/nethermind \
   --JsonRpc.JwtSecretFile /var/lib/jwtsecret/jwt.hex \
   --Sync.SnapSync true \
   --Network.P2PPort 30304 \
+  --Network.DiscoveryPort 30304 \ 
   --JsonRpc.Enabled true \
   --JsonRpc.Host <Internal_IP_address> \
   --JsonRpc.Port 8547 \
@@ -114,7 +115,7 @@ Once you're done, save with `Ctrl+O` and `Enter`, then exit with `Ctrl+X`. Under
 2. `--datadir`: The directory for Nethermind to store the blockchain data of the execution layer
 3. `--JsonRpc.JwtSecretFile`: The directory pointing to the JWT secret we generated earlier
 4. `--Sync.SnapSync`: Use Nethermind's snap sync feature. More information [here](https://docs.nethermind.io/nethermind/ethereum-client/sync-modes)&#x20;
-5. `--Network.P2PPort:` Sets the port used for peer-to-peer communication. Defaults to 30303.
+5. `--Network.P2PPort/--Network.DiscoveryPort:` Sets the port used for peer-to-peer communication. Defaults to 30303.
 6. `--JsonRpc.Enabled:` Enables the JSON-RPC service on http and websocket. This is so that DVT clients such as the Diva service can connect to your execution client &#x20;
 7. `--JsonRpc.Host:` Sets the IP address to connect to the JSON RPC service. Use the internal IP address of your device here (check by running `ip a`) - e.g. `192.168.x.x`. Defaults to `127.0.0.1` otherwise
 8. `--JsonRpc.Port`: Sets the port to connect to the JSON RPC service that will be used by the Diva service. You may choose any unused port number but remember to allow incoming connections into your chosen port in your firewall (`ufw`) rules. Defaults to 8545

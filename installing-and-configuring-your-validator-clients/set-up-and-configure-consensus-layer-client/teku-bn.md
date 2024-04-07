@@ -41,7 +41,7 @@ rm -r teku-24.2.0.tar.gz teku-24.2.0
 ## Configure the Teku Consensus Client
 
 {% hint style="info" %}
-_We will be running the consensus client and consensus client of Teku as separate services so that there is more flexibility to configure a failover node for maximum uptime when you decide it is needed._
+_We will be running the consensus client and validator client of Teku as separate services so that there is more flexibility to configure a failover node for maximum uptime when you decide it is needed._
 {% endhint %}
 
 Create an account (`teku`) without server access for the Teku Consensus Client & Validator Client to run as a background service. This type of user account will not have root access so it restricts potential attackers to only the Teku Consensus Client & Validator Client services in the unlikely event that they manage to infiltrate via a compromised client update.

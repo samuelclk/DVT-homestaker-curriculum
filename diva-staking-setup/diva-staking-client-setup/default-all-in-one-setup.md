@@ -186,6 +186,11 @@ Amend the `ports:` section of the `grafana` service to `"3001:3000".` This is so
       - ${DIVA_DATA_FOLDER:-.}/grafana/config/grafana.ini:/etc/grafana/grafana.ini
 ```
 
+You will then be able to run both Grafana services without conflicts. Access each of the dashboards via:&#x20;
+
+1. Native Grafana: \<IP\_address:3000>
+2. Docker Grafana: \<IP\_address:3001>&#x20;
+
 ## Run the Diva client
 
 After editing the `.env` file, you can now fire up the Diva Staking service using docker.
