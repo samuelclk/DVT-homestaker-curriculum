@@ -86,10 +86,12 @@ ExecStart=/usr/local/bin/teku/bin/teku \
   --ee-jwt-secret-file=/var/lib/jwtsecret/jwt.hex \
   --initial-state=https://holesky.beaconstate.ethstaker.cc/ \
   --metrics-enabled=true \
+  --metrics-port=8009 \
+  --p2p-port=9001 \
   --rest-api-enabled=true \
-  --rest-api-interface=<Internal_IP_address> \
+  --rest-api-interface=0.0.0.0 \
   --rest-api-host-allowlist=<Internal_IP_address> \
-  --rest-api-port=5052 \
+  --rest-api-port=5051 \
   --builder-endpoint=http://127.0.0.1:18550 \
   --validators-builder-registration-default-enabled=true \
   --p2p-nat-method=UPNP 
@@ -109,11 +111,12 @@ Once you're done, save with `Ctrl+O` and `Enter`, then exit with `Ctrl+X`. Under
 5. `--initial-state`: Enables nearly instant syncing of the Consensus Client by pointing to one of the checkpoint sync URLs here - [https://eth-clients.github.io/checkpoint-sync-endpoints/](https://eth-clients.github.io/checkpoint-sync-endpoints/)
 6. `--metrics-enabled`: Enable monitoring of Consensus Client metrics
 7. `--rest-api-enabled`: Allows the validator client to connect to this consensus client. Also allows monitoring endpoints to pull metrics from this service
-8. `--rest-api-interface`: Sets the IP address to connect to the REST API of the consensus client that will be used by the Diva service. Use the internal IP address of your device here (check by running `ip a`) - e.g. `192.168.x.x`. Defaults to `127.0.0.1` otherwise
-9. `--rest-api-port`: Sets the port to connect to the consensus client
-10. `--builder-endpoint`: URL to connect to external builders (e.g. MEV relays)
-11. `--validators-builder-registration-default-enabled`: Required when using external builders to build blocks (e.g. MEV relays)
-12. `--p2p-nat-method=UPNP`: Enables your Consensus Client to better discover and connect to other Consensus Clients in the ETH network without needing to use port forwarding
+8. `--rest-api-interface`: Sets the IP address to connect to the REST API of the consensus client that will be used by the Diva service. Use 0.0.0.0 here and restrict to specific host IP addresses of your device using `--rest-api-host-allowlist`.
+9. `--rest-api-host-allowlist:` Sets the IP address _**that is allowed**_ to connect to the REST API of the consensus client that will be used by the Diva service. Use the internal IP address of your device here (check by running `ip a`) - e.g. `192.168.x.x`. Defaults to `127.0.0.1` otherwise
+10. `--rest-api-port`: Sets the port to connect to the consensus client
+11. `--builder-endpoint`: URL to connect to external builders (e.g. MEV relays)
+12. `--validators-builder-registration-default-enabled`: Required when using external builders to build blocks (e.g. MEV relays)
+13. `--p2p-nat-method=UPNP`: Enables your Consensus Client to better discover and connect to other Consensus Clients in the ETH network without needing to use port forwarding
 
 ## Start the Teku Consensus Client
 
