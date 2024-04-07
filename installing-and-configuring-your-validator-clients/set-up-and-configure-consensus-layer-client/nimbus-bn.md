@@ -82,11 +82,13 @@ ExecStart=/usr/local/bin/nimbus_beacon_node \
   --jwt-secret=/var/lib/jwtsecret/jwt.hex \
   --payload-builder=true \
   --payload-builder-url=http://127.0.0.1:18550 \
+  --tcp-port=9001 \
+  --udp-port=9001 \
   --rest \
   --rest-address=<Internal_IP_address> \
-  --rest-port=5052 \
+  --rest-port=5051 \
   --metrics \
-  --metrics-port=8008 
+  --metrics-port=8009 
   
 [Install]
 WantedBy=multi-user.target
