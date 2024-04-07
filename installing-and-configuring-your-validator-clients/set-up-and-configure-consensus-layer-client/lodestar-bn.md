@@ -95,7 +95,6 @@ services:
     volumes:
       - /var/lib/lodestar_beacon:/var/lib/lodestar_beacon
       - /var/lib/jwtsecret:/var/lib/jwtsecret
-    network_mode: host
     command:
       - beacon
       - --dataDir
@@ -103,24 +102,32 @@ services:
       - --network
       - holesky
       - --checkpointSyncUrl
-      - https://holesky.beaconstate.ethstaker.cc
+      - https://checkpoint-sync.holesky.ethpandaops.io
       - --jwt-secret
       - /var/lib/jwtsecret/jwt.hex
       - --execution.urls
-      - http://127.0.0.1:8551
+      - http://host.docker.internal:8551
       - --builder
       - --builder.urls
-      - http://127.0.0.1:18550
+      - http://host.docker.internal:18550
+      - --port
+      - "9001"
       - --rest
       - --rest.address
-      - <Internal_IP_address>
+      - 0.0.0.0
       - --rest.port
-      - "5052"
+      - "5051"
       - --metrics
       - --metrics.port
-      - "8008"
+      - "8009"
     environment:
       NODE_OPTIONS: --max-old-space-size=8192
+    ports:
+      - "5051:5051"
+      - "9001:9001"
+      - "8009:8009"
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
 ```
 
 Once you're done, save with `Ctrl+O` and `Enter`, then exit with `Ctrl+X`.&#x20;
