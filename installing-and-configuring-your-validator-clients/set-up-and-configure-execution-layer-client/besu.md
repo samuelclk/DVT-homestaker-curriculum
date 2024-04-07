@@ -116,11 +116,12 @@ Once you're done, save with `Ctrl+O` and `Enter`, then exit with `Ctrl+X`. Under
 4. `--data-storage-format`: Bonsai Tries is a data storage layout policy designed to reduce storage requirements and increase read performance.
 5. `--engine-jwt-secret`: The directory pointing to the JWT secret we generated earlier.
 6. `--Xplugin-rocksdb-high-spec-enabled`: Speeds up sync time and performance. Use only if you have 32GB of RAM or more.
-7. `--rpc-ws-enabled`: Enables the JSON-RPC service on websocket. This is so that DVT clients such as the Diva service can connect to your execution client &#x20;
-8. `--rpc-ws-host`: Sets the IP address to connect to the JSON-RPC service that will be used by the Diva service. Use the internal IP address of your device here (check by running `ip a`) - e.g. `192.168.x.x`. Defaults to `127.0.0.1` otherwise
-9. `--rpc-ws-port`: Sets the port to connect to the JSON-RPC service. You may choose any unused port number but remember to allow incoming connections into your chosen port in your firewall (`ufw`) rules. Defaults to 8546
-10. `--rpc-http-enabled`: Enables the JSON-RPC service over http. This allows you to query the execution client endpoint directly to test for sync status and overall health. Default IP address (host) = 127.0.0.1; Default port = 8545
-11. `--metrics-enabled`: Enable monitoring metrics on the besu service
+7. `--p2p-port:` Sets the port used for peer-to-peer communication. Defaults to 30303.
+8. `--rpc-ws-enabled`: Enables the JSON-RPC service on websocket. This is so that DVT clients such as the Diva service can connect to your execution client &#x20;
+9. `--rpc-ws-host`: Sets the IP address to connect to the JSON-RPC service that will be used by the Diva service. Use the internal IP address of your device here (check by running `ip a`) - e.g. `192.168.x.x`. Defaults to `127.0.0.1` otherwise
+10. `--rpc-ws-port`: Sets the port to connect to the JSON-RPC service. You may choose any unused port number but remember to allow incoming connections into your chosen port in your firewall (`ufw`) rules. Defaults to 8546
+11. `--rpc-http-enabled`: Enables the JSON-RPC service over http. This allows you to query the execution client endpoint directly to test for sync status and overall health. Default IP address (host) = 127.0.0.1; Default port = 8545
+12. `--metrics-enabled`: Enable monitoring metrics on the besu service
 
 ### Start Besu
 

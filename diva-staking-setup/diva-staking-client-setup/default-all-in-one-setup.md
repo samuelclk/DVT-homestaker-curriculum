@@ -85,32 +85,26 @@ sudo nano .env
 1\) Amend the COMPOSE\_FILE and COMPOSE\_PROFILES to the following values. This will enable metrics for monitoring and telemetry for the Diva team to help you with troubleshooting.
 
 ```
-COMPOSE_FILE=docker-compose.yml # Change this (docker compose file name)
-COMPOSE_PROFILES=clients,metrics,telemetry # Change this (docker profiles: clients, metrics, telemetry)
+COMPOSE_FILE=docker-compose.yml 
+COMPOSE_PROFILES=clients,metrics,telemetry 
 ```
 
 2\) Connect your Diva client to your execution client via WebSocket&#x20;
 
-Replace the value `ws://HOST_IP:PORT` of `EXECUTION_CLIENT_URL` with the WebSocket endpoint of your execution client.
-
 ```
-EXECUTION_CLIENT_URL=ws://geth:8546  # Change this (execution RPC WebSocket, Nethermind example: ws://HOST_IP:8545)
+EXECUTION_CLIENT_URL=ws://geth:8546 
 ```
 
 **\*Note:** You have to use the IP address assigned by your ethernet port (eth0) or Wifi (wlo1) and not the loopback address (127.0.0.1) here.
 
 3\) Connect your Diva client to your Prysm consensus client via REST API
 
-Replace the value `http://HOST_IP:PORT` of `CONSENSUS_CLIENT_URL` with the REST API provider endpoint of your consensus client.
-
 ```
-CONSENSUS_CLIENT_URL=http://beacon:3500  # Change this (consensus REST API, prysm example: http://HOST_IP:3500)
+CONSENSUS_CLIENT_URL=http://beacon:3500 
 ```
 
-Replace the value `HOST_IP:PORT` of the `BEACON_RPC_PROVIDER` with the RPC provider endpoint of your consensus client.
-
 ```
-BEACON_RPC_PROVIDER=beacon:4000 # Change this (consensus RPC, prysm example: http://HOST_IP:4000)
+BEACON_RPC_PROVIDER=beacon:4000 
 ```
 
 4\) Choose a strong password to log into your Diva node API.
@@ -162,6 +156,35 @@ If you are running a machine on a local network, remember to also configure port
 {% content-ref url="../../tips/advanced-networking.md" %}
 [advanced-networking.md](../../tips/advanced-networking.md)
 {% endcontent-ref %}
+
+## Preparing the docker compose file
+
+Open up the `docker-compose.yml` file.
+
+```sh
+cd diva-alpha-net
+sudo nano docker-compose.yml
+```
+
+Amend the `ports:` section of the `grafana` service to `"3001:3000".` This is so that the Grafana service running on docker does not clash with your native Grafana service.
+
+```
+# Metrics
+  grafana:
+    image: grafana/grafana:10.2.5
+    user: root
+    container_name: grafana
+    profiles:
+      - metrics
+    hostname: grafana
+    restart: unless-stopped
+    ports:
+      - "3001:3000"
+    volumes:
+      - ${DIVA_DATA_FOLDER:-.}/grafana/config:/etc/grafana/provisioning
+      - ${DIVA_DATA_FOLDER:-.}/grafana/data:/var/lib/grafana
+      - ${DIVA_DATA_FOLDER:-.}/grafana/config/grafana.ini:/etc/grafana/grafana.ini
+```
 
 ## Run the Diva client
 

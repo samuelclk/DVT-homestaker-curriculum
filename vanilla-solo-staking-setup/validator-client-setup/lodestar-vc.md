@@ -105,7 +105,6 @@ services:
     restart: unless-stopped
     volumes:
       - /var/lib/lodestar_validator:/var/lib/lodestar_validator
-    network_mode: host
     command:
       - validator
       - --dataDir
@@ -117,7 +116,7 @@ services:
       - --network
       - holesky
       - --beaconNodes
-      - http://<Internal_IP_address>:5052
+      - http://<Internal_IP_address>:5051
       - --builder
       - --suggestedFeeRecipient
       - "<your_designated_ETH_wallet_address>"
@@ -129,6 +128,8 @@ services:
       - "your_graffiti_of_choice"
     environment:
       NODE_OPTIONS: --max-old-space-size=2048
+    ports:
+      - "5064:5064"
 ```
 
 Once you're done, save with `Ctrl+O` and `Enter`, then exit with `Ctrl+X`.&#x20;
@@ -155,6 +156,7 @@ Once you're done, save with `Ctrl+O` and `Enter`, then exit with `Ctrl+X`.&#x20;
    * `--metrics.port`: Set the port for retrieving metrics
    * `--graffiti`: Optional text to display on-chain when your validator proposes a block
 7. `environment`: Tells Node.js to allow a larger amount of memory to be used before it starts garbage collection processes to free up memory.
+8. `ports:` Maps the ports used by the docker container to the ports of the host device so that they are reachable via the 127.0.0.1  or localhost name spaces.
 
 ### Start the Lodestar Validator Client container
 

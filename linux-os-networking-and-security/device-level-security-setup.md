@@ -108,17 +108,20 @@ The basic rules we will implement are as follows:
 1. Deny all incoming traffic by default
 2. Allow all outgoing traffic by default
 3. Allow incoming traffic via port \<your\_chosen\_SSH\_port> for SSH access
-4. Allow incoming traffic via port 30303 for Nethermind to connect with other nodes
-5. Allow incoming traffic via port 9000 for Teku to connect with other nodes
-6. Allow incoming traffic via port 3000 for Grafana to display monitoring dashboards for your node
+4. Allow incoming traffic via port 30303 and 30304 for the execution clients to connect with other nodes
+5. Allow incoming traffic via port 9000 and 9001 for the consensus clients to connect with other nodes
+6. Allow incoming traffic via port 3000 and 3001 for Grafana to display monitoring dashboards for your node
 
 ```bash
 sudo ufw default deny incoming
 sudo ufw default allow outgoing
 sudo ufw allow <your_chosen_SSH_port>/tcp
-sudo ufw allow 30303
-sudo ufw allow 9000
-sudo ufw allow 3000
+sudo ufw allow 30303 # for the EL via Diva
+sudo ufw allow 30304 # for the native EL 
+sudo ufw allow 9000 # for the CL via Diva
+sudo ufw allow 9001 # for the native CL
+sudo ufw allow 3000 # for the native Grafana
+sudo ufw allow 3000 # for Grafana via Diva
 ```
 
 With these configurations set up, you will have blocked off all but 4 possible openings for potential attackers to enter from.&#x20;

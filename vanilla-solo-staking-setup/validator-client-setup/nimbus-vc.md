@@ -53,7 +53,7 @@ RestartSec=5
 ExecStart=/usr/local/bin/nimbus_validator_client \
   --data-dir=/var/lib/nimbus_validator \
   --payload-builder=true \
-  --beacon-node=http://<Internal_IP_address>:5052 \
+  --beacon-node=http://<Internal_IP_address>:5051 \
   --metrics \
   --metrics-port=8108 \
   --suggested-fee-recipient=0x9188DC42d33ad7d14cE460AADfcE00C2eeC19BbD \

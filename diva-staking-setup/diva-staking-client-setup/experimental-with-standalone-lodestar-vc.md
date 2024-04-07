@@ -182,7 +182,7 @@ services:
           - vc-rkm
 </code></pre>
 
-2\)  Append the following contents in this file.
+2\)  Append the following contents in this file
 
 ```
 # Monitoring configuration
@@ -203,6 +203,33 @@ services:
 ```
 
 These configurations sets the stage to allow you to use the Lodestar validator client instead of Prysm, which will enable you to use any minority consensus clients with your Diva node.
+
+Next, open up the `docker-compose.yml` file.&#x20;
+
+```sh
+cd diva-alpha-net
+sudo nano docker-compose.yml
+```
+
+Amend the `ports:` section of the `grafana` service to `"3001:3000".` This is so that the Grafana service running on docker does not clash with your native Grafana service.
+
+```
+# Metrics
+  grafana:
+    image: grafana/grafana:10.2.5
+    user: root
+    container_name: grafana
+    profiles:
+      - metrics
+    hostname: grafana
+    restart: unless-stopped
+    ports:
+      - "3001:3000"
+    volumes:
+      - ${DIVA_DATA_FOLDER:-.}/grafana/config:/etc/grafana/provisioning
+      - ${DIVA_DATA_FOLDER:-.}/grafana/data:/var/lib/grafana
+      - ${DIVA_DATA_FOLDER:-.}/grafana/config/grafana.ini:/etc/grafana/grafana.ini
+```
 
 ## Open required ports
 
