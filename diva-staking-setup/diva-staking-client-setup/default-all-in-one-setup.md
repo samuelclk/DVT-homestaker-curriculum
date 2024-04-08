@@ -12,14 +12,10 @@
    * [Prometheus](https://prometheus.io/), [Grafana](https://grafana.com/), [Jaeger](https://www.jaegertracing.io/) and [Vector](https://vector.dev/) for monitoring the testnet
 2. The system instructions for running the above is captured in the `docker-compose.yml` and `.env`files of the git repository you will be downloading
 3. Open the ports used by the Diva service on your device&#x20;
-4. &#x20;The Diva client comes together with a Prysm validator client - indicated as "Diva client" in the diagram below. Together, they sit on top of and connects to your execution + consensus client set via the , replacing the need for you to run your own validator client for this purpose
+4. &#x20;The Diva client comes together with a Prysm validator client - indicated as "Diva client" in the diagram below.&#x20;
 5. You will configure this connection via the `.env` file
 
 <figure><img src="../../.gitbook/assets/telegram-cloud-photo-size-2-5301219013684221545-y.jpg" alt="" width="375"><figcaption></figcaption></figure>
-
-{% hint style="info" %}
-For this method, you will need to stop your existing execution & consensus client and run the Prysm validator + consensus and Geth execution clients via the Docker containers included in the Diva Staking service stack.
-{% endhint %}
 
 ## Installing dependencies - Docker
 

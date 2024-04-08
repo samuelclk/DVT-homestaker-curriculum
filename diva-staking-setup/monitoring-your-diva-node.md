@@ -54,7 +54,7 @@ For this reason, we will need other methods of monitoring your performance.
 
 This method is used to monitor the performance of your assigned validator keys individually.&#x20;
 
-Although it may not be practical to do this for large amounts of key shares, it is still an extremely tool for monitoring alerts and troubleshooting.
+Although it may not be practical to do this for large amounts of key shares, it is still an extremely useful tool for monitoring alerts and troubleshooting.
 
 #### Beaconcha.in
 

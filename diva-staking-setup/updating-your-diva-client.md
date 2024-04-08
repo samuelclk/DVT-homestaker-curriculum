@@ -78,10 +78,44 @@ Copy the `.diva` folder from the `~/diva-alpha-net-bak` folder to the new folder
 cp -r ~/diva-alpha-net-bak/.diva ~/diva-alpha-net/.diva
 ```
 
-### 7. Prepare the Lodestar docker compose file
+### 7. Preparing the docker compose file
+
+Open up the `docker-compose.yml` file.
+
+```sh
+cd diva-alpha-net
+sudo nano docker-compose.yml
+```
+
+Amend the `ports:` section of the `grafana` service to `"3001:3000".` This is so that the Grafana service running on docker does not clash with your native Grafana service.
+
+```
+# Metrics
+  grafana:
+    image: grafana/grafana:10.2.5
+    user: root
+    container_name: grafana
+    profiles:
+      - metrics
+    hostname: grafana
+    restart: unless-stopped
+    ports:
+      - "3001:3000"
+    volumes:
+      - ${DIVA_DATA_FOLDER:-.}/grafana/config:/etc/grafana/provisioning
+      - ${DIVA_DATA_FOLDER:-.}/grafana/data:/var/lib/grafana
+      - ${DIVA_DATA_FOLDER:-.}/grafana/config/grafana.ini:/etc/grafana/grafana.ini
+```
+
+You will then be able to run both Grafana services without conflicts. Access each of the dashboards via:&#x20;
+
+1. Native Grafana: \<IP\_address:3000>
+2. Docker Grafana: \<IP\_address:3001>&#x20;
+
+### 8. Prepare the Lodestar docker compose file
 
 {% hint style="info" %}
-Skip this Step 7 for the Default method.
+Skip this Step 8 for the Default (All-in-one) method.
 {% endhint %}
 
 Open up the `docker-compose-lodestar-vc.yml` file.
@@ -110,7 +144,7 @@ Append the following contents in this file.
       service: grafana
 ```
 
-### 8. Remove previous containers
+### 9. Remove previous containers
 
 **Note:** You must stop and delete all Diva containers before starting the services again.
 
