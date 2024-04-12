@@ -92,7 +92,7 @@ COMPOSE_PROFILES=telemetry,metrics # Change this (docker profiles: clients, metr
 Replace the value `ws://HOST_IP:PORT` of `EXECUTION_CLIENT_URL` with the WebSocket endpoint of your execution client.
 
 ```
-EXECUTION_CLIENT_URL=ws://HOST_IP:PORT  # Change this (execution RPC WebSocket, Nethermind example: ws://HOST_IP:8545)
+EXECUTION_CLIENT_URL=ws://HOST_IP:8547 
 ```
 
 **\*Note:** You have to use the IP address assigned by your ethernet port (eth0) or Wifi (wlo1) and not the loopback address (127.0.0.1) here.
@@ -102,7 +102,7 @@ EXECUTION_CLIENT_URL=ws://HOST_IP:PORT  # Change this (execution RPC WebSocket, 
 Replace the value `http://HOST_IP:PORT` of `CONSENSUS_CLIENT_URL` with the REST API provider endpoint of your consensus client.
 
 ```
-CONSENSUS_CLIENT_URL=http://HOST_IP:PORT  # Change this (consensus REST API, prysm example: http://HOST_IP:3500)
+CONSENSUS_CLIENT_URL=http://HOST_IP:5051
 
 ```
 
