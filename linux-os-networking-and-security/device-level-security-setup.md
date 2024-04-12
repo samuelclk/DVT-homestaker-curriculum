@@ -121,7 +121,7 @@ sudo ufw allow 30304 # for the native EL
 sudo ufw allow 9000 # for the CL via Diva
 sudo ufw allow 9001 # for the native CL
 sudo ufw allow 3000 # for the native Grafana
-sudo ufw allow 3000 # for Grafana via Diva
+sudo ufw allow 3001 # for Grafana via Diva
 ```
 
 With these configurations set up, you will have blocked off all but 4 possible openings for potential attackers to enter from.&#x20;

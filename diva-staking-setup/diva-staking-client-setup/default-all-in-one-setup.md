@@ -91,8 +91,6 @@ COMPOSE_PROFILES=clients,metrics,telemetry
 EXECUTION_CLIENT_URL=ws://geth:8546 
 ```
 
-**\*Note:** You have to use the IP address assigned by your ethernet port (eth0) or Wifi (wlo1) and not the loopback address (127.0.0.1) here.
-
 3\) Connect your Diva client to your Prysm consensus client via REST API
 
 ```
