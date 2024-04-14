@@ -2,18 +2,10 @@
 
 Now that you have successfully set up your ETH validator node on the testnet, it is time to let the rubber hit the road.
 
-Choose your path below - DVT vs "vanilla" solo staking - to begin providing security to the Ethereum network!
-
-1\) DVT Home Staking using Diva
+Follow the replacement steps in the page below to transition over to Mainnet!
 
 {% content-ref url="https://app.gitbook.com/o/ZRc5aeQgk267aLADwYv5/s/FoGzpVzGOOby9LLDFqRC/" %}
-[Mainnet Diva Staking Guide](https://app.gitbook.com/o/ZRc5aeQgk267aLADwYv5/s/FoGzpVzGOOby9LLDFqRC/)
-{% endcontent-ref %}
-
-2\) "Vanilla" Solo Staking
-
-{% content-ref url="https://app.gitbook.com/o/ZRc5aeQgk267aLADwYv5/s/EST6JPU5u1uTCOt0BSNj/" %}
-[Mainnet Solo Staking Guide](https://app.gitbook.com/o/ZRc5aeQgk267aLADwYv5/s/EST6JPU5u1uTCOt0BSNj/)
+[Replacement steps for Mainnet](https://app.gitbook.com/o/ZRc5aeQgk267aLADwYv5/s/FoGzpVzGOOby9LLDFqRC/)
 {% endcontent-ref %}
 
 {% hint style="info" %}
