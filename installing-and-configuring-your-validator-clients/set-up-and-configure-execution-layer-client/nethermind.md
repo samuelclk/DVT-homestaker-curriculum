@@ -95,7 +95,7 @@ ExecStart=/usr/local/bin/nethermind/nethermind \
   --JsonRpc.JwtSecretFile /var/lib/jwtsecret/jwt.hex \
   --Sync.SnapSync true \
   --Network.P2PPort 30304 \
-  --Network.DiscoveryPort 30304 \ 
+  --Network.DiscoveryPort 30304 \
   --JsonRpc.Enabled true \
   --JsonRpc.Host <Internal_IP_address> \
   --JsonRpc.Port 8547 \
