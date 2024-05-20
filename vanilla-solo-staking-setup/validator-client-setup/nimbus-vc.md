@@ -77,15 +77,13 @@ Once you're done, save with `Ctrl+O` and `Enter`, then exit with `Ctrl+X`. Under
 **Nimbus Validator Client configuration summary:**
 
 1. `--data-dir`: Specify the directory for Nimbus to store the validator info
-2. `--validators-dir`: Specify the directory for Nimbus to retrieve the validator keystores
-3. `--secrets-dir`: Specify the directory for Nimbus to retrieve the password decrypting the validator keystores
-4. `--payload-builder`: Required when using external builders to build blocks (e.g. MEV relays)
-5. `--beacon-node`: URLs to connect to the main and backup consensus clients if any. This needs to be the same IP address set in your consensus client. Refer back [here](../../installing-and-configuring-your-validator-clients/set-up-and-configure-consensus-layer-client/) if you don't remember it.&#x20;
-6. `--metrics`: Enable metrics for monitoring
-7. `--metrics-port`: Set the port for retrieving metrics
-8. `--suggested-fee-recipient`: ETH wallet address to receive rewards from block proposals and MEV bribes
-9. `--graffiti`: Optional text to display on-chain when your validator proposes a block
-10. `--doppelganger-detection`: Helps prevents slashing due to double signing by checking if your validator keys are already active on the network. _**Not a fool-proof solution.**_
+2. `--payload-builder`: Required when using external builders to build blocks (e.g. MEV relays)
+3. `--beacon-node`: URLs to connect to the main and backup consensus clients if any. This needs to be the same IP address set in your consensus client. Refer back [here](../../installing-and-configuring-your-validator-clients/set-up-and-configure-consensus-layer-client/) if you don't remember it.&#x20;
+4. `--metrics`: Enable metrics for monitoring
+5. `--metrics-port`: Set the port for retrieving metrics
+6. `--suggested-fee-recipient`: ETH wallet address to receive rewards from block proposals and MEV bribes
+7. `--graffiti`: Optional text to display on-chain when your validator proposes a block
+8. `--doppelganger-detection`: Helps prevents slashing due to double signing by checking if your validator keys are already active on the network. _**Not a fool-proof solution.**_
 
 ### Start the Nimbus Validator Client service
 
