@@ -119,7 +119,7 @@ According to your selected consensus client, append the following block to the g
     metrics_path: /metrics
     scheme: http
     static_configs:
-      - targets: ["localhost:8008"]
+      - targets: ["localhost:8009"]
       
   - job_name: "teku-validator" #for validator client
     scrape_timeout: 10s
@@ -136,7 +136,7 @@ According to your selected consensus client, append the following block to the g
   - job_name: 'Nimbus'
     metrics_path: /metrics
     static_configs:
-      - targets: ['localhost:8008']
+      - targets: ['localhost:8009']
       
   - job_name: 'Nimbus-validator'
     metrics_path: /metrics
@@ -150,7 +150,7 @@ According to your selected consensus client, append the following block to the g
   - job_name: 'lodestar_beacon'
     metrics_path: /metrics
     static_configs:
-      - targets: ['localhost:8008']
+      - targets: ['localhost:8009']
   - job_name: 'lodestar_validator'
     metrics_path: /metrics
     static_configs:
