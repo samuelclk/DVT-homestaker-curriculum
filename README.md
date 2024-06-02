@@ -10,11 +10,10 @@ This curriculum incorporates both DVT and "vanilla" home staking methods so that
 
 ## Who is this for?
 
-Anyone who cares about keeping the Ethereum network decentralised!
+While I hope that anyone who cares about keeping the Ethereum network decentralised will find this guide helpful, the way it is written caters to the following audiences of non-technical people:
 
-1. Liquid staker exploring ways to move away from centralised platforms or large staking pools
-2. Aspiring solo staker trying to go from zero to one
-3. Existing solo staker or node operations engineer looking to refresh your knowledge
+1. Aspiring solo/home staker trying to go from zero to one
+2. Existing solo/home staker looking to refresh your knowledge
 
 ## Credits & Rights
 

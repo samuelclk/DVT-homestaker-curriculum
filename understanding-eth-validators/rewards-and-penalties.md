@@ -6,14 +6,15 @@ In exchange for processing transactions on the Ethereum network and providing ec
 
 The breakdown of these fees on average are as follows:
 
-1. Issuance:
-   1. Block attestation: **2.6%**
-   2. Sync committee duties: **0.5%**
-2. Block rewards (MEV and transaction tips): **1.1%**
+1. Consensus Layer (issuance): **2.85%**
+   * Block attestation
+   * Sync committee duties
+2. Execution Layer (Block rewards): **0.58%**
+   * MEV and transaction tips
 
-**Average total: \~4.2% APR**
+**Average total: \~3.42% APR**
 
-<figure><img src="../.gitbook/assets/image (146).png" alt=""><figcaption><p>Sample APRs of the top staking providers. Figures here will be closer to the mean (vs median) due to their large sizes.</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (159).png" alt=""><figcaption><p>Last 30 days data from Rated.Network. 2nd June 2024.</p></figcaption></figure>
 
 #### Block attestation rewards
 

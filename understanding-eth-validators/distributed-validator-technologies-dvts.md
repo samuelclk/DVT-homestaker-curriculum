@@ -51,15 +51,11 @@ For example, anyone can run an SSV service on top of their existing hardware, al
 
 ## How do I use DVTs as a solo staker?
 
-Using DVTs is largely a trivial process for solo stakers. It works by running an additional lightweight DVT client on top of your existing beacon node setup.
+Using DVTs involves a relatively trivial step  for solo stakers. It works by running an additional lightweight DVT client on top of your existing beacon node setup.
 
 You then expose the endpoints of your execution, consensus, and, in some cases, validator clients and connect them to your DVT client. This way, your DVT client can now "talk" to your existing beacon node and perform its duties.
 
-<figure><img src="../.gitbook/assets/image (1).png" alt="" width="563"><figcaption><p>Source: <a href="https://docs.divastaking.com/install">https://docs.divastaking.com/install</a></p></figcaption></figure>
-
-{% hint style="info" %}
-Diva Staking supports Besu as the execution client as well despite being missing from the diagram above.
-{% endhint %}
+<figure><img src="../.gitbook/assets/image (160).png" alt=""><figcaption><p>Illustration of how DVT clients fit into </p></figcaption></figure>
 
 ## Different types of DVT solutions
 
@@ -84,3 +80,9 @@ Diva node operators put up minimal collateral, and are automatically and randoml
 This way, Diva node operators do not need to form and fund their own clusters manually as with the case of Obol. Nor do they need to attract validator key owners to choose their node as with the case of SSV.
 
 Stakers also get to enjoy the benefits of putting their ETH to work with DVT-enabled node operators - i.e. huge reduction in slashing risks and offline penalties - without having to pay additional fees denominated in a secondary token.  &#x20;
+
+<figure><img src="../.gitbook/assets/image (1).png" alt="" width="563"><figcaption><p>Source: <a href="https://docs.divastaking.com/install">https://docs.divastaking.com/install</a></p></figcaption></figure>
+
+{% hint style="info" %}
+Diva Staking supports Besu as the execution client as well despite being missing from the diagram above.
+{% endhint %}

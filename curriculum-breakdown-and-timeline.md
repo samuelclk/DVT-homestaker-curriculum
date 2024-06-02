@@ -4,7 +4,7 @@ description: Curriculum breakdown by week
 
 # Curriculum breakdown & timeline
 
-## Week 1 - 5th Feb 2024
+## Week 1
 
 1\) Understanding Ethereum validators
 
@@ -22,7 +22,7 @@ description: Curriculum breakdown by week
 
 #### \*1 week lead time to purchase and receive hardware
 
-## Week 3 - 19th Feb 2024
+## Week 3&#x20;
 
 3\) Hardware purchase and setup
 
@@ -45,7 +45,7 @@ description: Curriculum breakdown by week
 * Firewalls, automatic patching, brute force protection, automatic security updates
 * Verifying checksums
 
-## Week 4 - 26th Feb 2024
+## Week 4
 
 7\) Execution client setup
 
@@ -62,7 +62,7 @@ description: Curriculum breakdown by week
 * Prepare consensus client configuration file
 * Running the consensus client
 
-## Week 5 - 4th Mar 2024
+## Week 5
 
 9\) MEV-Boost setup
 
@@ -81,7 +81,7 @@ description: Curriculum breakdown by week
 * Pruning execution clients
 * Pruning consensus clients
 
-## Week 6 - 11th Mar 2024
+## Week 6
 
 12\) Validator key generation
 
@@ -106,7 +106,7 @@ description: Curriculum breakdown by week
 * Optimising security
 * Managing your withdrawal wallet
 
-## Week 7 - 18th Mar 2024
+## Week 7
 
 16\) Diva Staking setup
 
@@ -117,6 +117,6 @@ description: Curriculum breakdown by week
 * Updating your Diva node&#x20;
 * Monitoring your Diva service
 
-## Week 8 to 9 - 25th Mar to 5th Apr 2024&#x20;
+## Week 8 to 9&#x20;
 
 17\) Mainnet deployment

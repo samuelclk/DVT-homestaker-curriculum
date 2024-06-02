@@ -68,21 +68,19 @@ To illustrate the risks, here are some scenarios that could happen:
 #### Risk factor #1: External node operators run infrastructure on behalf of ETH stakers
 
 1. **Location concentration:** Amazon Web Services is used by staking institutions to host 12.5% of all validators today. An extended mass outage event can wipe out >31% of staked ETH for validators who are affected.
-2. **Software concentration:** Staking institutions might have strong preferences for using majority clients due to the pressure of maximising performance and yield to their users. However, a crazy bug or glitch causing >33% of validators to violate consensus rules will wipe out all who are affected. To drive the example home, Geth has between 50% to 80% market share today.
+2. **Software concentration:** Staking institutions might have strong preferences for using majority clients due to the pressure of maximising performance and yield to their users. However, a crazy bug or glitch causing >33% of validators to violate consensus rules can wipe out all who are affected. &#x20;
 3. **Hardware concentration:** Due to economies of scale, staking institutions run hundreds of validator keys on a single set of hardware. This increases the blast radius of affected validators in the event of hardware failures. It is worth noting, however, that this is the mildest form of concentration.
 
 #### Risk factor #2: External node operators have a copy of validator keys generated for staking ETH
 
 1. **Mass leakage of keys:** Security breaches of staking institutions can put a large amount of users' capital at risk of blackmail via correlated slashing. The larger the institution, the more lucrative it is for potential attackers. &#x20;
-2. **Slashing incidents from operational mistakes:** Staking institutions managing a large number of validator keys are likely to use some level of automation to run their maintenance and troubleshooting process. Operational mistakes can easily cascade and affect a large number of validators under their management. Most slashing incidents to date have been triggered by institutions rather than individuals.
+2. **Slashing incidents from operational mistakes:** Staking institutions managing a large number of validator keys are likely to use some level of automation to run their maintenance and troubleshooting process. Operational mistakes can cascade and affect a large number of validators under their management. Most slashing incidents to date have been triggered by institutions rather than individuals.
 
 ### Pooled staking is more convenient, with higher yields
 
 With the high convenience offered by liquid staking providers and the diminishing validator rewards due to a large influx of new validators, you can't help but wonder why we bother dealing with the headspace and costs required for running your own home-based validator nodes.&#x20;
 
-Besides, liquid staking providers also smooth out block + MEV rewards across th
-
-eir entire validator set and auto-compounds your rewards, which leads to **higher median yields of roughly 0.5% - 0.8% (after fees) vs solo staking.**
+Besides, liquid staking providers also smooth out block + MEV rewards across their entire validator set and auto-compounds your rewards, which leads to **higher median yields of roughly 0.5% - 0.8% (after fees) vs solo staking.**
 
 This is because the occurrence and amounts of block rewards and MEV fees are entirely random, leading to a long right tail in the distribution of total rewards for solo validators where **median < mean.**
 
@@ -93,7 +91,7 @@ However, as with all things in crypto, these conveniences come at a cost. There 
 1. **Smart contract risks -** Smart contract exploits can happen anytime, and we have seen that not even blue chip projects (e.g. Curve) are immune to them
    * A huge contributing factor is because there is a fundamental imbalance between auditors and attackers - i.e. audits are performed once or at certain checkpoints while attackers are attempting to exploit the smart contract continuously&#x20;
 2. **Governance/counter-party risks -** Centralised platforms are the first to come to mind when we think about this risk, but this exists even in DeFi because:
-   1. Smart contracts are upgradable and governed by a multi-sig and;
+   1. Most smart contracts are upgradable and governed by a multi-sig and;
    2. Governance votes can change the rules (although indirectly) of the interaction with the smart contracts
 
 This means that to stake large amounts, you will need to monitor the developments of the liquid staking smart contracts you are using very closely. Or you only stake amounts that you are comfortable with losing completely.
