@@ -1,11 +1,5 @@
 # Install and prepare the OS
 
-{% hint style="info" %}
-If your hardware has not arrived yet, follow the link below to spin up a Google Cloud virtual machine (VM) to perform the **"Prepare your OS"** steps. Return to this page once you have your VM set up and are able to log in via SSH.
-{% endhint %}
-
-{% embed url="https://stakesaurus.gitbook.io/stakesaurus-testnet-eth-validator-practice/hardware-vms-and-systems-setup/preparing-your-vm-validator-node" %}
-
 ## Flash Ubuntu OS on USB Drive
 
 ### Download the latest version of Ubuntu

@@ -1,5 +1,23 @@
 # Assemble your hardware
 
+{% hint style="info" %}
+If your hardware has not arrived yet, follow the link below to spin up a Google Cloud virtual machine (VM) to perform the **"Prepare your OS"** steps. Return to this page once you have your VM set up and are able to log in via SSH.
+{% endhint %}
+
+{% embed url="https://stakesaurus.gitbook.io/stakesaurus-testnet-eth-validator-practice/hardware-vms-and-systems-setup/preparing-your-vm-validator-node" %}
+
+Once you are logged into your VM via SSH, run a general update using the command below.
+
+```sh
+sudo apt update -y && sudo apt upgrade -y
+```
+
+Then, jump straight into the `Device level security setup` section next.&#x20;
+
+{% content-ref url="../linux-os-networking-and-security/device-level-security-setup.md" %}
+[device-level-security-setup.md](../linux-os-networking-and-security/device-level-security-setup.md)
+{% endcontent-ref %}
+
 ## Inspect your hardware
 
 Inspecting your hardware physically is an important step to remove the possibility of supply chain attacks. This happens when the hardware is somehow compromised (e.g. with a keylogger) before it reaches you.

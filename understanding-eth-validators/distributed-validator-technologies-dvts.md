@@ -55,7 +55,17 @@ Using DVTs involves a relatively trivial step  for solo stakers. It works by run
 
 You then expose the endpoints of your execution, consensus, and, in some cases, validator clients and connect them to your DVT client. This way, your DVT client can now "talk" to your existing beacon node and perform its duties.
 
-<figure><img src="../.gitbook/assets/image (160).png" alt=""><figcaption><p>Illustration of how DVT clients fit into </p></figcaption></figure>
+{% tabs %}
+{% tab title="Without DVT" %}
+<figure><img src="../.gitbook/assets/image.png" alt=""><figcaption><p>Simplified illustration of a solo staker setup</p></figcaption></figure>
+{% endtab %}
+
+{% tab title="With DVT" %}
+<figure><img src="../.gitbook/assets/image (160).png" alt=""><figcaption><p>Simplified illustration of how DVT clients fit into the existing solo staker setup</p></figcaption></figure>
+
+
+{% endtab %}
+{% endtabs %}
 
 ## Different types of DVT solutions
 
@@ -81,7 +91,7 @@ This way, Diva node operators do not need to form and fund their own clusters ma
 
 Stakers also get to enjoy the benefits of putting their ETH to work with DVT-enabled node operators - i.e. huge reduction in slashing risks and offline penalties - without having to pay additional fees denominated in a secondary token.  &#x20;
 
-<figure><img src="../.gitbook/assets/image (1).png" alt="" width="563"><figcaption><p>Source: <a href="https://docs.divastaking.com/install">https://docs.divastaking.com/install</a></p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (1) (1).png" alt="" width="563"><figcaption><p>Source: <a href="https://docs.divastaking.com/install">https://docs.divastaking.com/install</a></p></figcaption></figure>
 
 {% hint style="info" %}
 Diva Staking supports Besu as the execution client as well despite being missing from the diagram above.

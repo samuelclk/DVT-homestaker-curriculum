@@ -12,6 +12,6 @@ However, the more technically advanced may proceed with the Experimental method 
 
 This setup method includes a standalone Lodestar validator client as part of Diva's docker stack so you do not need to stop any of your existing clients.  &#x20;
 
-{% content-ref url="experimental-with-standalone-lodestar-vc.md" %}
-[experimental-with-standalone-lodestar-vc.md](experimental-with-standalone-lodestar-vc.md)
+{% content-ref url="advanced-with-standalone-lodestar-vc.md" %}
+[advanced-with-standalone-lodestar-vc.md](advanced-with-standalone-lodestar-vc.md)
 {% endcontent-ref %}

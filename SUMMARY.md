@@ -10,7 +10,10 @@
 * [Rewards and penalties](understanding-eth-validators/rewards-and-penalties.md)
 * [Importance of client diversity](understanding-eth-validators/importance-of-client-diversity.md)
 * [Distributed Validator Technologies (DVTs)](understanding-eth-validators/distributed-validator-technologies-dvts.md)
-* [Economics of using DVTs — Diva Staking (WIP)](understanding-eth-validators/economics-of-using-dvts-diva-staking-wip.md)
+* [Economics of using DVTs (WIP)](understanding-eth-validators/economics-of-using-dvts-wip/README.md)
+  * [Diva Staking (WIP)](understanding-eth-validators/economics-of-using-dvts-wip/diva-staking-wip.md)
+  * [Obol (WIP)](understanding-eth-validators/economics-of-using-dvts-wip/obol-wip.md)
+  * [SSV (WIP)](understanding-eth-validators/economics-of-using-dvts-wip/ssv-wip.md)
 
 ## Hardware & systems setup
 
@@ -44,8 +47,8 @@
   * [Installing & configuring Prometheus](monitoring-maintenance-and-updates/set-up-monitoring-suite/installing-and-configuring-prometheus.md)
   * [Installing & configuring Node Exporter](monitoring-maintenance-and-updates/set-up-monitoring-suite/installing-and-configuring-node-exporter.md)
   * [Installing & configuring Grafana](monitoring-maintenance-and-updates/set-up-monitoring-suite/installing-and-configuring-grafana.md)
-  * [Google Uptime Check](monitoring-maintenance-and-updates/set-up-monitoring-suite/google-uptime-check.md)
   * [Beaconcha.in App API](monitoring-maintenance-and-updates/set-up-monitoring-suite/beaconcha.in-app-api.md)
+  * [Client Uptime Check](monitoring-maintenance-and-updates/set-up-monitoring-suite/client-uptime-check.md)
 * [Maintenance & Updates](monitoring-maintenance-and-updates/maintenance-and-updates/README.md)
   * [Nethermind](monitoring-maintenance-and-updates/maintenance-and-updates/nethermind.md)
   * [Besu](monitoring-maintenance-and-updates/maintenance-and-updates/besu.md)
@@ -58,7 +61,7 @@
 
 * [Diva Staking client setup](diva-staking-setup/diva-staking-client-setup/README.md)
   * [Default - All-in-one setup](diva-staking-setup/diva-staking-client-setup/default-all-in-one-setup.md)
-  * [Experimental - with standalone Lodestar VC](diva-staking-setup/diva-staking-client-setup/experimental-with-standalone-lodestar-vc.md)
+  * [Advanced - with standalone Lodestar VC](diva-staking-setup/diva-staking-client-setup/advanced-with-standalone-lodestar-vc.md)
 * [Registering your Diva node](diva-staking-setup/registering-your-diva-node.md)
 * [Updating your Diva client](diva-staking-setup/updating-your-diva-client.md)
 * [Monitoring your Diva Node](diva-staking-setup/monitoring-your-diva-node.md)

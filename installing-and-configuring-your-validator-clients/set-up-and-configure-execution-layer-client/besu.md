@@ -26,8 +26,8 @@ sudo apt -y install openjdk-17-jre libjemalloc-dev
 
 ```bash
 cd
-curl -LO https://hyperledger.jfrog.io/artifactory/besu-binaries/besu/24.1.2/besu-24.1.2.tar.gz
-echo "082db8cf4fb67527aa0dd757e5d254b3b497f5027c23287f9c0a74a6a743bf08 besu-24.1.2.tar.gz" | sha256sum --check
+curl -LO https://github.com/hyperledger/besu/releases/download/24.5.2/besu-24.5.2.tar.gz
+echo "4049bf48022ae073065b46e27088399dfb22035e9134ed4ac2c86dd8c5b5fbe9 besu-24.5.2.tar.gz" | sha256sum --check
 ```
 
 {% hint style="info" %}
@@ -43,15 +43,15 @@ Make sure to verify the correct checksum according to the downloaded version. Ri
 _**Expected output:** Verify output of the checksum verification_
 
 ```
-besu-24.1.2.tar.gz: OK
+besu-24.5.2.tar.gz: OK
 ```
 
 If checksum is verified, extract the files and move them into the `(/usr/local/bin)` directory for neatness and best practice. Then, clean up the duplicated copies.
 
 ```bash
-tar xvf besu-24.1.2.tar.gz
-sudo cp -a besu-24.1.2 /usr/local/bin/besu
-sudo rm -r besu-24.1.2.tar.gz besu-24.1.2
+tar xvf besu-24.5.2.tar.gz
+sudo cp -a besu-24.5.2 /usr/local/bin/besu
+sudo rm -r besu-24.5.2.tar.gz besu-24.5.2
 ```
 
 Create an account (`besu`) without server access for Besu to run as a background service. This type of user account will not have root access so it restricts potential attackers to only the Besu service in the unlikely event that they manage to infiltrate via a compromised client update.
