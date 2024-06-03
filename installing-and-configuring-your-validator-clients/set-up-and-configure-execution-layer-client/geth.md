@@ -2,7 +2,7 @@
 
 ### Generate the JWT file
 
-We first need to create a JSON Web Token (JWT) that will allow the execution layer software (Geth) and the consensus layer software (Teku) to talk to each other.
+We first need to create a JSON Web Token (JWT) that will allow the execution layer software (Geth) and the consensus layer software to talk to each other.
 
 Run the following commands one line at a time to create a folder on the server to store the JWT file and generate the JWT file:
 
@@ -105,11 +105,12 @@ Once you're done, save with `Ctrl+O` and `Enter`, then exit with `Ctrl+X`. Under
 3. `--authrpc.jwtsecret`: The directory pointing to the JWT secret we generated earlier
 4. `--state.scheme=path`: Use Geth's path-based state storage feature that is faster and prunes continuously. More information [here](https://blog.ethereum.org/2023/09/12/geth-v1-13-0)&#x20;
 5. `--port`: Sets the port used for peer-to-peer communication. Defaults to 30303.
-6. `--http.addr`: Enables the HTTP-RPC service on http and websocket. This is so that DVT clients such as the Diva service can connect to your execution client &#x20;
-7. `--JsonRpc.Host:` Sets the IP address to connect to the JSON RPC service. Use the internal IP address of your device here (check by running `ip a`) - e.g. `192.168.x.x`. Defaults to `127.0.0.1` otherwise
-8. `--http.port`: Sets the port to connect to the HTTP-RPC service that will be used by the DVT services. You may choose any unused port number but remember to allow incoming connections into your chosen port in your firewall (`ufw`) rules. Defaults to 8545.
-9. `--pprof:` Enables the pprof HTTP server, providing profiling data about the Geth process. Includes CPU usage, memory allocation, blocking profiles, etc. Useful for debugging and optimizing performance.
-10. `--metrics`: Enable monitoring metrics on the Geth service.
+6. `--http`: Enables the HTTP-RPC service on http and websocket. This is so that DVT clients such as the Diva service can connect to your execution client &#x20;
+7. `--http.addr`: Sets the IP address to connect to the JSON RPC service. Use the internal IP address of your device here (check by running `ip a`) - e.g. `192.168.x.x`. Defaults to `127.0.0.1` otherwise
+8. `--JsonRpc.Host:` Sets the IP address to connect to the JSON RPC service. Use the internal IP address of your device here (check by running `ip a`) - e.g. `192.168.x.x`. Defaults to `127.0.0.1` otherwise
+9. `--http.port`: Sets the port to connect to the HTTP-RPC service that will be used by the DVT services. You may choose any unused port number but remember to allow incoming connections into your chosen port in your firewall (`ufw`) rules. Defaults to 8545.
+10. `--pprof:` Enables the pprof HTTP server, providing profiling data about the Geth process. Includes CPU usage, memory allocation, blocking profiles, etc. Useful for debugging and optimizing performance.
+11. `--metrics`: Enable monitoring metrics on the Geth service.
 
 ### Start Geth
 

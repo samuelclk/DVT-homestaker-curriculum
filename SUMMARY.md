@@ -35,6 +35,7 @@
   * [Nethermind](installing-and-configuring-your-validator-clients/set-up-and-configure-execution-layer-client/nethermind.md)
   * [Besu](installing-and-configuring-your-validator-clients/set-up-and-configure-execution-layer-client/besu.md)
   * [Geth](installing-and-configuring-your-validator-clients/set-up-and-configure-execution-layer-client/geth.md)
+  * [Erigon](installing-and-configuring-your-validator-clients/set-up-and-configure-execution-layer-client/erigon.md)
 * [Set up and configure consensus layer client](installing-and-configuring-your-validator-clients/set-up-and-configure-consensus-layer-client/README.md)
   * [Teku BN](installing-and-configuring-your-validator-clients/set-up-and-configure-consensus-layer-client/teku-bn.md)
   * [Nimbus BN](installing-and-configuring-your-validator-clients/set-up-and-configure-consensus-layer-client/nimbus-bn.md)

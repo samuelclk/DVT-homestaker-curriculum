@@ -2,7 +2,7 @@
 
 ### Generate the JWT file
 
-We first need to create a JSON Web Token (JWT) that will allow the execution layer software (Nethermind) and the consensus layer software (Teku) to talk to each other.
+We first need to create a JSON Web Token (JWT) that will allow the execution layer software (Nethermind) and the consensus layer software to talk to each other.
 
 Run the following commands one line at a time to create a folder on the server to store the JWT file and generate the JWT file:
 
