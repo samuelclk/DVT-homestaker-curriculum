@@ -107,10 +107,9 @@ Once you're done, save with `Ctrl+O` and `Enter`, then exit with `Ctrl+X`. Under
 5. `--port`: Sets the port used for peer-to-peer communication. Defaults to 30303.
 6. `--http`: Enables the HTTP-RPC service on http and websocket. This is so that DVT clients such as the Diva service can connect to your execution client &#x20;
 7. `--http.addr`: Sets the IP address to connect to the JSON RPC service. Use the internal IP address of your device here (check by running `ip a`) - e.g. `192.168.x.x`. Defaults to `127.0.0.1` otherwise
-8. `--JsonRpc.Host:` Sets the IP address to connect to the JSON RPC service. Use the internal IP address of your device here (check by running `ip a`) - e.g. `192.168.x.x`. Defaults to `127.0.0.1` otherwise
-9. `--http.port`: Sets the port to connect to the HTTP-RPC service that will be used by the DVT services. You may choose any unused port number but remember to allow incoming connections into your chosen port in your firewall (`ufw`) rules. Defaults to 8545.
-10. `--pprof:` Enables the pprof HTTP server, providing profiling data about the Geth process. Includes CPU usage, memory allocation, blocking profiles, etc. Useful for debugging and optimizing performance.
-11. `--metrics`: Enable monitoring metrics on the Geth service.
+8. `--http.port`: Sets the port to connect to the HTTP-RPC service that will be used by the DVT services. You may choose any unused port number but remember to allow incoming connections into your chosen port in your firewall (`ufw`) rules. Defaults to 8545.
+9. `--pprof:` Enables the pprof HTTP server, providing profiling data about the Geth process. Includes CPU usage, memory allocation, blocking profiles, etc. Useful for debugging and optimizing performance.
+10. `--metrics`: Enable monitoring metrics on the Geth service.
 
 ### Start Geth
 
@@ -124,7 +123,7 @@ sudo systemctl status geth.service
 
 **Expected output:** The output should say Geth is **“active (running)”.** Press CTRL-C to exit and Geth will continue to run. It should take around 6 hours for Geth to sync on the Holesky testnet.
 
-<figure><img src="../../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 Use the following command to check the logs of Geth’s syncing process. Watch out for any warnings or errors.
 
@@ -135,7 +134,7 @@ sudo journalctl -fu geth -o cat | ccze -A
 
 **Expected output:**
 
-<figure><img src="../../.gitbook/assets/image (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (2) (1).png" alt=""><figcaption></figcaption></figure>
 
 Press `CTRL-C` to exit.
 
