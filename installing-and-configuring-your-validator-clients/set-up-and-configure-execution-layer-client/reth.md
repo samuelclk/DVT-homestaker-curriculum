@@ -19,15 +19,15 @@ We will be pointing the configuration files of the execution and consensus clien
 
 ```bash
 cd
-curl -LO https://github.com/paradigmxyz/reth/releases/download/v0.2.0-beta.8/reth-v0.2.0-beta.8-x86_64-unknown-linux-gnu.tar.gz
-curl -LO https://github.com/paradigmxyz/reth/releases/download/v0.2.0-beta.8/reth-v0.2.0-beta.8-x86_64-unknown-linux-gnu.tar.gz.asc
+curl -LO https://github.com/paradigmxyz/reth/releases/download/v0.1.0-alpha.23/reth-v0.1.0-alpha.23-x86_64-unknown-linux-gnu.tar.gz
+curl -LO https://github.com/paradigmxyz/reth/releases/download/v0.1.0-alpha.23/reth-v0.1.0-alpha.23-x86_64-unknown-linux-gnu.tar.gz.asc
 ```
 
 Run the checksum verification process.
 
 ```
 gpg --keyserver keyserver.ubuntu.com --recv-keys A3AE097C89093A124049DF1F5391A3C4100530B4
-gpg --verify reth-v0.2.0-beta.8-x86_64-unknown-linux-gnu.tar.gz.asc reth-v0.2.0-beta.8-x86_64-unknown-linux-gnu.tar.gz
+gpg --verify reth-v0.1.0-alpha.23-x86_64-unknown-linux-gnu.tar.gz.asc reth-v0.1.0-alpha.23-x86_64-unknown-linux-gnu.tar.gz
 ```
 
 Verify the release signing key (`--recv-keys`) in the first command above [here](https://reth.rs/installation/binaries.html).
@@ -45,15 +45,24 @@ Make sure to choose the amd64 version. Right click on the linked text and select
 _**Expected output:** Verify output of the checksum verification_
 
 ```
-reth-v0.2.0-beta.8-x86_64-unknown-linux-gnu.tar.gz: OK
+-linux-gnu.tar.gz.asc reth-v0.1.0-alpha.23-x86_64-unknown-linux-gnu.tar.gz
+gpg: Signature made Mon Apr 22 16:57:36 2024 UTC
+gpg:                using EDDSA key A3AE097C89093A124049DF1F5391A3C4100530B4
+gpg: Good signature from "Georgios Konstantopoulos (This is the key used by gakonst to sign Reth releases) <georgios@paradigm.xyz>" [expired]
+gpg: Note: This key has expired!
+Primary key fingerprint: A3AE 097C 8909 3A12 4049  DF1F 5391 A3C4 1005 30B4
 ```
+
+{% hint style="info" %}
+It seems the release key `A3AE097C89093A124049DF1F5391A3C4100530B4` used by the developers has expired so there should be a new key used for future releases.
+{% endhint %}
 
 If checksum is verified, extract the files and move them into the `(/usr/local/bin)` directory for neatness and best practice. Then, clean up the duplicated copies.
 
 ```bash
-tar xvf reth-v0.2.0-beta.8-x86_64-unknown-linux-gnu.tar.gz
+tar xvf reth-v0.1.0-alpha.23-x86_64-unknown-linux-gnu.tar.gz
 sudo cp reth /usr/local/bin
-rm -r reth-v0.2.0-beta.8-x86_64-unknown-linux-gnu.tar.gz.asc reth-v0.2.0-beta.8-x86_64-unknown-linux-gnu.tar.gz
+rm -r reth reth-v0.1.0-alpha.23-x86_64-unknown-linux-gnu.tar.gz.asc reth-v0.1.0-alpha.23-x86_64-unknown-linux-gnu.tar.gz
 ```
 
 Create an account (`reth`) without server access for Reth to run as a background service. This type of user account will not have root access so it restricts potential attackers to only the Reth service in the unlikely event that they manage to infiltrate via a compromised client update.
