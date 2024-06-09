@@ -15,6 +15,24 @@ All validator signing operations will require consensus among their respective c
 
 This reduces single points of failure and makes the validator set more robust!&#x20;
 
+## How do I use DVTs as a solo staker?
+
+Using DVTs involves a relatively trivial step  for solo stakers. It works by running an additional lightweight DVT client on top of your existing beacon node setup.
+
+You then expose the endpoints of your execution, consensus, and, in some cases, validator clients and connect them to your DVT client. This way, your DVT client can now "talk" to your existing beacon node and perform its duties.
+
+{% tabs %}
+{% tab title="With DVT" %}
+<figure><img src="../.gitbook/assets/image (160).png" alt=""><figcaption><p>Simplified illustration of how DVT clients fit into the existing solo staker setup</p></figcaption></figure>
+
+
+{% endtab %}
+
+{% tab title="Without DVT" %}
+<figure><img src="../.gitbook/assets/image (1) (1) (1) (1) (1) (1).png" alt=""><figcaption><p>Simplified illustration of a solo staker setup</p></figcaption></figure>
+{% endtab %}
+{% endtabs %}
+
 ## How do DVTs affect solo stakers?
 
 For solo stakers, DVTs enable us to achieve levels of performance and security rivalling large staking institutions, lower the financial barriers to entry, and even allow us to scale our income.
@@ -43,29 +61,15 @@ _**Other solutions like Diva Staking enable solo stakers to get started with jus
 
 ### Scaling income
 
-Some DVT solutions allow solo stakers to use their existing staking hardware to participate in DVT clusters, earning additional fees when they do so.
+DVT solutions allow solo stakers to use their existing staking hardware to participate in DVT clusters, earning additional fees when they do so.&#x20;
 
-For example, anyone can run an SSV service on top of their existing hardware, allowing validator signing key owners to choose their hardware as one of the beacon nodes in their preferred cluster and collect a fee in return.
+Some examples below:&#x20;
 
-**Diva Staking takes care of the matching and randomly assigns each of their node operators new key shares of active validators** so solo stakers do not need to convince ETH holders to choose their hardware themselves. &#x20;
+1. **SSV:** Enables validator signing key owners to choose the SSV operator's node as one of the operators in their preferred cluster. SSV operators collect a fee in return for providing this service.
+2. **Diva Staking:** Assigns node operators into clusters and assigns each cluster new key shares of active validators randomly. Solo stakers do not need to convince ETH holders to choose their node themselves in this case.
+3. **Obol:** Enables solo stakers to form clusters with up to 9 other node operators manually. In most cases, the required ETH to activate validator keys is deposited by the cluster participants themselves.
 
-## How do I use DVTs as a solo staker?
-
-Using DVTs involves a relatively trivial step  for solo stakers. It works by running an additional lightweight DVT client on top of your existing beacon node setup.
-
-You then expose the endpoints of your execution, consensus, and, in some cases, validator clients and connect them to your DVT client. This way, your DVT client can now "talk" to your existing beacon node and perform its duties.
-
-{% tabs %}
-{% tab title="Without DVT" %}
-<figure><img src="../.gitbook/assets/image (1) (1) (1) (1) (1) (1).png" alt=""><figcaption><p>Simplified illustration of a solo staker setup</p></figcaption></figure>
-{% endtab %}
-
-{% tab title="With DVT" %}
-<figure><img src="../.gitbook/assets/image (160).png" alt=""><figcaption><p>Simplified illustration of how DVT clients fit into the existing solo staker setup</p></figcaption></figure>
-
-
-{% endtab %}
-{% endtabs %}
+<figure><img src="../.gitbook/assets/image (168).png" alt=""><figcaption><p>Illustration of how a single solo staking setup can be used to participate in multiple DVT clusters across various DVT providers</p></figcaption></figure>
 
 ## Different types of DVT solutions
 
