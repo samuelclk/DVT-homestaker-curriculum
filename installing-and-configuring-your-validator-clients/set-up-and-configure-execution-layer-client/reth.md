@@ -15,7 +15,7 @@ We will be pointing the configuration files of the execution and consensus clien
 
 ### Download Reth and configure the service
 
-[Download](https://geth.ethereum.org/downloads) the latest version of Reth and it's digital signature (.asc) file. for verifying the checksum to ensure that the downloaded file has not been tampered with.
+[Download](https://github.com/paradigmxyz/reth/releases) the latest version of Reth and it's digital signature (.asc) file. for verifying the checksum to ensure that the downloaded file has not been tampered with.
 
 ```bash
 cd

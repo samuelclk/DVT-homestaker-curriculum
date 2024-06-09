@@ -153,7 +153,7 @@ Once you're done, save with `Ctrl+O` and `Enter`, then exit with `Ctrl+X`.&#x20;
    * `--builder.urls`: URL to connect to external block builders (e.g. via MEV relays)
    * `--port:` Sets the port for peer-to-peer communication. Defaults to 9000.
    * `--rest`: Allows the validator client to connect to this consensus client. Also allows monitoring endpoints to pull metrics from this service
-   * `--rest.address`: Sets the IP address to connect to the REST API of the consensus client that will be used by the Diva service. Use the internal IP address of your device here (check by running `ip a`) - e.g. `192.168.x.x`. Defaults to `127.0.0.1` otherwise
+   * `--rest.address`: Sets the IP address to connect to the REST API of the consensus client that will be used by the DVT clients. Use the internal IP address of your device here (check by running `ip a`) - e.g. `192.168.x.x`. Defaults to `127.0.0.1` otherwise
    * `--rest.port`: Sets the port to connect to the consensus client
    * `--metrics`: Enable monitoring of Consensus Client metrics
    * `--metrics.port`: Sets the port to pull metrics from

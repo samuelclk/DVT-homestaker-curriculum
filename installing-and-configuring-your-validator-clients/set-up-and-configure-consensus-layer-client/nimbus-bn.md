@@ -106,7 +106,7 @@ Once you're done, save with `Ctrl+O` and `Enter`, then exit with `Ctrl+X`. Under
 6. `--payload-builder-url`: URL to connect to external payload builder (MEV-boost)
 7. `--tcp-port / --udp-port:` Sets the port for peer-to-peer communication. Defaults to 9000.
 8. `--rest`: Enable the REST API endpoint for validator and DVT clients to connect to this consensus client&#x20;
-9. `--rest-address`: Sets the IP address to connect to the REST API of the consensus client that will be used by the Diva service. Use the internal IP address of your device here (check by running `ip a`) - e.g. `192.168.x.x`. Defaults to `127.0.0.1` otherwise
+9. `--rest-address`: Sets the IP address to connect to the REST API of the consensus client that will be used by the DVT clients. Use the internal IP address of your device here (check by running `ip a`) - e.g. `192.168.x.x`. Defaults to `127.0.0.1` otherwise
 10. `--rest-port`: Port to connect to the REST API endpoint
 11. `--metrics`: Enable monitoring of consensus client metrics
 12. `--metrics-port`: Port to connect to the metrics endpoint

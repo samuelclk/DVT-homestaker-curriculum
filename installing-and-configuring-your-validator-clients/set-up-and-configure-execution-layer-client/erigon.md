@@ -1,5 +1,13 @@
 # Erigon
 
+{% hint style="info" %}
+You will need a 4TB NVME SSD to run the Erigon execution client.&#x20;
+{% endhint %}
+
+{% hint style="info" %}
+The Erigon execution client is optimised to run as an Archival Node, which stores the full state of the Ethereum blockchain instead of just the most recent 128 blocks in Full Nodes. Running a Ethereum validator only requires a full node.&#x20;
+{% endhint %}
+
 ### Generate the JWT file
 
 We first need to create a JSON Web Token (JWT) that will allow the execution layer software (Erigon) and the consensus layer software to talk to each other.

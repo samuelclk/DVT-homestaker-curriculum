@@ -118,7 +118,7 @@ Once you're done, save with `Ctrl+O` and `Enter`, then exit with `Ctrl+X`. Under
 5. `--Network.P2PPort/--Network.DiscoveryPort:` Sets the port used for peer-to-peer communication. Defaults to 30303.
 6. `--JsonRpc.Enabled:` Enables the JSON-RPC service on http and websocket. This is so that DVT clients such as the Diva service can connect to your execution client &#x20;
 7. `--JsonRpc.Host:` Sets the IP address to connect to the JSON RPC service. Use the internal IP address of your device here (check by running `ip a`) - e.g. `192.168.x.x`. Defaults to `127.0.0.1` otherwise
-8. `--JsonRpc.Port`: Sets the port to connect to the JSON RPC service that will be used by the Diva service. You may choose any unused port number but remember to allow incoming connections into your chosen port in your firewall (`ufw`) rules. Defaults to 8545
+8. `--JsonRpc.Port`: Sets the port to connect to the JSON RPC service that will be used by the DVT clients. You may choose any unused port number but remember to allow incoming connections into your chosen port in your firewall (`ufw`) rules. Defaults to 8545
 9. `--HealthChecks.Enabled:` Enables you to test the connection to and health of your Nethermind service using the `curl` command - e.g. `curl http://<Internal_IP_address>:8545/health`
 10. `--Metrics.Enabled`: Enable monitoring metrics on the Nethermind service
 11. `--Metrics.PushGatewayUrl:` Pushes metrics to your monitoring suite&#x20;
