@@ -42,7 +42,7 @@
   * [Nimbus BN](installing-and-configuring-your-validator-clients/set-up-and-configure-consensus-layer-client/nimbus-bn.md)
   * [Lodestar BN](installing-and-configuring-your-validator-clients/set-up-and-configure-consensus-layer-client/lodestar-bn.md)
   * [Lighthouse BN](installing-and-configuring-your-validator-clients/set-up-and-configure-consensus-layer-client/lighthouse-bn.md)
-* [Downloading files from your node](installing-and-configuring-your-validator-clients/downloading-files-from-your-node.md)
+  * [Prysm BN](installing-and-configuring-your-validator-clients/set-up-and-configure-consensus-layer-client/prysm-bn.md)
 * [Set up and configure MEV-boost](installing-and-configuring-your-validator-clients/set-up-and-configure-mev-boost.md)
 
 ## Monitoring, Maintenance, and Updates
@@ -94,6 +94,7 @@
 ## Tips
 
 * [Advanced networking](tips/advanced-networking.md)
+* [Downloading files from your node](tips/downloading-files-from-your-node.md)
 
 ## Useful resources
 
