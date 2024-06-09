@@ -11,7 +11,7 @@ Follow the steps in this previous section to download Nimbus if you have not don
 ### Create a new user account
 
 ```sh
-sudo useradd --no-create-home --shell /bin/false nimbus_validator
+sudo useradd --no-create-home --shell /bin/false nimbusvalidator
 ```
 
 ### Prepare the validator data directory
@@ -32,7 +32,7 @@ sudo mkdir -p /var/lib/nimbus_validator
 4\) Restrict permissions on this new folder such that only the owner is able to read, write, and execute files in this folder
 
 ```sh
-sudo chown -R nimbus_validator:nimbus_validator /var/lib/nimbus_validator
+sudo chown -R nimbusvalidator:nimbusvalidator /var/lib/nimbus_validator
 sudo chmod 700 /var/lib/nimbus_validator
 ```
 
@@ -53,8 +53,8 @@ Wants=network-online.target
 After=network-online.target
 
 [Service]
-User=nimbus_validator
-Group=nimbus_validator
+User=nimbusvalidator
+Group=nimbusvalidator
 Type=simple
 Restart=always
 RestartSec=5

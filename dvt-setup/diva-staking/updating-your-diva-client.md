@@ -13,7 +13,7 @@ cd ~/diva-alpha-net
 
 Inside the `diva-alpha-net` folder, and select option `2. Update Diva`:
 
-<figure><img src="../.gitbook/assets/image (26).png" alt="" width="318"><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (26).png" alt="" width="318"><figcaption></figcaption></figure>
 
 ## Update manually
 
@@ -158,11 +158,11 @@ docker ps -a
 
 **Expected output:** You should see an empty list.&#x20;
 
-<figure><img src="../.gitbook/assets/image (28).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (28).png" alt=""><figcaption></figcaption></figure>
 
 If you still see a list of Diva related containers like below,
 
-<figure><img src="../.gitbook/assets/image (27).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (27).png" alt=""><figcaption></figcaption></figure>
 
 then you can remove all Diva containers listed using one of the following methods:
 
@@ -195,4 +195,4 @@ docker logs diva -f
 
 **Expected output:** There are 3 things to look out for - "connected to execution client", "consensus client available", and "running diva client".
 
-<figure><img src="../.gitbook/assets/image (29).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (29).png" alt=""><figcaption></figcaption></figure>

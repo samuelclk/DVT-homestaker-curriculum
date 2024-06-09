@@ -15,7 +15,7 @@
 4. &#x20;The Diva client comes together with a Prysm validator client - indicated as "Diva client" in the diagram below.&#x20;
 5. You will configure this connection via the `.env` file
 
-<figure><img src="../../.gitbook/assets/telegram-cloud-photo-size-2-5301219013684221545-y.jpg" alt="" width="375"><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/telegram-cloud-photo-size-2-5301219013684221545-y.jpg" alt="" width="375"><figcaption></figcaption></figure>
 
 ## Installing dependencies - Docker
 
@@ -147,8 +147,8 @@ sudo ufw allow 30000
 
 If you are running a machine on a local network, remember to also configure port forwarding on your router to port 5050 on your node. Refer to the port forwarding section on how to do this.
 
-{% content-ref url="../../tips/advanced-networking.md" %}
-[advanced-networking.md](../../tips/advanced-networking.md)
+{% content-ref url="../../../tips/advanced-networking.md" %}
+[advanced-networking.md](../../../tips/advanced-networking.md)
 {% endcontent-ref %}
 
 ## Preparing the docker compose file
@@ -204,7 +204,7 @@ docker logs -f diva
 
 **Expected output:** There are 3 things to look out for - "connected to execution client", "consensus client available", and "running diva client".
 
-<figure><img src="../../.gitbook/assets/image (29).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (29).png" alt=""><figcaption></figcaption></figure>
 
 **Note:** There will be a warning that says "cannot start p2p network without identity". This is expected as your Diva node is yet to be registered at this point.
 

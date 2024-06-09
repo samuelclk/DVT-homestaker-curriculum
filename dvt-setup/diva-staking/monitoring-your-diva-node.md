@@ -12,7 +12,7 @@ There will be 3 levels of metrics you as the Diva operator will be monitoring on
 
 You will be able to see all the validator key shares you have been assigned by accessing your Operator UI via a browser.
 
-<figure><img src="../.gitbook/assets/image (133).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (133).png" alt=""><figcaption></figcaption></figure>
 
 Recap on how to access the Operator UI if needed below.
 
@@ -26,19 +26,19 @@ Divascan ([https://divascan.io/](https://divascan.io/)) is an on-chain explorer 
 
 The tabs you will be interested in as a Diva node operator are **"Operators"** and **"Nodes".** Each operator can operate multiple nodes and each node can in turn be assigned multiple validator key shares.
 
-<figure><img src="../.gitbook/assets/image (22).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (22).png" alt=""><figcaption></figcaption></figure>
 
 Under these tabs, you will be able to look for your operator ID - which is the wallet address you used when registering your node during the [Registering your Diva node](registering-your-diva-node.md) step.
 
-<figure><img src="../.gitbook/assets/image (23).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (23).png" alt=""><figcaption></figcaption></figure>
 
 Clicking into your operator ID will bring you to a page showing all of the nodes that have been registered to your operator ID, along with how many validator key shares have been assigned to each node.&#x20;
 
-<figure><img src="../.gitbook/assets/image (24).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (24).png" alt=""><figcaption></figcaption></figure>
 
 Clicking into a Node ID here will show you a summary of all validator key shares assigned to that node, along with their corresponding public keys on the beacon chain.
 
-<figure><img src="../.gitbook/assets/image (25).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (25).png" alt=""><figcaption></figcaption></figure>
 
 It is worth noting that this method merely provides a very high level overview.
 
@@ -60,23 +60,23 @@ Although it may not be practical to do this for large amounts of key shares, it 
 
 1\) Go to [https://holesky.beaconcha.in/](https://beaconcha.in/) and search for the validator pubkey you want to inspect. The validator pubkey can be found using Divascan (see above section)
 
-<figure><img src="../.gitbook/assets/image (119).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (119).png" alt=""><figcaption></figcaption></figure>
 
 2\) You will then be able to see the status, the summary performance, and individual attestations of the validator you want to inspect. However, the industry defers to another explorer for the "Effectiveness" metric.
 
-<figure><img src="../.gitbook/assets/image (120).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (120).png" alt=""><figcaption></figcaption></figure>
 
 #### Rated.Network
 
 Rated.Network provides a more wholistic measure of "Effectiveness" (more details [here](https://docs.rated.network/methodologies/ethereum-beacon-chain/rated-effectiveness-rating)) and you use it in the same way as Beaconcha.in - by searching for the validator pubkey or ID that you want to inspect.
 
-<figure><img src="../.gitbook/assets/image (121).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (121).png" alt=""><figcaption></figcaption></figure>
 
 ## Monitoring device performance with Grafana
 
 The Diva service comes with a pre-configured docker container running Grafana, a highly extensible system/device-level monitoring dashboard.
 
-<figure><img src="../.gitbook/assets/image (122).png" alt=""><figcaption><p>Example of a pre-configured Diva dashboard on Grafana</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (122).png" alt=""><figcaption><p>Example of a pre-configured Diva dashboard on Grafana</p></figcaption></figure>
 
 **Here's how you can access this dashboard:**
 
@@ -88,7 +88,7 @@ docker ps -a
 
 &#x20;**Expected output:**
 
-<figure><img src="../.gitbook/assets/image (123).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (123).png" alt=""><figcaption></figcaption></figure>
 
 2\) Open port 3000 on your device-level firewall
 
@@ -104,7 +104,7 @@ ip a
 
 **Expected output:** Look for an IP address that is similar to the format - 192.168.xx.xx. That will be the internal IP address.
 
-<figure><img src="../.gitbook/assets/image (124).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (124).png" alt=""><figcaption></figcaption></figure>
 
 4\) Choose one of the following methods to access the Grafana dashboard depending on your network access.
 
@@ -116,8 +116,8 @@ Connect your working laptop to the same router as your node device and enter `ht
 
 Create an SSH tunnel into your node device. **Note:** Your SSH port needs to be open/forwarded from your modem/router into your node device. Check out the port forwarding section below if needed.
 
-{% content-ref url="../tips/advanced-networking.md" %}
-[advanced-networking.md](../tips/advanced-networking.md)
+{% content-ref url="../../tips/advanced-networking.md" %}
+[advanced-networking.md](../../tips/advanced-networking.md)
 {% endcontent-ref %}
 
 ```
@@ -140,7 +140,7 @@ docker ps -a
 
 **Expected output:**
 
-<figure><img src="../.gitbook/assets/image (125).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (125).png" alt=""><figcaption></figcaption></figure>
 
 2\) Check and follow logs of individual containers
 
@@ -158,23 +158,23 @@ If none of the scenarios matches your issue, you can raise them in the [Diva Sta
 
 {% tabs %}
 {% tab title="Diva" %}
-<figure><img src="../.gitbook/assets/image (134).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (134).png" alt=""><figcaption></figcaption></figure>
 {% endtab %}
 
 {% tab title="Lodestar/Prysm VC" %}
-<figure><img src="../.gitbook/assets/image (20).png" alt=""><figcaption><p>Lodestar VC</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (20).png" alt=""><figcaption><p>Lodestar VC</p></figcaption></figure>
 
 **Note:** suggestedFeeRecipeint is set to the "zero" address and burnt during this testnet phase but will be set to a designated pooling address on the mainnet.
 {% endtab %}
 
 {% tab title="Operator UI" %}
-<figure><img src="../.gitbook/assets/image (127).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (127).png" alt=""><figcaption></figcaption></figure>
 {% endtab %}
 
 {% tab title="Diva Reloader" %}
 \*Before being assigned any validator key shares from Diva Staking
 
-<figure><img src="../.gitbook/assets/image (129).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (129).png" alt=""><figcaption></figcaption></figure>
 {% endtab %}
 {% endtabs %}
 
@@ -182,23 +182,23 @@ If none of the scenarios matches your issue, you can raise them in the [Diva Sta
 
 {% tabs %}
 {% tab title="Node Exporter" %}
-<figure><img src="../.gitbook/assets/image (128).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (128).png" alt=""><figcaption></figcaption></figure>
 {% endtab %}
 
 {% tab title="Prometheus" %}
-<figure><img src="../.gitbook/assets/image (130).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (130).png" alt=""><figcaption></figcaption></figure>
 {% endtab %}
 
 {% tab title="Grafana" %}
-<figure><img src="../.gitbook/assets/image (131).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (131).png" alt=""><figcaption></figcaption></figure>
 {% endtab %}
 
 {% tab title="Jaegar" %}
-<figure><img src="../.gitbook/assets/Screenshot 2024-03-18 at 11.20.07 AM.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/Screenshot 2024-03-18 at 11.20.07 AM.png" alt=""><figcaption></figcaption></figure>
 {% endtab %}
 
 {% tab title="Vector" %}
-<figure><img src="../.gitbook/assets/Screenshot 2024-03-18 at 11.23.34 AM.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/Screenshot 2024-03-18 at 11.23.34 AM.png" alt=""><figcaption></figcaption></figure>
 {% endtab %}
 {% endtabs %}
 
@@ -208,7 +208,7 @@ If none of the scenarios matches your issue, you can raise them in the [Diva Sta
 
 1\) Warning that says "cannot start p2p network without identity". This means you have not [registered your Diva node via the Operator UI](registering-your-diva-node.md)
 
-<figure><img src="../.gitbook/assets/image (29).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (29).png" alt=""><figcaption></figcaption></figure>
 
 ### Lodestar Client
 

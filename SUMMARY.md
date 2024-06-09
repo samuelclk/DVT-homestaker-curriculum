@@ -61,14 +61,17 @@
   * [Lodestar](monitoring-maintenance-and-updates/maintenance-and-updates/lodestar.md)
   * [Updating the monitoring suite](monitoring-maintenance-and-updates/maintenance-and-updates/updating-the-monitoring-suite.md)
 
-## Diva Staking Setup
+## DVT Setup
 
-* [Diva Staking client setup](diva-staking-setup/diva-staking-client-setup/README.md)
-  * [Default - All-in-one setup](diva-staking-setup/diva-staking-client-setup/default-all-in-one-setup.md)
-  * [Advanced - with standalone Lodestar VC](diva-staking-setup/diva-staking-client-setup/advanced-with-standalone-lodestar-vc.md)
-* [Registering your Diva node](diva-staking-setup/registering-your-diva-node.md)
-* [Updating your Diva client](diva-staking-setup/updating-your-diva-client.md)
-* [Monitoring your Diva Node](diva-staking-setup/monitoring-your-diva-node.md)
+* [Diva Staking](dvt-setup/diva-staking/README.md)
+  * [Diva Staking client setup](dvt-setup/diva-staking/diva-staking-client-setup/README.md)
+    * [Default - All-in-one setup](dvt-setup/diva-staking/diva-staking-client-setup/default-all-in-one-setup.md)
+    * [Advanced - with standalone Lodestar VC](dvt-setup/diva-staking/diva-staking-client-setup/advanced-with-standalone-lodestar-vc.md)
+  * [Registering your Diva node](dvt-setup/diva-staking/registering-your-diva-node.md)
+  * [Updating your Diva client](dvt-setup/diva-staking/updating-your-diva-client.md)
+  * [Monitoring your Diva Node](dvt-setup/diva-staking/monitoring-your-diva-node.md)
+* [Obol (WIP)](dvt-setup/obol-wip.md)
+* [SSV (WIP)](dvt-setup/ssv-wip.md)
 
 ## "Vanilla" Solo Staking Setup
 
@@ -77,6 +80,7 @@
   * [Teku VC](vanilla-solo-staking-setup/validator-client-setup/teku-vc.md)
   * [Nimbus VC](vanilla-solo-staking-setup/validator-client-setup/nimbus-vc.md)
   * [Lodestar VC](vanilla-solo-staking-setup/validator-client-setup/lodestar-vc.md)
+  * [Lighthouse VC](vanilla-solo-staking-setup/validator-client-setup/lighthouse-vc.md)
 * [Depositing 32 ETH into your validator](vanilla-solo-staking-setup/depositing-32-eth-into-your-validator.md)
 * [Exiting your validator](vanilla-solo-staking-setup/exiting-your-validator.md)
 

@@ -125,7 +125,7 @@ sudo systemctl status prysmbeacon.service
 
 **Expected output:** The output should say Prysm Consensus Client is **“active (running)”.** Press `CTRL-C` to exit and Prysm Consensus Client will continue to run. It should take just a few minutes for Prysm to sync on Holesky.
 
-<figure><img src="../../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 Use the following command to check the logs of Prysm Consensus Client’s syncing process. Watch out for any warnings or errors.
 
@@ -135,7 +135,7 @@ sudo journalctl -fu prysmbeacon -o cat | ccze -A
 
 **Expected output:**&#x20;
 
-<figure><img src="../../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (3).png" alt=""><figcaption></figcaption></figure>
 
 Press `Ctrl+C` to exit monitoring.
 
@@ -153,7 +153,7 @@ sudo systemctl enable prysmbeacon.service
     <figure><img src="../../.gitbook/assets/image (53).png" alt=""><figcaption><p>testnet example: prater.beaconcha.in</p></figcaption></figure>
 3. `journalctl` output
 
-<figure><img src="../../.gitbook/assets/image (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (2) (1).png" alt=""><figcaption></figcaption></figure>
 
 ## Resources
 
