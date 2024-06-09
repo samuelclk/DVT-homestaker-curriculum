@@ -81,6 +81,7 @@
   * [Nimbus VC](vanilla-solo-staking-setup/validator-client-setup/nimbus-vc.md)
   * [Lodestar VC](vanilla-solo-staking-setup/validator-client-setup/lodestar-vc.md)
   * [Lighthouse VC](vanilla-solo-staking-setup/validator-client-setup/lighthouse-vc.md)
+  * [Prysm VC](vanilla-solo-staking-setup/validator-client-setup/prysm-vc.md)
 * [Depositing 32 ETH into your validator](vanilla-solo-staking-setup/depositing-32-eth-into-your-validator.md)
 * [Exiting your validator](vanilla-solo-staking-setup/exiting-your-validator.md)
 

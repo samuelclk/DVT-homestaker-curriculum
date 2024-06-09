@@ -88,6 +88,8 @@ ExecStart=/usr/local/bin/prysmbeacon \
   --monitoring-port 8009 \
   --p2p-tcp-port 13000 \
   --p2p-udp-port 12000 \
+  --rpc-port 4000 \
+  --rpc-host <Internal_IP_address> \
   --grpc-gateway-port 5051 \
   --grpc-gateway-host <Internal_IP_address> \
   --http-mev-relay=http://127.0.0.1:18550 
@@ -107,11 +109,12 @@ Once you're done, save with `Ctrl+O` and `Enter`, then exit with `Ctrl+X`. Under
 5. `--jwt-secret`: File path to locate the JWT secret we generated earlier
 6. `--checkpoint-sync-url`: Enables nearly instant syncing of the Consensus Client by pointing to one of the checkpoint sync URLs here - [https://eth-clients.github.io/checkpoint-sync-endpoints/](https://eth-clients.github.io/checkpoint-sync-endpoints/)
 7. `--monitoring-port`: Port to connect to the metrics server. Used by Prometheus & Grafana for monitoring.
-8. `--validator-monitor-auto`: Provides additional logging and metrics for locally controlled validators
-9. `--p2p-tcp-port/--p2p-udp-port`: Sets the port for peer-to-peer communication. Defaults to 13000 & 12000 respectively.
-10. `--grpc-gateway-port`: Sets the port to connect to the consensus client
-11. `--grpc-gateway-host`: Sets the IP address to connect to the REST API of the consensus client that will be used by the DVT clients. Use the internal IP address of your device here (check by running `ip a`) - e.g. `192.168.x.x`. Defaults to `127.0.0.1` otherwise
-12. `--http-mev-relay`: URL to connect to external builders (e.g. MEV relays)
+8. `--p2p-tcp-port/--p2p-udp-port`: Sets the port for peer-to-peer communication. Defaults to 13000 & 12000 respectively.
+9. `--rpc-port`: RPC port exposed by the Prysm beacon node (default: 4000) that will be used by the validator and DVT clients.
+10. `--rpc-host`: Host on which the RPC server should listen (default: "127.0.0.1") that will be used by the validator and DVT clients.
+11. `--grpc-gateway-port`: Sets the port to connect to the consensus client
+12. `--grpc-gateway-host`: Sets the IP address to connect to the REST API of the consensus client that will be used by the validator and DVT clients. Use the internal IP address of your device here (check by running `ip a`) - e.g. `192.168.x.x`. Defaults to `127.0.0.1` otherwise
+13. `--http-mev-relay`: URL to connect to external builders (e.g. MEV relays)
 
 ## Start the Prysm Consensus Client
 
@@ -125,7 +128,7 @@ sudo systemctl status prysmbeacon.service
 
 **Expected output:** The output should say Prysm Consensus Client is **“active (running)”.** Press `CTRL-C` to exit and Prysm Consensus Client will continue to run. It should take just a few minutes for Prysm to sync on Holesky.
 
-<figure><img src="../../.gitbook/assets/image (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 Use the following command to check the logs of Prysm Consensus Client’s syncing process. Watch out for any warnings or errors.
 
