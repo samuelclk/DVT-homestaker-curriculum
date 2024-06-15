@@ -1,6 +1,6 @@
 # Table of contents
 
-* [The ETHStaker-Diva Home Staking Curriculum](README.md)
+* [The DVT Home Staking Curriculum](README.md)
 * [Curriculum breakdown & timeline](curriculum-breakdown-and-timeline.md)
 
 ## Understanding ETH validators&#x20;
