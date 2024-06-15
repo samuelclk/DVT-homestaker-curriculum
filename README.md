@@ -35,8 +35,8 @@ Aside from the voluntary user contribution options below, no entity is entitled 
 
 Stakesaurus has also received the following bounty and grant for earlier work from which this curriculum was partly adapted.
 
-1. A bounty (1500 USDC) from the Stack Up x Google Cloud Challenge for creating a guide on setting up an Ethereum validator node using the Google Cloud stack. More details are described [here](https://x.com/StackUpHQ/status/1701601281541091565).
-2. A [retroactive grant (1000 DAI)](https://research.lido.fi/t/lido-community-lifeguards-initiative/4678/23?u=stakesaurus) from the Lido Ecosystem Grants Organisation for open-sourcing a comprehensive Ethereum home staking guide designed for non-technical people. More details are described [here](https://x.com/stakesaurus/status/1709419025435164696).
+1. A bounty (1500 USDC) from the Stack Up x Google Cloud Challenge for creating a guide on setting up a cloud-based Ethereum validator node using the Google Cloud stack. More details are described [here](https://x.com/StackUpHQ/status/1701601281541091565).
+2. A [retroactive grant (1000 DAI)](https://research.lido.fi/t/lido-community-lifeguards-initiative/4678/23?u=stakesaurus) from the Lido Ecosystem Grants Organisation for open-sourcing a comprehensive Ethereum home staking guide (no DVT) designed for non-technical people. More details are described [here](https://x.com/stakesaurus/status/1709419025435164696).
 
 ## How to get help?
 
