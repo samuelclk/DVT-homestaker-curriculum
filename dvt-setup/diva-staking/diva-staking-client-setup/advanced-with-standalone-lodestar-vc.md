@@ -296,11 +296,14 @@ docker restart $(docker ps -a -q)
 docker rm -f $(docker ps -a -q)
 ```
 
-3\) Perform (2) + delete the Diva git repository. Then repeat the steps on this page.
+3\) Perform (2) + rename the Diva git repository to serve as a "backup". Then repeat the steps on this page.
 
-```sh
-cd
-sudo rm -r diva-alpha-net
-```
+<pre class="language-sh"><code class="lang-sh"><strong>cd
+</strong><strong>mv diva-alpha-net diva-alpha-net_bak
+</strong></code></pre>
+
+{% hint style="info" %}
+Always make sure to back up your existing local Diva git repository if you have already registered your **Diva Node** previously. Your node identity is located in the `.diva` folder - i.e., `diva-alpha-net/.diva`
+{% endhint %}
 
 [^1]: change this to "holesky"
