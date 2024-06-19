@@ -109,8 +109,7 @@
 
 ## Bonded Validators Setup
 
-* [Lido CSM (Holesky)](bonded-validators-setup/lido-csm-holesky/README.md)
-  * [Validator Key Generation](bonded-validators-setup/lido-csm-holesky/validator-key-generation.md)
+* [Lido CSM (Holesky)](bonded-validators-setup/lido-csm-holesky.md)
 * [Puffer (WIP)](bonded-validators-setup/puffer-wip.md)
 * [Ether.fi (WIP)](bonded-validators-setup/ether.fi-wip.md)
 * [Stader (WIP)](bonded-validators-setup/stader-wip.md)

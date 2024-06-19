@@ -1,4 +1,0 @@
-# Validator Key Generation
-
-## Recap
-
