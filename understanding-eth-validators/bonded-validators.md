@@ -21,11 +21,21 @@ Hence, bonded validators enable node operators to lower their capital requiremen
 
 Similar to DVT clients, running a bonded validator setup simply requires you to spin up a separate lightweight (mostly) client on top of your existing execution + consensus client setup.&#x20;
 
-You then expose the endpoints of your execution, consensus, and, in some cases, validator clients and connect them to your bonded validator client. This way, your bonded validator client can now "talk" to your existing execution + consensus clients and perform its duties.
+You then expose the endpoints of your execution and consensus, and connect them to your bonded validator client. This way, your bonded validator client can now "talk" to your existing execution + consensus clients and perform its duties.
+
+There are 2 methods of setting up bonded validators today.
 
 {% tabs %}
-{% tab title="Bonded validators" %}
-<figure><img src="../.gitbook/assets/image (169).png" alt=""><figcaption></figcaption></figure>
+{% tab title="Lido CSM" %}
+<figure><img src="../.gitbook/assets/image (176).png" alt=""><figcaption></figcaption></figure>
+
+For the Lido CSM, you will essentially be running just a native validator node with no additional services required on your hardware. Bond deposit is managed on the CSM Webapp.
+{% endtab %}
+
+{% tab title="Rocketpool, Stader" %}
+<figure><img src="../.gitbook/assets/image (173).png" alt=""><figcaption></figcaption></figure>
+
+For the Rocketpool and Stader, you will need to run an additional and separate service that handles the ETH bond + alternative tokens deposit on your hardware on top of your native validator node.  &#x20;
 {% endtab %}
 
 {% tab title="Solo staking" %}
@@ -35,7 +45,7 @@ You then expose the endpoints of your execution, consensus, and, in some cases, 
 
 You can also run multiple bonded validator clients on the same hardware, provided that you have sufficient resources (e.g., CPU, RAM, Disk) on your hardware to meet the minimum requirements of each additional bonded validator client.
 
-<figure><img src="../.gitbook/assets/image (170).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (174).png" alt=""><figcaption></figcaption></figure>
 
 {% hint style="info" %}
 You can also run DVT clients alongside bonded validator clients in the same way.
