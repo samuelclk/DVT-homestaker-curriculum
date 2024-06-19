@@ -17,9 +17,9 @@ This reduces single points of failure and makes the validator set more robust!&#
 
 ## How do I use DVTs as a solo staker?
 
-Using DVTs involves a relatively trivial step  for solo stakers. It works by running an additional lightweight DVT client on top of your existing beacon node setup.
+Using DVTs involves a relatively trivial step  for solo stakers. It works by running an additional lightweight DVT client on top of your existing execution + consensus client setup.
 
-You then expose the endpoints of your execution, consensus, and, in some cases, validator clients and connect them to your DVT client. This way, your DVT client can now "talk" to your existing beacon node and perform its duties.
+You then expose the endpoints of your execution, consensus, and, in some cases, validator clients and connect them to your DVT client. This way, your DVT client can now "talk" to your existing execution + consensus client and perform its duties.
 
 {% tabs %}
 {% tab title="With DVT" %}

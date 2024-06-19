@@ -14,6 +14,8 @@
   * [Diva Staking (WIP)](understanding-eth-validators/economics-of-using-dvts-wip/diva-staking-wip.md)
   * [Obol (WIP)](understanding-eth-validators/economics-of-using-dvts-wip/obol-wip.md)
   * [SSV (WIP)](understanding-eth-validators/economics-of-using-dvts-wip/ssv-wip.md)
+* [Bonded Validators](understanding-eth-validators/bonded-validators.md)
+* [Economics of bonded validators (WIP)](understanding-eth-validators/economics-of-bonded-validators-wip.md)
 
 ## Hardware & systems setup
 
@@ -104,3 +106,11 @@
 ## Useful resources
 
 * [List of resources](useful-resources/list-of-resources.md)
+
+## Bonded Validators Setup
+
+* [Lido CSM](bonded-validators-setup/lido-csm.md)
+* [Puffer (WIP)](bonded-validators-setup/puffer-wip.md)
+* [Ether.fi (WIP)](bonded-validators-setup/ether.fi-wip.md)
+* [Stader (WIP)](bonded-validators-setup/stader-wip.md)
+* [Rocketpool (WIP)](bonded-validators-setup/rocketpool-wip.md)
