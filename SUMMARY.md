@@ -63,6 +63,18 @@
   * [Lodestar](monitoring-maintenance-and-updates/maintenance-and-updates/lodestar.md)
   * [Updating the monitoring suite](monitoring-maintenance-and-updates/maintenance-and-updates/updating-the-monitoring-suite.md)
 
+## "Vanilla" Solo Staking Setup
+
+* [Validator key generation](vanilla-solo-staking-setup/validator-key-generation.md)
+* [Validator client setup](vanilla-solo-staking-setup/validator-client-setup/README.md)
+  * [Teku VC](vanilla-solo-staking-setup/validator-client-setup/teku-vc.md)
+  * [Nimbus VC](vanilla-solo-staking-setup/validator-client-setup/nimbus-vc.md)
+  * [Lodestar VC](vanilla-solo-staking-setup/validator-client-setup/lodestar-vc.md)
+  * [Lighthouse VC](vanilla-solo-staking-setup/validator-client-setup/lighthouse-vc.md)
+  * [Prysm VC](vanilla-solo-staking-setup/validator-client-setup/prysm-vc.md)
+* [Depositing 32 ETH into your validator](vanilla-solo-staking-setup/depositing-32-eth-into-your-validator.md)
+* [Exiting your validator](vanilla-solo-staking-setup/exiting-your-validator.md)
+
 ## DVT Setup
 
 * [Diva Staking](dvt-setup/diva-staking/README.md)
@@ -75,17 +87,15 @@
 * [Obol (WIP)](dvt-setup/obol-wip.md)
 * [SSV (WIP)](dvt-setup/ssv-wip.md)
 
-## "Vanilla" Solo Staking Setup
+## Bonded Validators Setup
 
-* [Validator key generation](vanilla-solo-staking-setup/validator-key-generation.md)
-* [Validator client setup](vanilla-solo-staking-setup/validator-client-setup/README.md)
-  * [Teku VC](vanilla-solo-staking-setup/validator-client-setup/teku-vc.md)
-  * [Nimbus VC](vanilla-solo-staking-setup/validator-client-setup/nimbus-vc.md)
-  * [Lodestar VC](vanilla-solo-staking-setup/validator-client-setup/lodestar-vc.md)
-  * [Lighthouse VC](vanilla-solo-staking-setup/validator-client-setup/lighthouse-vc.md)
-  * [Prysm VC](vanilla-solo-staking-setup/validator-client-setup/prysm-vc.md)
-* [Depositing 32 ETH into your validator](vanilla-solo-staking-setup/depositing-32-eth-into-your-validator.md)
-* [Exiting your validator](vanilla-solo-staking-setup/exiting-your-validator.md)
+* [Lido CSM (WIP)](bonded-validators-setup/lido-csm-wip/README.md)
+  * [Uploading your deposit data file](bonded-validators-setup/lido-csm-wip/uploading-your-deposit-data-file.md)
+  * [Running a separate VC service](bonded-validators-setup/lido-csm-wip/running-a-separate-vc-service.md)
+* [Puffer (WIP)](bonded-validators-setup/puffer-wip.md)
+* [Ether.fi (WIP)](bonded-validators-setup/ether.fi-wip.md)
+* [Stader (WIP)](bonded-validators-setup/stader-wip.md)
+* [Rocketpool (WIP)](bonded-validators-setup/rocketpool-wip.md)
 
 ## Mainnet Deployment
 
@@ -106,13 +116,3 @@
 ## Useful resources
 
 * [List of resources](useful-resources/list-of-resources.md)
-
-## Bonded Validators Setup
-
-* [Lido CSM (WIP)](bonded-validators-setup/lido-csm-wip/README.md)
-  * [Uploading your deposit data file](bonded-validators-setup/lido-csm-wip/uploading-your-deposit-data-file.md)
-  * [Running separate VC & MEV-Boost services](bonded-validators-setup/lido-csm-wip/running-separate-vc-and-mev-boost-services.md)
-* [Puffer (WIP)](bonded-validators-setup/puffer-wip.md)
-* [Ether.fi (WIP)](bonded-validators-setup/ether.fi-wip.md)
-* [Stader (WIP)](bonded-validators-setup/stader-wip.md)
-* [Rocketpool (WIP)](bonded-validators-setup/rocketpool-wip.md)

@@ -33,7 +33,7 @@ You will then upload your `deposit data file` in the [next section](uploading-yo
 {% endcontent-ref %}
 
 {% hint style="info" %}
-For existing solo stakers, you can spin up a new validator client service specifically for your CSM validator keys so that you can retain your own `fee_recipient` address for your solo staking keys. Refer to [this sub-section](running-separate-vc-and-mev-boost-services.md).
+For existing solo stakers, you can spin up a new validator client service specifically for your CSM validator keys so that you can retain your own `fee_recipient` address for your solo staking keys. Refer to [this sub-section](running-a-separate-vc-service.md).
 {% endhint %}
 
 ### **MEV-Boost Relays**
@@ -41,7 +41,7 @@ For existing solo stakers, you can spin up a new validator client service specif
 * Remove the `-min-bid` flag (if used)
 
 {% hint style="info" %}
-For existing solo stakers, you can spin up a new MEV-Boost service specifically for your CSM validator keys. Refer to [this sub-section](running-separate-vc-and-mev-boost-services.md).
+**Note:** Ultra Sound and Aestus relays do not censor transactions from OFAC sanctioned addresses.
 {% endhint %}
 
 * During the MEV-Boost setup step, set the `-relay` flags only to the list of designated MEV relays for Lido CSM on **Holesky** below.&#x20;
