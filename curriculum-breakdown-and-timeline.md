@@ -4,6 +4,10 @@ description: Curriculum breakdown by week
 
 # Curriculum breakdown & timeline
 
+## Format
+
+Thi
+
 ## Week 1
 
 1\) Understanding Ethereum validators
@@ -13,6 +17,7 @@ description: Curriculum breakdown by week
 * Rewards and penalties
 * Importance of client diversity
 * Distributed validator technologies (DVTs)
+* Bonded validators
 
 2\) Hardware concepts
 
@@ -47,7 +52,7 @@ description: Curriculum breakdown by week
 
 ## Week 4
 
-7\) Execution client setup
+7\) Execution client setup **(Holesky)**
 
 * Generating JWT token
 * Installing dependencies
@@ -55,7 +60,7 @@ description: Curriculum breakdown by week
 * Prepare execution client configuration file
 * Running the execution client
 
-8\) Consensus client setup
+8\) Consensus client setup **(Holesky)**
 
 * Installing dependencies
 * Downloading and installing the consensus client
@@ -64,7 +69,7 @@ description: Curriculum breakdown by week
 
 ## Week 5
 
-9\) MEV-Boost setup
+9\) MEV-Boost setup **(Holesky)**
 
 * Installing dependencies
 * Prepare the MEV-boost configuration file
@@ -83,20 +88,20 @@ description: Curriculum breakdown by week
 
 ## Week 6
 
-12\) Validator key generation
+12\) Validator key generation **(Holesky)**
 
 * Setting up an air-gapped machine&#x20;
 * SOPs during key generation and storage&#x20;
 * Key generation process
 
-13\) Validator client setup
+13\) Validator client setup **(Holesky)**
 
 * Prepare validator client configuration file
 * Running the validator client
 
 14\) Depositing ETH
 
-* Get Holesky ETH from faucets
+* Get **Holesky ETH** from faucets
 * Complete the deposit process
 
 15\) Tips and other best practices
@@ -108,15 +113,8 @@ description: Curriculum breakdown by week
 
 ## Week 7
 
-16\) Diva Staking setup
-
-* Installing docker&#x20;
-* Manual installation
-* Configuring your Diva service
-* Registering your Diva node
-* Updating your Diva node&#x20;
-* Monitoring your Diva service
+16\) DVT & bonded validator setup **(Holesky)**
 
 ## Week 8 to 9&#x20;
 
-17\) Mainnet deployment
+**17) Mainnet deployment**

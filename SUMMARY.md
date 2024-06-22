@@ -109,7 +109,9 @@
 
 ## Bonded Validators Setup
 
-* [Lido CSM (Holesky)](bonded-validators-setup/lido-csm-holesky.md)
+* [Lido CSM (WIP)](bonded-validators-setup/lido-csm-wip/README.md)
+  * [Uploading your deposit data file](bonded-validators-setup/lido-csm-wip/uploading-your-deposit-data-file.md)
+  * [Running separate VC & MEV-Boost services](bonded-validators-setup/lido-csm-wip/running-separate-vc-and-mev-boost-services.md)
 * [Puffer (WIP)](bonded-validators-setup/puffer-wip.md)
 * [Ether.fi (WIP)](bonded-validators-setup/ether.fi-wip.md)
 * [Stader (WIP)](bonded-validators-setup/stader-wip.md)

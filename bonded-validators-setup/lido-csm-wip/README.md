@@ -1,32 +1,50 @@
-# Lido CSM (Holesky)
+# Lido CSM (WIP)
 
 ## How it works
 
-Recall that running bonded validators via the Lido CSM does not require setting up a separate service.
+Recall that running bonded validators via the Lido CSM does not require setting up a separate service on your hardware.
 
-{% content-ref url="../understanding-eth-validators/bonded-validators.md" %}
-[bonded-validators.md](../understanding-eth-validators/bonded-validators.md)
+{% content-ref url="../../understanding-eth-validators/bonded-validators.md" %}
+[bonded-validators.md](../../understanding-eth-validators/bonded-validators.md)
 {% endcontent-ref %}
 
-Instead, you simply tweak the parameters of the following steps while configuring your native solo staking setup.
+Instead, you simply tweak the parameters of the following steps of the native solo staking setup.
 
-* **Withdrawal Address:** During the validator key generation step, generate a number of validator keystores (e.g., max 10 per CSM operator) along with the deposit data file while setting the `withdrawalAddress` field to the Lido CSM contract on **Holesky:** [`0xF0179dEC45a37423EAD4FaD5fCb136197872EAd9`](https://holesky.etherscan.io/address/0xF0179dEC45a37423EAD4FaD5fCb136197872EAd9)
+### Withdrawal address
+
+* During the validator key generation step, generate a number of validator keystores (e.g., max 10 per CSM operator) along with the deposit data file while setting the `withdrawalAddress` field to the Lido CSM contract on **Holesky:** [`0xF0179dEC45a37423EAD4FaD5fCb136197872EAd9`](https://holesky.etherscan.io/address/0xF0179dEC45a37423EAD4FaD5fCb136197872EAd9)
 
 {% hint style="info" %}
 **DO NOT DEPOSIT 32 ETH** using the deposit data file generated this way as the Lido CSM will make the deposit for you. _**Doing so will result in a loss of funds.**_
 {% endhint %}
 
-{% content-ref url="../vanilla-solo-staking-setup/validator-key-generation.md" %}
-[validator-key-generation.md](../vanilla-solo-staking-setup/validator-key-generation.md)
+{% content-ref url="../../vanilla-solo-staking-setup/validator-key-generation.md" %}
+[validator-key-generation.md](../../vanilla-solo-staking-setup/validator-key-generation.md)
 {% endcontent-ref %}
 
-* **Fee Recipient Address:** During the validator client setup step, set the `fee_recipient` flag to the designated fee recipient address for Lido CSM on **Holesky:** [`0xE73a3602b99f1f913e72F8bdcBC235e206794Ac8`](https://holesky.etherscan.io/address/0xE73a3602b99f1f913e72F8bdcBC235e206794Ac8)
+You will then upload your `deposit data file` in the [next section](uploading-your-deposit-data-file.md). Make sure you complete the remaining steps on this page before that.&#x20;
 
-{% content-ref url="../vanilla-solo-staking-setup/validator-client-setup/" %}
-[validator-client-setup](../vanilla-solo-staking-setup/validator-client-setup/)
+### **Fee Recipient Address**
+
+* During the validator client setup step, set the `fee_recipient` flag to the designated fee recipient address for Lido CSM on **Holesky:** [`0xE73a3602b99f1f913e72F8bdcBC235e206794Ac8`](https://holesky.etherscan.io/address/0xE73a3602b99f1f913e72F8bdcBC235e206794Ac8)
+
+{% content-ref url="../../vanilla-solo-staking-setup/validator-client-setup/" %}
+[validator-client-setup](../../vanilla-solo-staking-setup/validator-client-setup/)
 {% endcontent-ref %}
 
-* **MEV-Boost Relays:** During the MEV-Boost setup step, set the `-relay` flags only to the list of designated MEV relays for Lido CSM on **Holesky** below.&#x20;
+{% hint style="info" %}
+For existing solo stakers, you can spin up a new validator client service specifically for your CSM validator keys so that you can retain your own `fee_recipient` address for your solo staking keys. Refer to [this sub-section](running-separate-vc-and-mev-boost-services.md).
+{% endhint %}
+
+### **MEV-Boost Relays**
+
+* Remove the `-min-bid` flag (if used)
+
+{% hint style="info" %}
+For existing solo stakers, you can spin up a new MEV-Boost service specifically for your CSM validator keys. Refer to [this sub-section](running-separate-vc-and-mev-boost-services.md).
+{% endhint %}
+
+* During the MEV-Boost setup step, set the `-relay` flags only to the list of designated MEV relays for Lido CSM on **Holesky** below.&#x20;
 
 <details>
 
@@ -50,16 +68,17 @@ Instead, you simply tweak the parameters of the following steps while configurin
 
 </details>
 
-## Verifying the MEV Relay List
+#### Verifying the MEV Relay List
 
 You can verify the latest MEV Relay List for the Lido CSM on Holesky here: [https://holesky.etherscan.io/address/0x2d86C5855581194a386941806E38cA119E50aEA3#readContract](https://holesky.etherscan.io/address/0x2d86C5855581194a386941806E38cA119E50aEA3#readContract)
 
 1. Go to the Etherscan link above and it will bring you to the MEV Relay Inclusion List used by the Lido CSM
 2.  Under `Contract`>>`Read Contract`>>`4. get_relays`>>`Query`
 
-    <figure><img src="../.gitbook/assets/image (179).png" alt=""><figcaption></figcaption></figure>
+    <figure><img src="../../.gitbook/assets/image (179).png" alt=""><figcaption></figcaption></figure>
 3. A list of relay endpoints will appear under this section `4. get_relays`. Verify that you are only using relay endpoints from this list.
 
 {% hint style="info" %}
 The Holesky version of this Etherscan link is currently broken so you will face an error. Refer to the **Designated MEV Relay List** in the previous section in the meantime.
 {% endhint %}
+
