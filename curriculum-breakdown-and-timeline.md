@@ -4,10 +4,6 @@ description: Curriculum breakdown by week
 
 # Curriculum breakdown & timeline
 
-## Format
-
-Thi
-
 ## Week 1
 
 1\) Understanding Ethereum validators
