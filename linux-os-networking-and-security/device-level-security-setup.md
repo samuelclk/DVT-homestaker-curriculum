@@ -31,7 +31,7 @@ ssh-copy-id -i ~/.ssh/id_ed25519.pub <username>@<node_IP_address>
 Enter the password of your NUC device when prompted.
 {% endtab %}
 
-{% tab title="Transfer Remotely" %}
+{% tab title="Transfer physically" %}
 Print out the SSH pubkey string and copy it. On your working laptop, run:
 
 ```

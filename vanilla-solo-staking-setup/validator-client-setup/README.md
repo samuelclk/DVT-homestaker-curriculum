@@ -13,3 +13,11 @@
 {% content-ref url="lodestar-vc.md" %}
 [lodestar-vc.md](lodestar-vc.md)
 {% endcontent-ref %}
+
+{% content-ref url="lighthouse-vc.md" %}
+[lighthouse-vc.md](lighthouse-vc.md)
+{% endcontent-ref %}
+
+{% content-ref url="prysm-vc.md" %}
+[prysm-vc.md](prysm-vc.md)
+{% endcontent-ref %}
