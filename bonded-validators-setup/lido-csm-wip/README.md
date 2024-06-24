@@ -33,7 +33,7 @@ You will then upload your `deposit data file` in the [next section](uploading-yo
 {% endcontent-ref %}
 
 {% hint style="info" %}
-For existing solo stakers, you can spin up a new validator client service specifically for your CSM validator keys so that you can retain your own `fee_recipient` address for your solo staking keys. Refer to [this sub-section](running-a-separate-vc-service-wip.md).
+For existing solo stakers, you can spin up a new validator client service specifically for your CSM validator keys so that you can retain your own `fee_recipient` address for your solo staking keys. Refer to [this sub-section](running-a-separate-vc-service.md).
 {% endhint %}
 
 ### **MEV-Boost Setup--Relay endpoints**
@@ -87,7 +87,7 @@ The Holesky version of this Etherscan link is currently broken so you will face 
 {% tabs %}
 {% tab title="Existing Solo Stakers" %}
 1. [Generate new validator keys](generating-csm-keystores.md) while setting the `withdrawal_address` to the  Lido CSM contract on **Holesky:** [`0xF0179dEC45a37423EAD4FaD5fCb136197872EAd9`](https://holesky.etherscan.io/address/0xF0179dEC45a37423EAD4FaD5fCb136197872EAd9)
-2. [Configure a separate validator client](running-a-separate-vc-service-wip.md) while setting the `fee_recipient` flag to the designated fee recipient address for Lido CSM on **Holesky:** [`0xE73a3602b99f1f913e72F8bdcBC235e206794Ac8`](https://holesky.etherscan.io/address/0xE73a3602b99f1f913e72F8bdcBC235e206794Ac8) and import the newly generated CSM keystores
+2. [Configure a separate validator client](running-a-separate-vc-service.md) while setting the `fee_recipient` flag to the designated fee recipient address for Lido CSM on **Holesky:** [`0xE73a3602b99f1f913e72F8bdcBC235e206794Ac8`](https://holesky.etherscan.io/address/0xE73a3602b99f1f913e72F8bdcBC235e206794Ac8) and import the newly generated CSM keystores
 3. [On your MEV-Boost service](../../keystore-generation-and-mev-boost/set-up-and-configure-mev-boost.md), remove the `-min-bid` flag (if used), and  set the `-relay` flags only to the list of designated MEV relays for Lido CSM on **Holesky** (refer to previous section)
 4. [Upload the newly generated deposit data file](uploading-your-deposit-data-file.md) pertaining to your CSM keystores onto the Lido CSM Web App and provide the required bond amount in ETH/stETH/wstETH
 5. Wait for your CSM validator keys to be funded by Lido and make sure your node remains online in the meantime!

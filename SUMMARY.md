@@ -94,8 +94,9 @@
 
 * [Lido CSM (WIP)](bonded-validators-setup/lido-csm-wip/README.md)
   * [Generating CSM keystores](bonded-validators-setup/lido-csm-wip/generating-csm-keystores.md)
-  * [Running a separate VC service (WIP)](bonded-validators-setup/lido-csm-wip/running-a-separate-vc-service-wip.md)
+  * [Running a separate VC service](bonded-validators-setup/lido-csm-wip/running-a-separate-vc-service.md)
   * [Uploading your deposit data file](bonded-validators-setup/lido-csm-wip/uploading-your-deposit-data-file.md)
+  * [Claiming your CSM rewards (WIP)](bonded-validators-setup/lido-csm-wip/claiming-your-csm-rewards-wip.md)
   * [Monitoring your CSM validators (WIP)](bonded-validators-setup/lido-csm-wip/monitoring-your-csm-validators-wip.md)
   * [Exiting CSM validators (WIP)](bonded-validators-setup/lido-csm-wip/exiting-csm-validators-wip.md)
 * [Puffer (WIP)](bonded-validators-setup/puffer-wip.md)
