@@ -27,7 +27,7 @@ sudo mkdir -p /var/lib/nimbus_validator
 <pre class="language-sh"><code class="lang-sh"><strong>sudo /usr/local/bin/nimbus_beacon_node deposits import --data-dir:/var/lib/nimbus_validator/ ~/validator_keys
 </strong></code></pre>
 
-3\) Change the owner of this new folder to the `nimbus` user
+3\) Change the owner of this new folder to the `nimbus_validator` user
 
 4\) Restrict permissions on this new folder such that only the owner is able to read, write, and execute files in this folder
 

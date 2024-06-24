@@ -63,17 +63,17 @@
   * [Lodestar](monitoring-maintenance-and-updates/maintenance-and-updates/lodestar.md)
   * [Updating the monitoring suite](monitoring-maintenance-and-updates/maintenance-and-updates/updating-the-monitoring-suite.md)
 
-## "Vanilla" Solo Staking Setup
+## Native Solo Staking Setup
 
-* [Validator key generation](vanilla-solo-staking-setup/validator-key-generation.md)
-* [Validator client setup](vanilla-solo-staking-setup/validator-client-setup/README.md)
-  * [Teku VC](vanilla-solo-staking-setup/validator-client-setup/teku-vc.md)
-  * [Nimbus VC](vanilla-solo-staking-setup/validator-client-setup/nimbus-vc.md)
-  * [Lodestar VC](vanilla-solo-staking-setup/validator-client-setup/lodestar-vc.md)
-  * [Lighthouse VC](vanilla-solo-staking-setup/validator-client-setup/lighthouse-vc.md)
-  * [Prysm VC](vanilla-solo-staking-setup/validator-client-setup/prysm-vc.md)
-* [Depositing 32 ETH into your validator](vanilla-solo-staking-setup/depositing-32-eth-into-your-validator.md)
-* [Exiting your validator](vanilla-solo-staking-setup/exiting-your-validator.md)
+* [Validator key generation](native-solo-staking-setup/validator-key-generation.md)
+* [Validator client setup](native-solo-staking-setup/validator-client-setup/README.md)
+  * [Teku VC](native-solo-staking-setup/validator-client-setup/teku-vc.md)
+  * [Nimbus VC](native-solo-staking-setup/validator-client-setup/nimbus-vc.md)
+  * [Lodestar VC](native-solo-staking-setup/validator-client-setup/lodestar-vc.md)
+  * [Lighthouse VC](native-solo-staking-setup/validator-client-setup/lighthouse-vc.md)
+  * [Prysm VC](native-solo-staking-setup/validator-client-setup/prysm-vc.md)
+* [Depositing 32 ETH into your validator](native-solo-staking-setup/depositing-32-eth-into-your-validator.md)
+* [Exiting your validator](native-solo-staking-setup/exiting-your-validator.md)
 
 ## DVT Setup
 
@@ -90,8 +90,9 @@
 ## Bonded Validators Setup
 
 * [Lido CSM (WIP)](bonded-validators-setup/lido-csm-wip/README.md)
-  * [Uploading your deposit data file](bonded-validators-setup/lido-csm-wip/uploading-your-deposit-data-file.md)
+  * [Generating CSM keystores](bonded-validators-setup/lido-csm-wip/generating-csm-keystores.md)
   * [Running a separate VC service](bonded-validators-setup/lido-csm-wip/running-a-separate-vc-service.md)
+  * [Uploading your deposit data file](bonded-validators-setup/lido-csm-wip/uploading-your-deposit-data-file.md)
 * [Puffer (WIP)](bonded-validators-setup/puffer-wip.md)
 * [Ether.fi (WIP)](bonded-validators-setup/ether.fi-wip.md)
 * [Stader (WIP)](bonded-validators-setup/stader-wip.md)

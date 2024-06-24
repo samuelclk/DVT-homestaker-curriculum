@@ -10,7 +10,7 @@ Recall that running bonded validators via the Lido CSM does not require setting 
 
 Instead, you simply tweak the parameters of the following steps of the native solo staking setup.
 
-### Withdrawal address
+### Keystore generation--Withdrawal address
 
 * During the validator key generation step, generate a number of validator keystores (e.g., max 10 per CSM operator) along with the deposit data file while setting the `withdrawalAddress` field to the Lido CSM contract on **Holesky:** [`0xF0179dEC45a37423EAD4FaD5fCb136197872EAd9`](https://holesky.etherscan.io/address/0xF0179dEC45a37423EAD4FaD5fCb136197872EAd9)
 
@@ -18,25 +18,25 @@ Instead, you simply tweak the parameters of the following steps of the native so
 **DO NOT DEPOSIT 32 ETH** using the deposit data file generated this way as the Lido CSM will make the deposit for you. _**Doing so will result in a loss of funds.**_
 {% endhint %}
 
-{% content-ref url="../../vanilla-solo-staking-setup/validator-key-generation.md" %}
-[validator-key-generation.md](../../vanilla-solo-staking-setup/validator-key-generation.md)
+{% content-ref url="../../native-solo-staking-setup/validator-key-generation.md" %}
+[validator-key-generation.md](../../native-solo-staking-setup/validator-key-generation.md)
 {% endcontent-ref %}
 
 You will then upload your `deposit data file` in the [next section](uploading-your-deposit-data-file.md). Make sure you complete the remaining steps on this page before that.&#x20;
 
-### **Fee Recipient Address**
+### **Validator Client Setup--Fee Recipient Address**
 
 * During the validator client setup step, set the `fee_recipient` flag to the designated fee recipient address for Lido CSM on **Holesky:** [`0xE73a3602b99f1f913e72F8bdcBC235e206794Ac8`](https://holesky.etherscan.io/address/0xE73a3602b99f1f913e72F8bdcBC235e206794Ac8)
 
-{% content-ref url="../../vanilla-solo-staking-setup/validator-client-setup/" %}
-[validator-client-setup](../../vanilla-solo-staking-setup/validator-client-setup/)
+{% content-ref url="../../native-solo-staking-setup/validator-client-setup/" %}
+[validator-client-setup](../../native-solo-staking-setup/validator-client-setup/)
 {% endcontent-ref %}
 
 {% hint style="info" %}
 For existing solo stakers, you can spin up a new validator client service specifically for your CSM validator keys so that you can retain your own `fee_recipient` address for your solo staking keys. Refer to [this sub-section](running-a-separate-vc-service.md).
 {% endhint %}
 
-### **MEV-Boost Relays**
+### **MEV-Boost Setup--Relay endpoints**
 
 * Remove the `-min-bid` flag (if used)
 
@@ -82,3 +82,4 @@ You can verify the latest MEV Relay List for the Lido CSM on Holesky here: [http
 The Holesky version of this Etherscan link is currently broken so you will face an error. Refer to the **Designated MEV Relay List** in the previous section in the meantime.
 {% endhint %}
 
+## Step-by-step guide in the sub-sections

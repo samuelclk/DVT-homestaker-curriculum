@@ -80,7 +80,7 @@ _**New folders created:**_
 
 ## Downloading Lodestar
 
-Create a new folder for the Lodestar consensus client.&#x20;
+Create a new folder for the Lodestar validator client.&#x20;
 
 ```sh
 cd
