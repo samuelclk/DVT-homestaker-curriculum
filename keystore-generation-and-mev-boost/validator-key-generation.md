@@ -48,6 +48,50 @@
 <figure><img src="../.gitbook/assets/image (67).png" alt=""><figcaption></figcaption></figure>
 
 {% tabs %}
+{% tab title="Executable binaries" %}
+## Downloading the executable binary file
+
+Download the latest version of the Ethereum validator deposit key generation binary file [here](https://github.com/ethereum/staking-deposit-cli/releases) and verify the checksum of the downloaded zipped file.
+
+```sh
+cd
+curl -LO https://github.com/ethereum/staking-deposit-cli/releases/download/v2.7.0/staking_deposit-cli-fdab65d-linux-amd64.tar.gz
+echo "ac3151843d681c92ae75567a88fbe0e040d53c21368cc1ed1a8c3d9fb29f2a3a staking_deposit-cli-fdab65d-linux-amd64.tar.gz" | sha256sum --check
+```
+
+**Expected output:**
+
+```
+staking_deposit-cli-fdab65d-linux-amd64.tar.gz: OK
+```
+
+After the checksum verification, extract the contents of the zipped file and change directory into the extracted folder.
+
+```sh
+tar xvf staking_deposit-cli-fdab65d-linux-amd64.tar.gz
+cd staking_deposit-cli-fdab65d-linux-amd64
+```
+
+## Generate your validator signing keys
+
+### \*BEFORE PROCEEDING TO THE NEXT STEP
+
+1. #### TURN OFF YOUR ETHERNET, WIFI, AND BLUETOOTH ACCESS&#x20;
+2. #### PHYSICALLY COVER ALL CAMERA DEVICES - e.g. PHONES, WEBCAMS, LAPTOP CAMERAS, PEOPLE STANDING BEHIND YOU
+
+Run the following command to generate your validator keys. Replace `<number>` with the number of validators you want to set up and `<YourWithdrawalAddress>` with the actual withdrawal address depending on your setup choice.
+
+```
+./deposit new-mnemonic --num_validators <number> --chain holesky --eth1_withdrawal_address <YourWithdrawalAaddress>
+```
+
+1. **Native Solo Staking Setup:** Use a secure Ethereum wallet address that you own--e.g., cold wallet address, SAFE multi-sig address
+2. **Diva Staking:** Skip this section. The validator key shares will be assigned to you by the Diva client.
+3. **Lido CSM:** On `Holesky` testnet, set your withdrawal address to `0xF0179dEC45a37423EAD4FaD5fCb136197872EAd9`
+4. **RocketPool (WIP):**
+5. **Stader (WIP):**
+{% endtab %}
+
 {% tab title="Build from source" %}
 ## Building the validator key generation tool from source
 
@@ -102,50 +146,6 @@ python3 ./staking_deposit/deposit.py new-mnemonic --num_validators <number> --ch
 1. **Native Solo Staking Setup:** Use a secure Ethereum wallet address that you own--e.g., cold wallet address, SAFE multi-sig address
 2. **Diva Staking:** Skip this section. The validator key shares will be assigned to you by the Diva client.
 3. **Lido CSM:** On the `Holesky` testnet, set your withdrawal address to the Lido CSM contract address --[`0xF0179dEC45a37423EAD4FaD5fCb136197872EAd9`](https://holesky.etherscan.io/address/0xF0179dEC45a37423EAD4FaD5fCb136197872EAd9)&#x20;
-4. **RocketPool (WIP):**
-5. **Stader (WIP):**
-{% endtab %}
-
-{% tab title="Executable binaries" %}
-## Downloading the executable binary file
-
-Download the latest version of the Ethereum validator deposit key generation binary file [here](https://github.com/ethereum/staking-deposit-cli/releases) and verify the checksum of the downloaded zipped file.
-
-```sh
-cd
-curl -LO https://github.com/ethereum/staking-deposit-cli/releases/download/v2.7.0/staking_deposit-cli-fdab65d-linux-amd64.tar.gz
-echo "ac3151843d681c92ae75567a88fbe0e040d53c21368cc1ed1a8c3d9fb29f2a3a staking_deposit-cli-fdab65d-linux-amd64.tar.gz" | sha256sum --check
-```
-
-**Expected output:**
-
-```
-staking_deposit-cli-fdab65d-linux-amd64.tar.gz: OK
-```
-
-After the checksum verification, extract the contents of the zipped file and change directory into the extracted folder.
-
-```sh
-tar xvf staking_deposit-cli-fdab65d-linux-amd64.tar.gz
-cd staking_deposit-cli-fdab65d-linux-amd64
-```
-
-## Generate your validator signing keys
-
-### \*BEFORE PROCEEDING TO THE NEXT STEP
-
-1. #### TURN OFF YOUR ETHERNET, WIFI, AND BLUETOOTH ACCESS&#x20;
-2. #### PHYSICALLY COVER ALL CAMERA DEVICES - e.g. PHONES, WEBCAMS, LAPTOP CAMERAS, PEOPLE STANDING BEHIND YOU
-
-Run the following command to generate your validator keys. Replace `<number>` with the number of validators you want to set up and `<YourWithdrawalAddress>` with the actual withdrawal address depending on your setup choice.
-
-```
-./deposit new-mnemonic --num_validators <number> --chain holesky --eth1_withdrawal_address <YourWithdrawalAaddress>
-```
-
-1. **Native Solo Staking Setup:** Use a secure Ethereum wallet address that you own--e.g., cold wallet address, SAFE multi-sig address
-2. **Diva Staking:** Skip this section. The validator key shares will be assigned to you by the Diva client.
-3. **Lido CSM:** On `Holesky` testnet, set your withdrawal address to `0xF0179dEC45a37423EAD4FaD5fCb136197872EAd9`
 4. **RocketPool (WIP):**
 5. **Stader (WIP):**
 {% endtab %}
