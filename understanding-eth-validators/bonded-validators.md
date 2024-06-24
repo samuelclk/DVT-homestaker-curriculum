@@ -7,8 +7,8 @@ Conventionally, running an Ethereum validator node as a solo staker required you
 However, there are options available today to significantly reduce this capital requirement in the form of bonded validators. The basic mechanism works as follows:
 
 1. **Liquid stakers** stakes native ETH into smart contracts of liquid staking protocols
-2. **Node operators** provide some amount of ETH as collateral or bond (e.g., 1/2/4/8 ETH) to serve as the first line of defense against slashing events, poor performance, & MEV theft.
-3. **Liquid staking protocols** assign some amount of staked ETH of liquid stakers to node operators to fulfill the 32 ETH minimum requirement per active validator key
+2. **Node operators** provide some amount of ETH as collateral or bond (e.g., 1/2/4/8 ETH) to serve as the first line of defence against slashing events, poor performance, & MEV theft.
+3. **Liquid staking protocols** assign some amount of staked ETH of liquid stakers to node operators to fulfil the 32 ETH minimum requirement per active validator key
 4. **Fee distribution:** Liquid staker pay some fees (e.g., 10% or 14%) to the liquid staking protocol and a majority portion (or all) of this flows to node operators&#x20;
 
 Hence, bonded validators enable node operators to lower their capital requirements and boost their rewards rate as compared to native solo staking.
@@ -23,7 +23,7 @@ Similar to DVT clients, running a bonded validator setup simply requires you to 
 
 You then expose the endpoints of your execution and consensus, and connect them to your bonded validator client. This way, your bonded validator client can now "talk" to your existing execution + consensus clients and perform its duties.
 
-There are 2 methods of setting up bonded validators today.
+_**There are 2 methods of setting up bonded validators today.**_
 
 {% tabs %}
 {% tab title="Lido CSM" %}
@@ -45,7 +45,7 @@ For the Rocketpool and Stader, you will need to run an additional and separate s
 
 You can also run multiple bonded validator clients on the same hardware, provided that you have sufficient resources (e.g., CPU, RAM, Disk) on your hardware to meet the minimum requirements of each additional bonded validator client.
 
-<figure><img src="../.gitbook/assets/image (174).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (180).png" alt=""><figcaption></figcaption></figure>
 
 {% hint style="info" %}
 You can also run DVT clients alongside bonded validator clients in the same way.

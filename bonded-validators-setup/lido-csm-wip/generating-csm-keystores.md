@@ -18,8 +18,8 @@ This is to reduce the risk of importing your existing solo staking keystores by 
 
 Visit the Validator key generation page and follow the steps accordingly.&#x20;
 
-{% content-ref url="../../native-solo-staking-setup/validator-key-generation.md" %}
-[validator-key-generation.md](../../native-solo-staking-setup/validator-key-generation.md)
+{% content-ref url="../../keystore-generation-and-mev-boost/validator-key-generation.md" %}
+[validator-key-generation.md](../../keystore-generation-and-mev-boost/validator-key-generation.md)
 {% endcontent-ref %}
 
 {% hint style="info" %}

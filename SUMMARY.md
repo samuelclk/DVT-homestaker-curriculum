@@ -31,21 +31,25 @@
 * [Device level security setup](linux-os-networking-and-security/device-level-security-setup.md)
 * [Verifying checksums](linux-os-networking-and-security/verifying-checksums.md)
 
-## Installing & configuring your validator clients
+## Installing & configuring your EL+CL clients
 
-* [Set up and configure execution layer client](installing-and-configuring-your-validator-clients/set-up-and-configure-execution-layer-client/README.md)
-  * [Nethermind](installing-and-configuring-your-validator-clients/set-up-and-configure-execution-layer-client/nethermind.md)
-  * [Besu](installing-and-configuring-your-validator-clients/set-up-and-configure-execution-layer-client/besu.md)
-  * [Geth](installing-and-configuring-your-validator-clients/set-up-and-configure-execution-layer-client/geth.md)
-  * [Erigon](installing-and-configuring-your-validator-clients/set-up-and-configure-execution-layer-client/erigon.md)
-  * [Reth](installing-and-configuring-your-validator-clients/set-up-and-configure-execution-layer-client/reth.md)
-* [Set up and configure consensus layer client](installing-and-configuring-your-validator-clients/set-up-and-configure-consensus-layer-client/README.md)
-  * [Teku BN](installing-and-configuring-your-validator-clients/set-up-and-configure-consensus-layer-client/teku-bn.md)
-  * [Nimbus BN](installing-and-configuring-your-validator-clients/set-up-and-configure-consensus-layer-client/nimbus-bn.md)
-  * [Lodestar BN](installing-and-configuring-your-validator-clients/set-up-and-configure-consensus-layer-client/lodestar-bn.md)
-  * [Lighthouse BN](installing-and-configuring-your-validator-clients/set-up-and-configure-consensus-layer-client/lighthouse-bn.md)
-  * [Prysm BN](installing-and-configuring-your-validator-clients/set-up-and-configure-consensus-layer-client/prysm-bn.md)
-* [Set up and configure MEV-boost](installing-and-configuring-your-validator-clients/set-up-and-configure-mev-boost.md)
+* [Set up and configure execution layer client](installing-and-configuring-your-el+cl-clients/set-up-and-configure-execution-layer-client/README.md)
+  * [Nethermind](installing-and-configuring-your-el+cl-clients/set-up-and-configure-execution-layer-client/nethermind.md)
+  * [Besu](installing-and-configuring-your-el+cl-clients/set-up-and-configure-execution-layer-client/besu.md)
+  * [Geth](installing-and-configuring-your-el+cl-clients/set-up-and-configure-execution-layer-client/geth.md)
+  * [Erigon](installing-and-configuring-your-el+cl-clients/set-up-and-configure-execution-layer-client/erigon.md)
+  * [Reth](installing-and-configuring-your-el+cl-clients/set-up-and-configure-execution-layer-client/reth.md)
+* [Set up and configure consensus layer client](installing-and-configuring-your-el+cl-clients/set-up-and-configure-consensus-layer-client/README.md)
+  * [Teku BN](installing-and-configuring-your-el+cl-clients/set-up-and-configure-consensus-layer-client/teku-bn.md)
+  * [Nimbus BN](installing-and-configuring-your-el+cl-clients/set-up-and-configure-consensus-layer-client/nimbus-bn.md)
+  * [Lodestar BN](installing-and-configuring-your-el+cl-clients/set-up-and-configure-consensus-layer-client/lodestar-bn.md)
+  * [Lighthouse BN](installing-and-configuring-your-el+cl-clients/set-up-and-configure-consensus-layer-client/lighthouse-bn.md)
+  * [Prysm BN](installing-and-configuring-your-el+cl-clients/set-up-and-configure-consensus-layer-client/prysm-bn.md)
+
+## Keystore generation & MEV-Boost&#x20;
+
+* [Validator key generation](keystore-generation-and-mev-boost/validator-key-generation.md)
+* [Set up and configure MEV-boost](keystore-generation-and-mev-boost/set-up-and-configure-mev-boost.md)
 
 ## Monitoring, Maintenance, and Updates
 
@@ -65,7 +69,6 @@
 
 ## Native Solo Staking Setup
 
-* [Validator key generation](native-solo-staking-setup/validator-key-generation.md)
 * [Validator client setup](native-solo-staking-setup/validator-client-setup/README.md)
   * [Teku VC](native-solo-staking-setup/validator-client-setup/teku-vc.md)
   * [Nimbus VC](native-solo-staking-setup/validator-client-setup/nimbus-vc.md)
@@ -91,8 +94,10 @@
 
 * [Lido CSM (WIP)](bonded-validators-setup/lido-csm-wip/README.md)
   * [Generating CSM keystores](bonded-validators-setup/lido-csm-wip/generating-csm-keystores.md)
-  * [Running a separate VC service](bonded-validators-setup/lido-csm-wip/running-a-separate-vc-service.md)
+  * [Running a separate VC service (WIP)](bonded-validators-setup/lido-csm-wip/running-a-separate-vc-service-wip.md)
   * [Uploading your deposit data file](bonded-validators-setup/lido-csm-wip/uploading-your-deposit-data-file.md)
+  * [Monitoring your CSM validators (WIP)](bonded-validators-setup/lido-csm-wip/monitoring-your-csm-validators-wip.md)
+  * [Exiting CSM validators (WIP)](bonded-validators-setup/lido-csm-wip/exiting-csm-validators-wip.md)
 * [Puffer (WIP)](bonded-validators-setup/puffer-wip.md)
 * [Ether.fi (WIP)](bonded-validators-setup/ether.fi-wip.md)
 * [Stader (WIP)](bonded-validators-setup/stader-wip.md)

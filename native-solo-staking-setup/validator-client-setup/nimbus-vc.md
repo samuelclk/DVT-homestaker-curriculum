@@ -4,8 +4,8 @@
 
 Follow the steps in this previous section to download Nimbus if you have not done so.
 
-{% content-ref url="../../installing-and-configuring-your-validator-clients/set-up-and-configure-consensus-layer-client/nimbus-bn.md" %}
-[nimbus-bn.md](../../installing-and-configuring-your-validator-clients/set-up-and-configure-consensus-layer-client/nimbus-bn.md)
+{% content-ref url="../../installing-and-configuring-your-el+cl-clients/set-up-and-configure-consensus-layer-client/nimbus-bn.md" %}
+[nimbus-bn.md](../../installing-and-configuring-your-el+cl-clients/set-up-and-configure-consensus-layer-client/nimbus-bn.md)
 {% endcontent-ref %}
 
 ### Create a new user account
@@ -78,7 +78,7 @@ Once you're done, save with `Ctrl+O` and `Enter`, then exit with `Ctrl+X`. Under
 
 1. `--data-dir`: Specify the directory for Nimbus to store the validator info
 2. `--payload-builder`: Required when using external builders to build blocks (e.g. MEV relays)
-3. `--beacon-node`: URLs to connect to the main and backup consensus clients if any. This needs to be the same IP address set in your consensus client. Refer back [here](../../installing-and-configuring-your-validator-clients/set-up-and-configure-consensus-layer-client/) if you don't remember it.&#x20;
+3. `--beacon-node`: URLs to connect to the main and backup consensus clients if any. This needs to be the same IP address set in your consensus client. Refer back [here](../../installing-and-configuring-your-el+cl-clients/set-up-and-configure-consensus-layer-client/) if you don't remember it.&#x20;
 4. `--metrics`: Enable metrics for monitoring
 5. `--metrics-port`: Set the port for retrieving metrics
 6. `--suggested-fee-recipient`: ETH wallet address to receive rewards from block proposals and MEV bribes

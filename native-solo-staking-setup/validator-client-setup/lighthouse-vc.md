@@ -4,8 +4,8 @@
 
 Follow the steps in this previous section to download Lighthouse if you have not done so.
 
-{% content-ref url="../../installing-and-configuring-your-validator-clients/set-up-and-configure-consensus-layer-client/lighthouse-bn.md" %}
-[lighthouse-bn.md](../../installing-and-configuring-your-validator-clients/set-up-and-configure-consensus-layer-client/lighthouse-bn.md)
+{% content-ref url="../../installing-and-configuring-your-el+cl-clients/set-up-and-configure-consensus-layer-client/lighthouse-bn.md" %}
+[lighthouse-bn.md](../../installing-and-configuring-your-el+cl-clients/set-up-and-configure-consensus-layer-client/lighthouse-bn.md)
 {% endcontent-ref %}
 
 ### Create a new user account
@@ -85,7 +85,7 @@ Once you're done, save with `Ctrl+O` and `Enter`, then exit with `Ctrl+X`. Under
 1. `--network`: Run the validator client on the Holesky testnet
 2. `--data-dir`: Specify the directory for Lighthouse to store the validator info
 3. `--builder-proposals`: Required when using external builders to build blocks (e.g. MEV relays)
-4. `--beacon-nodes`: URLs to connect to the main and backup consensus clients if any. This needs to be the same IP address set in your consensus client. Refer back [here](../../installing-and-configuring-your-validator-clients/set-up-and-configure-consensus-layer-client/) if you don't remember it. Use multiple comma-separated endpoints here to configure fallback beacon nodes for your validator.&#x20;
+4. `--beacon-nodes`: URLs to connect to the main and backup consensus clients if any. This needs to be the same IP address set in your consensus client. Refer back [here](../../installing-and-configuring-your-el+cl-clients/set-up-and-configure-consensus-layer-client/) if you don't remember it. Use multiple comma-separated endpoints here to configure fallback beacon nodes for your validator.&#x20;
 5. `--metrics`: Enable metrics for monitoring
 6. `--metrics-port`: Set the port for retrieving metrics
 7. `--suggested-fee-recipient`: ETH wallet address to receive rewards from block proposals and MEV bribes

@@ -148,7 +148,7 @@ Once you're done, save with `Ctrl+O` and `Enter`, then exit with `Ctrl+X`.&#x20;
    * The first value (`validator`) instructs Lodestar to run only the consensus client and without the validator client&#x20;
    * `--dataDir`: Specify the directory for Lodestar to store data related to the validator client
    * `--network`: Run the Validator Client service on the ETH Holesky testnet.
-   * `--beacon-nodes`: URLs to connect to the main and backup consensus clients if any. This needs to be the same IP address set in your consensus client. Refer back [here](../../installing-and-configuring-your-validator-clients/set-up-and-configure-consensus-layer-client/) if you don't remember it.&#x20;
+   * `--beacon-nodes`: URLs to connect to the main and backup consensus clients if any. This needs to be the same IP address set in your consensus client. Refer back [here](../../installing-and-configuring-your-el+cl-clients/set-up-and-configure-consensus-layer-client/) if you don't remember it.&#x20;
    * `--builder`: Required when using external builders to build blocks (e.g. MEV relays)
    * `--suggestedFeeRecipient`: ETH wallet address to receive rewards from block proposals and MEV bribes
    * `--doppelganger-detection`: Helps prevents slashing due to double signing by checking if your validator keys are already active on the network. _**Not a fool-proof solution.**_

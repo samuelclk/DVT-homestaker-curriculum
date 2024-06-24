@@ -133,7 +133,7 @@ Once you're done, save with `Ctrl+O` and `Enter`, then exit with `Ctrl+X`. Under
 2. `--holesky`: Run the validator client on the Holesky testnet
 3. `--datadir`: Specify the directory for Lighthouse to store the validator info
 4. `--enable-builder`: Required when using external builders to build blocks (e.g. MEV relays)
-5. `--beacon-rpc-provider/beacon-rpc-gateway-provider`: URLs to connect to the main and backup _**Prysm**_ consensus clients if any. This needs to be the same IP address set in your _**Prysm**_ consensus client. Refer back [here](../../installing-and-configuring-your-validator-clients/set-up-and-configure-consensus-layer-client/) if you don't remember it. Use multiple comma-separated endpoints here to configure fallback beacon nodes for your validator. &#x20;
+5. `--beacon-rpc-provider/beacon-rpc-gateway-provider`: URLs to connect to the main and backup _**Prysm**_ consensus clients if any. This needs to be the same IP address set in your _**Prysm**_ consensus client. Refer back [here](../../installing-and-configuring-your-el+cl-clients/set-up-and-configure-consensus-layer-client/) if you don't remember it. Use multiple comma-separated endpoints here to configure fallback beacon nodes for your validator. &#x20;
 6. `--wallet-dir`: Path to a wallet directory on-disk for Prysm validator accounts
 7. `--wallet-password-file`: Path to a plain-text, .txt file containing your wallet password
 8. `--monitoring-port`: Set the port for retrieving metrics
