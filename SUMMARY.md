@@ -104,9 +104,10 @@
 * [Stader (WIP)](bonded-validators-setup/stader-wip.md)
 * [Rocketpool (WIP)](bonded-validators-setup/rocketpool-wip.md)
 
-## Mainnet Deployment
+## Mainnet
 
-* [Mainnet Deployment](mainnet-deployment/mainnet-deployment.md)
+* [Mainnet Deployment](mainnet/mainnet-deployment.md)
+* [Heroglpyhs (WIP)](mainnet/heroglpyhs-wip.md)
 
 ## Best practices
 
