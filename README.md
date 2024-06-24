@@ -44,7 +44,8 @@ Stakesaurus has also received the following bounty and grants for earlier work f
 
 1. A bounty (1500 USDC) from the Stack Up x Google Cloud Challenge for creating a guide on setting up a cloud-based Ethereum validator node using the Google Cloud stack. More details are described [here](https://x.com/StackUpHQ/status/1701601281541091565).
 2. A [retroactive grant (1000 DAI)](https://research.lido.fi/t/lido-community-lifeguards-initiative/4678/23?u=stakesaurus) from the Lido Ecosystem Grants Organisation for open-sourcing a comprehensive Ethereum home staking guide (no DVT) designed for non-technical people. More details are described [here](https://x.com/stakesaurus/status/1709419025435164696).
-3. Stakesaurus is also a grantee of the [Lido Community Lifeguards Initiative](https://research.lido.fi/t/lido-community-lifeguards-initiative/4678), representing the voice & interests of community operators (e.g., solo/home stakers, Lido CSM operators) to the Lido DAO.
+
+Stakesaurus is also a grantee of the [Lido Community Lifeguards Initiative](https://research.lido.fi/t/lido-community-lifeguards-initiative/4678), representing the voice & interests of community operators (e.g., solo/home stakers, Lido CSM operators) to the Lido DAO.
 
 ## How to get help?
 
