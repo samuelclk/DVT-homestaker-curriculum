@@ -2,6 +2,50 @@
 
 ## How it works
 
+As an overview, the Lido CSM funds valid validator keys uploaded by node operators if the minimum bond required has also been provided.
+
+{% hint style="info" %}
+**"Valid validator keys"** in this case refers to validator keystores generated while setting the `withdrawalAddress` field to the Lido CSM contract.
+{% endhint %}
+
+### Rewards&#x20;
+
+Solo stakers receive rewards from 2 sources:
+
+1. **The bond provided:** The bond can be provided in ETH, stETH, or wstETH, and they will be converted into stETH, which accrues rewards over time less the 10% staking fee. i.e., `90% * ETH PoS staking yield * total ETH bond provided`
+2. **8% share of rewards** of the validator keys funded by the Lido CSM. i.e., 8`% * ETH PoS staking yield * total validator keys funded (32 ETH each)`
+
+### Bond mechanics
+
+#### Providing the CSM bond
+
+The required bond amounts can be provided by anyone, although it will most likely come from the node operator using the CSM (CSM operator) themselves.
+
+#### Bond decrease
+
+The bond provided serves as a deterrence against dishonest behaviour (e.g., MEV theft) and poor performance by the CSM operator
+
+When MEV theft is detected, the node operator's bond amount will be locked until the stolen amounts are returned. This will cause the bond balance of the CSM operator to fall below the required threshold. In this scenario, the CSM node operator will cease to accrue rewards on their validator keys funded by Lido CSM until they top up the shortfall. &#x20;
+
+#### Bond increase
+
+On the other hand, because the bond is provided in stETH (which rebases in quantity), the bond balance of CSM operators will increase over time, above the required threshold.
+
+Excess bond balance, together with accrued rewards, will be claimable by CSM operators from the CSM Web App.
+
+### Rewards Address & Manager Address
+
+There are 2 main addresses used by CSM operators.
+
+1. **Rewards Address:** This is the address that all accrued rewards and excess bond amounts will go to when claimed. Rewards Addresses can change Manager Addresses but Rewards Addresses can only be changed by itself.
+2. **Manager Address:** This is the address that can trigger the claiming of all accrued rewards and excess bond amounts to the Rewards Address. The Manager Address can also upload/remove new/existing deposit data files. The Manager Address cannot change the Rewards Address.
+
+{% hint style="info" %}
+An interesting observation from how the 2 addresses work is that users can technically bifurcate the capital (bond) provider and service provider (node operator) when using the CSM.
+{% endhint %}
+
+## Getting started
+
 Recall that running bonded validators via the Lido CSM does not require setting up a separate service on your hardware.
 
 {% content-ref url="../../understanding-eth-validators/bonded-validators.md" %}
