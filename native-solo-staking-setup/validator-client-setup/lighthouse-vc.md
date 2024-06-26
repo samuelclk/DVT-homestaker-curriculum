@@ -30,7 +30,7 @@ sudo lighthouse account validator import --network holesky --datadir /var/lib/li
 
 **Expected output:**
 
-<figure><img src="../../.gitbook/assets/image (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 3\) Change the owner of this new folder to the `lighthousevalidator` user
 
@@ -112,7 +112,7 @@ sudo journalctl -fu lighthousevalidator -o cat | ccze -A
 
 **Expected output:**
 
-<figure><img src="../../.gitbook/assets/image (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (2) (1).png" alt=""><figcaption></figcaption></figure>
 
 {% hint style="info" %}
 You will see some warnings if your beacon node (consensus client) is not yet synced.

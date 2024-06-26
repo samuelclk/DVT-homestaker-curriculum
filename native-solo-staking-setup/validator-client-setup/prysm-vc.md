@@ -66,7 +66,7 @@ sudo /usr/local/bin/prysmvalidator accounts import --keys-dir=$HOME/validator_ke
 
 **Expected output:**
 
-<figure><img src="../../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (6).png" alt=""><figcaption></figcaption></figure>
 
 3\) Create a plain text password file for the Prysm wallet
 

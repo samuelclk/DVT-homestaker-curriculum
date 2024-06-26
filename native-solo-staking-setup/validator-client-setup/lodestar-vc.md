@@ -182,7 +182,7 @@ docker compose up -d
 docker logs lodestar_validator -f
 ```
 
-<figure><img src="../../.gitbook/assets/image (6).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (6) (1).png" alt=""><figcaption></figcaption></figure>
 
 ## Remove duplicates of validator keystores
 
