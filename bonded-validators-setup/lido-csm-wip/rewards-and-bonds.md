@@ -33,14 +33,13 @@ On the other hand, if your bond shortage falls below the required minimum, the u
 <figure><img src="../../.gitbook/assets/image (183).png" alt=""><figcaption></figcaption></figure>
 
 {% hint style="info" %}
-The required minimum bond amount is based on how many of your uploaded validator keys have been funded by the CSM.
+The required minimum bond amount is based on how many of your uploaded validator keys have been funded by the CSM. Exiting your CSM-funded keys will not unlock your `Locked bonds`.
 {% endhint %}
 
-**At this point, there are 3 options you can take:**
+**At this point, there are 2 options you can take:**
 
 1. Top up your bond amount under the `UNLOCK BOND` tab
 2. Wait for new rewards to replenish the bond  amount until it is back to the required level
-3. Exit some of your CSM-funded validator keys
 
 {% hint style="info" %}
 You cannot replenish `Locked bonds` using the `ADD BOND` feature.
