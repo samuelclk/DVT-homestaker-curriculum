@@ -1,4 +1,43 @@
-# Lido CSM (WIP)
+# Lido CSM
+
+## Workflow breakdown
+
+Recall that running bonded validators via the Lido CSM does not require setting up a separate service on your hardware.
+
+{% content-ref url="../../understanding-eth-validators/bonded-validators.md" %}
+[bonded-validators.md](../../understanding-eth-validators/bonded-validators.md)
+{% endcontent-ref %}
+
+Instead, you simply tweak the parameters of the following steps of the native solo staking setup.
+
+{% tabs %}
+{% tab title="Existing Solo Stakers" %}
+1. [Generate new validator keys](generating-csm-keystores.md) while setting the `withdrawal_address` to the  Lido CSM contract on **Holesky:** [`0xF0179dEC45a37423EAD4FaD5fCb136197872EAd9`](https://holesky.etherscan.io/address/0xF0179dEC45a37423EAD4FaD5fCb136197872EAd9)
+2. [Configure a separate validator client](running-a-separate-vc-service.md) while setting the `fee_recipient` flag to the designated fee recipient address for Lido CSM on **Holesky:** [`0xE73a3602b99f1f913e72F8bdcBC235e206794Ac8`](https://holesky.etherscan.io/address/0xE73a3602b99f1f913e72F8bdcBC235e206794Ac8) and import the newly generated CSM keystores
+3. [On your MEV-Boost service](../../keystore-generation-and-mev-boost/set-up-and-configure-mev-boost.md), remove the `-min-bid` flag (if used), and  set the `-relay` flags only to the list of designated MEV relays for Lido CSM on **Holesky** (refer to previous section)
+4. [Upload the newly generated deposit data file](uploading-your-deposit-data-file.md) pertaining to your CSM keystores onto the Lido CSM Web App and provide the required bond amount in ETH/stETH/wstETH
+5. Wait for your CSM validator keys to be funded by Lido and make sure your node remains online in the meantime!
+
+{% hint style="info" %}
+**DO NOT DEPOSIT 32 ETH** using the deposit data file generated this way as the Lido CSM will make the deposit for you. _**Doing so will result in a loss of funds.**_
+{% endhint %}
+{% endtab %}
+
+{% tab title="New Solo Stakers" %}
+1. Follow this guide from [Setup Overview](../../hardware-and-systems-setup/setup-overview.md) until you have your[ execution](../../installing-and-configuring-your-el+cl-clients/set-up-and-configure-execution-layer-client/) and [consensus client ](../../installing-and-configuring-your-el+cl-clients/set-up-and-configure-consensus-layer-client/)set up
+2. [Generate new validator keys](../../keystore-generation-and-mev-boost/validator-key-generation.md) while setting the `withdrawal_address` to the  Lido CSM contract on **Holesky:** [`0xF0179dEC45a37423EAD4FaD5fCb136197872EAd9`](https://holesky.etherscan.io/address/0xF0179dEC45a37423EAD4FaD5fCb136197872EAd9)
+3. [Configure your validator client](../../native-solo-staking-setup/validator-client-setup/) while setting the `fee_recipient` flag to the designated fee recipient address for Lido CSM on **Holesky:** [`0xE73a3602b99f1f913e72F8bdcBC235e206794Ac8`](https://holesky.etherscan.io/address/0xE73a3602b99f1f913e72F8bdcBC235e206794Ac8) and import the newly generated CSM keystores
+4. [Configure your MEV-Boost service](../../keystore-generation-and-mev-boost/set-up-and-configure-mev-boost.md). Do not set the`-min-bid` flag and  set the `-relay` flags only to the list of designated MEV relays for Lido CSM on **Holesky** (refer to previous section)
+5. [Upload the newly generated deposit data](uploading-your-deposit-data-file.md) file pertaining to your CSM keystores onto the Lido CSM Web App and provide the required bond amount in ETH/stETH/wstETH
+6. Wait for your CSM validator keys to be funded by Lido and make sure your node remains online in the meantime!
+
+{% hint style="info" %}
+**DO NOT DEPOSIT 32 ETH** using the deposit data file generated this way as the Lido CSM will make the deposit for you. _**Doing so will result in a loss of funds.**_
+{% endhint %}
+{% endtab %}
+{% endtabs %}
+
+### Step-by-step guide in the following sub-sections
 
 ## How it works
 
@@ -53,15 +92,7 @@ There are 2 main addresses used by CSM operators.
 An interesting observation from how the 2 addresses work is that users can technically bifurcate the capital (bond) provider and service provider (node operator) when using the CSM.
 {% endhint %}
 
-## Getting started
-
-Recall that running bonded validators via the Lido CSM does not require setting up a separate service on your hardware.
-
-{% content-ref url="../../understanding-eth-validators/bonded-validators.md" %}
-[bonded-validators.md](../../understanding-eth-validators/bonded-validators.md)
-{% endcontent-ref %}
-
-Instead, you simply tweak the parameters of the following steps of the native solo staking setup.
+## Key settings to note
 
 ### Keystore generation--Withdrawal address
 
@@ -134,34 +165,3 @@ You can verify the latest MEV Relay List for the Lido CSM on Holesky here: [http
 {% hint style="info" %}
 The Holesky version of this Etherscan link is currently broken so you will face an error. Refer to the **Designated MEV Relay List** in the previous section in the meantime.
 {% endhint %}
-
-## Workflow breakdown
-
-{% tabs %}
-{% tab title="Existing Solo Stakers" %}
-1. [Generate new validator keys](generating-csm-keystores.md) while setting the `withdrawal_address` to the  Lido CSM contract on **Holesky:** [`0xF0179dEC45a37423EAD4FaD5fCb136197872EAd9`](https://holesky.etherscan.io/address/0xF0179dEC45a37423EAD4FaD5fCb136197872EAd9)
-2. [Configure a separate validator client](running-a-separate-vc-service.md) while setting the `fee_recipient` flag to the designated fee recipient address for Lido CSM on **Holesky:** [`0xE73a3602b99f1f913e72F8bdcBC235e206794Ac8`](https://holesky.etherscan.io/address/0xE73a3602b99f1f913e72F8bdcBC235e206794Ac8) and import the newly generated CSM keystores
-3. [On your MEV-Boost service](../../keystore-generation-and-mev-boost/set-up-and-configure-mev-boost.md), remove the `-min-bid` flag (if used), and  set the `-relay` flags only to the list of designated MEV relays for Lido CSM on **Holesky** (refer to previous section)
-4. [Upload the newly generated deposit data file](uploading-your-deposit-data-file.md) pertaining to your CSM keystores onto the Lido CSM Web App and provide the required bond amount in ETH/stETH/wstETH
-5. Wait for your CSM validator keys to be funded by Lido and make sure your node remains online in the meantime!
-
-{% hint style="info" %}
-**DO NOT DEPOSIT 32 ETH** using the deposit data file generated this way as the Lido CSM will make the deposit for you. _**Doing so will result in a loss of funds.**_
-{% endhint %}
-{% endtab %}
-
-{% tab title="New Solo Stakers" %}
-1. Follow this guide until you have your execution and consensus client set up
-2. [Generate new validator keys](../../keystore-generation-and-mev-boost/validator-key-generation.md) while setting the `withdrawal_address` to the  Lido CSM contract on **Holesky:** [`0xF0179dEC45a37423EAD4FaD5fCb136197872EAd9`](https://holesky.etherscan.io/address/0xF0179dEC45a37423EAD4FaD5fCb136197872EAd9)
-3. [Configure your validator client](../../native-solo-staking-setup/validator-client-setup/) while setting the `fee_recipient` flag to the designated fee recipient address for Lido CSM on **Holesky:** [`0xE73a3602b99f1f913e72F8bdcBC235e206794Ac8`](https://holesky.etherscan.io/address/0xE73a3602b99f1f913e72F8bdcBC235e206794Ac8) and import the newly generated CSM keystores
-4. [Configure your MEV-Boost service](../../keystore-generation-and-mev-boost/set-up-and-configure-mev-boost.md). Do not set the`-min-bid` flag and  set the `-relay` flags only to the list of designated MEV relays for Lido CSM on **Holesky** (refer to previous section)
-5. [Upload the newly generated deposit data](uploading-your-deposit-data-file.md) file pertaining to your CSM keystores onto the Lido CSM Web App and provide the required bond amount in ETH/stETH/wstETH
-6. Wait for your CSM validator keys to be funded by Lido and make sure your node remains online in the meantime!
-
-{% hint style="info" %}
-**DO NOT DEPOSIT 32 ETH** using the deposit data file generated this way as the Lido CSM will make the deposit for you. _**Doing so will result in a loss of funds.**_
-{% endhint %}
-{% endtab %}
-{% endtabs %}
-
-### Step-by-step guide in the following sub-sections

@@ -26,6 +26,12 @@ _**There are 2 methods of setting up bonded validators today.**_
 <figure><img src="../.gitbook/assets/image (3).png" alt=""><figcaption></figcaption></figure>
 
 For the Lido CSM, you will essentially be running just a native validator node with no additional services required on your hardware. Bond deposit is managed on the CSM Webapp.
+
+### Jump to Lido CSM setup here
+
+{% content-ref url="../bonded-validators-setup/lido-csm/" %}
+[lido-csm](../bonded-validators-setup/lido-csm/)
+{% endcontent-ref %}
 {% endtab %}
 
 {% tab title="Rocketpool, Stader" %}
@@ -34,10 +40,26 @@ For the Lido CSM, you will essentially be running just a native validator node w
 For the Rocketpool and Stader, you will need to run an additional and separate service that handles the ETH bond + alternative tokens deposit on your hardware on top of your native validator node.&#x20;
 
 You then expose the endpoints of your execution and consensus, and connect them to your bonded validator client. This way, your bonded validator client can now "talk" to your existing execution + consensus clients and perform its duties.
+
+### Jump to Rocketpool and Stader setup below
+
+{% content-ref url="../bonded-validators-setup/rocketpool-wip.md" %}
+[rocketpool-wip.md](../bonded-validators-setup/rocketpool-wip.md)
+{% endcontent-ref %}
+
+{% content-ref url="../bonded-validators-setup/stader-wip.md" %}
+[stader-wip.md](../bonded-validators-setup/stader-wip.md)
+{% endcontent-ref %}
 {% endtab %}
 
-{% tab title="Solo staking" %}
+{% tab title="Native Solo staking" %}
 <figure><img src="../.gitbook/assets/image (1) (1) (1) (1) (1) (1) (1).png" alt=""><figcaption><p>Simplified illustration of a solo staker setup</p></figcaption></figure>
+
+### Jump to native Solo Staking setup below
+
+{% content-ref url="../hardware-and-systems-setup/setup-overview.md" %}
+[setup-overview.md](../hardware-and-systems-setup/setup-overview.md)
+{% endcontent-ref %}
 {% endtab %}
 {% endtabs %}
 
