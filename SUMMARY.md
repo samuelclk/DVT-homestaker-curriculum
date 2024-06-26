@@ -92,13 +92,13 @@
 
 ## Bonded Validators Setup
 
-* [Lido CSM (WIP)](bonded-validators-setup/lido-csm-wip/README.md)
-  * [Generating CSM keystores](bonded-validators-setup/lido-csm-wip/generating-csm-keystores.md)
-  * [Running a separate VC service](bonded-validators-setup/lido-csm-wip/running-a-separate-vc-service.md)
-  * [Uploading your deposit data file](bonded-validators-setup/lido-csm-wip/uploading-your-deposit-data-file.md)
-  * [Rewards & bonds](bonded-validators-setup/lido-csm-wip/rewards-and-bonds.md)
-  * [Exiting CSM validators (WIP)](bonded-validators-setup/lido-csm-wip/exiting-csm-validators-wip.md)
-  * [Monitoring your CSM validators (WIP)](bonded-validators-setup/lido-csm-wip/monitoring-your-csm-validators-wip.md)
+* [Lido CSM](bonded-validators-setup/lido-csm/README.md)
+  * [Generating CSM keystores](bonded-validators-setup/lido-csm/generating-csm-keystores.md)
+  * [Running a separate VC service](bonded-validators-setup/lido-csm/running-a-separate-vc-service.md)
+  * [Uploading your deposit data file](bonded-validators-setup/lido-csm/uploading-your-deposit-data-file.md)
+  * [Rewards & bonds](bonded-validators-setup/lido-csm/rewards-and-bonds.md)
+  * [Exiting CSM validators](bonded-validators-setup/lido-csm/exiting-csm-validators.md)
+  * [Monitoring your CSM validators](bonded-validators-setup/lido-csm/monitoring-your-csm-validators.md)
 * [Puffer (WIP)](bonded-validators-setup/puffer-wip.md)
 * [Ether.fi (WIP)](bonded-validators-setup/ether.fi-wip.md)
 * [Stader (WIP)](bonded-validators-setup/stader-wip.md)
