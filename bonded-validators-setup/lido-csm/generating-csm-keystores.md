@@ -16,7 +16,7 @@ This is to reduce the risk of importing your existing solo staking keystores by 
 
 ## Generate CSM keystores
 
-Visit the Validator key generation page and follow the steps accordingly.&#x20;
+Visit the Validator key generation page and follow the steps accordingly to generate CSM-valid validator keystores.&#x20;
 
 {% content-ref url="../../keystore-generation-and-mev-boost/validator-key-generation.md" %}
 [validator-key-generation.md](../../keystore-generation-and-mev-boost/validator-key-generation.md)
