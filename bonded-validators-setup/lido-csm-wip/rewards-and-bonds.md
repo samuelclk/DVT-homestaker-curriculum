@@ -1,4 +1,4 @@
-# Rewards & bonds (WIP)
+# Rewards & bonds
 
 ## Dashboard
 
@@ -38,12 +38,16 @@ The required minimum bond amount is based on how many of your uploaded validator
 
 **At this point, there are 3 options you can take:**
 
-1. Top up your bond amount&#x20;
+1. Top up your bond amount under the `UNLOCK BOND` tab
 2. Wait for new rewards to replenish the bond  amount until it is back to the required level
 3. Exit some of your CSM-funded validator keys
+
+{% hint style="info" %}
+You cannot replenish `Locked bonds` using the `ADD BOND` feature.
+{% endhint %}
 
 ### `UNLOCK BOND` tab
 
 <figure><img src="../../.gitbook/assets/image (184).png" alt=""><figcaption></figcaption></figure>
 
-This tab allows you to replenish your `Locked bonds`.
+This tab allows you to replenish your `Locked bonds` to resume the accruing of your CSM operator rewards.
