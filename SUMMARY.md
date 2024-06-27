@@ -95,7 +95,7 @@
 * [Lido CSM](bonded-validators-setup/lido-csm/README.md)
   * [Generating CSM keystores](bonded-validators-setup/lido-csm/generating-csm-keystores.md)
   * [Running a separate VC service](bonded-validators-setup/lido-csm/running-a-separate-vc-service.md)
-  * [Upload/Remove validator keys](bonded-validators-setup/lido-csm/upload-remove-validator-keys.md)
+  * [Upload/Remove/View validator keys](bonded-validators-setup/lido-csm/upload-remove-view-validator-keys.md)
   * [Rewards & bonds](bonded-validators-setup/lido-csm/rewards-and-bonds.md)
   * [Exiting CSM validators](bonded-validators-setup/lido-csm/exiting-csm-validators.md)
   * [Monitoring your CSM validators](bonded-validators-setup/lido-csm/monitoring-your-csm-validators.md)

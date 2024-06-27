@@ -1,4 +1,4 @@
-# Upload/Remove validator keys
+# Upload/Remove/View validator keys
 
 ## Upload keys
 
@@ -39,5 +39,10 @@ Recall that for each validator key that you the Lido CSM to fund, you will need 
 Removing previously uploaded keys will incur a fee.
 {% endhint %}
 
-## View keys (WIP)
+## View keys
 
+You can also view the status of the keys pertaining to your uploaded deposit data file and take the necessary actions.
+
+<figure><img src="../../.gitbook/assets/image (187).png" alt=""><figcaption></figcaption></figure>
+
+<table><thead><tr><th width="145">Status</th><th>What it means</th><th>What to do?</th></tr></thead><tbody><tr><td><mark style="color:green;"><strong>Active</strong></mark></td><td>Key has been funded &#x26; is active on the beacon chain</td><td>Make sure your validator node is online to perform its duties</td></tr><tr><td><strong>Queued</strong></td><td>Key has been funded and pending activation on the beacon chain</td><td>Make sure your validator node is online to perform its duties</td></tr><tr><td><strong>Depositable</strong></td><td>Key is valid and bond is sufficient. Pending deposit from Lido Protocol</td><td>Maintain sufficient bond amounts</td></tr><tr><td><strong>Exited</strong></td><td>Key has been exited</td><td>None</td></tr><tr><td><mark style="color:orange;"><strong>Unbonded</strong></mark></td><td>Bond is insufficient for this Active Key</td><td>Top up bond or exit key</td></tr><tr><td><mark style="color:red;"><strong>Duplicated</strong></mark></td><td>Key has been uploaded twice</td><td>Remove duplicate key</td></tr><tr><td><mark style="color:red;"><strong>Invalid</strong></mark></td><td>Uploaded key has an invalid signature</td><td>Remove key</td></tr><tr><td><mark style="color:red;"><strong>Stuck</strong></mark></td><td>Exit request for Active Key was not fulfilled within 96 hours</td><td>Exit key</td></tr></tbody></table>
