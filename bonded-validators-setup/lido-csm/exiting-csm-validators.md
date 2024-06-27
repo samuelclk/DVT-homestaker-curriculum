@@ -21,9 +21,7 @@ When this happens, CSM operators must initiate an exit on the requested number o
 
 Penalties are lifted when there are no more `Stuck Keys`
 
-## How to exit
-
-### Manual exit
+## Manual exit
 
 Exiting CSM-funded validator keys works the same way as exiting solo staking validator keys.
 
@@ -33,13 +31,13 @@ Refer to this dedicated guide for exiting validators put together by Remy Roy.
 
 You can also follow the steps extracted from Remy's guide below (Linux only).
 
-#### Overview of the validator exit process
+### Overview of the validator exit process
 
 The whole process can feel daunting so we will break it down into 3 phases.
 
 <figure><img src="../../.gitbook/assets/exitValidators.png" alt=""><figcaption></figcaption></figure>
 
-#### Phase 1: Prepare the necessary files
+### Phase 1: Prepare the necessary files
 
 * Ensure that you have either your **24-word mnemonic** or your **validator keystores + the password to decrypt it.**&#x20;
 
@@ -90,7 +88,7 @@ tar xvf ethdo-1.35.2-linux-amd64.tar.gz
 offline-preparation.json generated
 ```
 
-#### Phase 2: Transfer files into an air-gapped machine
+### Phase 2: Transfer files into an air-gapped machine
 
 Recall the steps in the **Install and prepare the OS** section, but instead of installing Ubuntu as the OS, we will install TailsOS for extra security.
 
@@ -121,7 +119,7 @@ sudo cp ~/offline-preparation.json ~/ethdo-1.35.3-linux-amd64.tar.gz ~/ethdo-1.3
 * **This step creates the airgapped machine:** Unplug any wired connections from your laptop. Then, follow the steps in the [**Install and prepare the OS**](../../linux-os-networking-and-security/install-and-prepare-the-os.md) section to flash the _**second**_ USB drive with TailsOS and boot up TailsOS on your laptop. Stop just before _"**Install the SSH server"**_
 * Plug the _**first**_ USB drive into your laptop that is now running TailsOS and transfer all the files into the home folder
 
-#### Phase 3: Signing the exit message
+### Phase 3: Signing the exit message
 
 **Loading the files onto TailsOS**
 
