@@ -176,7 +176,7 @@ tar xvf ethdo-1.35.2-linux-amd64.tar.gz
 Copy the resulting file (e.g., 459921-exit.json) into your _**first**_ USB (currently plugged into your TailsOS laptop). This is the `exit message`.
 
 {% hint style="danger" %}
-**WARNING:** Do not enter your 24-word mnemonic into any machine that is not airgapped _(i.e., never was and never will be online)_
+**WARNING:** Do not enter your 24-word mnemonic into any machine that is not air-gapped _(i.e., never was and never will be online)_
 {% endhint %}
 
 **Broadcasting the exit message**
