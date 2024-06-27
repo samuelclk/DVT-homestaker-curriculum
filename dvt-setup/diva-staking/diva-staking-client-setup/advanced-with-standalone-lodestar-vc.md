@@ -290,7 +290,7 @@ Then, restart the docker containers.
 docker restart $(docker ps -a -q)
 ```
 
-2\) Stop and remove the docker containers. Then repeat the steps on this page.
+2\) Stop and remove the docker containers. Then, repeat the steps on this page.
 
 ```sh
 docker rm -f $(docker ps -a -q)
