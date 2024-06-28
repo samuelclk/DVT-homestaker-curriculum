@@ -310,7 +310,7 @@ WantedBy=multi-user.target
 Once you're done, save with `Ctrl+O` and `Enter`, then exit with `Ctrl+X`. Understand and review your configuration summary below, and amend if needed.
 
 {% hint style="info" %}
-**Important:** Recall that you will have to use a designated fee recipient address ([`0xE73a3602b99f1f913e72F8bdcBC235e206794Ac8`](https://holesky.etherscan.io/address/0xE73a3602b99f1f913e72F8bdcBC235e206794Ac8)`)` as a CSM operator
+**Important:** Recall that you will have to use a designated fee recipient address ([`0xE73a3602b99f1f913e72F8bdcBC235e206794Ac8`](https://holesky.etherscan.io/address/0xE73a3602b99f1f913e72F8bdcBC235e206794Ac8)) as a CSM operator
 {% endhint %}
 
 Refer to the native Teku validator client setup section for more information on the other flags used. &#x20;

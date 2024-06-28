@@ -2,7 +2,11 @@
 
 ## Exit requests from Lido
 
-CSM operators can receive exit requests from the Lido Protocol when their bond amounts fall below the minimum threshold for the number of validator keys funded by the CSM.
+There are 3 reasons why CSM operators can receive exit requests from the Lido Protocol:
+
+1. The node operator's bond amounts fall below the minimum threshold for the number of validator keys deposited by the CSM
+2. To cover withdrawal requests from stETH holders
+3. By DAO decision in some exceptional cases. This will require an on-chain vote and public discussion on the [Lido Research forum](https://research.lido.fi/).
 
 Exit requests can be observed in the number `Unbonded` keys on the operator dashboard of the CSM Web App.
 
@@ -12,18 +16,18 @@ When this happens, CSM operators must initiate an exit on the requested number o
 
 ## Stuck Keys
 
-`Stuck Keys` accrue when CSM operators do not perform timely (within 96 hours) exits on the required number of CSM-funded validator keys when requested by the Lido Protocol.&#x20;
+`Stuck Keys` accrue when CSM operators do not perform timely (within 96 hours) exits on the required number of CSM-deposited validator keys when requested by the Lido Protocol.&#x20;
 
 **Penalties of having `Stuck Keys` include:**
 
-1. New validator keys of the CSM operator will not be funded&#x20;
+1. New validator keys of the CSM operator will not be deposited&#x20;
 2. New staking rewards stop accruing for the CSM operator
 
-Penalties are lifted when there are no more `Stuck Keys`
+Penalties are lifted when there are no more `Stuck Keys`.  More details [here](https://operatorportal.lido.fi/modules/community-staking-module#block-0ed61a4c0a5a439bbb4be20e814b4e38).
 
 ## Manual exit
 
-Exiting CSM-funded validator keys works the same way as exiting solo staking validator keys.
+Exiting CSM-deposited validator keys works the same way as exiting solo staking validator keys.
 
 Refer to this dedicated guide for exiting validators put together by Remy Roy.
 

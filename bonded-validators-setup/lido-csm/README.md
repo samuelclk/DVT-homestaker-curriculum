@@ -1,5 +1,7 @@
 # Lido CSM
 
+[Community Staking Module (CSM)](https://operatorportal.lido.fi/modules/community-staking-module) is the [Lido protocol’s](https://lido.fi/) first module with permissionless entry, allowing any node operator to operate validators by providing an ETH-based bond as security collateral
+
 ## Workflow breakdown
 
 Recall that running bonded validators via the Lido CSM does not require setting up a separate service on your hardware.
@@ -15,8 +17,8 @@ Instead, you simply tweak the parameters of the following steps of the native so
 1. [Generate new validator keys](generating-csm-keystores.md) while setting the `withdrawal_address` to the  Lido CSM contract on **Holesky:** [`0xF0179dEC45a37423EAD4FaD5fCb136197872EAd9`](https://holesky.etherscan.io/address/0xF0179dEC45a37423EAD4FaD5fCb136197872EAd9)
 2. [Configure a separate validator client](running-a-separate-vc-service.md) while setting the `fee_recipient` flag to the designated fee recipient address for Lido CSM on **Holesky:** [`0xE73a3602b99f1f913e72F8bdcBC235e206794Ac8`](https://holesky.etherscan.io/address/0xE73a3602b99f1f913e72F8bdcBC235e206794Ac8) and import the newly generated CSM keystores
 3. [On your MEV-Boost service](../../keystore-generation-and-mev-boost/set-up-and-configure-mev-boost.md), remove the `-min-bid` flag (if used), and  set the `-relay` flags only to the list of designated MEV relays for Lido CSM on **Holesky** (refer to _**"Key settings to note"**_ section)
-4. [Upload the newly generated deposit data file](upload-remove-view-validator-keys.md) pertaining to your CSM keystores onto the Lido CSM Web App and provide the required bond amount in ETH/stETH/wstETH
-5. Wait for your CSM validator keys to be funded by Lido and make sure your node remains online in the meantime!
+4. [Upload the newly generated deposit data file](upload-remove-view-validator-keys.md) pertaining to your CSM keystores onto the [Lido CSM Widget](https://csm.testnet.fi/) and provide the required bond amount in ETH/stETH/wstETH
+5. Wait for your CSM validator keys to be deposited by Lido and make sure your node remains online in the meantime!
 
 {% hint style="info" %}
 **DO NOT DEPOSIT 32 ETH** using the deposit data file generated this way as the Lido CSM will make the deposit for you. _**Doing so will result in a loss of funds.**_
@@ -41,7 +43,7 @@ Instead, you simply tweak the parameters of the following steps of the native so
 
 ## How CSM works
 
-As an overview, the Lido CSM funds valid validator keys uploaded by node operators if the minimum bond required has also been provided.
+As an overview, the Lido CSM deposits valid validator keys uploaded by node operators if the minimum bond required has also been provided.
 
 {% hint style="info" %}
 **"Valid validator keys"** in this case refers to validator keystores generated while setting the `withdrawalAddress` field to the Lido CSM contract.
@@ -52,7 +54,11 @@ As an overview, the Lido CSM funds valid validator keys uploaded by node operato
 Solo stakers receive rewards from 2 sources:
 
 1. **The bond provided:** The bond can be provided in ETH, stETH, or wstETH, and they will be converted into stETH, which accrues rewards over time less the 10% staking fee. i.e., `90% * ETH PoS staking yield * total ETH bond provided`
-2. **8% share of rewards** of the validator keys funded by the Lido CSM. i.e., 8`% * ETH PoS staking yield * total validator keys funded (32 ETH each)`
+2. **7% share of rewards** of the validator keys deposited by the Lido CSM. i.e., `7% * ETH PoS staking yield * total validator keys deposited (32 ETH each)`
+
+{% hint style="info" %}
+**Note:** The share of rewards % above apply only on CSM Holesky testnet. The values for mainnet may differ and will be set upon the mainnet launch by DAO vote
+{% endhint %}
 
 ### Bond mechanics
 
@@ -64,13 +70,13 @@ The required bond amounts can be provided by anyone, although it will most likel
 
 The bond provided serves as a deterrence against dishonest behaviours and poor performance by the node operator. e.g.,
 
-1. MEV theft&#x20;
-2. Slashing events
-3. Sustained poor performance by the node operator causing the effective balance of any validator to fall below 32 ETH
+1. **MEV theft:**  If detected, a fine will be imposed by burning part of the node operator's bond and an amount of bond equivalent to the stolen amount will be locked until it is made whole.
+2. **Slashing events:** Slashing penalties will be deducted from the bond amount and burnt
+3. **Sustained poor performance:** If the effective balance of any validators fall below 32 ETH, the shortfall will be deducted from the bond amount and burnt
 
-When the events described above are detected, an equivalent amount of node operator's bond will be locked until the stolen/slashed/penalised amounts are made whole. This will cause the net bond balance of the CSM operator to fall below the required threshold.&#x20;
+These events will cause the net bond balance of the CSM operator to fall below the required threshold.&#x20;
 
-In this scenario, the CSM node operator will cease to accrue rewards on their validator keys funded by Lido CSM until:
+In this scenario, the CSM node operator will cease to accrue rewards on their validator keys deposited by Lido CSM until:
 
 * The CSM node operator tops up the shortage
 * New rewards generated by the CSM node operator fills up the shortage--e.g., All new rewards will be used to replenish the bond shortage until it is back to the required level
@@ -81,6 +87,10 @@ On the other hand, because the bond is provided in stETH (which rebases in quant
 
 Excess bond balance, together with accrued rewards, will be claimable by CSM operators from the CSM Web App.
 
+{% hint style="info" %}
+More details on bond mechanics [here](https://operatorportal.lido.fi/modules/community-staking-module#block-268ecefc0b37498badc1bf0baab04e0b).
+{% endhint %}
+
 ### Rewards Address & Manager Address
 
 There are 2 main addresses used by CSM operators.
@@ -88,7 +98,30 @@ There are 2 main addresses used by CSM operators.
 1. **Rewards Address:** This is the address that all accrued rewards and excess bond amounts will go to when claimed. Rewards Addresses can change Manager Addresses but Rewards Addresses can only be changed by itself.
 2. **Manager Address:** This is the address that can trigger the claiming of all accrued rewards and excess bond amounts to the Rewards Address. The Manager Address can also upload/remove new/existing deposit data files. The Manager Address cannot change the Rewards Address.
 
+<figure><img src="../../.gitbook/assets/image (188).png" alt=""><figcaption><p>Break down of scope for each address. Source: <a href="https://operatorportal.lido.fi/modules/community-staking-module#block-c58d307283e942ecab5eeb96f9a89235">Lido CSM operator portal</a></p></figcaption></figure>
+
+Upon creation of a Node Operator these addresses are set equal, but they can be changed afterwards.
+
+It is recommended to use different addresses for security reasons. A hot wallet may be used for the Manager address to simplify daily operations, while a cold wallet is preferable for the Rewards address to enhance security. Node Operators are solely responsible for the security of the private keys related to these addresses.
+
+{% hint style="success" %}
+For example, CSM operators with their hot wallet addresses included in the Early Adoption list can change their Rewards Address to a more secure address
+{% endhint %}
+
+The process of changing the Manager and Rewards addressed is two-phased:
+
+* Propose new address from the existing one
+* Accept the change from the new address
+
+This process helps Node Operators to avoid incorrect changes to the non-existing address.
+
+There is also a method to reset Manager address to Reward Address from the Rewards address in case the first one was compromised or lost.
+
 {% hint style="info" %}
+More details on Rewards vs Manager addresses [here](https://operatorportal.lido.fi/modules/community-staking-module#block-268ecefc0b37498badc1bf0baab04e0b).
+{% endhint %}
+
+{% hint style="success" %}
 An interesting observation from how the 2 addresses work is that users can technically bifurcate the capital (bond) provider and service provider (node operator) when using the CSM.
 {% endhint %}
 
@@ -96,7 +129,7 @@ An interesting observation from how the 2 addresses work is that users can techn
 
 ### Keystore generation--Withdrawal address
 
-* During the validator key generation step, generate a number of validator keystores (e.g., max 10 per CSM operator) along with the deposit data file while setting the `withdrawalAddress` field to the Lido CSM contract on **Holesky:** [`0xF0179dEC45a37423EAD4FaD5fCb136197872EAd9`](https://holesky.etherscan.io/address/0xF0179dEC45a37423EAD4FaD5fCb136197872EAd9)
+* During the validator key generation step, generate a number of validator keystores along with the deposit data file while setting the `withdrawalAddress` field to the Lido CSM contract on **Holesky:** [`0xF0179dEC45a37423EAD4FaD5fCb136197872EAd9`](https://holesky.etherscan.io/address/0xF0179dEC45a37423EAD4FaD5fCb136197872EAd9)
 
 {% hint style="info" %}
 **DO NOT DEPOSIT 32 ETH** using the deposit data file generated this way as the Lido CSM will make the deposit for you. _**Doing so will result in a loss of funds.**_

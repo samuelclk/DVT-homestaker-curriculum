@@ -6,7 +6,7 @@
 
 ### How to get here
 
-* Go to the CSM Web App (link)
+* Go to the [CSM Widget](https://csm.testnet.fi/)
 * Select the `BOND & REWARDS` section in the navigation bar
 
 ### `CLAIM` tab
@@ -22,9 +22,9 @@ You will also be able to claim your net rewards + bond in total or in individual
 There are 2 activities you can perform here:
 
 1. Review the balance of your total bond provided and the excess/shortage bond amounts
-2. Add more bond so that you can get more of your uploaded validator keys funded by the CSM
+2. Add more bond so that you can get more of your uploaded validator keys deposited by the CSM
 
-Once your excess bond amount is sufficient for new validator keys to be funded, the `Keys available to upload` will increase.
+Once your excess bond amount is sufficient for new validator keys to be deposited, the `Keys available to upload` will increase.
 
 <figure><img src="../../.gitbook/assets/image (182).png" alt=""><figcaption></figcaption></figure>
 
@@ -33,7 +33,7 @@ On the other hand, if your bond shortage falls below the required minimum, the u
 <figure><img src="../../.gitbook/assets/image (183).png" alt=""><figcaption></figcaption></figure>
 
 {% hint style="info" %}
-The required minimum bond amount is based on how many of your uploaded validator keys have been funded by the CSM. Exiting your CSM-funded keys will not unlock your `Locked bonds`.
+The required minimum bond amount is based on how many of your uploaded validator keys have been deposited by the CSM. Exiting your CSM-deposited keys will not unlock your `Locked bonds`.
 {% endhint %}
 
 **At this point, there are 2 options you can take:**
