@@ -22,7 +22,7 @@ You will also be able to claim your net rewards + bond in total or in individual
 There are 2 activities you can perform here:
 
 1. Review the balance of your total bond provided and the excess/shortage bond amounts
-2. Add more bond so that you can get more of your uploaded validator keys deposited by the CSM or top up any shortages due to poor performance or slashing events
+2. Add more bond so that you can get more of your uploaded validator keys deposited by the CSM or top up any shortages due to poor performance or slashing events. **Read more on bond penalties** [**here**](https://operatorportal.lido.fi/modules/community-staking-module#block-3951aa72ba1e471bafe95b40fef65d2b)**.**
 
 Once your excess bond amount is sufficient for new validator keys to be deposited, the `Keys available to upload` will increase.
 
@@ -50,3 +50,7 @@ You cannot replenish `Locked bonds` using the `ADD BOND` feature.
 <figure><img src="../../.gitbook/assets/image (184).png" alt=""><figcaption></figcaption></figure>
 
 This tab allows you to replenish your `Locked bonds` due to MEV theft and resume the accruing of your CSM operator rewards.
+
+## Resources
+
+<table><thead><tr><th width="202">Category</th><th>Navigation</th></tr></thead><tbody><tr><td><a href="../../curriculum-breakdown-and-timeline.md">Bond &#x26; Rewards</a></td><td> CSM Operator Portal: "Economics" section</td></tr><tr><td><a href="https://operatorportal.lido.fi/modules/community-staking-module#block-3951aa72ba1e471bafe95b40fef65d2b">Bond Penalties</a></td><td>CSM Operator Portal: "Penalties" sub-section</td></tr></tbody></table>

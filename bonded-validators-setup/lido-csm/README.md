@@ -1,6 +1,6 @@
 # Lido CSM
 
-[Community Staking Module (CSM)](https://operatorportal.lido.fi/modules/community-staking-module) is the [Lido protocol’s](https://lido.fi/) first module with permissionless entry, allowing any node operator to operate validators by providing an ETH-based bond as security collateral
+The [Community Staking Module (CSM)](https://operatorportal.lido.fi/modules/community-staking-module) is the [Lido protocol’s](https://lido.fi/) first module with permissionless entry, allowing any node operator to operate validators by providing an ETH-based bond as security collateral
 
 ## Workflow breakdown
 
@@ -53,8 +53,8 @@ As an overview, the Lido CSM deposits valid validator keys uploaded by node oper
 
 Solo stakers receive rewards from 2 sources:
 
-1. **The bond provided:** The bond can be provided in ETH, stETH, or wstETH, and they will be converted into stETH, which accrues rewards over time less the 10% staking fee. i.e., `90% * ETH PoS staking yield * total ETH bond provided`
-2. **7% share of rewards** of the validator keys deposited by the Lido CSM. i.e., `7% * ETH PoS staking yield * total validator keys deposited (32 ETH each)`
+1. **Bond rebase**: staking rewards generated from the bonded tokens ((w)stETH)--e.g., `90% * ETH PoS staking yield * total ETH bond provided`
+2. **Node Operator rewards**: a 7% share of rewards from the active validator keys deposited by the Lido Protocol with possible reductions for bad performance--e.g., `7% * ETH PoS staking yield * total validator keys deposited (32 ETH each) - poor performance penalties`
 
 {% hint style="info" %}
 **Note:** The share of rewards % above apply only on CSM Holesky testnet. The values for mainnet may differ and will be set upon the mainnet launch by DAO vote
@@ -134,6 +134,8 @@ An interesting observation from how the 2 addresses work is that users can techn
 
 ## Key settings to note
 
+These settings are part of the expectations for all node operators participating in the CSM. Read more [here](https://operatorportal.lido.fi/modules/community-staking-module#block-c58d307283e942ecab5eeb96f9a89235).
+
 ### Keystore generation--Withdrawal address
 
 * During the validator key generation step, generate a number of validator keystores along with the deposit data file while setting the `withdrawalAddress` field to the Lido CSM contract on **Holesky:** [`0xF0179dEC45a37423EAD4FaD5fCb136197872EAd9`](https://holesky.etherscan.io/address/0xF0179dEC45a37423EAD4FaD5fCb136197872EAd9)
@@ -162,12 +164,6 @@ For existing solo stakers, you can spin up a new validator client service specif
 
 ### **MEV-Boost Setup--Relay endpoints**
 
-* Remove the `-min-bid` flag (if used)
-
-{% hint style="info" %}
-**Note:** Ultra Sound and Aestus relays do not censor transactions from OFAC sanctioned addresses.
-{% endhint %}
-
 * During the MEV-Boost setup step, set the `-relay` flags only to the list of designated MEV relays for Lido CSM on **Holesky** below.&#x20;
 
 <details>
@@ -192,6 +188,10 @@ For existing solo stakers, you can spin up a new validator client service specif
 
 </details>
 
+{% hint style="info" %}
+**Note:** Ultra Sound and Aestus relays do not censor transactions from OFAC sanctioned addresses.
+{% endhint %}
+
 #### Verifying the MEV Relay List
 
 You can verify the latest MEV Relay List for the Lido CSM on Holesky here: [https://holesky.etherscan.io/address/0x2d86C5855581194a386941806E38cA119E50aEA3#readContract](https://holesky.etherscan.io/address/0x2d86C5855581194a386941806E38cA119E50aEA3#readContract)
@@ -205,3 +205,4 @@ You can verify the latest MEV Relay List for the Lido CSM on Holesky here: [http
 {% hint style="info" %}
 The Holesky version of this Etherscan link is currently broken so you will face an error. Refer to the **Designated MEV Relay List** in the previous section in the meantime.
 {% endhint %}
+
