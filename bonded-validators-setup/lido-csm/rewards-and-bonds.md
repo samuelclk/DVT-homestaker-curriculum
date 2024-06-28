@@ -22,7 +22,7 @@ You will also be able to claim your net rewards + bond in total or in individual
 There are 2 activities you can perform here:
 
 1. Review the balance of your total bond provided and the excess/shortage bond amounts
-2. Add more bond so that you can get more of your uploaded validator keys deposited by the CSM
+2. Add more bond so that you can get more of your uploaded validator keys deposited by the CSM or top up any shortages due to poor performance or slashing events
 
 Once your excess bond amount is sufficient for new validator keys to be deposited, the `Keys available to upload` will increase.
 
@@ -38,7 +38,7 @@ The required minimum bond amount is based on how many of your uploaded validator
 
 **At this point, there are 2 options you can take:**
 
-1. Top up your bond amount under the `UNLOCK BOND` tab
+1. Top up your bond amount under the `ADD BOND` tab
 2. Wait for new rewards to replenish the bond  amount until it is back to the required level
 
 {% hint style="info" %}
@@ -49,4 +49,4 @@ You cannot replenish `Locked bonds` using the `ADD BOND` feature.
 
 <figure><img src="../../.gitbook/assets/image (184).png" alt=""><figcaption></figcaption></figure>
 
-This tab allows you to replenish your `Locked bonds` to resume the accruing of your CSM operator rewards.
+This tab allows you to replenish your `Locked bonds` due to MEV theft and resume the accruing of your CSM operator rewards.
