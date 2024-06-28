@@ -98,7 +98,7 @@
   * [Upload/Remove/View validator keys](bonded-validators-setup/lido-csm/upload-remove-view-validator-keys.md)
   * [Rewards & bonds](bonded-validators-setup/lido-csm/rewards-and-bonds.md)
   * [Exiting CSM validators](bonded-validators-setup/lido-csm/exiting-csm-validators.md)
-  * [Monitoring your CSM validators](bonded-validators-setup/lido-csm/monitoring-your-csm-validators.md)
+  * [Monitoring & Address management](bonded-validators-setup/lido-csm/monitoring-and-address-management.md)
 * [Puffer (WIP)](bonded-validators-setup/puffer-wip.md)
 * [Ether.fi (WIP)](bonded-validators-setup/ether.fi-wip.md)
 * [Stader (WIP)](bonded-validators-setup/stader-wip.md)

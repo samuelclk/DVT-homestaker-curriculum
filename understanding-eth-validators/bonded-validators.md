@@ -23,7 +23,7 @@ _**There are 2 methods of setting up bonded validators today.**_
 
 {% tabs %}
 {% tab title="Lido CSM" %}
-<figure><img src="../.gitbook/assets/image (3).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (3) (2).png" alt=""><figcaption></figcaption></figure>
 
 For the Lido CSM, you will essentially be running just a native validator node with no additional services required on your hardware. Bond deposit is managed on the CSM Webapp.
 
@@ -35,7 +35,7 @@ For the Lido CSM, you will essentially be running just a native validator node w
 {% endtab %}
 
 {% tab title="Rocketpool, Stader" %}
-<figure><img src="../.gitbook/assets/image (5).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (5) (2).png" alt=""><figcaption></figcaption></figure>
 
 For the Rocketpool and Stader, you will need to run an additional and separate service that handles the ETH bond + alternative tokens deposit on your hardware on top of your native validator node.&#x20;
 
@@ -53,7 +53,7 @@ You then expose the endpoints of your execution and consensus, and connect them 
 {% endtab %}
 
 {% tab title="Native Solo staking" %}
-<figure><img src="../.gitbook/assets/image (1) (1) (1) (1) (1) (1) (1).png" alt=""><figcaption><p>Simplified illustration of a solo staker setup</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (1) (1) (1) (1) (1) (1) (1) (1).png" alt=""><figcaption><p>Simplified illustration of a solo staker setup</p></figcaption></figure>
 
 ### Jump to native Solo Staking setup below
 
@@ -65,7 +65,7 @@ You then expose the endpoints of your execution and consensus, and connect them 
 
 You can also run multiple bonded validator clients on the same hardware, provided that you have sufficient resources (e.g., CPU, RAM, Disk) on your hardware to meet the minimum requirements of each additional service.
 
-<figure><img src="../.gitbook/assets/image (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (2) (2).png" alt=""><figcaption></figcaption></figure>
 
 {% hint style="info" %}
 You can also run DVT clients alongside bonded validator clients.

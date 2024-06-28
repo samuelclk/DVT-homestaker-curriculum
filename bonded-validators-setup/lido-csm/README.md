@@ -65,7 +65,7 @@ Further, CSM operators will enjoy 2 additional rewards features described in mor
 * **Rewards smoothing** across all Lido modules (e.g., block proposer rewards, sync committee rewards)
 * **Rewards socialisation** among validators whose performance exceeds a certain threshold and underperforming validators will receive no node operator rewards for the given frame
 
-<figure><img src="../../.gitbook/assets/image (1).png" alt="" width="375"><figcaption><p>Illustration on Rewards Socialisation</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (1) (1).png" alt="" width="375"><figcaption><p>Illustration on Rewards Socialisation</p></figcaption></figure>
 
 ### Bond mechanics
 
@@ -115,22 +115,7 @@ It is recommended to use different addresses for security reasons. A hot wallet 
 For example, CSM operators with their hot wallet addresses included in the Early Adoption list can change their Rewards Address to a more secure address
 {% endhint %}
 
-The process of changing the Manager and Rewards addressed is two-phased:
-
-* Propose new address from the existing one
-* Accept the change from the new address
-
-This process helps Node Operators to avoid incorrect changes to the non-existing address.
-
-There is also a method to reset Manager address to Reward Address from the Rewards address in case the first one was compromised or lost.
-
-{% hint style="info" %}
-More details on Rewards vs Manager addresses [here](https://operatorportal.lido.fi/modules/community-staking-module#block-268ecefc0b37498badc1bf0baab04e0b).
-{% endhint %}
-
-{% hint style="success" %}
-An interesting observation from how the 2 addresses work is that users can technically bifurcate the capital (bond) provider and service provider (node operator) when using the CSM.
-{% endhint %}
+**More details on Rewards vs Manager addresses** [**here**](https://operatorportal.lido.fi/modules/community-staking-module#block-268ecefc0b37498badc1bf0baab04e0b)**.**
 
 ## Key settings to note
 

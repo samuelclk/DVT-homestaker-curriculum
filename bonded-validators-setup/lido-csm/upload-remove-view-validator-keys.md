@@ -6,7 +6,7 @@
 * Select `Become a Node Operator` and then `Create a Node Operator`
 * On the CSM Widget, upload your `deposit data file` and select the corresponding bond type (ETH, stETH, wstETH), and provide the desired bond amount
 
-<figure><img src="../../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (5).png" alt=""><figcaption></figcaption></figure>
 
 * Finally, select `Submit`, sign the transaction with your connected wallet, and you are all set.
 * Now you just need to wait for the Lido CSM to deposit your validator keys (using your `deposit data file`). This is a first-in, first-out process so expect a queue when demand is high. More details on this process [here](https://operatorportal.lido.fi/modules/community-staking-module#block-25614a13674b465f875db871081091f9)
