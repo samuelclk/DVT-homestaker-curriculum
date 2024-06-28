@@ -60,10 +60,12 @@ Solo stakers receive rewards from 2 sources:
 **Note:** The share of rewards % above apply only on CSM Holesky testnet. The values for mainnet may differ and will be set upon the mainnet launch by DAO vote
 {% endhint %}
 
-Further, CSM operators will enjoy 2 additional rewards features (more details [here](https://operatorportal.lido.fi/modules/community-staking-module#block-6f17b30ed89d4b7eacc5d94a6a9a6095)):
+Further, CSM operators will enjoy 2 additional rewards features described in more detail [here](https://operatorportal.lido.fi/modules/community-staking-module#block-6f17b30ed89d4b7eacc5d94a6a9a6095):
 
-* Rewards smoothing across all Lido modules (e.g., MEV rewards smoothing, sync committee rewards). More details h
-* Rewards socialisation:&#x20;
+* **Rewards smoothing** across all Lido modules (e.g., block proposer rewards, sync committee rewards)
+* **Rewards socialisation** among validators whose performance exceeds a certain threshold and underperforming validators will receive no node operator rewards for the given frame
+
+<figure><img src="../../.gitbook/assets/image.png" alt="" width="375"><figcaption><p>Illustration on Rewards Socialisation</p></figcaption></figure>
 
 ### Bond mechanics
 
