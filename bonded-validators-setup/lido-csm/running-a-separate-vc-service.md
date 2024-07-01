@@ -337,7 +337,7 @@ After=network-online.target
 
 [Service]
 User=csm_nimbus_validator
-Group=nimbus_validator
+Group=csm_nimbus_validator
 Type=simple
 Restart=always
 RestartSec=5
