@@ -18,13 +18,7 @@ Review the status of your uploaded keys at the end of the **Lido CSM: Upload/Rem
 
 ## Monitoring for exit requests
 
-Exit requests will be received in the `INBOX REQUESTS` tab under the `ROLES` header of the [CSM Widget](https://csm.testnet.fi/).
-
-<figure><img src="../../.gitbook/assets/image (4).png" alt=""><figcaption></figcaption></figure>
-
-_(You will see **Exit Requests** in the above screenshot instead of address assignment requests)_
-
-The `DASHBOARD` header also provides a consolidated view of any exit requests issued to you in the form of `Unbonded` and `Stuck` keys.
+The `DASHBOARD` header provides a consolidated view of any exit requests issued to you in the form of `Unbonded` and `Stuck` keys.
 
 <figure><img src="../../.gitbook/assets/image (2) (1).png" alt=""><figcaption></figcaption></figure>
 
