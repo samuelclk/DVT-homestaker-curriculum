@@ -67,16 +67,6 @@ Instead, you simply tweak the parameters of the following steps of the native so
 {% endtab %}
 {% endtabs %}
 
-### Lido Discord Community
-
-#### [https://discord.com/invite/lido](https://discord.com/invite/lido)
-
-#### Instructions
-
-
-
-<table><thead><tr><th width="218">Channel</th><th>Instructions</th></tr></thead><tbody><tr><td><a href="https://discord.com/invite/lido">Lido <code>csm-testnet</code> Discord channel</a></td><td></td></tr><tr><td></td><td></td></tr></tbody></table>
-
 ## How CSM works
 
 As an overview, the Lido CSM deposits valid validator keys uploaded by node operators if the minimum bond required has also been provided.
