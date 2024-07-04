@@ -43,6 +43,40 @@ Instead, you simply tweak the parameters of the following steps of the native so
 
 ### _\*Step-by-step guide in the following sub-sections_
 
+## Get Support
+
+{% tabs %}
+{% tab title="Lido Discord Community" %}
+**Join here:** [**https://discord.com/invite/lido**](https://discord.com/invite/lido)
+
+#### Instructions
+
+* Select the `Rules` channel and react
+
+<figure><img src="../../.gitbook/assets/image (190).png" alt=""><figcaption></figcaption></figure>
+
+* Select the `cs-get-started` channel and react with both emojis
+
+<figure><img src="../../.gitbook/assets/image (192).png" alt=""><figcaption></figcaption></figure>
+
+* Drop your questions in the `csm-testnet` channel
+{% endtab %}
+
+{% tab title="Stakesaurus Telegram Community" %}
+**Join here:** [https://t.me/stakesaurus](https://t.me/stakesaurus)
+{% endtab %}
+{% endtabs %}
+
+### Lido Discord Community
+
+#### [https://discord.com/invite/lido](https://discord.com/invite/lido)
+
+#### Instructions
+
+
+
+<table><thead><tr><th width="218">Channel</th><th>Instructions</th></tr></thead><tbody><tr><td><a href="https://discord.com/invite/lido">Lido <code>csm-testnet</code> Discord channel</a></td><td></td></tr><tr><td></td><td></td></tr></tbody></table>
+
 ## How CSM works
 
 As an overview, the Lido CSM deposits valid validator keys uploaded by node operators if the minimum bond required has also been provided.
