@@ -8,6 +8,29 @@
 
 <figure><img src="../../.gitbook/assets/image (5) (1).png" alt=""><figcaption></figcaption></figure>
 
+{% tabs %}
+{% tab title="Copy & Paste" %}
+Print the contents of the `deposit_data.json` file on your node machine, then copy & paste the contents into CSM Widget directly.
+
+* Identify the actual file name of your `deposit_data.json` file on your node
+
+```sh
+ls ~/validator_keys
+```
+
+* **Print the contents:**
+
+```sh
+sudo cat ~/validator_keys/deposit_data-<timestamp>.json
+#replace <timestamp> with the actual numbers in your file name
+```
+{% endtab %}
+
+{% tab title="Upload File" %}
+Transfer the deposit\_data-\<timestamp>.json file from the USB used in the validator key generation step onto your working device (e.g., laptop with Metamask), then upload the file.
+{% endtab %}
+{% endtabs %}
+
 * Finally, select `Submit`, sign the transaction with your connected wallet, and you are all set.
 * Now you just need to wait for the Lido CSM to deposit your validator keys (using your `deposit data file`). This is a first-in, first-out process so expect a queue when demand is high. More details on this process [here](https://operatorportal.lido.fi/modules/community-staking-module#block-25614a13674b465f875db871081091f9)
 
