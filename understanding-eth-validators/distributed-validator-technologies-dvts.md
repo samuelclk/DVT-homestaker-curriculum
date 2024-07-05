@@ -29,7 +29,7 @@ You then expose the endpoints of your execution, consensus, and, in some cases, 
 {% endtab %}
 
 {% tab title="Without DVT" %}
-<figure><img src="../.gitbook/assets/image (1) (1) (1) (1) (1) (1) (1) (1) (1).png" alt=""><figcaption><p>Simplified illustration of a solo staker setup</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (1) (1) (1) (1) (1) (1) (1) (1) (1) (1).png" alt=""><figcaption><p>Simplified illustration of a solo staker setup</p></figcaption></figure>
 {% endtab %}
 {% endtabs %}
 
@@ -95,7 +95,7 @@ This way, Diva node operators do not need to form and fund their own clusters ma
 
 Stakers also get to enjoy the benefits of putting their ETH to work with DVT-enabled node operators - i.e. huge reduction in slashing risks and offline penalties - without having to pay additional fees denominated in a secondary token.  &#x20;
 
-<figure><img src="../.gitbook/assets/image (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1).png" alt="" width="563"><figcaption><p>Source: <a href="https://docs.divastaking.com/install">https://docs.divastaking.com/install</a></p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1).png" alt="" width="563"><figcaption><p>Source: <a href="https://docs.divastaking.com/install">https://docs.divastaking.com/install</a></p></figcaption></figure>
 
 {% hint style="info" %}
 Diva Staking supports Besu as the execution client as well despite being missing from the diagram above.

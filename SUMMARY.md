@@ -22,7 +22,8 @@
 * [Setup Overview](hardware-and-systems-setup/setup-overview.md)
 * [Hardware & system requirements](hardware-and-systems-setup/hardware-and-system-requirements.md)
 * [Procuring your hardware](hardware-and-systems-setup/procuring-your-hardware.md)
-* [Assemble your hardware](hardware-and-systems-setup/assemble-your-hardware.md)
+* [Assemble your hardware](hardware-and-systems-setup/assemble-your-hardware/README.md)
+  * [Practicing on Cloud VMs](hardware-and-systems-setup/assemble-your-hardware/practicing-on-cloud-vms.md)
 
 ## Linux OS, Networking, & Security
 
