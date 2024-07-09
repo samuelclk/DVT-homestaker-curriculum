@@ -18,7 +18,7 @@ This is a simple and lightweight uptime checker chatbot for Solo DVT operators t
 
 You must configure port forwarding to ports 30303 and 9000 of your validator node in order for Google Uptime Check to work.
 
-Refer to the [Configure the firewall rules](../../linux-os-networking-and-security/device-level-security-setup#configure-the-firewall-rules) sub-section of this guide to understand how to.
+Refer to the [Configure the firewall rules](../../linux-os-networking-and-security/device-level-security-setup.md#configure-the-firewall-rules) sub-section of this guide to understand how to.
 
 ### Setup
 
