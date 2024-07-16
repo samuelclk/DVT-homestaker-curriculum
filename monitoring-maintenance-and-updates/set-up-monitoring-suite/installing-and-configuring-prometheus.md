@@ -222,10 +222,12 @@ According to your selected consensus client, append the following block to the g
 {% tab title="Prysm" %}
 ```
   - job_name: 'prysm_beacon' #for consensus client   
+    metrics_path: /metrics
     static_configs:
       - targets: ['localhost:8009']
       
   - job_name: 'prysm_validator' #for validator client
+    metrics_path: /metrics  
     static_configs:
       - targets: ['localhost:8108']
 ```
