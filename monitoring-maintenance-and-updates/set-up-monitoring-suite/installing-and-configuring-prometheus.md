@@ -102,7 +102,55 @@ scrape_configs:
     scheme: http
     static_configs:
       - targets:
-          - localhost:9545
+          - localhost:9545 
+```
+{% endtab %}
+
+{% tab title="Geth" %}
+```
+global:
+  scrape_interval: 15s
+scrape_configs:
+  - job_name: prometheus
+    static_configs:
+      - targets:
+          - localhost:9090
+  - job_name: node_exporter
+    static_configs:
+      - targets:
+          - localhost:9100
+  - job_name: 'geth'
+    scrape_interval: 15s
+    scrape_timeout: 10s
+    metrics_path: /debug/metrics/prometheus
+    scheme: http
+    static_configs:
+      - targets:
+          - localhost:6060 
+```
+{% endtab %}
+
+{% tab title="Erigon" %}
+```
+global:
+  scrape_interval: 15s
+scrape_configs:
+  - job_name: prometheus
+    static_configs:
+      - targets:
+          - localhost:9090
+  - job_name: node_exporter
+    static_configs:
+      - targets:
+          - localhost:9100
+  - job_name: 'erigon'
+    scrape_interval: 15s
+    scrape_timeout: 10s
+    metrics_path: /debug/metrics/prometheus
+    scheme: http
+    static_configs:
+      - targets:
+          - localhost:6060 
 ```
 {% endtab %}
 {% endtabs %}
@@ -114,14 +162,14 @@ According to your selected consensus client, append the following block to the g
 {% tabs %}
 {% tab title="Teku" %}
 ```
-  - job_name: "teku-dev" #for consensus client
+  - job_name: "teku_beacon" #for consensus client
     scrape_timeout: 10s
     metrics_path: /metrics
     scheme: http
     static_configs:
       - targets: ["localhost:8009"]
       
-  - job_name: "teku-validator" #for validator client
+  - job_name: "teku_validator" #for validator client
     scrape_timeout: 10s
     metrics_path: /metrics
     scheme: http
@@ -132,29 +180,54 @@ According to your selected consensus client, append the following block to the g
 {% endtab %}
 
 {% tab title="Nimbus" %}
-```
-  - job_name: 'Nimbus'
-    metrics_path: /metrics
+<pre><code><strong>  - job_name: 'Nimbus_beacon' #for consensus client
+</strong>    metrics_path: /metrics
     static_configs:
       - targets: ['localhost:8009']
       
-  - job_name: 'Nimbus-validator'
+  - job_name: 'Nimbus_validator' #for validator client
     metrics_path: /metrics
     static_configs:
       - targets: ['localhost:8108']
-```
+</code></pre>
 {% endtab %}
 
 {% tab title="Lodestar" %}
 ```
-  - job_name: 'lodestar_beacon'
+  - job_name: 'lodestar_beacon' #for consensus client
     metrics_path: /metrics
     static_configs:
       - targets: ['localhost:8009']
-  - job_name: 'lodestar_validator'
+      
+  - job_name: 'lodestar_validator' #for validator client
     metrics_path: /metrics
     static_configs:
       - targets: ['localhost:5064']
+```
+{% endtab %}
+
+{% tab title="Lighthouse" %}
+<pre><code><strong>  - job_name: 'lighthouse_beacon' #for consensus client
+</strong>    metrics_path: /metrics    
+    static_configs:
+      - targets: ['localhost:8009']
+      
+  - job_name: 'lighthouse_validator' #for validator client
+    metrics_path: /metrics
+    static_configs:
+      - targets: ['localhost:8108']
+</code></pre>
+{% endtab %}
+
+{% tab title="Prysm" %}
+```
+  - job_name: 'prysm_beacon' #for consensus client   
+    static_configs:
+      - targets: ['localhost:8009']
+      
+  - job_name: 'prysm_validator' #for validator client
+    static_configs:
+      - targets: ['localhost:8108']
 ```
 {% endtab %}
 {% endtabs %}
