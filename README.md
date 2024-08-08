@@ -38,6 +38,10 @@ Aside from the voluntary user contribution options below, no entity is entitled 
 
 {% embed url="https://www.buymeacoffee.com/stakesaurus" %}
 
+* Subscribe to my newsletter
+
+{% embed url="https://stakesaurus.beehiiv.com/" %}
+
 ### Other disclosures before you contribute
 
 Stakesaurus has also received the following bounty and grants for earlier work from which this curriculum was partly adapted.
