@@ -215,3 +215,9 @@ Copy the `deposit-data` file contents and save it as a `.json` file on your work
 ### Get support
 
 <figure><img src="../.gitbook/assets/image (196).png" alt=""><figcaption></figcaption></figure>
+
+### Support Stakesaurus
+
+If you found this guide helpful, consider staking some GNO in my Stakewise Vault below!
+
+{% embed url="https://app.stakewise.io/vault/gnosis/0x3cb4692177525db38d983da0445d4eb25c3826de" %}
