@@ -205,3 +205,7 @@ cat ~/.stakewise/0x8b23d62536ff8943020754d9232d6976abdedea4/deposit_data.json
 Copy the `deposit-data` file contents and save it as a `.json` file on your working device. Then, upload the file.
 
 <figure><img src="../.gitbook/assets/image (195).png" alt=""><figcaption></figcaption></figure>
+
+### Get support
+
+<figure><img src="../.gitbook/assets/image (196).png" alt=""><figcaption></figcaption></figure>
