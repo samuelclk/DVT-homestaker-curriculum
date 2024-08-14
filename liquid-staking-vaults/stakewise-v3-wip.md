@@ -4,7 +4,7 @@
 
 ### Vault Setup
 
-WIP
+[https://app.stakewise.io/operate](https://app.stakewise.io/operate)
 
 ### Validator Node Setup
 
@@ -20,15 +20,25 @@ Install dependencies.
 ./ethd install
 ```
 
-`./ethd install`
+Exit and re-log in to your machine.
 
 Configure Eth Docker and set the `fee recipient address` to your `Stakwise vault fee recipient address`.
 
 ```sh
+cd eth-docker
 ./ethd config
 ```
 
-Exit and re-log in to your machine.
+Open your `.env` file.
+
+<pre class="language-sh"><code class="lang-sh"><strong>nano .env #within the eth-docker folder
+</strong></code></pre>
+
+Append the following parameters into the compose line
+
+```
+COMPOSE_FILE=<other_flags>:el-shared.yml:cl-shared.yml
+```
 
 Start your Gnosis validator node.
 
@@ -42,20 +52,35 @@ View all your docker containers.
 docker ps -a
 ```
 
-View logs of each docker container.
+View logs of each docker container (choose one).
 
 ```sh
-docker logs <container_name> -f --tail 20
+ethd logs <container_name> -f
+```
+
+```
+blackbox-exporter          consensus                  execution                  json-exporter              node-exporter              promtail
+cadvisor                   ethereum-metrics-exporter  grafana                    loki                       prometheus                 validator
+```
+
+Configure firewall rules.
+
+```sh
+sudo ufw default allow outgoing
+sudo ufw default deny incoming
+sudo ufw allow 22/tcp
+sudo ufw allow 9000
+sudo ufw allow 30303
 ```
 
 ### Stakewise Operator Setup
 
 Download the Stakewise Operator binary file & checksum [here](https://github.com/stakewise/v3-operator/releases)
 
-```sh
-curl -LO https://github.com/stakewise/v3-operator/releases/download/v2.0.5/operator-v2.0.5-linux-amd64.tar.gz
-curl -LO https://github.com/stakewise/v3-operator/releases/download/v2.0.5/operator-v2.0.5-linux-amd64.sha256
-```
+<pre class="language-sh"><code class="lang-sh"><strong>cd
+</strong><strong>curl -LO https://github.com/stakewise/v3-operator/releases/download/v2.0.5/operator-v2.0.5-linux-amd64.tar.gz
+</strong>curl -LO https://github.com/stakewise/v3-operator/releases/download/v2.0.5/operator-v2.0.5-linux-amd64.sha256
+</code></pre>
 
 Print the checksum.
 
@@ -87,7 +112,7 @@ Create the validator keys.
 <pre class="language-sh"><code class="lang-sh"><strong>/usr/local/bin/./operator create-keys
 </strong></code></pre>
 
-Create a hot wallet for your vault to receive staking fees.
+Create a hot wallet for your vault to pay for gas when activating new validator keys.
 
 <pre class="language-sh"><code class="lang-sh"><strong>/usr/local/bin/./operator create-wallet
 </strong></code></pre>
@@ -112,16 +137,16 @@ Description=StakewiseOperator
 After=network.target
 
 [Service]
-User=<user> #replace with your actual user
-Group=<user> #replace with your actual user
+User=<user>
+Group=<user>
 Type=simple
 Restart=always
 RestartSec=5
 ExecStart=/usr/local/bin/operator start \
   --network=gnosis \
   --verbose \
-  --vault=<your_vault_address> \ #replace with your actual vault address
-  --max-fee-per-gas-gwei=40 \
+  --vault=<your_vault_address> \
+  --max-fee-per-gas-gwei=30 \
   --consensus-endpoints=http://127.0.0.1:5052 \
   --execution-endpoints=http://127.0.0.1:8545
 
@@ -144,8 +169,35 @@ sudo systemctl status stakewiseOperator
 
 View the logs.
 
+<pre class="language-sh"><code class="lang-sh"><strong>sudo apt install ccze
+</strong><strong>sudo journalctl -fu stakewiseOperator -o cat | ccze -A
+</strong></code></pre>
+
+Move keystores into `ethdocker/.eth/validator_keystores` folder.
+
+<pre class="language-sh"><code class="lang-sh"><strong>sudo mv ~/.stakewise/&#x3C;vault_address>/keystores/* ~/eth-docker/.eth/validator_keys 
+</strong></code></pre>
+
+Print the keystores password.
+
 ```sh
-sudo journalctl -fu stakewisOperator -o cat | ccze -A
+cat ~/eth-docker/.eth/validator_keys/password.txt 
+```
+
+Run the keys import process with `eth-docker` and enter the keystores password when prompted.
+
+```sh
+ethd keys import
 ```
 
 #### Upload the deposit data generated onto the [Stakewise V3 operator UI](https://app.stakewise.io/operate).&#x20;
+
+Print the `deposit-data.json` file.
+
+```sh
+cat ~/.stakewise/0x8b23d62536ff8943020754d9232d6976abdedea4/deposit_data.json
+```
+
+Copy the `deposit-data` file contents and save it as a `.json` file on your working device. Then, upload the file.
+
+<figure><img src="../.gitbook/assets/image (195).png" alt=""><figcaption></figcaption></figure>
