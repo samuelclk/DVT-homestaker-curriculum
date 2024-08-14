@@ -105,6 +105,10 @@
 * [Stader (WIP)](bonded-validators-setup/stader-wip.md)
 * [Rocketpool (WIP)](bonded-validators-setup/rocketpool-wip.md)
 
+## Liquid Staking Vaults
+
+* [Stakewise V3 (WIP)](liquid-staking-vaults/stakewise-v3-wip.md)
+
 ## Mainnet
 
 * [Mainnet Deployment](mainnet/mainnet-deployment.md)
