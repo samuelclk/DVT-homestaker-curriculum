@@ -79,6 +79,7 @@ sudo ufw default deny incoming
 sudo ufw allow 22/tcp
 sudo ufw allow 9000
 sudo ufw allow 30303
+sudo ufw enable
 ```
 
 ### Stakewise Operator Setup
