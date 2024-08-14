@@ -1,6 +1,10 @@
 # Stakewise V3 (WIP)
 
-## &#x20;
+## Gnosis
+
+### Overview
+
+<figure><img src="../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
 
 ### Vault Setup
 
