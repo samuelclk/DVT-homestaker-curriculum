@@ -1,4 +1,8 @@
-# Stakewise V3 (WIP)
+---
+description: Highly condensed version for now
+---
+
+# Stakewise V3
 
 ## Gnosis
 
@@ -169,6 +173,7 @@ Start the `operator` service.
 sudo systemctl daemon-reload
 sudo systemctl start stakewiseOperator
 sudo systemctl status stakewiseOperator
+sudo systemctl enable stakewiseOperator
 ```
 
 View the logs.

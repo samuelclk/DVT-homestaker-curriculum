@@ -107,7 +107,7 @@
 
 ## Liquid Staking Vaults
 
-* [Stakewise V3 (WIP)](liquid-staking-vaults/stakewise-v3-wip.md)
+* [Stakewise V3](liquid-staking-vaults/stakewise-v3.md)
 
 ## Mainnet
 
