@@ -38,7 +38,7 @@ Estimated cost per month on Google Cloud = $84, or _**3.5 months of free practic
 
 **SSH into your VM/hardware:** Click on the dropdown beside the **"SSH"** column and select **"Open in browser window".** Click on **"Authorize"** when prompted.
 
-<figure><img src="https://dvt-homestaker.stakesaurus.com/~gitbook/image?url=https%3A%2F%2Fcontent.gitbook.com%2Fcontent%2FoML8XLjdWBoYbtGBoQ9R%2Fblobs%2F2Q2YLvmx1mbGgZ94FI8O%2Fimage.png&#x26;width=768&#x26;dpr=4&#x26;quality=100&#x26;sign=69649c14&#x26;sv=1" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (197).png" alt=""><figcaption></figcaption></figure>
 
 Go to the [Coincashew website](https://www.coincashew.com/coins/overview-eth/ethpillar) and copy the latest 1-line installation command and paste it into your terminal.
 
