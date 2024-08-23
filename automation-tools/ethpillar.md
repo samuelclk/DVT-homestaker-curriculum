@@ -50,6 +50,7 @@ Then, type + enter `ethpillar` and follow along the prompts in the terminal UI (
 
 1. Sync a Nethermind execution client and a Nimbus Consensus + Validator Client
 2. Generate suitable validator keys to participate in the Lido CSM
+   * Verify the fee recipient and withdrawal address on the [CSM Operator Portal](https://operatorportal.lido.fi/modules/community-staking-module)
 3. Import the generated validator keys onto your validator client
 4. Copy the deposit data for uploading onto the [CSM Widget](https://csm.testnet.fi)
 
@@ -72,5 +73,6 @@ Run through the first 3 faucets below.
 1. `Arrow keys & Tab key`: Cycle options
 2. `Space bar`: Select option
 3. `Enter`: Confirm option
-4. `CTRL + C`: Exit monitoring
-5. `exit` command (type "exit" and `enter` in terminal) : Exit current view
+4. `CTRL+B`, then `D`: Exit split-screen monitoring view
+5. `CTRL+C`: Exit individual screen monitoring view
+6. `exit` command (type "exit" and `enter` in terminal) : Exit current terminal
