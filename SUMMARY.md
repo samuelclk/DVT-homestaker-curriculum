@@ -128,4 +128,9 @@
 
 ## Useful resources
 
-* [List of resources](useful-resources/list-of-resources.md)
+* [General resources](useful-resources/general-resources.md)
+* [Holesky Faucets](useful-resources/holesky-faucets.md)
+
+## Automation/tools
+
+* [ETHPillar](automation-tools/ethpillar.md)
