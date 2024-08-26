@@ -131,7 +131,7 @@ There are 2 main addresses used by CSM operators.
 1. **Rewards Address:** This is the address that all accrued rewards and excess bond amounts will go to when claimed. Rewards Addresses can change Manager Addresses but Rewards Addresses can only be changed by itself.
 2. **Manager Address:** This is the address that can trigger the claiming of all accrued rewards and excess bond amounts to the Rewards Address. The Manager Address can also upload/remove new/existing deposit data files. The Manager Address cannot change the Rewards Address.
 
-<figure><img src="../../.gitbook/assets/image (188).png" alt=""><figcaption><p>Break down of scope for each address. Source: <a href="https://operatorportal.lido.fi/modules/community-staking-module#block-c58d307283e942ecab5eeb96f9a89235">Lido CSM operator portal</a></p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/Screenshot 2024-08-26 at 10.51.27 PM.png" alt=""><figcaption><p>Break down of scope for each address. Source: <a href="https://operatorportal.lido.fi/modules/community-staking-module#block-c58d307283e942ecab5eeb96f9a89235">Lido CSM operator portal</a></p></figcaption></figure>
 
 Upon creation of a Node Operator these addresses are set equal, but they can be changed afterwards.
 

@@ -33,4 +33,30 @@ sudo apt update
 sudo apt install cpuid
 ```
 
-###
+### Dependencies
+
+Rust
+
+```
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+```
+
+Cargo
+
+```
+sudo apt install cargo
+```
+
+OpenSSL & pkg-config
+
+```
+sudo apt-get install libssl-dev pkg-config
+```
+
+#### **Set the `PKG_CONFIG_PATH` Environment Variable**
+
+```
+export PKG_CONFIG_PATH=/usr/lib/x86_64-linux-gnu/pkgconfig:$PKG_CONFIG_PATH
+```
+
+\
