@@ -58,7 +58,7 @@ Although it may not be practical to do this for large amounts of key shares, it 
 
 #### Beaconcha.in
 
-1\) Go to [https://holesky.beaconcha.in/](https://beaconcha.in/) and search for the validator pubkey you want to inspect. The validator pubkey can be found using Divascan (see above section)
+1\) Go to [https://holesky.beaconcha.in/](https://holesky.beaconcha.in/) and search for the validator pubkey you want to inspect. The validator pubkey can be found using Divascan (see above section)
 
 <figure><img src="../../.gitbook/assets/image (119).png" alt=""><figcaption></figcaption></figure>
 
