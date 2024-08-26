@@ -101,7 +101,7 @@ ExecStart=/usr/local/bin/nethermind/nethermind \
   --JsonRpc.Port 8547 \
   --HealthChecks.Enabled true \
   --Metrics.Enabled true \
-  --Metrics.PushGatewayUrl http://localhost:9091/metrics 
+  --Metrics.ExposePort=8009
   
 [Install]
 WantedBy=default.target
@@ -121,7 +121,7 @@ Once you're done, save with `Ctrl+O` and `Enter`, then exit with `Ctrl+X`. Under
 8. `--JsonRpc.Port`: Sets the port to connect to the JSON RPC service that will be used by the DVT clients. You may choose any unused port number but remember to allow incoming connections into your chosen port in your firewall (`ufw`) rules. Defaults to 8545
 9. `--HealthChecks.Enabled:` Enables you to test the connection to and health of your Nethermind service using the `curl` command - e.g. `curl http://<Internal_IP_address>:8545/health`
 10. `--Metrics.Enabled`: Enable monitoring metrics on the Nethermind service
-11. `--Metrics.PushGatewayUrl:` Pushes metrics to your monitoring suite&#x20;
+11. `--Metrics.ExposePort:` Pushes metrics to your monitoring suite&#x20;
 
 ### Start Nethermind
 

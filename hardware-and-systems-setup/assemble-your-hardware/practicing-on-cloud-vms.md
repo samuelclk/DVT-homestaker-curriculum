@@ -7,7 +7,7 @@
    * https://cloud.google.com/free
 3.  Go into your Google Cloud console&#x20;
 
-    <figure><img src="../../.gitbook/assets/image (2).png" alt=""><figcaption></figcaption></figure>
+    <figure><img src="../../.gitbook/assets/image (2) (1).png" alt=""><figcaption></figcaption></figure>
 4.  Go to **Create a VM**&#x20;
 
 
@@ -31,7 +31,7 @@ Choose the following settings:
 4. **Machine configuration:** E2
 5. **Machine type:** e2-standard-8, 16GB memory
 
-<figure><img src="../../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (2).png" alt=""><figcaption></figcaption></figure>
 
 Under **Boot disk**, click on the **"change"** button.
 
@@ -43,7 +43,7 @@ Select `Ubuntu` for the operating system, `Ubuntu 24.04 LTS x86` for the version
 
 Check the first 2 boxes under the **"Firewall"** section.
 
-<figure><img src="../../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 Once you are done, click on the **"Create"** button at the bottom of the screen.
 

@@ -1,4 +1,4 @@
-# List of resources
+# General resources
 
 * Ethstaker [Discord](https://discord.gg/krrwKQSV) and [Reddit](https://www.reddit.com/r/ethstaker/)
 * Nethermind [Discord](https://discord.gg/b73Ac7YZP5) and [Documentation](https://docs.nethermind.io/nethermind/)
@@ -19,4 +19,5 @@
 * [Understanding the inactivity leak](https://eth2book.info/capella/part2/incentives/inactivity/)
 * [Check scheduled block proposal duties](https://wenmerge.com/block-proposer-schedule/)
 * [Check scheduled sync committee duties](https://www.coincashew.com/coins/overview-eth/guide-or-how-to-setup-a-validator-on-eth2-mainnet/part-ii-maintenance/checking-my-eth-validators-sync-committee-duties)
+* [Holesky Faucets](holesky-faucets.md)
 

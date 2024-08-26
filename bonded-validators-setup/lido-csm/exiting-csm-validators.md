@@ -82,7 +82,7 @@ Do not proceed if the checksum verification fails, and reach out for help on the
 * Generate the `offline-preparation.json` file using `ethdo`
 
 ```sh
-tar xvf ethdo-1.35.2-linux-amd64.tar.gz
+tar xvf ethdo-1.35.3-linux-amd64.tar.gz
 ./ethdo validator exit --prepare-offline
 ```
 

@@ -2,7 +2,7 @@
 
 ## Upload keys
 
-* Go to the [CSM Widget](https://csm.testnet.fi/) and connect your wallet that is eligible for the [Early Adoption Period](https://operatorportal.lido.fi/modules/community-staking-module#block-ef60a1fa96ae4c7995dd7794de2a3e22)
+* Go to the [CSM Widget](https://csm.testnet.fi/) and connect your wallet
 * Select `Become a Node Operator` and then `Create a Node Operator`
 * On the CSM Widget, upload your `deposit data file` and select the corresponding bond type (ETH, stETH, wstETH), and provide the desired bond amount
 

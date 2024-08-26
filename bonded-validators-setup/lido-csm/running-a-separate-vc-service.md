@@ -144,7 +144,7 @@ sudo mkdir -p /var/lib/csm_nimbus_validator
 
 2\) Run the validator key import process.
 
-<pre class="language-sh"><code class="lang-sh"><strong>sudo /usr/local/bin/nimbus_beacon_node deposits import --data-dir:/var/lib/csm_nimbus_validator/ ~/validator_keys
+<pre class="language-sh"><code class="lang-sh"><strong>sudo /usr/local/bin/nimbus_beacon_node deposits import --data-dir:/var/lib/csm_nimbus_validator/ ~/staking_deposit-cli*/validator_keys
 </strong></code></pre>
 
 3\) Change the owner of this new folder to the `csm_nimbus_validator` user
@@ -209,12 +209,12 @@ sudo mkdir -p /var/lib/csm_lighthouse_validator
 2\) Run the validator key import process.
 
 ```sh
-sudo lighthouse account validator import --network holesky --datadir /var/lib/csm_lighthouse_validator --directory=$HOME/validator_keys
+sudo lighthouse account validator import --network holesky --datadir /var/lib/csm_lighthouse_validator --directory=$HOME/staking_deposit-cli*/validator_keys
 ```
 
 **Expected output:**
 
-<figure><img src="../../.gitbook/assets/image (1) (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (1) (1) (1) (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 3\) Change the owner of this new folder to the `csm_lighthouse_validator` user
 
@@ -236,7 +236,7 @@ sudo mkdir -p /var/lib/csm_prysm_validator
 2\) Run the validator key import process.
 
 ```sh
-sudo /usr/local/bin/prysmvalidator accounts import --keys-dir=$HOME/validator_keys --wallet-dir=/var/lib/csm_prysm_validator --holesky
+sudo /usr/local/bin/prysmvalidator accounts import --keys-dir=$HOME/staking_deposit-cli*/validator_keys --wallet-dir=/var/lib/csm_prysm_validator --holesky
 ```
 
 **Note:** You will be prompted to accept the terms of use, create a new password for the Prysm wallet, and enter the password of your validator keystore.
@@ -581,7 +581,7 @@ Created symlink /etc/systemd/system/multi-user.target.wants/csm_tekuvalidator.se
 To prevent configuration mistakes leading to double signing in the future, remove duplicate copies of the validator signing keystores once everything is running smoothly.
 
 ```sh
-sudo rm -r ~/validator_keys
+sudo rm -r ~/staking_deposit-cli*/validator_keys
 ```
 {% endtab %}
 
@@ -625,7 +625,7 @@ Created symlink /etc/systemd/system/multi-user.target.wants/csm_nimbusvalidator.
 To prevent configuration mistakes leading to double signing in the future, remove duplicate copies of the validator signing keystores once everything is running smoothly.
 
 ```sh
-sudo rm -r ~/validator_keys
+sudo rm -r ~/staking_deposit-cli*/validator_keys
 ```
 {% endtab %}
 
@@ -659,7 +659,7 @@ docker logs csm_lodestar_validator -f
 To prevent configuration mistakes leading to double signing in the future, remove duplicate copies of the validator signing keystores once everything is running smoothly.
 
 ```sh
-sudo rm -r ~/validator_keys
+sudo rm -r ~/staking_deposit-cli*/validator_keys
 ```
 {% endtab %}
 
@@ -682,7 +682,7 @@ sudo journalctl -fu csm_lighthousevalidator -o cat | ccze -A
 
 **Expected output:**
 
-<figure><img src="../../.gitbook/assets/image (2) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (2) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 {% hint style="info" %}
 You will see some warnings if your beacon node (consensus client) is not yet synced.
@@ -707,7 +707,7 @@ Created symlink /etc/systemd/system/multi-user.target.wants/csm_lighthousevalida
 To prevent configuration mistakes leading to double signing in the future, remove duplicate copies of the validator signing keystores once everything is running smoothly.
 
 ```sh
-sudo rm -r ~/validator_keys
+sudo rm -r ~/staking_deposit-cli*/validator_keys
 ```
 {% endtab %}
 
@@ -755,7 +755,7 @@ Created symlink /etc/systemd/system/multi-user.target.wants/csm_prysmvalidator.s
 To prevent configuration mistakes leading to double signing in the future, remove duplicate copies of the validator signing keystores once everything is running smoothly.
 
 ```sh
-sudo rm -r ~/validator_keys
+sudo rm -r ~/staking_deposit-cli*/validator_keys
 ```
 {% endtab %}
 {% endtabs %}

@@ -105,6 +105,10 @@
 * [Stader (WIP)](bonded-validators-setup/stader-wip.md)
 * [Rocketpool (WIP)](bonded-validators-setup/rocketpool-wip.md)
 
+## Liquid Staking Vaults
+
+* [Stakewise V3](liquid-staking-vaults/stakewise-v3.md)
+
 ## Mainnet
 
 * [Mainnet Deployment](mainnet/mainnet-deployment.md)
@@ -124,4 +128,9 @@
 
 ## Useful resources
 
-* [List of resources](useful-resources/list-of-resources.md)
+* [General resources](useful-resources/general-resources.md)
+* [Holesky Faucets](useful-resources/holesky-faucets.md)
+
+## Automation/tools
+
+* [ETHPillar](automation-tools/ethpillar.md)
