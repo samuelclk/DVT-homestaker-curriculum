@@ -1,4 +1,4 @@
-# Puffer (WIP)
+# Enclave: 1 ETH (WIP)
 
 ## Create VM
 
@@ -13,7 +13,7 @@ virtualMachines  japaneast    Standard_DC1ds_v3       1          None
 
 Open up your Azure console.
 
-<figure><img src="../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (4).png" alt=""><figcaption></figcaption></figure>
 
 Print out all resources with SGX enabled.
 

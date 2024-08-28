@@ -9,7 +9,7 @@ As a home staker, some of the key considerations you'd have are:&#x20;
 
 The Intel NUC and ASUS Mini PC form factors are recommended here because of these reasons. They have similar compact sizes, sleek black design, in-built cooling system, and a standardised motherboard layout — which are ideal properties for new learners to get up to speed on hardware requirements rapidly.
 
-<figure><img src="../.gitbook/assets/image (2) (1) (1) (1) (1) (1) (1) (1) (1) (1).png" alt="" width="375"><figcaption><p>Intel NUC</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (2) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1).png" alt="" width="375"><figcaption><p>Intel NUC</p></figcaption></figure>
 
 <figure><img src="../.gitbook/assets/Screenshot 2024-01-29 at 1.45.40 PM.png" alt="" width="563"><figcaption><p>ASUS Mini PC</p></figcaption></figure>
 
