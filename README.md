@@ -28,7 +28,7 @@ This curriculum is designed collaboratively by ETHStaker and Stakesaurus, featur
 
 Aside from the voluntary user contribution options below, no entity is entitled to resell or commercialise the contents of this document without providing additional value.&#x20;
 
-### If you found this helpful, consider supporting Stakesaurus in one of two ways below!&#x20;
+### If you found this helpful, consider supporting Stakesaurus in one of few ways below!&#x20;
 
 * [Stakesaurus' liquid staking ETH vault powered by Stakewise V3](https://app.stakewise.io/vault/0x649955f4189c3921df60e25f58cb1e81070fedb0)
 

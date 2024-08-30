@@ -149,7 +149,13 @@ Invalid registrations will be skipped by the Guardians. Your bond will be return
 
 Now that your validator is registered with Puffer, you will need to import the validator key into your validator client.
 
-### Eth-docker users
+### ETH Docker users
+
+Follow the steps in the page below until before the **"Import validator keys"** section.&#x20;
+
+{% content-ref url="../../automation-tools/eth-docker.md" %}
+[eth-docker.md](../../automation-tools/eth-docker.md)
+{% endcontent-ref %}
 
 Move your validator key(s) into the `~/eth-docker/.eth/validator_keys` folder.
 
@@ -192,3 +198,11 @@ cadvisor                   ethereum-metrics-exporter  grafana                   
 ```
 
 ### Systemd users (WIP)
+
+## Support
+
+{% embed url="https://t.me/stakesaurus" %}
+
+## Donations
+
+#### If you found this helpful, consider supporting Stakesaurus in one of few ways [here](https://dvt-homestaker.stakesaurus.com/#if-you-found-this-helpful-consider-supporting-stakesaurus-in-one-of-two-ways-below)!

@@ -73,7 +73,7 @@ Run through the first 3 faucets below.
 [upload-remove-view-validator-keys.md](../bonded-validators-setup/lido-csm/upload-remove-view-validator-keys.md)
 {% endcontent-ref %}
 
-### ETHPillar Navigation
+### ETHPillar TUI Navigation
 
 1. `Arrow keys & Tab key`: Cycle options
 2. `Space bar`: Select option
@@ -81,3 +81,11 @@ Run through the first 3 faucets below.
 4. `CTRL+B`, then `D`: Exit split-screen monitoring view
 5. `CTRL+C`: Exit individual screen monitoring view
 6. `exit` command (type "exit" and `enter` in terminal) : Exit current terminal
+
+## Support
+
+{% embed url="https://t.me/stakesaurus" %}
+
+## Donations
+
+#### If you found this helpful, consider supporting Stakesaurus in one of few ways [here](https://dvt-homestaker.stakesaurus.com/#if-you-found-this-helpful-consider-supporting-stakesaurus-in-one-of-two-ways-below)!

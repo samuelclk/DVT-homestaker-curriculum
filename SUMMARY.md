@@ -136,3 +136,4 @@
 ## Automation/tools
 
 * [ETHPillar](automation-tools/ethpillar.md)
+* [ETH Docker](automation-tools/eth-docker.md)
