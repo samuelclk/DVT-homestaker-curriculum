@@ -16,7 +16,7 @@ You will need to prepare your virtual machine (VM) or home staking hardware for 
 
 ### Video guide
 
-WIP
+{% embed url="https://www.youtube.com/watch?v=PQ5qLfbBeTI" %}
 
 ### Prepare your VM/Hardware
 
