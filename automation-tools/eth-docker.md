@@ -43,7 +43,7 @@ cd ~ && git clone https://github.com/eth-educators/eth-docker.git && cd eth-dock
 ```
 
 ```sh
-./ethd install
+sudo ./ethd install
 ```
 
 Exit your virtual machine/hardware and re-login to add your host user into the docker user group.
@@ -52,21 +52,19 @@ Exit your virtual machine/hardware and re-login to add your host user into the d
 exit
 ```
 
-Once you are back in, you will be able to call `ethd` from anywhere in your terminal. Next, configure the ETH Docker service.
+Next, configure the ETH Docker service.
 
-```sh
-ethd config
-```
+<pre class="language-sh"><code class="lang-sh"><strong>cd ~/eth-docker/
+</strong><strong>./ethd config
+</strong></code></pre>
 
 **Follow along the prompts in the terminal UI (TUI) to:**
 
-1. Choose `Holešovice Testnet` >> `Lido-compatible node (Community Staking / Simple DVT)` >> `[Community Staking] CSM node`
-2. Select the **consensus + validator client** and **execution client** and  of your choice
-3. Use the `provided URL` for **Checkpoint Sync**, select `yes` for **MEV Boost**, `select all` **relays**, `yes` for **Grafana dashboards**, `default` **Graffiti**, `yes` for **generate validator keys**
-4. Generate suitable validator keys to participate in the Lido CSM
-   * Generate `1` validator key and set the encryption password for the key
-   * Save your 24-word mnemonic
-   * Verify the fee recipient and withdrawal address on the [CSM Operator Portal](https://operatorportal.lido.fi/modules/community-staking-module)
+1. Choose `Holešovice Testnet` >> `Ethereum node - consensus, execution and validator client`
+2. Select the **Nimbus** (Consensus) and **Nethermind** (Execution) for the client choices
+3. Use the `provided URL` for **Checkpoint Sync**, select `yes` for **MEV Boost**, `use default` **relay**, `yes` for **Grafana dashboards**
+4. Set `Rewards Address` to an ERC-20 wallet address that you control (e.g., Metamask, hardware wallet)
+5. `use default` **Graffiti**, `yes` for **generate validator keys**
 
 #### ETH Docker TUI Navigation
 
@@ -77,11 +75,37 @@ ethd config
 5. `CTRL+C`: Exit individual screen monitoring view
 6. `exit` command (type "exit" and `enter` in terminal) : Exit current terminal
 
-### Start ETH Docker
+### Add validator key generation tool
 
 ```sh
-ethd up
+cd ~/eth-docker
+nano .env
 ```
+
+### Generate validator keys
+
+```sh
+cd ~/eth-docker
+./ethd cmd run --rm deposit-cli-new --execution_address <YOURHARDWAREWALLETADDRESS> --uid $(id -u)
+```
+
+Replace `<YOURHARDWAREWALLETADDRESS>` (_**including the "< >"**_) with your actual ERC-20 wallet address (e.g., Metamask, hardware wallet).
+
+**Follow the TUI prompts:**
+
+* Choose language
+* Confirm withdrawal (execution layer) address
+* Number of validator keys to generate
+* Set password to encrypt validator keys - No "\*\*\*\*" will be displayed so make sure to type your password carefully.
+* Save the 24-word mnemonic securely
+
+Your validator keys will be saved in the `~/eth-docker/.eth/validator_keys` folder.
+
+### Start ETH Docker
+
+<pre class="language-sh"><code class="lang-sh">cd ~/eth-docker
+<strong>./ethd up
+</strong></code></pre>
 
 ### Import validator keys
 

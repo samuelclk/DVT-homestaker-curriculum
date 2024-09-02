@@ -42,7 +42,7 @@ Estimated cost per month on Google Cloud = $84, or _**3.5 months of free practic
 
 Go to [Lido's ETH Docker repository ](https://github.com/lidofinance/eth-docker)and to get and run the installation commands. Run the next 2 commands in sequence.
 
-```
+```sh
 cd ~ && git clone https://github.com/lidofinance/eth-docker.git && cd eth-docker
 ```
 
