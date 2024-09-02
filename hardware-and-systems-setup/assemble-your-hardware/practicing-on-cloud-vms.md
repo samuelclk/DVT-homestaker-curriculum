@@ -41,6 +41,10 @@ Select `Ubuntu` for the operating system, `Ubuntu 24.04 LTS x86` for the version
 
 <figure><img src="../../.gitbook/assets/Screenshot 2024-07-05 at 5.41.32 PM.png" alt=""><figcaption></figcaption></figure>
 
+Select `No service account` under **"Identity and API access"**.
+
+<figure><img src="../../.gitbook/assets/Screenshot 2024-09-02 at 2.55.20 PM.png" alt=""><figcaption></figcaption></figure>
+
 Check the first 2 boxes under the **"Firewall"** section.
 
 <figure><img src="../../.gitbook/assets/image (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
