@@ -148,12 +148,8 @@ Run `ethd help` to print all available command line options. Common options:
 * Update all clients & ETH Docker stack: `ethd update`
 * Stop ETH Docker: `ethd down`
 * Restart ETH Docker: `ethd restart`
-* Restart from scratch: e`thd terminate`&#x20;
+* Restart from scratch: `ethd terminate`&#x20;
 
 ## Support
 
 {% embed url="https://t.me/stakesaurus" %}
-
-## Donations
-
-#### If you found this helpful, consider supporting Stakesaurus in one of few ways [here](https://dvt-homestaker.stakesaurus.com/#if-you-found-this-helpful-consider-supporting-stakesaurus-in-one-of-two-ways-below)!
