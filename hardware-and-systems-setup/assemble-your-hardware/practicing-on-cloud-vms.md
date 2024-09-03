@@ -4,7 +4,7 @@
 
 1. Laptop
 2. Google Cloud account with free trial activated. Credit card details are needed but don’t have to charge it
-   * https://cloud.google.com/free
+   * [https://cloud.google.com/free](https://cloud.google.com/free)
 3.  Go into your Google Cloud console&#x20;
 
     <figure><img src="../../.gitbook/assets/image (2) (1) (1).png" alt=""><figcaption></figcaption></figure>
