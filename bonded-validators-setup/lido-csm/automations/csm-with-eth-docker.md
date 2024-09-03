@@ -24,11 +24,11 @@ Create a new Google Cloud account to unlock $300 of free cloud credits.
 
 Create a VM on the Google Cloud Console (or any other cloud provider) with the following machine specifications.
 
-* CPU: 2 vCPU
-* RAM: 8GB
-* Disk: 350GB SSD
-* OS: Ubuntu 24.04 LTS
-* Enable HTTP & HTTPS traffic
+* **CPU:** 2 vCPU
+* **RAM:** 8GB
+* **Boot Disk:** Ubuntu 24.04 LTS, Balanced persistent disk, 350GB SSD,
+* **Identity & API access:** No service account
+* **Firewall:** Enable HTTP & HTTPS traffic
 
 {% hint style="info" %}
 Estimated cost per month on Google Cloud = $84, or _**3.5 months of free practice time**_ with $300 of cloud credits&#x20;
@@ -65,7 +65,7 @@ ethd config
 **Follow along the prompts in the terminal UI (TUI) to:**
 
 1. Choose `Holešovice Testnet` >> `Lido-compatible node (Community Staking / Simple DVT)` >> `[Community Staking] CSM node`
-2. Select the **consensus + validator client** and **execution client** and  of your choice
+2. Select the **Nimbus** (Consensus) and **Nethermind** (Execution) for the client choices
 3. Use the `provided URL` for **Checkpoint Sync**, select `yes` for **MEV Boost**, `select all` **relays**, `yes` for **Grafana dashboards**, `default` **Graffiti**, `yes` for **generate validator keys**
 4. Generate suitable validator keys to participate in the Lido CSM
    * Generate `1` validator key and set the encryption password for the key
@@ -77,9 +77,7 @@ ethd config
 1. `Arrow keys & Tab key`: Cycle options
 2. `Space bar`: Select option
 3. `Enter`: Confirm option
-4. `CTRL+B`, then `D`: Exit split-screen monitoring view
-5. `CTRL+C`: Exit individual screen monitoring view
-6. `exit` command (type "exit" and `enter` in terminal) : Exit current terminal
+4. `CTRL+C`: Exit individual screen monitoring view
 
 ### Start ETH Docker
 
