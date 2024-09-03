@@ -38,7 +38,7 @@ Estimated cost per month on Google Cloud = $84, or _**3.5 months of free practic
 
 **SSH into your VM/hardware:** Click on the dropdown beside the **"SSH"** column and select **"Open in browser window".** Click on **"Authorize"** when prompted.
 
-<figure><img src="https://dvt-homestaker.stakesaurus.com/~gitbook/image?url=https%3A%2F%2F1628445806-files.gitbook.io%2F%7E%2Ffiles%2Fv0%2Fb%2Fgitbook-x-prod.appspot.com%2Fo%2Fspaces%252FoML8XLjdWBoYbtGBoQ9R%252Fuploads%252F67CExXgVAXX8He9QB978%252Fimage.png%3Falt%3Dmedia%26token%3D76052e50-b3d8-4ef4-b143-ac07a32f45fb&#x26;width=768&#x26;dpr=4&#x26;quality=100&#x26;sign=8d7c4d17&#x26;sv=1" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/Screenshot 2024-09-03 at 1.50.18 PM.png" alt=""><figcaption></figcaption></figure>
 
 Go to [Lido's ETH Docker repository ](https://github.com/lidofinance/eth-docker)and to get and run the installation commands. Run the next 2 commands in sequence.
 
