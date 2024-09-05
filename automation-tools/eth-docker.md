@@ -43,20 +43,21 @@ cd ~ && git clone https://github.com/eth-educators/eth-docker.git && cd eth-dock
 ```
 
 ```sh
-sudo ./ethd install
+sudo usermod -aG sudo $USER
+./ethd install
 ```
 
-Exit your virtual machine/hardware and re-login to add your host user into the docker user group.
+Exit your virtual machine/hardware and re-login to add your host user into the sudo & docker user group.
 
 ```sh
 exit
 ```
 
-Next, configure the ETH Docker service.
+Next, configure the ETH Docker service. **Tip:** You can now call ethd from anywhere in your VM.
 
-<pre class="language-sh"><code class="lang-sh"><strong>cd ~/eth-docker/
-</strong><strong>./ethd config
-</strong></code></pre>
+```sh
+ethd config
+```
 
 **Follow along the prompts in the terminal UI (TUI) to:**
 
@@ -76,8 +77,7 @@ Next, configure the ETH Docker service.
 ### Generate validator keys
 
 ```sh
-cd ~/eth-docker
-./ethd cmd run --rm deposit-cli-new --execution_address 0x4D496CcC28058B1D74B7a19541663E21154f9c84 --uid $(id -u)
+ethd cmd run --rm deposit-cli-new --execution_address 0x4D496CcC28058B1D74B7a19541663E21154f9c84 --uid $(id -u)
 ```
 
 {% hint style="danger" %}
@@ -96,8 +96,7 @@ Your validator keys will be saved in the `~/eth-docker/.eth/validator_keys` fold
 
 ### Start ETH Docker
 
-<pre class="language-sh"><code class="lang-sh">cd ~/eth-docker
-<strong>./ethd up
+<pre class="language-sh"><code class="lang-sh"><strong>ethd up
 </strong></code></pre>
 
 ### Import validator keys
@@ -105,8 +104,7 @@ Your validator keys will be saved in the `~/eth-docker/.eth/validator_keys` fold
 Import the generated validator keys onto your validator client
 
 ```sh
-cd ~/eth-docker
-./ethd keys import
+ethd keys import
 ```
 
 ### Whitelist your wallet address
@@ -151,8 +149,7 @@ Monitor the logs of your validator node to make sure that it is syncing (or sync
 View logs of each docker container.
 
 ```sh
-cd ~/eth-docker
-./ethd logs <container_name> -f --tail 20
+ethd logs <container_name> -f --tail 20
 ```
 
 **Flags:**
@@ -172,16 +169,17 @@ cadvisor                   ethereum-metrics-exporter  grafana                   
 Within the `~/eth-docker` folder, run `./ethd help` to print all available command line options.&#x20;
 
 ```sh
-cd ~/eth-docker
-./ethd help
+ethd help
 ```
 
 **Common options:**
 
-* Update all clients & ETH Docker stack: `./ethd update`
-* Stop ETH Docker: `./ethd down`
-* Restart ETH Docker: `./ethd restart`
-* Restart from scratch: `./ethd terminate`&#x20;
+* Update all clients & ETH Docker stack: `ethd update`
+* Stop ETH Docker: `ethd down`
+* Restart ETH Docker: `ethd restart`
+* Restart from scratch: `ethd terminate`&#x20;
+* Resync consensus client: `ethd resync-consensus`
+* Resync execution client: `ethd resync-execution`
 
 ## Support
 
