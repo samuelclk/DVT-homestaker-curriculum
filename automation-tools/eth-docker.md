@@ -44,13 +44,17 @@ cd ~ && git clone https://github.com/eth-educators/eth-docker.git && cd eth-dock
 
 ```sh
 sudo usermod -aG sudo $USER
-./ethd install
 ```
 
 Exit your virtual machine/hardware and re-login to add your host user into the sudo & docker user group.
 
 ```sh
 exit
+```
+
+```sh
+cd eth-docker
+./ethd install
 ```
 
 Next, configure the ETH Docker service. **Tip:** You can now call ethd from anywhere in your VM.
