@@ -119,7 +119,7 @@ This section only applies to the Holeksy testnet
 
 1. Join the discord server here - [https://discord.gg/ethstaker](https://discord.gg/ethstaker)
 2. Join the #cheap-holesky-validator channel
-3. Type “/cheap-holeskysky-deposit `<your ETH address>` ” in the text box and press enter
+3. Type “/cheap-holesky-deposit `<your ETH address>` ” in the text box and press enter
 4.  Click on the link generated (ie. the [**Signer.is**](http://signer.is) text shown below)&#x20;
 
     <figure><img src="../.gitbook/assets/image (144).png" alt=""><figcaption></figcaption></figure>
