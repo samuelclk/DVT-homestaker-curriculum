@@ -27,7 +27,7 @@ Create a VM on the Google Cloud Console (or any other cloud provider) with the f
 * **Firewall:** Enable HTTP & HTTPS traffic
 
 {% hint style="info" %}
-Estimated cost per month on Google Cloud = $84, or _**3.5 months of free practice time**_ with $300 of cloud credits&#x20;
+Estimated cost per month on Google Cloud = $149, or **2 **_**months of free practice time**_ with $300 of cloud credits&#x20;
 {% endhint %}
 
 ### Download & configure ETH Docker

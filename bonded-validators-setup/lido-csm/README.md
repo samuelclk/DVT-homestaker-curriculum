@@ -15,7 +15,7 @@ Instead, you simply tweak the parameters of the following steps of the native so
 {% tabs %}
 {% tab title="Existing Solo Stakers" %}
 1. [Generate new validator keys](generating-csm-keystores.md) while setting the `withdrawal_address` to the  [Lido withdrawal vault](https://holesky.etherscan.io/address/0xF0179dEC45a37423EAD4FaD5fCb136197872EAd9) on **Holesky:** [`0xF0179dEC45a37423EAD4FaD5fCb136197872EAd9`](https://holesky.etherscan.io/address/0xF0179dEC45a37423EAD4FaD5fCb136197872EAd9)
-2. [Configure a separate validator client](running-a-separate-vc-service.md) (and/or beacon node) while setting the `fee_recipient` flag to the designated fee recipient address for Lido CSM on **Holesky:** [`0xE73a3602b99f1f913e72F8bdcBC235e206794Ac8`](https://holesky.etherscan.io/address/0xE73a3602b99f1f913e72F8bdcBC235e206794Ac8) and import the newly generated CSM keystores
+2. [Configure a separate validator client](running-a-separate-vc-service.md) (and/or beacon node) while setting the `fee_recipient` flag to the Lido Execution Layer Rewards Vault on **Holesky :** [`0xE73a3602b99f1f913e72F8bdcBC235e206794Ac8`](https://holesky.etherscan.io/address/0xE73a3602b99f1f913e72F8bdcBC235e206794Ac8) and import the newly generated CSM keystores
 3. [On your MEV-Boost service](../../keystore-generation-and-mev-boost/set-up-and-configure-mev-boost.md), Do not set the`-min-bid` flag (or set 0) and set the \
    `-relay` flags only to the [list of designated MEV relays for Lido CSM on **Holesky**](https://enchanted-direction-844.notion.site/6d369eb33f664487800b0dedfe32171e?v=985cb7e521de43d78c67b7ad29adec84) (refer to "_**Key settings to note**_" section)
 4. [Upload the newly generated deposit data file](upload-remove-view-validator-keys.md) pertaining to your CSM keystores onto the [Lido CSM Widget](https://csm.testnet.fi/) and provide the required bond amount in ETH/stETH/wstETH
@@ -149,7 +149,7 @@ These settings are part of the expectations for all node operators participating
 
 ### Keystore generation--Withdrawal address
 
-* During the validator key generation step, generate a number of validator keystores along with the deposit data file while setting the `withdrawalAddress` field to the Lido CSM contract on **Holesky:** [`0xF0179dEC45a37423EAD4FaD5fCb136197872EAd9`](https://holesky.etherscan.io/address/0xF0179dEC45a37423EAD4FaD5fCb136197872EAd9)
+* During the validator key generation step, generate a number of validator keystores along with the deposit data file while setting the `withdrawalAddress` field to the Lido Withdrawal Vault on **Holesky:** [`0xF0179dEC45a37423EAD4FaD5fCb136197872EAd9`](https://holesky.etherscan.io/address/0xF0179dEC45a37423EAD4FaD5fCb136197872EAd9)
 
 {% hint style="info" %}
 **DO NOT DEPOSIT 32 ETH** using the deposit data file generated this way as the Lido CSM will make the deposit for you. _**Doing so will result in a loss of funds.**_
@@ -163,7 +163,7 @@ You will then upload your `deposit data file` in the [next section](upload-remov
 
 ### **Validator Client Setup--Fee Recipient Address**
 
-* During the validator client setup step, set the `fee_recipient` flag to the designated fee recipient address for Lido CSM on **Holesky:** [`0xE73a3602b99f1f913e72F8bdcBC235e206794Ac8`](https://holesky.etherscan.io/address/0xE73a3602b99f1f913e72F8bdcBC235e206794Ac8)
+* During the validator client setup step, set the `fee_recipient` flag to the Lido Execution Layer Rewards Vault on **Holesky:** [`0xE73a3602b99f1f913e72F8bdcBC235e206794Ac8`](https://holesky.etherscan.io/address/0xE73a3602b99f1f913e72F8bdcBC235e206794Ac8)
 
 {% content-ref url="../../native-solo-staking-setup/validator-client-setup/" %}
 [validator-client-setup](../../native-solo-staking-setup/validator-client-setup/)
