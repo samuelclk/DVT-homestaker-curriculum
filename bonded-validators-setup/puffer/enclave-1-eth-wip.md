@@ -1,3 +1,7 @@
+---
+hidden: true
+---
+
 # Enclave: 1 ETH (WIP)
 
 ## Create VM

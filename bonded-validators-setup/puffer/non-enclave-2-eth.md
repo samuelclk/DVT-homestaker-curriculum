@@ -1,3 +1,7 @@
+---
+hidden: true
+---
+
 # Non-Enclave: 2 ETH
 
 ## Installing dependencies

@@ -57,6 +57,12 @@ cd eth-docker
 ./ethd install
 ```
 
+Enable ethd to be called from anywhere on your terminal.
+
+```sh
+source ~/.profile
+```
+
 Next, configure the ETH Docker service. **Tip:** You can now call ethd from anywhere in your VM.
 
 ```sh
