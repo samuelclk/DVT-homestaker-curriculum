@@ -84,26 +84,6 @@ ethd config
 3. `Enter`: Confirm option
 4. `CTRL+C`: Exit individual screen monitoring view
 
-### Generate validator keys
-
-```sh
-ethd cmd run --rm deposit-cli-new --execution_address 0x4D496CcC28058B1D74B7a19541663E21154f9c84 --uid $(id -u)
-```
-
-{% hint style="danger" %}
-Replace **--execution\_address** with your actual ERC-20 wallet address (e.g., Metamask, hardware wallet) on mainnet. The pre-filled execution address here enables the ETHStaker community to fund the validator key on our behalf.
-{% endhint %}
-
-**Follow the TUI prompts:**
-
-* Choose language
-* Confirm withdrawal (execution layer) address
-* Number of validator keys to generate
-* Set password to encrypt validator keys - No "\*\*\*\*" will be displayed so make sure to type your password carefully.
-* Save the 24-word mnemonic securely
-
-Your validator keys will be saved in the `~/eth-docker/.eth/validator_keys` folder.
-
 ### Optional: Make EL and CL endpoints accessible on host
 
 Edit the `.env` file in the `eth-docker` folder.
@@ -124,6 +104,26 @@ Now, the REST/HTTP/WS endpoints of your execution and consensus client can be ac
 * Execution Client (HTTP): http://127.0.0.1:8545
 * Execution Client (WS): http://127.0.0.1:8546
 * Consensus Client: http://127.0.0.1:5052
+
+### Generate validator keys
+
+```sh
+ethd cmd run --rm deposit-cli-new --execution_address 0x4D496CcC28058B1D74B7a19541663E21154f9c84 --uid $(id -u)
+```
+
+{% hint style="danger" %}
+Replace **--execution\_address** with your actual ERC-20 wallet address (e.g., Metamask, hardware wallet) on mainnet. The pre-filled execution address here enables the ETHStaker community to fund the validator key on our behalf.
+{% endhint %}
+
+**Follow the TUI prompts:**
+
+* Choose language
+* Confirm withdrawal (execution layer) address
+* Number of validator keys to generate
+* Set password to encrypt validator keys - No "\*\*\*\*" will be displayed so make sure to type your password carefully.
+* Save the 24-word mnemonic securely
+
+Your validator keys will be saved in the `~/eth-docker/.eth/validator_keys` folder.
 
 ### Start ETH Docker
 
