@@ -104,6 +104,27 @@ Replace **--execution\_address** with your actual ERC-20 wallet address (e.g., M
 
 Your validator keys will be saved in the `~/eth-docker/.eth/validator_keys` folder.
 
+### Optional: Make EL and CL endpoints accessible on host
+
+Edit the `.env` file in the `eth-docker` folder.
+
+```sh
+cd 
+nano ~/eth-docker/.env
+```
+
+Append `:el-shared.yml` and `:cl-shared.yml` in the `COMPOSE_FILE` line.
+
+**Example:**
+
+<figure><img src="../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+
+Now, the REST/HTTP/WS endpoints of your execution and consensus client can be accessed via:
+
+* Execution Client (HTTP): http://127.0.0.1:8545
+* Execution Client (WS): http://127.0.0.1:8546
+* Consensus Client: http://127.0.0.1:5052
+
 ### Start ETH Docker
 
 <pre class="language-sh"><code class="lang-sh"><strong>ethd up
