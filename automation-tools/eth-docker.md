@@ -97,7 +97,7 @@ Append `:el-shared.yml` and `:cl-shared.yml` in the `COMPOSE_FILE` line.
 
 **Example:**
 
-<figure><img src="../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (2).png" alt=""><figcaption></figcaption></figure>
 
 Now, the REST/HTTP/WS endpoints of your execution and consensus client can be accessed via:
 

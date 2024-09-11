@@ -70,6 +70,7 @@ cd ~/coral
 Create a password file to encrypt your validator keys.
 
 ```
+mkdir output
 nano output/password.txt
 ```
 
@@ -78,16 +79,7 @@ Enter your password in the plain text file and use `CTRL+O`, `ENTER`, `CTRL+X` t
 Replace the `--module-name` in the example docker command below (i.e., <0xXXX...>  including the brackets) with the `--module-name` seen in the launchpad-generated command.
 
 ```
-docker run -it --network host \
-    -v ./output:/app/output --rm \
-    coral-cli:latest /app/coral-cli validator keygen \
-    --guardian-threshold 1 \
-    --module-name <0xXXX...> \
-    --withdrawal-credentials 0x0100000000000000000000005ee9246f01e95c08ee767029c1d18765bb1779d0 \
-    --guardian-pubkeys 0x049cc1fbaa3cffd3e4c1f935c47720d013938ccb822a9cbd20c5f09ab65ae8300e7986b6ce75e916d3b59599ece72134adf2972d06a76a8ba5f3747d356117c342 \
-    --fork-version 0x01017000 \
-    --password-file output/password.txt \
-    --output-file output/registration_docker_001.json
+docker run -it --network host -v ./output:/app/output --rm coral-cli:latest /app/coral-cli validator keygen --guardian-threshold 1 --module-name <0xXXX...> --withdrawal-credentials 0x010000000000000000000000a37ff697ed5940c06789a3e8399a737fdd3e79cc --guardian-pubkeys 0x04097a98928ed79c443d03714d4073baecf21928102c7f8d1b34420d358c9b625da61d237034919de8c690cf4992e098311a449e41e655ee0b270486b7bc613fa2 --fork-version 0x01017000 --password-file output/password.txt --output-file output/registration_docker_001.json
 ```
 
 Follow the prompts to select the number of validator keys to generate.
@@ -106,10 +98,50 @@ password.txt    registration_docker_001.json
 
 ## Transfer Puffer registration file
 
-Open up the terminal app on your laptop and run the secure copy command to retrieve your Puffer registration file. We will upload this file onto the Puffer launchpad in the next step to register your validator.
+### Method 1: Manual copy-paste
+
+Print out the contents of the `registration_docker_001.json` file.
 
 ```
-scp <username>@<IP_address>:~/coral/output/registration_docker_001.json ~/Downloads/registration_docker_001.json
+cd
+cat ~/coral/output/registration_docker_001.json
+```
+
+Copy the entire output starting from the opening curly brackets `{` to the closing curly brackets `}` and paste it onto a text editor / notepad on your laptop.
+
+&#x20;**Example:**
+
+<figure><img src="../../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
+
+Save this plain text file as `registration_docker_001.json`.&#x20;
+
+{% hint style="info" %}
+On Windows notepad, select `"All file types"` before saving.
+{% endhint %}
+
+### Method 2: Secure Transfer
+
+Open up your terminal/powershell on your Mac/Windows laptop and run:
+
+```
+ssh-keygen -t ed25519 -C <google_cloud_username>
+```
+
+Your `<google_cloud_username>` can be found in the email you used to sign up for Google Cloud. e.g., if `sam@gmail.com` is the email used, then `sam` is your username.&#x20;
+
+Print the ssh public key.
+
+```
+cat ~/.ssh/id_ed25519.pub
+```
+
+Copy the output, click into your Google Cloud instance>>`EDIT`, scroll down to `SSH Keys`>>`ADD ITEM`, and paste it here. Then `Save`.
+
+Open up the terminal app on your laptop and run the secure copy command to retrieve your Puffer registration file. We will upload this file onto the Puffer launchpad in the next step to register your validator.
+
+```sh
+cd ~
+scp -i .ssh/id_ed25519 <username>@<IP_address>:~/coral/output/registration_docker_001.json Downloads/registration_docker_001.json
 ```
 
 **Tip:** Replace `<username>` & `<IP_address>` with the actual username & IP address of your server/node.
@@ -126,7 +158,7 @@ Do not use any other method to transfer the registration.json file onto your lap
 
 Purchase 2 ETH worth of pufETH and at least 28 days worth of validator tickets.
 
-<figure><img src="../../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 * Non-enclave users must deposit 2 ETH worth of pufETH to register
 * A minimum of 28 Validator Tickets (VTs) are required to be deposited when registering a validator. The Guardians will exit validators if their VTs expire after 28 days without being refilled.
@@ -135,7 +167,7 @@ Purchase 2 ETH worth of pufETH and at least 28 days worth of validator tickets.
 
 Upload the registration.json file that you retrieved from your server/node onto your laptop here.&#x20;
 
-<figure><img src="../../.gitbook/assets/image (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (2) (1).png" alt=""><figcaption></figcaption></figure>
 
 You will then be prompted to sign 3 transactions on your wallet.
 
