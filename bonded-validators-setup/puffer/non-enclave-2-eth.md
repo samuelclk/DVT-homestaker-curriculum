@@ -1,7 +1,3 @@
----
-hidden: true
----
-
 # Non-Enclave: 2 ETH
 
 ## Installing dependencies
@@ -97,29 +93,6 @@ password.txt    registration_docker_001.json
 ```
 
 ## Transfer Puffer registration file
-
-### Method 1: Manual copy-paste
-
-Print out the contents of the `registration_docker_001.json` file.
-
-```
-cd
-cat ~/coral/output/registration_docker_001.json
-```
-
-Copy the entire output starting from the opening curly brackets `{` to the closing curly brackets `}` and paste it onto a text editor / notepad on your laptop.
-
-&#x20;**Example:**
-
-<figure><img src="../../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
-
-Save this plain text file as `registration_docker_001.json`.&#x20;
-
-{% hint style="info" %}
-On Windows notepad, select `"All file types"` before saving.
-{% endhint %}
-
-### Method 2: Secure Transfer
 
 Open up your terminal/powershell on your Mac/Windows laptop and run:
 

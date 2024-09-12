@@ -63,4 +63,29 @@ sudo apt-get install libssl-dev pkg-config
 export PKG_CONFIG_PATH=/usr/lib/x86_64-linux-gnu/pkgconfig:$PKG_CONFIG_PATH
 ```
 
-\
+## Non scp registration file transfer
+
+&#x20;
+
+
+
+### Method 1: Manual copy-paste
+
+Print out the contents of the `registration_docker_001.json` file.
+
+```
+cd
+cat ~/coral/output/registration_docker_001.json
+```
+
+Copy the entire output starting from the opening curly brackets `{` to the closing curly brackets `}` and paste it onto a text editor / notepad on your laptop.
+
+**Example:**
+
+<figure><img src="../../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
+
+Save this plain text file as `registration_docker_001.json`.&#x20;
+
+{% hint style="info" %}
+On Windows notepad, select `"All file types"` before saving.
+{% endhint %}
