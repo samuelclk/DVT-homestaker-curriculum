@@ -170,7 +170,7 @@ Move your validator key(s) into the `~/eth-docker/.eth/validator_keys` folder.
 
 ```sh
 cd ~/coral/etc/keys/bls_keys
-sudo cp *.json ~/eth-docker/.eth/validator_keys
+sudo cp * ~/eth-docker/.eth/validator_keys
 ```
 
 Import validator keys into your validator client
