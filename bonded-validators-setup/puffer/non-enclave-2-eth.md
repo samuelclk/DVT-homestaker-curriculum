@@ -169,15 +169,14 @@ Follow the steps in the page below until before the **"Import validator keys"** 
 Move your validator key(s) into the `~/eth-docker/.eth/validator_keys` folder.
 
 ```sh
-cd ~/coral/output
-sudo cp keystore*.json ~/eth-docker/.eth/validator_keys
+cd ~/coral/etc/keys/bls_keys
+sudo cp *.json ~/eth-docker/.eth/validator_keys
 ```
 
 Import validator keys into your validator client
 
-```sh
-ethd keys import
-```
+<pre class="language-sh"><code class="lang-sh"><strong>ethd keys import
+</strong></code></pre>
 
 Alternatively,
 
