@@ -47,18 +47,6 @@ Build the Coral image ("install").
 cargo build --release
 ```
 
-## Retrieve latest Module name
-
-Visit [puffer.fi](https://www.puffer.fi/) and select "Become a validator".
-
-Connect your wallet. Disable the "Enclave" option. Then, copy the `--module-name` in the generated command on launchpad and replace it in the example command in the next section.
-
-<figure><img src="../../.gitbook/assets/Screenshot 2024-08-28 at 11.53.24 PM (1).png" alt=""><figcaption></figcaption></figure>
-
-{% hint style="info" %}
-Validator enclaves using Intel SGX is not live on mainnet yet and the current version on testnet will be deprecated in favour of the upcoming V2 SGX.
-{% endhint %}
-
 ## Generate validator keys and Puffer registration file
 
 First, make sure you are in the `coral` folder.
@@ -76,10 +64,22 @@ nano output/password.txt
 
 Enter your password in the plain text file and use `CTRL+O`, `ENTER`, `CTRL+X` to save and exit.
 
-Replace the `--module-name` in the example docker command below (i.e., <0xXXX...>  including the brackets) with the `--module-name` seen in the launchpad-generated command.
+### Retrieve latest Module name
+
+Visit [puffer.fi](https://www.puffer.fi/) and select "Become a validator".
+
+Connect your wallet. Disable the "Enclave" option. Then, copy + paste the command on a text editor and set the`--password-file` and `--output-file` to `output/password.txt` and `output/registration_001.json`.
+
+<figure><img src="../../.gitbook/assets/Screenshot 2024-08-28 at 11.53.24 PM (1).png" alt=""><figcaption></figcaption></figure>
+
+{% hint style="info" %}
+Validator enclaves using Intel SGX is not live on mainnet yet and the current version on testnet will be deprecated in favour of the upcoming V2 SGX.
+{% endhint %}
+
+**Example Command:**
 
 ```
-cargo run --bin coral-cli validator keygen --guardian-threshold 1 --module-name <0xXXX...> --withdrawal-credentials 0x010000000000000000000000a37ff697ed5940c06789a3e8399a737fdd3e79cc --guardian-pubkeys 0x04097a98928ed79c443d03714d4073baecf21928102c7f8d1b34420d358c9b625da61d237034919de8c690cf4992e098311a449e41e655ee0b270486b7bc613fa2 --fork-version 0x01017000 --password-file output/password.txt --output-file output/registration_docker_001.json
+cargo run --bin coral-cli validator keygen --guardian-threshold 1 --module-name <0xXXX...> --withdrawal-credentials <0x0100...> --guardian-pubkeys 0x04097a98928ed79c443d03714d4073baecf21928102c7f8d1b34420d358c9b625da61d237034919de8c690cf4992e098311a449e41e655ee0b270486b7bc613fa2 --fork-version 0x01017000 --password-file output/password.txt --output-file output/registration_docker_001.json
 ```
 
 Follow the prompts to select the number of validator keys to generate.
