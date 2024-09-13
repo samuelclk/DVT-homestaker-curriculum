@@ -2,30 +2,34 @@
 
 ## Installing dependencies
 
-### Docker
-
-The script below performs the following:
-
-1. Download and run the official Docker installation script
-2. Creates a new user group called "docker"
-3. Adds your current Linux user account to this new docker group
+Rust
 
 ```sh
-curl -fsSL https://get.docker.com -o get-docker.sh
-sudo sh get-docker.sh
-
-sudo groupadd docker
-sudo usermod -aG docker $USER
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 ```
 
-Log out and then back in again for the new user group settings to take effect.
+Cargo
+
+```sh
+sudo apt install cargo
+```
+
+OpenSSL & pkg-config
+
+```sh
+sudo apt-get install libssl-dev pkg-config
+```
+
+Set the `PKG_CONFIG_PATH` Environment Variable
+
+```sh
+export PKG_CONFIG_PATH=/usr/lib/x86_64-linux-gnu/pkgconfig:$PKG_CONFIG_PATH
+```
+
+Exit your VM and re-login.
 
 ```sh
 exit
-```
-
-```sh
-ssh <user>@<IP_address> -p <port_no.> -i <SSH_key> -v
 ```
 
 ## Installing Puffer
@@ -39,8 +43,8 @@ cd coral
 
 Build the Coral image ("install").
 
-```
-docker buildx build -f docker/Dockerfile -t coral-cli:latest .
+```sh
+cargo build --release
 ```
 
 ## Retrieve latest Module name
@@ -75,12 +79,12 @@ Enter your password in the plain text file and use `CTRL+O`, `ENTER`, `CTRL+X` t
 Replace the `--module-name` in the example docker command below (i.e., <0xXXX...>  including the brackets) with the `--module-name` seen in the launchpad-generated command.
 
 ```
-docker run -it --network host -v ./output:/app/output --rm coral-cli:latest /app/coral-cli validator keygen --guardian-threshold 1 --module-name <0xXXX...> --withdrawal-credentials 0x010000000000000000000000a37ff697ed5940c06789a3e8399a737fdd3e79cc --guardian-pubkeys 0x04097a98928ed79c443d03714d4073baecf21928102c7f8d1b34420d358c9b625da61d237034919de8c690cf4992e098311a449e41e655ee0b270486b7bc613fa2 --fork-version 0x01017000 --password-file output/password.txt --output-file output/registration_docker_001.json
+cargo run --bin coral-cli validator keygen --guardian-threshold 1 --module-name <0xXXX...> --withdrawal-credentials 0x010000000000000000000000a37ff697ed5940c06789a3e8399a737fdd3e79cc --guardian-pubkeys 0x04097a98928ed79c443d03714d4073baecf21928102c7f8d1b34420d358c9b625da61d237034919de8c690cf4992e098311a449e41e655ee0b270486b7bc613fa2 --fork-version 0x01017000 --password-file output/password.txt --output-file output/registration_docker_001.json
 ```
 
 Follow the prompts to select the number of validator keys to generate.
 
-If successful, you should see the following files in your `~/coral/output` folder.
+If successful, you should see the following files in your `~/coral/output`  and `~/coral/etc/keys/bls_keys` folders.
 
 ```sh
 ls ~/coral/output
@@ -90,6 +94,18 @@ ls ~/coral/output
 
 ```
 password.txt    registration_docker_001.json
+```
+
+```sh
+ls ~/coral/etc/keys/bls_keys
+```
+
+**Expected output:**
+
+_\*Example only. You should see a file with it's validator public key as its file name._
+
+```
+800000b3884235f70b06fec68c19642fc9e81e34fbe7f1c0ae156b8b45860dfe5ac71037ae561c2a759ba83401488e18
 ```
 
 ## Transfer Puffer registration file
