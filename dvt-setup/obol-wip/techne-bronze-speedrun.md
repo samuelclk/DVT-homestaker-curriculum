@@ -31,6 +31,12 @@ sudo groupadd docker
 sudo usermod -aG docker $USER
 ```
 
+Exit and re-login.
+
+```sh
+exit
+```
+
 ## Generate your Obol ENR
 
 ```sh
@@ -79,10 +85,10 @@ The cluster leader will collect everyone's `ENR public key` and run the followin
 --withdrawal-addresses="0x17E6F6270A101dc7687Cc9899889819EeAF8253f" \
 --network="holesky" \
 --operator-enrs=\
-"enr:-HW4QOGRKbbooOpJkT5QbMnpWKT8_Uz6c3e4t9PuuNPC9M_DdCyAskXetVeqZ8RJxDvBXzWPZHiPWn0G32W09RW6t4GAgmlkgnY0iXNlY3AyNTZrMaEDNPesuI4Gi4uMb85qNnydaZDfKZw0LFwSjun4JTHvLaY",\
-"enr:-HW4QNl3vZHbiBbwn-fUKxDGSwCEEhJP7NK64iH_dT7oOF4lJ5XOSqlfwFG4FsEjjb_1hrQdu56JH-Fr1X2DyH493mWAgmlkgnY0iXNlY3AyNTZrMaECcd98w7Xlubs7PubSZvQj6uSmSVpheG3UhPwaQqQ3A58",\
-"enr:-HW4QFhNE5dSDytMpp9frzxkME5RtXkfRpsfllWjASfEComrYluy-8t-Vc01fZ4VyhSCqmA98pej7W2CA7TtqdWl8ZqAgmlkgnY0iXNlY3AyNTZrMaEDMe3QaRxnmidfOsPx8nZq5lKYeUaDuzW0mR0lXFGW4P4",\
-"enr:-HW4QEUElnbbHlkMR7tSV4mgXTWLFuO2yXw6vNHhLxG4ThkKIMKWgUa2kh4TGmUluvmxYILByCGTTJuw9PKyA453JdaAgmlkgnY0iXNlY3AyNTZrMaEDzturQ9VYUTJQleFXvSPfAYU0Unw_6Dn-lxAJQ3UqcUk"
+"enr:-HW4QO5ci0ykiIxKD9CPoK0DzqrtV85jaXRgHeUKJyX8KmAhOxe5lD5MBGTNf9vJClUIeLzqj9awJtXsxWGciTI8BgSAgmlkgnY0iXNlY3AyNTZrMaEDivyOXAZbkL8sqbSuCQ0NBa3qiGxgrU_3pda02C1A0HQ",\
+"enr:-HW4QFOFj99TaauvirkSRmEphR1UkevkegYJYkBzzLK3b2kwLmEHxE_E8q_BTJY0pN1vIBPq4rZ2Kih-K11MOAC6VimAgmlkgnY0iXNlY3AyNTZrMaECV0SXHBiWDjucuAdRPbJA19ExP73EvDlYJGEwyr4fYZY",\
+"enr:-HW4QFRRhXE1aBufxYYqXLp5_QTCpAmct6UsKt-MMqbaNNCcNpVMC-icRYwAwXalh0Y2cIIhVocLVRPcZSQrev8osJyAgmlkgnY0iXNlY3AyNTZrMaECerwvVkvu8ZM_vALT10Rtp0YiFth7R5JrqP-iTmXwzAk",\
+"enr:-HW4QIq63_axsvYq3D24gcZSFTKjrSl0nWwXVeYc29mJV-avEzVMKUcaxjM9wYnz4GWIT4JQqASJfu6M-HK5RH-zE8aAgmlkgnY0iXNlY3AyNTZrMaEDafXZh594s4ft5El40JmGt1qVsOdW5gv2qzaVtC2LTLc"
 </code></pre>
 
 {% hint style="info" %}
@@ -94,7 +100,7 @@ A `cluster-definition.json` file will be generated and saved in the `~/.charon` 
 Distribute this `cluster-definition.json` file to each cluster member to place within their own `~/.charon` directories.
 
 {% hint style="info" %}
-You can use&#x20;
+You can use any messaging app for this because only the public part of the ENR key is exposed in this file.
 {% endhint %}
 
 ## Run the DKG ceremony
@@ -113,6 +119,7 @@ Once the DKG ceremony is completed, set the permissions of the `charon-enr-priva
 ```sh
 sudo chmod +x ~/.charon
 sudo chmod 666 ~/.charon
+sudo chmod 644 ~/.charon/charon-enr-private-key
 ```
 
 ## Setup ETH Docker
@@ -136,11 +143,17 @@ cd
 nano ~/eth-docker/.env
 ```
 
-Append `:lido-obol.yml` in the `COMPOSE_FILE` line.
+* Append `:lido-obol.yml` in the `COMPOSE_FILE` line.
 
 **Example:**
 
 <figure><img src="../../.gitbook/assets/image (198).png" alt=""><figcaption></figcaption></figure>
+
+* Change the `CL_NODE` line to **http://charon:3600** (from http://consensus:5052)
+
+**Example:**
+
+<figure><img src="../../.gitbook/assets/image (200).png" alt=""><figcaption></figcaption></figure>
 
 `CTRL+O`, `ENTER`, `CTRL+X` to save and exit.
 
@@ -150,7 +163,7 @@ Migrate .charon contents into ETHDocker.
 
 ```sh
 cd
-cp -r .charon/* eth-docker/.eth
+sudo cp -r .charon/* eth-docker/.eth
 ```
 
 Start ETH Docker.
