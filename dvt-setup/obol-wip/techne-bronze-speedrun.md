@@ -126,7 +126,7 @@ sudo chmod 644 ~/.charon/charon-enr-private-key
 
 ## Setup ETH Docker
 
-First, each cluster member needs to spin up a "vanilla" validator node.
+Each cluster member needs to spin up a "vanilla" validator node.
 
 {% content-ref url="../../automation-tools/eth-docker.md" %}
 [eth-docker.md](../../automation-tools/eth-docker.md)
@@ -198,3 +198,35 @@ http://<VM_external_IP>:3000
 
 * Enter **"admin"** for both the username and password.
 * Navigate to `Dashboards`. The 2 most common dashboards when running Obol DVTs are `Charon Log Dashboard` and `Charon Overview`&#x20;
+
+## Securing your device
+
+### Firewall Rules
+
+```sh
+sudo ufw default deny incoming
+sudo ufw default allow outgoing
+sudo ufw allow 22/tcp # for SSH
+sudo ufw allow 30303 # for the EL
+sudo ufw allow 9000 # for the CL
+sudo ufw allow 3000 # for the native Grafana
+sudo ufw enable
+```
+
+### Other Security SOPs
+
+{% content-ref url="../../linux-os-networking-and-security/networking-and-network-security.md" %}
+[networking-and-network-security.md](../../linux-os-networking-and-security/networking-and-network-security.md)
+{% endcontent-ref %}
+
+{% content-ref url="../../linux-os-networking-and-security/device-level-security-setup.md" %}
+[device-level-security-setup.md](../../linux-os-networking-and-security/device-level-security-setup.md)
+{% endcontent-ref %}
+
+## Support
+
+{% embed url="https://t.me/stakesaurus" %}
+
+## Donations
+
+#### If you found this helpful, consider supporting Stakesaurus in one of few ways [here](https://dvt-homestaker.stakesaurus.com/#if-you-found-this-helpful-consider-supporting-stakesaurus-in-one-of-two-ways-below)!

@@ -30,9 +30,13 @@ Aside from the voluntary user contribution options below, no entity is entitled 
 
 ### If you found this helpful, consider supporting Stakesaurus in one of few ways below!&#x20;
 
-* [Stakesaurus' liquid staking ETH vault powered by Stakewise V3](https://app.stakewise.io/vault/0x649955f4189c3921df60e25f58cb1e81070fedb0)
+* [Stakesaurus' liquid staking **ETH vault** powered by Stakewise V3](https://app.stakewise.io/vault/0x649955f4189c3921df60e25f58cb1e81070fedb0)
 
-{% embed url="https://app.stakewise.io/vault/0x649955f4189c3921df60e25f58cb1e81070fedb0" %}
+{% embed url="https://app.stakewise.io/vault/mainnet/0x649955f4189c3921df60e25f58cb1e81070fedb0" %}
+
+* [Stakesaurus' liquid staking **GNO vault** powered by Stakewise V3](https://app.stakewise.io/vault/0x649955f4189c3921df60e25f58cb1e81070fedb0)
+
+{% embed url="https://app.stakewise.io/vault/gnosis/0x3cb4692177525db38d983da0445d4eb25c3826de" %}
 
 * Buy me a coffee!
 
