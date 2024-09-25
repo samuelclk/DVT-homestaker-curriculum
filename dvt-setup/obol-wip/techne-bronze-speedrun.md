@@ -19,6 +19,8 @@ There seems to be a bug with the Obol Holesky Launchpad where we are unable to g
 
 Choose your cluster members and form your cluster members by creating a Splitter contract that splits the execution layer rewards among all operators.
 
+{% embed url="https://splits.org/" %}
+
 ## Install dependencies
 
 Install Docker.
