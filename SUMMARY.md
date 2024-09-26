@@ -88,9 +88,9 @@
   * [Registering your Diva node](dvt-setup/diva-staking/registering-your-diva-node.md)
   * [Updating your Diva client](dvt-setup/diva-staking/updating-your-diva-client.md)
   * [Monitoring your Diva Node](dvt-setup/diva-staking/monitoring-your-diva-node.md)
-* [Obol (WIP)](dvt-setup/obol-wip/README.md)
-  * [Techne Bronze Speedrun (Launchpad)](dvt-setup/obol-wip/techne-bronze-speedrun-launchpad.md)
-  * [Techne Bronze Speedrun (CLI)](dvt-setup/obol-wip/techne-bronze-speedrun-cli.md)
+* [Obol](dvt-setup/obol/README.md)
+  * [Techne Bronze Speedrun (Launchpad)](dvt-setup/obol/techne-bronze-speedrun-launchpad.md)
+  * [Techne Bronze Speedrun (CLI)](dvt-setup/obol/techne-bronze-speedrun-cli.md)
 * [SSV (WIP)](dvt-setup/ssv-wip.md)
 
 ## Bonded Validators Setup
