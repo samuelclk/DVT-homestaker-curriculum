@@ -174,7 +174,7 @@ docker compose up -d
 
 **Expected output:**
 
-<figure><img src="../../.gitbook/assets/image (7).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (7) (1).png" alt=""><figcaption></figcaption></figure>
 
 3\) Make sure there are no error messages by monitoring the logs for a few minutes.
 
@@ -182,7 +182,7 @@ docker compose up -d
 docker logs lodestar_validator -f
 ```
 
-<figure><img src="../../.gitbook/assets/image (6) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (6) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 ## Remove duplicates of validator keystores
 
