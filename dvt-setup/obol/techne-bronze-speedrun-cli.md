@@ -207,6 +207,20 @@ http://<VM_external_IP>:3000
 * Enter **"admin"** for both the username and password.
 * Navigate to `Dashboards`. The 2 most common dashboards when running Obol DVTs are `Charon Log Dashboard` and `Charon Overview`&#x20;
 
+## Register your cluster for funding
+
+Cluster leader to fill up the Obol Techne Credentials registration form [here](https://airtable.com/apphbfJ552v5mHpo4/pag7JX1gSNIMzvELA/form).
+
+Copy and paste the `cluster-lock.json` and `deposit-data.json` files from your node to a text editor your laptop so that you can upload them easily onto the form.
+
+```sh
+sudo cat ~/.charon/cluster-lock.json
+```
+
+```sh
+sudo cat ~/.charon/deposit-data.json
+```
+
 ## Securing your device
 
 ### Firewall Rules
