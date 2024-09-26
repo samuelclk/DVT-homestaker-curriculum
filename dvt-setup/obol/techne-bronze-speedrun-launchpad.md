@@ -4,10 +4,6 @@
 
 Obol Techne Bronze Credentials require node operators to run 50 testnet validator keys as a distributed validator cluster for 3 weeks, where Obol will fund the testnet ETH required to activate the validator keys.
 
-{% hint style="info" %}
-There seems to be a bug with the Obol Holesky Launchpad where we are unable to generate >1 validator key via DKG so we will be doing some workarounds using the CLI method.
-{% endhint %}
-
 ### Hardware (Holesky)
 
 * CPU: 4 cores
