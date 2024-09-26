@@ -11,12 +11,6 @@ Obol Techne Bronze Credentials require node operators to run 50 testnet validato
 * SSD: 350GB
 * OS: Ubuntu 24.04
 
-## Set up Splitter contract
-
-Choose your cluster members and form your cluster members by creating a Splitter contract that splits the execution layer rewards among all operators.
-
-{% embed url="https://splits.org/" %}
-
 ## Install dependencies
 
 Install Docker.
