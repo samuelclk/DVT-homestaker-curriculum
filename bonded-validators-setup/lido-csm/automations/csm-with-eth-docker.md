@@ -90,7 +90,7 @@ ethd start
 Change the user permissions of the folder containing your validator keys. Replace \<user> with your actual username of your VM.
 
 ```sh
-sudo chown -R <user>:<user> ~/eth-docker/.eth/validator_keys
+sudo chown -R $USER:$USER ~/eth-docker/.eth/validator_keys
 ```
 
 **Tip:** To find username, look to the terminal of your sever/node. Every character before the `@` is your username

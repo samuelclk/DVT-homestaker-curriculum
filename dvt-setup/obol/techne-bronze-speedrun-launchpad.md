@@ -93,7 +93,7 @@ Copy the group invite link and share it with your other cluster members.
 
 They will need to accept the cluster configuration, input their respective `ENR Public Keys` , and then sign a message (2 transactions) with their respective wallet addresses set during the cluster creation step.
 
-## Create the Cluster Definition file
+## DKG Ceremony
 
 Once all members have accepted the cluster configuration, everyone can now proceed to the distributed key generation (DKG) phase.
 
