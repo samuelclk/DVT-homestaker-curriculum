@@ -141,3 +141,14 @@ Paste your exit message in the text field and hit submit.
 Congratulations! Your validator key will be exited soon but in the meantime, you will have to keep your validator node running until your key is fully exited.&#x20;
 
 Repeat the **"Generate Exit Message"** section for all other keys you want to exit.&#x20;
+
+## Feedback & Support
+
+{% embed url="https://t.me/stakesaurus" %}
+
+## Supporting Stakesaurus
+
+#### If you found this helpful, consider following me below!
+
+* [Twitter](https://twitter.com/stakesaurus)
+* [Newsletter](https://stakesaurus.beehiiv.com/)
