@@ -182,6 +182,12 @@ Start ETH Docker.
 ethd up
 ```
 
+After all your services running via Docker "warmed up" for \~5 minutes, import your validator key shards.&#x20;
+
+```
+ethd keys import
+```
+
 ## Monitoring Charon
 
 Print Obol's Charon logs.

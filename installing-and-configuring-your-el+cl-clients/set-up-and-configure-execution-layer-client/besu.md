@@ -135,7 +135,7 @@ sudo systemctl status besu.service
 
 **Expected output:** The output should say Besu is **“active (running)”.** Press CTRL-C to exit and Besu will continue to run. It should take just a few minutes for Besu to sync on Holesky.
 
-<figure><img src="../../.gitbook/assets/image (4) (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (4) (1) (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 Use the following command to check the logs of Besu’s syncing process. Watch out for any warnings or errors.
 

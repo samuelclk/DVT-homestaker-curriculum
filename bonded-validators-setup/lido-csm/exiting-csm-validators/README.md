@@ -10,7 +10,7 @@ There are 3 reasons why CSM operators can receive exit requests from the Lido Pr
 
 Exit requests can be observed in the number `Unbonded` keys on the operator dashboard of the CSM Web App.
 
-<figure><img src="../../.gitbook/assets/Screenshot 2024-06-27 at 3.48.39 PM.png" alt="" width="375"><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/Screenshot 2024-06-27 at 3.48.39 PM.png" alt="" width="375"><figcaption></figcaption></figure>
 
 When this happens, CSM operators must initiate an exit on the requested number of validator keys as soon as possible (within 96 hours) to avoid penalty measures from having `Stuck Keys`.
 
@@ -39,7 +39,7 @@ You can also follow the steps extracted from Remy's guide below (Linux only).
 
 The whole process can feel daunting so we will break it down into 3 phases.
 
-<figure><img src="../../.gitbook/assets/exitValidators.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/exitValidators.png" alt=""><figcaption></figcaption></figure>
 
 ### Phase 1: Prepare the necessary files
 
@@ -120,7 +120,7 @@ sudo cp ~/offline-preparation.json ~/ethdo-1.35.3-linux-amd64.tar.gz ~/ethdo-1.3
 ```
 
 * Download the latest version of TailsOS into your laptop from the [website](https://tails.net/install/mac/index.en.html#download) and follow the instructions to upload the downloaded file for checksum verification
-* **This step creates the airgapped machine:** Unplug any wired connections from your laptop. Then, follow the steps in the [**Install and prepare the OS**](../../linux-os-networking-and-security/install-and-prepare-the-os.md) section to flash the _**second**_ USB drive with TailsOS and boot up TailsOS on your laptop. Stop just before _"**Install the SSH server"**_
+* **This step creates the airgapped machine:** Unplug any wired connections from your laptop. Then, follow the steps in the [**Install and prepare the OS**](../../../linux-os-networking-and-security/install-and-prepare-the-os.md) section to flash the _**second**_ USB drive with TailsOS and boot up TailsOS on your laptop. Stop just before _"**Install the SSH server"**_
 * Plug the _**first**_ USB drive into your laptop that is now running TailsOS and transfer all the files into the home folder
 
 ### Phase 3: Signing the exit message

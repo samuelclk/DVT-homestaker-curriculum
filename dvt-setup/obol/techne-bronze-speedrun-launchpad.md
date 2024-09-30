@@ -77,19 +77,19 @@ The cluster leader will collect the wallet addresses of all members and configur
 
 <summary>Screenshots</summary>
 
-<img src="../../.gitbook/assets/image.png" alt="" data-size="original">
+<img src="../../.gitbook/assets/image (4).png" alt="" data-size="original">
 
-![](<../../.gitbook/assets/image (1).png>)
+![](<../../.gitbook/assets/image (1) (1).png>)
 
-![](<../../.gitbook/assets/image (2).png>)
+![](<../../.gitbook/assets/image (2) (1).png>)
 
-![](<../../.gitbook/assets/image (3).png>)
+![](<../../.gitbook/assets/image (3) (1).png>)
 
 </details>
 
 Copy the group invite link and share it with your other cluster members.
 
-<figure><img src="../../.gitbook/assets/image (4).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (4) (1).png" alt=""><figcaption></figcaption></figure>
 
 They will need to accept the cluster configuration, input their respective `ENR Public Keys` , and then sign a message (2 transactions) with their respective wallet addresses set during the cluster creation step.
 
@@ -171,6 +171,12 @@ Start ETH Docker.
 
 ```sh
 ethd up
+```
+
+After all your services running via Docker "warmed up" for \~5 minutes, import your validator key shards.&#x20;
+
+```
+ethd keys import
 ```
 
 ## Monitoring Charon
