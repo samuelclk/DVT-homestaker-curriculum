@@ -110,13 +110,15 @@ ethd config
 6. Set `Rewards Address` to an ERC-20 wallet address that you control (e.g., Metamask, hardware wallet)
 7. `use default` **Graffiti**, `yes` for **generate validator keys**
 
-### Edit MEV Relays to include all options
+### Customise ETH Docker Settings
 
 Open up the ETH Docker `.env` file for editing.
 
 ```sh
 nano ~/eth-docker/.env
 ```
+
+#### Add all MEV Relays
 
 Add `#`to the start of the `MEV_RELAYS=` line.
 
@@ -132,7 +134,23 @@ MEV_RELAYS=https://0xafa4c6985aa049fb79dd37010438cfebeb0f2bd42b115b89dd678dab067
 This enables your SSV Node to use all MEV Relays which maximises MEV rewards for stakers using SSV.
 {% endhint %}
 
+#### Change SSV DKG Port
+
+Change the `SSV_DKG_PORT=` to **443** (from 3030).
+
+<figure><img src="../../.gitbook/assets/image (201).png" alt=""><figcaption></figcaption></figure>
+
+`CTRL+O`, `ENTER`, `CTRL+X` to save and exit.
+
 ## Configure DKG endpoint
+
+Find the external IP address of your VM on your Google Cloud account >> Console >> Compute Engine >> Look under "External IP".
+
+Your **DKG endpoint** will be `<EXTERNAL_IP_ADDRESS>:443`,without the pointy brackets. _<mark style="background-color:yellow;">**Note that down and save it in a text editor file.**</mark>_
+
+<details>
+
+<summary>Configure DKG endpoint (for non-VMs)</summary>
 
 On your laptop, create a Tailscale VPN account at [https://login.tailscale.com](https://login.tailscale.com).
 
@@ -145,7 +163,7 @@ sudo tailscale up
 
 Copy the URL and paste it into a browser on your laptop to authenticate your VM. Sign-in and click `Connect` when prompted.
 
-<figure><img src="../../.gitbook/assets/image (4).png" alt=""><figcaption></figcaption></figure>
+<img src="../../.gitbook/assets/image (4).png" alt="" data-size="original">
 
 On your VM, after successfully authenticating,
 
@@ -155,7 +173,9 @@ sudo tailscale funnel --bg https+insecure://localhost:3030
 
 The highlighted part of the output is your DKG endpoint. _<mark style="background-color:yellow;">**Copy it and save it in your text editor.**</mark>_
 
-<figure><img src="../../.gitbook/assets/image (5).png" alt=""><figcaption><p>E.g., Your full DKG endpoint in this example is <code>https://ssv-csm-test.tail147ca.ts.net</code></p></figcaption></figure>
+<img src="../../.gitbook/assets/image (5).png" alt="E.g., Your full DKG endpoint in this example is https://ssv-csm-test.tail147ca.ts.net" data-size="original">
+
+</details>
 
 Verify that your DKG endpoint is accessible from external sources.
 
@@ -167,8 +187,6 @@ docker compose run --rm ssv-dkg ping --ip <DKG_ENDPOINT>
 **Expected output:**
 
 <figure><img src="../../.gitbook/assets/image (10).png" alt=""><figcaption></figcaption></figure>
-
-
 
 ## Start ETH Docker
 
