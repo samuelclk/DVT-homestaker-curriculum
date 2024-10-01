@@ -6,7 +6,7 @@ Universal plug and play (**Upnp**) is a way for modems/routers to automatically 
 
 To enable this, log in to your modem/router and turn it on. It's usually a one-click action located under the "Advanced", "NAT", or "Application" etc sections.
 
-<figure><img src="../.gitbook/assets/image (8).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (8) (1).png" alt=""><figcaption></figcaption></figure>
 
 **Upnp** needs to be enabled on all routers upstream and finally on your modem if you have multiple layers of routers in your network.
 
@@ -58,21 +58,21 @@ Quick start:
 
 2\) Add devices under "Machines".
 
-<figure><img src="../.gitbook/assets/image (9).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (9) (1).png" alt=""><figcaption></figcaption></figure>
 
 3\) Add your client device (e.g. working laptop) using the easy-to-follow instructions provided
 
 {% tabs %}
 {% tab title="Linux" %}
-<figure><img src="../.gitbook/assets/image (10).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (10) (1).png" alt=""><figcaption></figcaption></figure>
 {% endtab %}
 
 {% tab title="Windows" %}
-<figure><img src="../.gitbook/assets/image (11).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (11) (1).png" alt=""><figcaption></figcaption></figure>
 {% endtab %}
 
 {% tab title="Mac" %}
-<figure><img src="../.gitbook/assets/image (12).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (12) (1).png" alt=""><figcaption></figcaption></figure>
 {% endtab %}
 {% endtabs %}
 

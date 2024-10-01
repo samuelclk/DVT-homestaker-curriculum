@@ -60,7 +60,7 @@ sudo find /var/lib -name "keystore*.json"
 
 **Example output:**
 
-<figure><img src="../../../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (16).png" alt=""><figcaption></figcaption></figure>
 
 Copy the keystores you want to exit into the $HOME folder. The exact command will depend on your actual file paths.
 
@@ -110,7 +110,7 @@ ls
 
 **Example:**
 
-<figure><img src="../../../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 Generate the validator exit message for each of that key.
 
@@ -130,13 +130,13 @@ cat exit_message.json
 
 **Example:**
 
-<figure><img src="../../../.gitbook/assets/image (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (2) (1).png" alt=""><figcaption></figcaption></figure>
 
 Copy the entire output and go to the [message broadcasting tool of holesky.beaconcha.in](https://holesky.beaconcha.in/tools/broadcast) to broadcast your exit message.
 
 Paste your exit message in the text field and hit submit.
 
-<figure><img src="../../../.gitbook/assets/image (3).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (3) (1).png" alt=""><figcaption></figcaption></figure>
 
 Congratulations! Your validator key will be exited soon but in the meantime, you will have to keep your validator node running until your key is fully exited.&#x20;
 

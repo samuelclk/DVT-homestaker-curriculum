@@ -77,19 +77,19 @@ The cluster leader will collect the wallet addresses of all members and configur
 
 <summary>Screenshots</summary>
 
-<img src="../../.gitbook/assets/image (4).png" alt="" data-size="original">
+<img src="../../.gitbook/assets/image (4) (1).png" alt="" data-size="original">
 
-![](<../../.gitbook/assets/image (1) (1).png>)
+![](<../../.gitbook/assets/image (1) (1) (1).png>)
 
-![](<../../.gitbook/assets/image (2) (1).png>)
+![](<../../.gitbook/assets/image (2) (1) (1).png>)
 
-![](<../../.gitbook/assets/image (3) (1).png>)
+![](<../../.gitbook/assets/image (3) (1) (1).png>)
 
 </details>
 
 Copy the group invite link and share it with your other cluster members.
 
-<figure><img src="../../.gitbook/assets/image (4) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (4) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 They will need to accept the cluster configuration, input their respective `ENR Public Keys` , and then sign a message (2 transactions) with their respective wallet addresses set during the cluster creation step.
 
@@ -97,11 +97,11 @@ They will need to accept the cluster configuration, input their respective `ENR 
 
 Once all members have accepted the cluster configuration, everyone can now proceed to the distributed key generation (DKG) phase.
 
-<figure><img src="../../.gitbook/assets/image (5).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (5) (1).png" alt=""><figcaption></figcaption></figure>
 
 Each cluster member copies the DKG command generated for them and runs it on their own machine.
 
-<figure><img src="../../.gitbook/assets/image (6).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (6) (1).png" alt=""><figcaption></figcaption></figure>
 
 {% hint style="info" %}
 All cluster members need to run the DKG service within 30 minutes of one another and keep it running until the ceremony is complete.

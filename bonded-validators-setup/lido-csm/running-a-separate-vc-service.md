@@ -214,7 +214,7 @@ sudo lighthouse account validator import --network holesky --datadir /var/lib/cs
 
 **Expected output:**
 
-<figure><img src="../../.gitbook/assets/image (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 3\) Change the owner of this new folder to the `csm_lighthouse_validator` user
 
@@ -243,7 +243,7 @@ sudo /usr/local/bin/prysmvalidator accounts import --keys-dir=$HOME/staking_depo
 
 **Expected output:**
 
-<figure><img src="../../.gitbook/assets/image (6) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (6) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 3\) Create a plain text password file for the Prysm wallet
 
@@ -646,7 +646,7 @@ docker compose up -d
 
 **Expected output:**
 
-<figure><img src="../../.gitbook/assets/image (7) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (7) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 3\) Make sure there are no error messages by monitoring the logs for a few minutes.
 
@@ -654,7 +654,7 @@ docker compose up -d
 docker logs csm_lodestar_validator -f
 ```
 
-<figure><img src="../../.gitbook/assets/image (6) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (6) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 ## Remove duplicates of validator keystores
 
@@ -684,7 +684,7 @@ sudo journalctl -fu csm_lighthousevalidator -o cat | ccze -A
 
 **Expected output:**
 
-<figure><img src="../../.gitbook/assets/image (2) (1) (1) (1) (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (2) (1) (1) (1) (1) (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 {% hint style="info" %}
 You will see some warnings if your beacon node (consensus client) is not yet synced.

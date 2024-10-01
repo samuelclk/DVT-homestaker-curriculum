@@ -125,7 +125,7 @@ sudo /usr/local/bin/nimbus_beacon_node trustedNodeSync --network=holesky --data-
 
 **Expected output:**
 
-<figure><img src="../../.gitbook/assets/image (16).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (16) (1).png" alt=""><figcaption></figcaption></figure>
 
 ## Start the Nimbus Consensus Client
 

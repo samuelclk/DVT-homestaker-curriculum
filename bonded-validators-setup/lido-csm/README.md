@@ -91,7 +91,7 @@ Further, CSM operators will enjoy 2 additional rewards features described in mor
 * **Rewards smoothing** across all Lido modules (e.g., block proposer rewards, sync committee rewards)
 * **Rewards socialisation** among validators whose performance exceeds a certain threshold and underperforming validators will receive no node operator rewards for the given frame
 
-<figure><img src="../../.gitbook/assets/image (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1).png" alt="" width="375"><figcaption><p>Illustration on Rewards Socialisation</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1).png" alt="" width="375"><figcaption><p>Illustration on Rewards Socialisation</p></figcaption></figure>
 
 ### Bond mechanics
 

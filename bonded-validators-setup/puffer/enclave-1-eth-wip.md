@@ -17,7 +17,7 @@ virtualMachines  japaneast    Standard_DC1ds_v3       1          None
 
 Open up your Azure console.
 
-<figure><img src="../../.gitbook/assets/image (4) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (4) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 Print out all resources with SGX enabled.
 
@@ -82,7 +82,7 @@ Copy the entire output starting from the opening curly brackets `{` to the closi
 
 **Example:**
 
-<figure><img src="../../.gitbook/assets/image (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 Save this plain text file as `registration_docker_001.json`.&#x20;
 
