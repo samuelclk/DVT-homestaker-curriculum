@@ -93,6 +93,8 @@
   * [Techne Bronze Speedrun (CLI)](dvt-setup/obol/techne-bronze-speedrun-cli.md)
 * [SSV](dvt-setup/ssv/README.md)
   * [SSV + Lido CSM](dvt-setup/ssv/ssv-+-lido-csm.md)
+  * [SSV Operator](dvt-setup/ssv/ssv-operator.md)
+  * [SSV Staker](dvt-setup/ssv/ssv-staker.md)
 
 ## Bonded Validators Setup
 

@@ -1,11 +1,4 @@
----
-description: >-
-  This guide is used as reference material for in-person workshops with mainly
-  non-technical audiences
-hidden: true
----
-
-# SSV + Lido CSM
+# SSV Operator
 
 ## Credits
 
@@ -208,10 +201,14 @@ Select all options under MEV Relays.
 
 <figure><img src="../../.gitbook/assets/image (13).png" alt=""><figcaption></figcaption></figure>
 
-The MEV Relays are actually set in your ETH Docker config and this is just to signal the relays that you are using.
+The MEV Relays are actually set in your ETH Docker config and this step is just to signal the relays that you are using.
 
 {% hint style="danger" %}
 All cluster members _**must use**_ the same relays to avoid missing block proposals due to a lack of consensus!
+{% endhint %}
+
+{% hint style="info" %}
+Use all available MEV Relays so that it's easier for stakers to choose your SSV Node.&#x20;
 {% endhint %}
 
 Input your DKG endpoint and append `:443` at the end if you are using a Tailscale funnel.
@@ -221,72 +218,4 @@ Input your DKG endpoint and append `:443` at the end if you are using a Tailscal
 {% hint style="info" %}
 The other fields are optional but fill them up to attract stakers to select your SSV Operator!
 {% endhint %}
-
-## Create a Safe Multi-Sig Wallet
-
-Cluster leader collects the wallet addresses of all cluster members to assign each of them as signers of this multi-sig wallet
-
-Next, create a Safe multi-sig wallet on Holesky for your cluster here: [https://holesky-safe.protofire.io/](https://holesky-safe.protofire.io/)
-
-* Connect your wallet >> Input your cluster name & select Holesky network
-* Add all wallet addresses of your cluster as signers. Choose any name for each signer. Select your signing threshold.
-
-{% hint style="info" %}
-The recommended signing thresholds are 3/4, 4/5, 5/6, 5/7, 6/8, 7/9, & 7/10.
-{% endhint %}
-
-## Create Splitter Contract
-
-Create a Splitter contract for your cluster here: [https://app.splits.org/](https://app.splits.org/)
-
-* Connect your wallet >> **Create new contract** >> Set the network to `Holesky` (you might need to zoom out on your browser to see testnets) >> Choose `Split`
-* Add each cluster member's wallet address and set their respective percentage splits
-* Set Controller to `None (immutable)`, Distribution bounty to `Off`, & choose whether you want to  sponsor the maintainer of Splits
-* Optionally, set the name of your Splitter contract
-
-## Create your SSV Cluster
-
-After all cluster members have registered their operators one of the cluster members opens the[ SSV webapp](https://app.ssv.network/) and connects the cluster Safe wallet.
-
-* Choose WalletConnect as the method (not Metamask or Coinbase Wallet)
-* `Open` the WalletConnect modal >> Copy the link (look for the "Copy" icon)
-
-<figure><img src="../../.gitbook/assets/Screenshot 2024-10-02 at 6.02.33 PM.png" alt="" width="375"><figcaption></figcaption></figure>
-
-* Go to you cluster's Safe multi-sig account and click on the WalletConnect icon >> Paste the copied link from the SSV Webapp here
-
-<figure><img src="../../.gitbook/assets/Screenshot 2024-10-02 at 6.06.44 PM.png" alt="" width="375"><figcaption></figcaption></figure>
-
-* Go back to the SSV Webapp >> Distribute Validator >> Generate new key shares
-* Select cluster size and the SSV Operators in your cluster >> Select `Offline` as your preferred DKG method
-* Select `DKG - Generate from New Key,` number of keys you want to generate, & set the withdrawal address to `0xF0179dEC45a37423EAD4FaD5fCb136197872EAd9` (Lido **TESTNET** withdrawal vault)
-  * Select `Linux (and WSL)` and copy the DKG command that will be generated for you
-
-### Initiating the DKG Ceremony
-
-Make sure all cluster members have confirmed that their DKG service is running and reachable.
-
-Run `cd`, then run the generated DKG command on your VM and you should see _**"DKG ceremony completed"**_ if the DKG ceremony completes successfully.&#x20;
-
-<figure><img src="../../.gitbook/assets/image (202).png" alt=""><figcaption></figcaption></figure>
-
-Back up all DKG output files located in `$HOME/ceremony*` folder.
-
-```sh
-#run on your laptop
-scp -r $USER@<EXTERNAL_IP_ADDRESS>:$HOME/ceremony* $HOME
-```
-
-Save this folder onto a USB drive and delete the copy on your laptop.
-
-```sh
-#run on your laptop
-sudo rm -r $HOME/ceremony*
-```
-
-Return to the SSV Webapp and acknowledge **Step 2: Deposit Validator** (although this is not yet done at this point), then go to **Step 3** and click on Register Validator.
-
-## Create CSM Operator
-
-## Exiting CSM-SSV validators
 
