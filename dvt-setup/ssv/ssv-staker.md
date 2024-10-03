@@ -12,11 +12,14 @@ This guide references the ideas and work of one of the Lido Community Staking me
 
 {% embed url="https://faucet.ssv.network/" %}
 
-2\) Install and configure ETH Docker
+2\) Install and configure ETH Docker only if you have not completed the **SSV Operator** section
 
 {% content-ref url="../../automation-tools/eth-docker.md" %}
 [eth-docker.md](../../automation-tools/eth-docker.md)
 {% endcontent-ref %}
+
+* Choose `Holešovice Testnet` >> `Ethereum node - consensus, execution and validator client`
+* Choose any configuration options for the subsequent steps. We only want to get to a point where you can use ETH Docker to generate validator keystores easily here.&#x20;
 
 ## Method 1: Distribute existing keystores
 
