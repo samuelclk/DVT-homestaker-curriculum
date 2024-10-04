@@ -46,8 +46,8 @@ Go to [Lido's ETH Docker repository ](https://github.com/lidofinance/eth-docker)
 cd ~ && git clone https://github.com/lidofinance/eth-docker.git && cd eth-docker
 ```
 
-```
-./ethd install
+```sh
+sudo usermod -aG sudo $USER
 ```
 
 Exit your virtual machine/hardware and re-login to add your host user into the docker user group.
@@ -56,9 +56,22 @@ Exit your virtual machine/hardware and re-login to add your host user into the d
 exit
 ```
 
-Once you are back in, you will be able to call `ethd` from anywhere in your terminal. Next, configure the ETH Docker service.
+After logging in again, install ETH Docker.
 
+```sh
+cd eth-docker
+./ethd install
 ```
+
+After the installation is complete, run:
+
+```sh
+source ~/.profile
+```
+
+You will now be able to call `ethd` from anywhere in your terminal. Next, configure the ETH Docker service.
+
+```sh
 ethd config
 ```
 
