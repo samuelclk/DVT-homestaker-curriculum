@@ -174,7 +174,7 @@ Verify that your DKG endpoint is accessible from external sources.
 
 ```sh
 cd ~/eth-docker
-sudo docker compose run --rm ssv-dkg ping --ip <DKG_ENDPOINT>:443
+sudo docker compose run --rm ssv-dkg ping --ip <DKG_ENDPOINT>
 ```
 
 **Expected output:**
