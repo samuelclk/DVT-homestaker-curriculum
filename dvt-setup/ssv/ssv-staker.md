@@ -23,6 +23,16 @@ This guide references the ideas and work of one of the Lido Community Staking me
 
 ## Method 1: Distribute existing keystores
 
+### Customise ETH Docker Settings
+
+Open up the ETH Docker `.env` file for editing.
+
+```sh
+nano ~/eth-docker/.env
+```
+
+Add `:deposit-cli.yml` to the end of the `COMPOSE_FILE=` line.
+
 ### Generate validator keystores
 
 First, generate your validator keystores.
