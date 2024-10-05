@@ -165,6 +165,7 @@ Migrate .charon contents into ETHDocker.
 ```sh
 cd
 sudo cp -r .charon/* eth-docker/.eth
+sudo chown -R $USER:$USER eth-docker/.eth/validator_keys
 ```
 
 Start ETH Docker.
