@@ -230,6 +230,7 @@ sudo ufw allow 22/tcp # for SSH
 sudo ufw allow 30303 # for the EL
 sudo ufw allow 9000 # for the CL
 sudo ufw allow 3000 # for the native Grafana
+sudo ufw allow 3610 # for Obol P2P
 sudo ufw enable
 ```
 
