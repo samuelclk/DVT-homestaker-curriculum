@@ -7,8 +7,12 @@
 On your client machine (e.g. working laptop), open up your terminal (Mac) or Windows Powershell (Windows) and run:
 
 ```sh
-ssh-keygen -t ed25519 -C ethnode
+ssh-keygen -t ed25519 -C <USERNAME>
 ```
+
+{% hint style="info" %}
+Replace `<USERNAME>` with your actual username if you are using cloud VMs. Your username typically comes before the **"@"** symbol in your VM's terminal.
+{% endhint %}
 
 Press `Enter` and set a password to encrypt your SSH private key.
 
@@ -59,33 +63,43 @@ sudo nano ~/.ssh/authorized_keys
 
 Paste your copied SSH pubkey string into the `authorized_keys` file and press `CTRL + O, enter, CTRL + X`  to save the file and exit.
 {% endtab %}
+
+{% tab title="On Google Cloud" %}
+Print out the SSH pubkey string and copy it. On your working laptop, run:
+
+```sh
+cat ~/.ssh/id_ed25519.pub
+```
+
+You will see a similar output below:
+
+```sh
+ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIBKRXS4XpZoBcuqvXVN2sRNNolKL+ZHy2Xnzx27Op3uY sam
+```
+
+Copy this SSH pubkey and enter it into your Google Cloud VM.
+
+{% embed url="https://youtu.be/NJQhUMqPN9A" %}
+
+SSH into your VM with your custom SSH key.
+
+```sh
+# on your laptop
+ssh <username>@<External_IP_address> -p 22 -i .ssh/id_ed25519 -v
+```
+{% endtab %}
 {% endtabs %}
 
 ### Change the SSH port and disable remote password login
-
-You can make it harder for attackers to access your node by changing your SSH port away from the default port 22.
-
-Pick a port number between 1024–49151 and check that it is not already in use by running
-
-```bash
-sudo ss -tulpn | grep <Chosen_SSH_Port_Number>
-```
-
-**Expected output:** None. _i.e. If there is no output, it means that your chosen port is free to use._
-
-#### Next, we will change your SSH port number and disable remote password login concurrently
-
-Run the following command to open up the SSH server configuration file.
 
 ```bash
 sudo nano /etc/ssh/sshd_config
 ```
 
-1. Find the line `Port 22` in the file. Change it to your chosen port number and then uncomment the line by removing the `#` prefix (if it exists)
-2. Uncomment `#AuthorizedKeysFile` if it is commented (by removing the `#` in front of it)
-3. Change `KbdInteractiveAuthentication yes` to `KbdInteractiveAuthentication no` and uncomment (by removing the `#` in front of it)
-4. Change `PasswordAuthentication yes` to `PasswordAuthentication no` and uncomment (by removing the `#` in front of it)
-5. Change `#PermitRootLogin prohibit-password` to `PermitRootLogin no` , removing the `#` prefix
+1. Uncomment `#AuthorizedKeysFile` if it is commented (by removing the `#` in front of it)
+2. Change `KbdInteractiveAuthentication yes` to `KbdInteractiveAuthentication no` and uncomment (by removing the `#` in front of it)
+3. Change `PasswordAuthentication yes` to `PasswordAuthentication no` and uncomment (by removing the `#` in front of it)
+4. Change `#PermitRootLogin prohibit-password` to `PermitRootLogin no` , removing the `#` prefix
 
 Once you're done, save with `Ctrl+O` and `Enter`, then exit with `Ctrl+X`.
 
@@ -93,12 +107,13 @@ Now we restart the SSH server so it registers the new settings:
 
 ```bash
 sudo systemctl restart sshd
+sudo systemctl restart ssh
 ```
 
 Now you will only be able to access your node remotely using your SSH private key. The command for your SSH connection will be amended slightly from before to:
 
 ```
-ssh <username>@<node_IP_address> -p <new_port_no.> -i .ssh/id_ed25519 -v
+ssh <username>@<node_IP_address> -p 22 -i .ssh/id_ed25519 -v
 ```
 
 ### Configure the firewall rules
