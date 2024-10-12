@@ -219,6 +219,29 @@ sudo cat ~/.charon/cluster-lock.json
 sudo cat ~/.charon/deposit-data.json
 ```
 
+## Add Obol monitoring credentials
+
+You will receive your monitoring credentials after registrering your cluster with Obol Techne Credentials Progamme and you will need to add it into your ETH Docker configuration.
+
+Open up the `obol-prom.yml` file for editing.
+
+```sh
+nano ~/eth-docker/prometheus/obol-prom.yml
+```
+
+Replace the `credentials` field with your actual monitoring credentials.
+
+<figure><img src="../../.gitbook/assets/Screenshot 2024-10-12 at 10.45.11 AM.png" alt=""><figcaption><p>e.g., Replace OBOL_PROM_REMOTE_WRITE_TOKEN</p></figcaption></figure>
+
+`CTRL+O`, `ENTER`, `CTRL+X` to save and exit.
+
+Then, restart your ETH Docker services.
+
+```sh
+ethd down
+ethd up
+```
+
 ## Securing your device
 
 ### Firewall Rules
