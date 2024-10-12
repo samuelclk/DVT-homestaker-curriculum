@@ -219,3 +219,43 @@ Input your DKG endpoint and append `:443` at the end if you are using a Tailscal
 The other fields are optional but fill them up to attract stakers to select your SSV Operator!
 {% endhint %}
 
+## Securing your device
+
+### Firewall Rules
+
+```sh
+sudo ufw default deny incoming
+sudo ufw default allow outgoing
+sudo ufw allow 22/tcp # for SSH
+sudo ufw allow 30303 # for the EL
+sudo ufw allow 9000 # for the CL
+sudo ufw allow 3000 # for the native Grafana
+sudo ufw allow 3030 # for SSV DKG
+sudo ufw allow 12001/udp # for SSV node UDP
+sudo ufw allow 13001/tcp # for SSV node TCP
+sudo ufw enable
+```
+
+Make sure to also configure port forwarding on the ports allowed above.&#x20;
+
+{% content-ref url="../../tips/advanced-networking.md" %}
+[advanced-networking.md](../../tips/advanced-networking.md)
+{% endcontent-ref %}
+
+### Other Security SOPs
+
+{% content-ref url="../../linux-os-networking-and-security/networking-and-network-security.md" %}
+[networking-and-network-security.md](../../linux-os-networking-and-security/networking-and-network-security.md)
+{% endcontent-ref %}
+
+{% content-ref url="../../linux-os-networking-and-security/device-level-security-setup.md" %}
+[device-level-security-setup.md](../../linux-os-networking-and-security/device-level-security-setup.md)
+{% endcontent-ref %}
+
+## Support
+
+{% embed url="https://t.me/stakesaurus" %}
+
+## Donations
+
+#### If you found this helpful, consider supporting Stakesaurus in one of few ways [here](https://dvt-homestaker.stakesaurus.com/#if-you-found-this-helpful-consider-supporting-stakesaurus-in-one-of-two-ways-below)!

@@ -257,6 +257,12 @@ sudo ufw allow 3610 # for Obol P2P
 sudo ufw enable
 ```
 
+Make sure to also configure port forwarding on the ports allowed above.&#x20;
+
+{% content-ref url="../../tips/advanced-networking.md" %}
+[advanced-networking.md](../../tips/advanced-networking.md)
+{% endcontent-ref %}
+
 ### Other Security SOPs
 
 {% content-ref url="../../linux-os-networking-and-security/networking-and-network-security.md" %}
