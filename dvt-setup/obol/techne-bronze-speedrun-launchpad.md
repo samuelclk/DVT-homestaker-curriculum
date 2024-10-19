@@ -235,6 +235,12 @@ Replace the `credentials` field with your actual monitoring credentials.
 
 `CTRL+O`, `ENTER`, `CTRL+X` to save and exit.
 
+Copy the contents over into the `custom-prom.yml` file that is empty by default but already incorporated in the default ETH Docker configurations.&#x20;
+
+```sh
+cp ~/eth-docker/prometheus/obol-prom.yml ~/eth-docker/prometheus/custom-prom.yml
+```
+
 Then, restart your ETH Docker services.
 
 ```sh
