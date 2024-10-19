@@ -124,6 +124,52 @@ Once the DKG ceremony is completed, **back up the `.charon` folder containing th
 * validator\_keys/
 * deposit-data.json
 
+**Back up using one of the 2 methods below.**
+
+{% tabs %}
+{% tab title="secure copy" %}
+This is the most secure method but requires having SSH access to your server from your laptop's terminal (i.e., after manually adding SSH public keys to your server).&#x20;
+
+```sh
+scp -i PATH_TO_SSH_PRIVATE_KEY -r $USER@EXTERNAL_IP_ADDRESS:$HOME/.charon $HOME/Documents
+```
+
+Your .charon folder will now be found on your laptop's `Documents` folder. Note that `.charon` is a hidden folder so you will not see it being displayed in your file system.
+{% endtab %}
+
+{% tab title="base64" %}
+This is an alternative method if you have not set up SSH access to your server from your laptop's terminal. It is less secure as you will expose your files temporarily on your terminal.
+
+* Zip up the .charon folder and convert the zipped file into a base64 string. Then print out the resulting contents.
+
+```sh
+sudo tar -czvf - $HOME/.charon | base64 > dot_charon.tar.gz.b64
+cat dot_charon.tar.gz.b64
+```
+
+* Copy the entire output carefully and save it in a text editor on your laptop.&#x20;
+* Clear your terminal and remove the bash history of your server to minimise exposure of these important files
+
+```sh
+clear
+history -c
+```
+
+#### Restoring the files
+
+To restore base64 encoded files, we basically need to reverse the process above.
+
+Convert the base64 string back into a zipped file and then unzip the resulting archive.
+
+```sh
+base64 -d dot_charon.tar.gz.b64 > dot_charon.tar.gz
+tar xvf dot_charon.tar.gz
+```
+
+The `.charon` folder will be found in the folder you ran the above command in. Run `ls -la` to see it.
+{% endtab %}
+{% endtabs %}
+
 Then, set the following permissions.&#x20;
 
 ```sh
