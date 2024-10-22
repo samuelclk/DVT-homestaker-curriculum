@@ -100,7 +100,9 @@
 
 * [Lido CSM](bonded-validators-setup/lido-csm/README.md)
   * [Generating CSM keystores](bonded-validators-setup/lido-csm/generating-csm-keystores.md)
-  * [Running a separate VC service](bonded-validators-setup/lido-csm/running-a-separate-vc-service.md)
+  * [Set Fee Recipient Address](bonded-validators-setup/lido-csm/set-fee-recipient-address/README.md)
+    * [Method 1: Configure on validator keys (WIP)](bonded-validators-setup/lido-csm/set-fee-recipient-address/method-1-configure-on-validator-keys-wip.md)
+    * [Method 2: Configure on separate validator client](bonded-validators-setup/lido-csm/set-fee-recipient-address/method-2-configure-on-separate-validator-client.md)
   * [Upload/Remove/View validator keys](bonded-validators-setup/lido-csm/upload-remove-view-validator-keys.md)
   * [Rewards & bonds](bonded-validators-setup/lido-csm/rewards-and-bonds.md)
   * [Exiting CSM validators](bonded-validators-setup/lido-csm/exiting-csm-validators/README.md)

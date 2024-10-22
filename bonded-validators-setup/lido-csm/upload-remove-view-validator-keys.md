@@ -2,7 +2,7 @@
 
 ## Upload keys
 
-* Go to the [CSM Widget](https://csm.testnet.fi/) and connect your wallet
+* Go to the [CSM Widget](https://csm.testnet.fi/) and connect your wallet. <mark style="color:red;">**MAKE SURE THAT YOU ARE ON THE CORRECT NETWORK (i.e., Holesky or Mainnet).**</mark>
 * Select `Become a Node Operator` and then `Create a Node Operator`
 * On the CSM Widget, upload your `deposit data file` and select the corresponding bond type (ETH, stETH, wstETH), and provide the desired bond amount
 

@@ -21,14 +21,14 @@ You will also be able to claim your net rewards + bond in total or in individual
 
 There are 2 activities you can perform here:
 
-1. Review the balance of your total bond provided and the excess/shortage bond amounts
+1. Review the balance of your total bond provided and the excess/insufficient bond amounts
 2. Add more bond so that you can get more of your uploaded validator keys deposited by the CSM or top up any shortages due to poor performance or slashing events. **Read more on bond penalties** [**here**](https://operatorportal.lido.fi/modules/community-staking-module#block-3951aa72ba1e471bafe95b40fef65d2b)**.**
 
 Once your excess bond amount is sufficient for new validator keys to be deposited, the `Keys available to upload` will increase.
 
 <figure><img src="../../.gitbook/assets/image (182).png" alt=""><figcaption></figcaption></figure>
 
-On the other hand, if your bond shortage falls below the required minimum, the unbonded keys count will increase.
+On the other hand, if your bond falls below the required minimum, the unbonded keys count will increase.
 
 <figure><img src="../../.gitbook/assets/image (183).png" alt=""><figcaption></figcaption></figure>
 

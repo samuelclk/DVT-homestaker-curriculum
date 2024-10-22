@@ -1,4 +1,4 @@
-# Running a separate VC service
+# Method 2: Configure on separate validator client
 
 ## Pre-requisites
 
@@ -6,14 +6,14 @@ Make sure you have downloaded the necessary files according to your choice of va
 
 {% tabs %}
 {% tab title="Teku" %}
-{% content-ref url="../../installing-and-configuring-your-el+cl-clients/set-up-and-configure-consensus-layer-client/teku-bn.md" %}
-[teku-bn.md](../../installing-and-configuring-your-el+cl-clients/set-up-and-configure-consensus-layer-client/teku-bn.md)
+{% content-ref url="../../../installing-and-configuring-your-el+cl-clients/set-up-and-configure-consensus-layer-client/teku-bn.md" %}
+[teku-bn.md](../../../installing-and-configuring-your-el+cl-clients/set-up-and-configure-consensus-layer-client/teku-bn.md)
 {% endcontent-ref %}
 {% endtab %}
 
 {% tab title="Nimbus" %}
-{% content-ref url="../../installing-and-configuring-your-el+cl-clients/set-up-and-configure-consensus-layer-client/nimbus-bn.md" %}
-[nimbus-bn.md](../../installing-and-configuring-your-el+cl-clients/set-up-and-configure-consensus-layer-client/nimbus-bn.md)
+{% content-ref url="../../../installing-and-configuring-your-el+cl-clients/set-up-and-configure-consensus-layer-client/nimbus-bn.md" %}
+[nimbus-bn.md](../../../installing-and-configuring-your-el+cl-clients/set-up-and-configure-consensus-layer-client/nimbus-bn.md)
 {% endcontent-ref %}
 {% endtab %}
 
@@ -48,14 +48,14 @@ ssh <user>@<IP_address> -p <port_no.> -i <SSH_key> -v
 {% endtab %}
 
 {% tab title="Lighthouse" %}
-{% content-ref url="../../installing-and-configuring-your-el+cl-clients/set-up-and-configure-consensus-layer-client/lighthouse-bn.md" %}
-[lighthouse-bn.md](../../installing-and-configuring-your-el+cl-clients/set-up-and-configure-consensus-layer-client/lighthouse-bn.md)
+{% content-ref url="../../../installing-and-configuring-your-el+cl-clients/set-up-and-configure-consensus-layer-client/lighthouse-bn.md" %}
+[lighthouse-bn.md](../../../installing-and-configuring-your-el+cl-clients/set-up-and-configure-consensus-layer-client/lighthouse-bn.md)
 {% endcontent-ref %}
 {% endtab %}
 
 {% tab title="Prysm" %}
-{% content-ref url="../../installing-and-configuring-your-el+cl-clients/set-up-and-configure-consensus-layer-client/prysm-bn.md" %}
-[prysm-bn.md](../../installing-and-configuring-your-el+cl-clients/set-up-and-configure-consensus-layer-client/prysm-bn.md)
+{% content-ref url="../../../installing-and-configuring-your-el+cl-clients/set-up-and-configure-consensus-layer-client/prysm-bn.md" %}
+[prysm-bn.md](../../../installing-and-configuring-your-el+cl-clients/set-up-and-configure-consensus-layer-client/prysm-bn.md)
 {% endcontent-ref %}
 
 {% hint style="info" %}
@@ -214,7 +214,7 @@ sudo lighthouse account validator import --network holesky --datadir /var/lib/cs
 
 **Expected output:**
 
-<figure><img src="../../.gitbook/assets/image (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 3\) Change the owner of this new folder to the `csm_lighthouse_validator` user
 
@@ -243,7 +243,7 @@ sudo /usr/local/bin/prysmvalidator accounts import --keys-dir=$HOME/staking_depo
 
 **Expected output:**
 
-<figure><img src="../../.gitbook/assets/image (6) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (6) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 3\) Create a plain text password file for the Prysm wallet
 
@@ -310,15 +310,16 @@ WantedBy=multi-user.target
 Once you're done, save with `Ctrl+O` and `Enter`, then exit with `Ctrl+X`. Understand and review your configuration summary below, and amend if needed.
 
 {% hint style="info" %}
-**Important:** Recall that you will have to use a designated fee recipient address&#x20;
+**Important:** Recall that you will have to use designated fee recipient addresses as a CSM operator.\
+**- Holesky:** [`0xE73a3602b99f1f913e72F8bdcBC235e206794Ac8`](https://holesky.etherscan.io/address/0xE73a3602b99f1f913e72F8bdcBC235e206794Ac8)
 
-([`0xE73a3602b99f1f913e72F8bdcBC235e206794Ac8`](https://holesky.etherscan.io/address/0xE73a3602b99f1f913e72F8bdcBC235e206794Ac8)) as a CSM operator
+**- Mainnet:** [`0x388C818CA8B9251b393131C08a736A67ccB19297`](https://etherscan.io/address/0x388C818CA8B9251b393131C08a736A67ccB19297)
 {% endhint %}
 
 Refer to the native Teku validator client setup section for more information on the other flags used. &#x20;
 
-{% content-ref url="../../native-solo-staking-setup/validator-client-setup/teku-vc.md" %}
-[teku-vc.md](../../native-solo-staking-setup/validator-client-setup/teku-vc.md)
+{% content-ref url="../../../native-solo-staking-setup/validator-client-setup/teku-vc.md" %}
+[teku-vc.md](../../../native-solo-staking-setup/validator-client-setup/teku-vc.md)
 {% endcontent-ref %}
 {% endtab %}
 
@@ -365,8 +366,8 @@ Once you're done, save with `Ctrl+O` and `Enter`, then exit with `Ctrl+X`. Under
 
 Refer to the native Nimbus validator client setup section for more information on the other flags used.
 
-{% content-ref url="../../native-solo-staking-setup/validator-client-setup/nimbus-vc.md" %}
-[nimbus-vc.md](../../native-solo-staking-setup/validator-client-setup/nimbus-vc.md)
+{% content-ref url="../../../native-solo-staking-setup/validator-client-setup/nimbus-vc.md" %}
+[nimbus-vc.md](../../../native-solo-staking-setup/validator-client-setup/nimbus-vc.md)
 {% endcontent-ref %}
 {% endtab %}
 
@@ -431,8 +432,8 @@ Once you're done, save with `Ctrl+O` and `Enter`, then exit with `Ctrl+X`.&#x20;
 
 Refer to the native Lodestar validator client setup section for more information on the other flags used.
 
-{% content-ref url="../../native-solo-staking-setup/validator-client-setup/lodestar-vc.md" %}
-[lodestar-vc.md](../../native-solo-staking-setup/validator-client-setup/lodestar-vc.md)
+{% content-ref url="../../../native-solo-staking-setup/validator-client-setup/lodestar-vc.md" %}
+[lodestar-vc.md](../../../native-solo-staking-setup/validator-client-setup/lodestar-vc.md)
 {% endcontent-ref %}
 {% endtab %}
 
@@ -480,8 +481,8 @@ Once you're done, save with `Ctrl+O` and `Enter`, then exit with `Ctrl+X`. Under
 
 Refer to the native Lighthouse validator client setup section for more information on the other flags used.
 
-{% content-ref url="../../native-solo-staking-setup/validator-client-setup/lighthouse-vc.md" %}
-[lighthouse-vc.md](../../native-solo-staking-setup/validator-client-setup/lighthouse-vc.md)
+{% content-ref url="../../../native-solo-staking-setup/validator-client-setup/lighthouse-vc.md" %}
+[lighthouse-vc.md](../../../native-solo-staking-setup/validator-client-setup/lighthouse-vc.md)
 {% endcontent-ref %}
 {% endtab %}
 
@@ -532,8 +533,8 @@ Once you're done, save with `Ctrl+O` and `Enter`, then exit with `Ctrl+X`. Under
 
 Refer to the native Lighthouse validator client setup section for more information on the other flags used.
 
-{% content-ref url="../../native-solo-staking-setup/validator-client-setup/prysm-vc.md" %}
-[prysm-vc.md](../../native-solo-staking-setup/validator-client-setup/prysm-vc.md)
+{% content-ref url="../../../native-solo-staking-setup/validator-client-setup/prysm-vc.md" %}
+[prysm-vc.md](../../../native-solo-staking-setup/validator-client-setup/prysm-vc.md)
 {% endcontent-ref %}
 {% endtab %}
 {% endtabs %}
@@ -562,7 +563,7 @@ sudo journalctl -fu csm_tekuvalidator -o cat | ccze -A
 
 **Expected output:**
 
-<figure><img src="../../.gitbook/assets/image (55).png" alt=""><figcaption><p>Example output of the Teku VC running on the Goerli testnet. Look out for Holesky in your output.</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (55).png" alt=""><figcaption><p>Example output of the Teku VC running on the Goerli testnet. Look out for Holesky in your output.</p></figcaption></figure>
 
 Press `CTRL-C` to exit.
 
@@ -606,7 +607,7 @@ sudo journalctl -fu csm_nimbusvalidator -o cat | ccze -A
 
 **Expected output:**
 
-<figure><img src="../../.gitbook/assets/image (142).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (142).png" alt=""><figcaption></figcaption></figure>
 
 Press `CTRL-C` to exit.
 
@@ -646,7 +647,7 @@ docker compose up -d
 
 **Expected output:**
 
-<figure><img src="../../.gitbook/assets/image (7) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (7) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 3\) Make sure there are no error messages by monitoring the logs for a few minutes.
 
@@ -654,7 +655,7 @@ docker compose up -d
 docker logs csm_lodestar_validator -f
 ```
 
-<figure><img src="../../.gitbook/assets/image (6) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (6) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 ## Remove duplicates of validator keystores
 
@@ -684,7 +685,7 @@ sudo journalctl -fu csm_lighthousevalidator -o cat | ccze -A
 
 **Expected output:**
 
-<figure><img src="../../.gitbook/assets/image (2) (1) (1) (1) (1) (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (2) (1) (1) (1) (1) (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 {% hint style="info" %}
 You will see some warnings if your beacon node (consensus client) is not yet synced.
@@ -732,7 +733,7 @@ sudo journalctl -fu csm_prysmvalidator -o cat | ccze -A
 
 **Expected output:**
 
-<figure><img src="../../.gitbook/assets/image (167).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (167).png" alt=""><figcaption></figcaption></figure>
 
 {% hint style="info" %}
 You will see some warnings if your beacon node (consensus client) is not yet synced.
@@ -759,6 +760,33 @@ To prevent configuration mistakes leading to double signing in the future, remov
 ```sh
 sudo rm -r ~/staking_deposit-cli*/validator_keys
 ```
+{% endtab %}
+{% endtabs %}
+
+## Automation Tools
+
+{% tabs %}
+{% tab title="ETH Pillar" %}
+Select `4 - Lido CSM Validator Client Only`.
+
+<figure><img src="../../../.gitbook/assets/image (203).png" alt=""><figcaption></figcaption></figure>
+
+Enter your consensus client (beacon node) address. **Example:** http://127.0.0.1:5052
+
+Verify the `fee_recipient` address is set to the `Lido Execution Layer Rewards Vault`.
+
+* **Holesky:** [`0xE73a3602b99f1f913e72F8bdcBC235e206794Ac8`](https://holesky.etherscan.io/address/0xE73a3602b99f1f913e72F8bdcBC235e206794Ac8)
+* **Mainnet:** [`0x388C818CA8B9251b393131C08a736A67ccB19297`](https://etherscan.io/address/0x388C818CA8B9251b393131C08a736A67ccB19297)
+
+Generate and import CSM validator keys.
+{% endtab %}
+
+{% tab title="ETH Docker" %}
+ETH Docker sets the `fee_recipient` address on the validator key level. Refer to the subpage below, under **"Automation Tools".**
+
+{% content-ref url="method-1-configure-on-validator-keys-wip.md" %}
+[method-1-configure-on-validator-keys-wip.md](method-1-configure-on-validator-keys-wip.md)
+{% endcontent-ref %}
 {% endtab %}
 {% endtabs %}
 
@@ -795,4 +823,3 @@ sudo rm -r ~/staking_deposit-cli*/validator_keys
 * Discord: [https://discord.gg/prysmaticlabs](https://discord.gg/prysmaticlabs)
 {% endtab %}
 {% endtabs %}
-
