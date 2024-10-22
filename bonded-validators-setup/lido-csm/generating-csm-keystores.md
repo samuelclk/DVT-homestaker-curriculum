@@ -25,7 +25,6 @@ Visit the Validator key generation page and follow the steps accordingly to gene
 {% hint style="info" %}
 Recall that the steps for both native solo staking and CSM are the same except for the requirement to use a specific`withdrawal_address` of the `Lido Withdrawal Vault.`
 
-**Holeksy:**[`0xF0179dEC45a37423EAD4FaD5fCb136197872EAd9`](https://holesky.etherscan.io/address/0xF0179dEC45a37423EAD4FaD5fCb136197872EAd9)
-
-**Mainnet:** [`0xB9D7934878B5FB9610B3fE8A5e441e8fad7E293f`](https://etherscan.io/address/0xb9d7934878b5fb9610b3fe8a5e441e8fad7e293f)
+* **Mainnet:** [`0xB9D7934878B5FB9610B3fE8A5e441e8fad7E293f`](https://etherscan.io/address/0xb9d7934878b5fb9610b3fe8a5e441e8fad7e293f)
+* **Holeksy:**[`0xF0179dEC45a37423EAD4FaD5fCb136197872EAd9`](https://holesky.etherscan.io/address/0xF0179dEC45a37423EAD4FaD5fCb136197872EAd9)
 {% endhint %}

@@ -87,7 +87,9 @@ Run the following command to generate your validator keys. Replace `<number>` wi
 
 1. **Native Solo Staking Setup:** Use a secure Ethereum wallet address that you own--e.g., cold wallet address, SAFE multi-sig address
 2. **Diva Staking:** Skip this section. The validator key shares will be assigned to you by the Diva client.
-3. **Lido CSM:** On `Holesky` testnet, set your withdrawal address to `0xF0179dEC45a37423EAD4FaD5fCb136197872EAd9`
+3. **Lido CSM:** Set your withdrawal address to the following.
+   * **Mainnet:** [`0xB9D7934878B5FB9610B3fE8A5e441e8fad7E293f`](https://etherscan.io/address/0xb9d7934878b5fb9610b3fe8a5e441e8fad7e293f)
+   * **Holesky:** [`0xF0179dEC45a37423EAD4FaD5fCb136197872EAd9`](https://holesky.etherscan.io/address/0xF0179dEC45a37423EAD4FaD5fCb136197872EAd9)
 4. **RocketPool (WIP):**
 5. **Stader (WIP):**
 {% endtab %}

@@ -6,7 +6,9 @@
 
 ### How to get here
 
-* Go to the [CSM Widget](https://csm.testnet.fi/)
+* Go to the Lido CSM Widget
+  * **Mainnet:** [https://csm.lido.fi/](https://csm.lido.fi/)
+  * **Holesky:** [https://csm.testnet.fi/](https://csm.testnet.fi/)
 * Select the `BOND & REWARDS` section in the navigation bar
 
 ### `CLAIM` tab

@@ -2,9 +2,11 @@
 
 ## Upload keys
 
-* Go to the [CSM Widget](https://csm.testnet.fi/) and connect your wallet. <mark style="color:red;">**MAKE SURE THAT YOU ARE ON THE CORRECT NETWORK (i.e., Holesky or Mainnet).**</mark>
+* Go to the Lido CSM Widget and connect your wallet. <mark style="color:red;">**MAKE SURE THAT YOU ARE ON THE CORRECT NETWORK (i.e., Holesky or Mainnet).**</mark>
+  * **Mainnet:** [https://csm.lido.fi/](https://csm.lido.fi/)
+  * **Holesky:** [https://csm.testnet.fi/](https://csm.testnet.fi/)
 * Select `Become a Node Operator` and then `Create a Node Operator`
-* On the CSM Widget, upload your `deposit data file` and select the corresponding bond type (ETH, stETH, wstETH), and provide the desired bond amount
+* On the Lido CSM Widget, upload your `deposit data file` and select the corresponding bond type (ETH, stETH, wstETH), and provide the desired bond amount
 
 <figure><img src="../../.gitbook/assets/image (5) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
@@ -46,7 +48,7 @@ A fee is confiscated from the Node Operator's bond on each deleted key to cover 
 
 More details [here](https://operatorportal.lido.fi/modules/community-staking-module#block-051fceb673504a489e541e3615984084).
 
-* Go to the [CSM Widget](https://csm.testnet.fi/), under the `KEYS` header
+* Go to the Lido CSM Widget, under the `KEYS` header
 * Select the `REMOVE` tab on the widget
 * Select the keys you want to remove--
 

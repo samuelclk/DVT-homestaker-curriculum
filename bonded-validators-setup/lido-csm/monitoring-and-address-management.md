@@ -1,5 +1,10 @@
 # Monitoring & Address management
 
+## Lido CSM Widget URLS
+
+* **Mainnet:** [https://csm.lido.fi/](https://csm.lido.fi/)
+* **Holesky:** [https://csm.testnet.fi/](https://csm.testnet.fi/)
+
 ## Monitoring validator performance
 
 Refer to the monitoring section below.
@@ -28,7 +33,7 @@ As there are no custom alerts available yet, you should check this once every 3 
 
 ## Changing Rewards & Manager Address
 
-Node operators can change the Rewards and Manager Address in the `REWARDS ADDRESS` & `MANAGER ADDRESS` tab under the `ROLES` header of the [CSM Widget](https://csm.testnet.fi/).
+Node operators can change the Rewards and Manager Address in the `REWARDS ADDRESS` & `MANAGER ADDRESS` tab under the `ROLES` header of the Lido CSM Widget.
 
 <figure><img src="../../.gitbook/assets/image (3) (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
