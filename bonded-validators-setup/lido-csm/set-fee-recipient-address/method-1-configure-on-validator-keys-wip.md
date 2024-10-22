@@ -4,8 +4,151 @@
 
 {% tabs %}
 {% tab title="Teku" %}
+Assuming your Teku validator client is already set up, stop your Teku validator client.
+
 ```sh
-sudo useradd --no-create-home --shell /bin/false csm_teku_validator
+sudo systemctl stop tekuvalidator.service
+```
+
+Find the pubkey values of your own <mark style="color:red;">**non-CSM**</mark> validator keystores generated.
+
+```sh
+sudo find /var/lib -name "keystore*.json"
+```
+
+For each `resulting filepath`, run:
+
+```sh
+cat RESULTING_FILEPATH | jq -r '.pubkey'
+```
+
+_**You should now have a list of all your own**** **<mark style="color:red;">**non-CSM**</mark>** ****validator keystore pubkeys.**_
+
+Create a custom proposer configuration file.
+
+```sh
+sudo nano /var/lib/teku_validator/validator/proposer_configuration.yml
+```
+
+Paste the following contents into the file.
+
+```
+{
+  "proposer_config": {
+    "YOUR_OWN_VALIDATOR_PUBKEY_(NOT_CSM)_01": {
+      "fee_recipient": "YOUR_OWN_FEE_RECIPIENT_ADDRESS",
+      "builder": {
+        "enabled": true
+      }
+    },
+    "YOUR_OWN_VALIDATOR_PUBKEY_(NOT_CSM)_02": {
+      "fee_recipient": "YOUR_OWN_FEE_RECIPIENT_ADDRESS",
+      "builder": {
+        "enabled": true
+      }
+    },
+    "YOUR_OWN_VALIDATOR_PUBKEY_(NOT_CSM)_03": {
+      "fee_recipient": "YOUR_OWN_FEE_RECIPIENT_ADDRESS",
+      "builder": {
+        "enabled": true
+      }
+    }
+  },
+  "default_config": {
+    "fee_recipient": "LIDO_EXECUTION_LAYER_REWARDS_VAULT",
+    "builder": {
+      "enabled": true
+    }
+  }
+}
+```
+
+**Replace** `YOUR_OWN_VALIDATOR_PUBKEY_(NOT_CSM)` with your own actual validator pubkeys <mark style="color:red;">**(NOT CSM).**</mark>
+
+**Replace** `YOUR_OWN_FEE_RECIPIENT_ADDRESS` with your desired wallet address.
+
+**Replace** `LIDO_EXECUTION_LAYER_REWARDS_VAULT` with the following options.
+
+* **Mainnet**
+
+```
+suggested_fee_recipient: "0x388C818CA8B9251b393131C08a736A67ccB19297"
+```
+
+* **Holesky**
+
+```
+suggested_fee_recipient: "0xE73a3602b99f1f913e72F8bdcBC235e206794Ac8"
+```
+
+`CTRL+O`, `ENTER`, `CTRL+X` to save and exit.
+
+### Adding more <mark style="color:red;">non-CSM</mark> validator keystores:
+
+If you want to add more of your own validator keystores, replicate the following segment, taking note of the indentation.
+
+```
+    "YOUR_OWN_VALIDATOR_PUBKEY_(NOT_CSM)_03": {
+      "fee_recipient": "YOUR_OWN_FEE_RECIPIENT_ADDRESS",
+      "builder": {
+        "enabled": true
+      }
+    }
+```
+
+`CTRL+O`, `ENTER`, `CTRL+X` to save and exit.
+
+Edit the Teku validator client service file.
+
+```
+sudo nano /etc/systemd/system/tekuvalidator.service
+```
+
+Add the `--validators-proposer-config` flag and point it to the `proposer_configuration.yml` file. Then remove the `--validators-proposer-default-fee-recipient flag`. e.g.,
+
+```
+[Unit]
+Description=Teku Validator Client (Holesky)
+Wants=network-online.target
+After=network-online.target
+
+[Service]
+User=teku_validator
+Group=teku_validator
+Type=simple
+Restart=always
+RestartSec=5
+Environment="JAVA_OPTS=-Xmx6g"
+Environment="TEKU_OPTS=-XX:-HeapDumpOnOutOfMemoryError"
+ExecStart=/usr/local/bin/teku/bin/teku vc \
+  --network=holesky \
+  --data-path=/var/lib/teku_validator \
+  --validator-keys=/var/lib/teku_validator/validator_keystores:/var/lib/teku_validator/keystore_password \
+  --beacon-node-api-endpoint=http://<Internal_IP_address>:5051 \
+  --validators-proposer-config=/var/lib/teku_validator/validator/proposer_configuration.yml \
+  --validators-proposer-blinded-blocks-enabled=true \
+  --validators-graffiti="<your_graffiti_of_choice>" \
+  --metrics-enabled=true \
+  --metrics-port=8108 \
+  --doppelganger-detection-enabled=true 
+
+[Install]
+WantedBy=multi-user.target
+```
+
+`CTRL+O`, `ENTER`, `CTRL+X` to save and exit.
+
+Restart your Teku validator client.
+
+```sh
+sudo systemctl start tekuvalidator.service
+sudo systemctl status tekuvalidator.service
+```
+
+Monitor for errors.
+
+```sh
+sudo journalctl -fu tekuvalidator -o cat | ccze -A
 ```
 {% endtab %}
 
@@ -22,11 +165,17 @@ sudo useradd --no-create-home --shell /bin/false csm_lodestar_validator
 {% endtab %}
 
 {% tab title="Lighthouse" %}
-Edit the `validator_definitions.yml` file with the designated `fee_recipeint` address.
+Assuming you have set up your Lighthouse validator client and imported your CSM validator keystores. Stop your validator client.
 
 ```sh
-sudo nano /var/lib/lighthouse/<network>/validators/validator_definitions.yml
-# Replace <network> with mainnet or holesky
+sudo systemctl stop lighthousevalidator.service
+```
+
+Then, edit the `validator_definitions.yml` file with the designated `fee_recipeint` address.
+
+```sh
+sudo nano /var/lib/lighthouse_validator/validators/validator_definitions.yml
+# Actual filepath might vary according to your configurations
 ```
 
 Find the pubkeys of each of your CSM validator keystores and add the following line under each keystore as a new line. **Note:** Take note of the exact indentation.&#x20;
@@ -43,21 +192,37 @@ suggested_fee_recipient: "0x388C818CA8B9251b393131C08a736A67ccB19297"
 suggested_fee_recipient: "0xE73a3602b99f1f913e72F8bdcBC235e206794Ac8"
 ```
 
-#### Example:
+#### Example with Mainnet fee recipient:
 
 ```
 ---
 - enabled: true
-  voting_public_key: "0x87a580d31d7bc69069b55f5a01995a610dd391a26dc9e36e81057a17211983a79266800ab8531f21f1083d7d84085007"
+  voting_public_key: 0xa1a6d4a72db3fff3a81401cb9a80e1a7d18a96c3a6c3c9b50531e3b02e50b2baeba06e3a7c9fe24374e48091006b11f7
+  description: ''
   type: local_keystore
-  voting_keystore_path: /home/paul/.lighthouse/validators/0x87a580d31d7bc69069b55f5a01995a610dd391a26dc9e36e81057a17211983a79266800ab8531f21f1083d7d84085007/voting-keystore.json
-  voting_keystore_password_path: /home/paul/.lighthouse/secrets/0x87a580d31d7bc69069b55f5a01995a610dd391a26dc9e36e81057a17211983a79266800ab8531f21f1083d7d84085007
+  voting_keystore_path: /var/lib/lighthouse_validator/validators/0xa1a6d4a72db3fff3a81401cb9a80e1a7d18a96c3a6c3c9b50531e3b02e50b2baeba06e3a7c9fe24374e48091006b11f7/keystore-m>
+  voting_keystore_password: password
   suggested_fee_recipient: "0x388C818CA8B9251b393131C08a736A67ccB19297"
 - enabled: true
-  voting_public_key: "0xa5566f9ec3c6e1fdf362634ebec9ef7aceb0e460e5079714808388e5d48f4ae1e12897fed1bea951c17fa389d511e477"
-  type: local_keystore voting_keystore_path: /home/paul/.lighthouse/validators/0xa5566f9ec3c6e1fdf362634ebec9ef7aceb0e460e5079714808388e5d48f4ae1e12897fed1bea951c17fa389d511e477/voting-keystore.json
-  voting_keystore_password: myStrongpa55word123&$
+  voting_public_key: 0x8e2a8abfeeca058d757f6d6ff5c058c61ab1d40804c28298d44bfe4486265c96e5d30f781a2a3cee6e2b250a85c40e38
+  description: ''
+  type: local_keystore
+  voting_keystore_path: /var/lib/lighthouse_validator/validators/0x8e2a8abfeeca058d757f6d6ff5c058c61ab1d40804c28298d44bfe4486265c96e5d30f781a2a3cee6e2b250a85c40e38/keystore-m>
+  voting_keystore_password: password
   suggested_fee_recipient: "0x388C818CA8B9251b393131C08a736A67ccB19297"
+```
+
+Restart your Lighthouse validator client.
+
+```sh
+sudo systemctl start lighthousevalidator.service
+sudo systemctl status lighthousevalidator.service
+```
+
+Monitor for errors.
+
+```sh
+sudo journalctl -fu lighthousevalidator -o cat | ccze -A
 ```
 {% endtab %}
 
