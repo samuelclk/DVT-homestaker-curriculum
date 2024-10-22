@@ -1,4 +1,4 @@
-# Method 1: Configure on validator keys (WIP)
+# Method 1: Configure on validator keys
 
 ## Validator Clients
 
@@ -19,7 +19,7 @@ sudo find /var/lib -name "keystore*.json"
 For each `resulting filepath`, run:
 
 ```sh
-cat RESULTING_FILEPATH | jq -r '.pubkey'
+grep -oP '"pubkey": *"\K[^"]+' RESULTING_FILEPATH
 ```
 
 _**You should now have a list of all your own**** **<mark style="color:red;">**non-CSM**</mark>** ****validator keystore pubkeys.**_
@@ -27,7 +27,7 @@ _**You should now have a list of all your own**** **<mark style="color:red;">**n
 Create a custom proposer configuration file.
 
 ```sh
-sudo nano /var/lib/teku_validator/validator/proposer_configuration.yml
+sudo nano /var/lib/teku_validator/validator/proposer_configuration.json
 ```
 
 Paste the following contents into the file.
@@ -83,6 +83,12 @@ suggested_fee_recipient: "0xE73a3602b99f1f913e72F8bdcBC235e206794Ac8"
 
 `CTRL+O`, `ENTER`, `CTRL+X` to save and exit.
 
+Set the permissions of the custom proposer configuration file.
+
+```sh
+sudo chown -R teku_validator:teku_validator /var/lib/teku_validator/validator
+```
+
 ### Adding more <mark style="color:red;">non-CSM</mark> validator keystores:
 
 If you want to add more of your own validator keystores, replicate the following segment, taking note of the indentation.
@@ -104,7 +110,7 @@ Edit the Teku validator client service file.
 sudo nano /etc/systemd/system/tekuvalidator.service
 ```
 
-Add the `--validators-proposer-config` flag and point it to the `proposer_configuration.yml` file. Then remove the `--validators-proposer-default-fee-recipient flag`. e.g.,
+Add the `--validators-proposer-config` flag and point it to the `proposer_configuration.json` file. Then remove the `--validators-proposer-default-fee-recipient flag`. e.g.,
 
 ```
 [Unit]
@@ -125,7 +131,7 @@ ExecStart=/usr/local/bin/teku/bin/teku vc \
   --data-path=/var/lib/teku_validator \
   --validator-keys=/var/lib/teku_validator/validator_keystores:/var/lib/teku_validator/keystore_password \
   --beacon-node-api-endpoint=http://<Internal_IP_address>:5051 \
-  --validators-proposer-config=/var/lib/teku_validator/validator/proposer_configuration.yml \
+  --validators-proposer-config=/var/lib/teku_validator/validator/proposer_configuration.json \
   --validators-proposer-blinded-blocks-enabled=true \
   --validators-graffiti="<your_graffiti_of_choice>" \
   --metrics-enabled=true \
@@ -141,6 +147,7 @@ WantedBy=multi-user.target
 Restart your Teku validator client.
 
 ```sh
+sudo systemctl daemon-reload
 sudo systemctl start tekuvalidator.service
 sudo systemctl status tekuvalidator.service
 ```
@@ -153,15 +160,23 @@ sudo journalctl -fu tekuvalidator -o cat | ccze -A
 {% endtab %}
 
 {% tab title="Nimbus" %}
-```sh
-sudo useradd --no-create-home --shell /bin/false csm_nimbus_validator
-```
+Configure a separate validator client and set the `fee_recipient` address to the Lido Execution Layer Rewards Vault there. Refer to the subpage below.
+
+{% content-ref url="method-2-configure-on-separate-validator-client.md" %}
+[method-2-configure-on-separate-validator-client.md](method-2-configure-on-separate-validator-client.md)
+{% endcontent-ref %}
 {% endtab %}
 
 {% tab title="Lodestar" %}
-```sh
-sudo useradd --no-create-home --shell /bin/false csm_lodestar_validator
-```
+{% hint style="info" %}
+The `--proposerSettingsFile` feature of Lodestar and its format is in [alpha and subject to change](https://chainsafe.github.io/lodestar/run/validator-management/validator-cli#--proposersettingsfile). Hence we will fallback to running a separate validator client to customise the `fee_recipient` address.
+{% endhint %}
+
+Configure a separate validator client and set the `fee_recipient` address to the Lido Execution Layer Rewards Vault there. Refer to the following subpage.
+
+{% content-ref url="method-2-configure-on-separate-validator-client.md" %}
+[method-2-configure-on-separate-validator-client.md](method-2-configure-on-separate-validator-client.md)
+{% endcontent-ref %}
 {% endtab %}
 
 {% tab title="Lighthouse" %}
@@ -178,7 +193,19 @@ sudo nano /var/lib/lighthouse_validator/validators/validator_definitions.yml
 # Actual filepath might vary according to your configurations
 ```
 
-Find the pubkeys of each of your CSM validator keystores and add the following line under each keystore as a new line. **Note:** Take note of the exact indentation.&#x20;
+Find the pubkeys of each of your CSM validator keystores.
+
+```sh
+sudo find /var/lib -name "keystore*.json"
+```
+
+For each `resulting filepath`, run:
+
+```sh
+grep -oP '"pubkey": *"\K[^"]+' RESULTING_FILEPATH
+```
+
+and add the following line under each keystore as a new line. **Note:** Take note of the exact indentation.&#x20;
 
 * **Mainnet**
 
@@ -227,8 +254,158 @@ sudo journalctl -fu lighthousevalidator -o cat | ccze -A
 {% endtab %}
 
 {% tab title="Prysm" %}
+Assuming your Prysm validator client is already set up, stop your Prysm validator client.
+
 ```sh
-sudo useradd --no-create-home --shell /bin/false csm_prysm_validator
+sudo systemctl stop prysmvalidator.service
+```
+
+Find the pubkey values of your own <mark style="color:red;">**non-CSM**</mark> validator keystores generated.
+
+```sh
+sudo find /var/lib -name "keystore*.json"
+```
+
+For each `resulting filepath`, run:
+
+```sh
+grep -oP '"pubkey": *"\K[^"]+' RESULTING_FILEPATH
+```
+
+_**You should now have a list of all your own**** **<mark style="color:red;">**non-CSM**</mark>** ****validator keystore pubkeys.**_
+
+Create a custom proposer configuration file.
+
+```sh
+sudo nano /var/lib/prysm_validator/validator/proposer_configuration.json
+```
+
+Paste the following contents into the file.
+
+```
+{
+  "proposer_config": {
+    "YOUR_OWN_VALIDATOR_PUBKEY_(NOT_CSM)_01": {
+      "fee_recipient": "YOUR_OWN_FEE_RECIPIENT_ADDRESS",
+      "builder": {
+        "enabled": true
+      }
+    },
+    "YOUR_OWN_VALIDATOR_PUBKEY_(NOT_CSM)_02": {
+      "fee_recipient": "YOUR_OWN_FEE_RECIPIENT_ADDRESS",
+      "builder": {
+        "enabled": true
+      }
+    },
+    "YOUR_OWN_VALIDATOR_PUBKEY_(NOT_CSM)_03": {
+      "fee_recipient": "YOUR_OWN_FEE_RECIPIENT_ADDRESS",
+      "builder": {
+        "enabled": true
+      }
+    }
+  },
+  "default_config": {
+    "fee_recipient": "LIDO_EXECUTION_LAYER_REWARDS_VAULT",
+    "builder": {
+      "enabled": true
+    }
+  }
+}
+```
+
+**Replace** `YOUR_OWN_VALIDATOR_PUBKEY_(NOT_CSM)` with your own actual validator pubkeys <mark style="color:red;">**(NOT CSM).**</mark>
+
+**Replace** `YOUR_OWN_FEE_RECIPIENT_ADDRESS` with your desired wallet address.
+
+**Replace** `LIDO_EXECUTION_LAYER_REWARDS_VAULT` with the following options.
+
+* **Mainnet**
+
+```
+suggested_fee_recipient: "0x388C818CA8B9251b393131C08a736A67ccB19297"
+```
+
+* **Holesky**
+
+```
+suggested_fee_recipient: "0xE73a3602b99f1f913e72F8bdcBC235e206794Ac8"
+```
+
+`CTRL+O`, `ENTER`, `CTRL+X` to save and exit.
+
+Set the permissions of the custom proposer configuration file.
+
+```sh
+sudo chown -R prysm_validator:prysm_validator /var/lib/prysm_validator/validator
+```
+
+### Adding more <mark style="color:red;">non-CSM</mark> validator keystores:
+
+If you want to add more of your own validator keystores, replicate the following segment, taking note of the indentation.
+
+```
+    "YOUR_OWN_VALIDATOR_PUBKEY_(NOT_CSM)_03": {
+      "fee_recipient": "YOUR_OWN_FEE_RECIPIENT_ADDRESS",
+      "builder": {
+        "enabled": true
+      }
+    }
+```
+
+`CTRL+O`, `ENTER`, `CTRL+X` to save and exit.
+
+Edit the Prysm validator client service file.
+
+```
+sudo nano /etc/systemd/system/prysmvalidator.service
+```
+
+Add the `--proposer-settings-file` flag and point it to the `proposer_configuration.json` file. Then remove the `--suggested-fee-recipient` flag. e.g.,
+
+```
+[Unit]
+Description=Prysm Validator Client (Holesky)
+Wants=network-online.target
+After=network-online.target
+
+[Service]
+User=prysmvalidator
+Group=prysmvalidator
+Type=simple
+Restart=always
+RestartSec=5
+ExecStart=/usr/local/bin/prysmvalidator \
+  --accept-terms-of-use \
+  --holesky \
+  --datadir=/var/lib/prysm_validator \
+  --enable-builder \
+  --beacon-rpc-provider=<Internal_IP_address>:4000 \
+  --beacon-rpc-gateway-provider=<Internal_IP_address>:5051 \
+  --wallet-dir=/var/lib/prysm_validator \
+  --wallet-password-file=/var/lib/prysm_validator/password.txt \
+  --monitoring-port=8108 \
+  --proposer-settings-file=/var/lib/prysm_validator/validator/proposer_configuration.json \
+  --graffiti="<your_graffiti>" \
+  --enable-doppelganger
+
+[Install]
+WantedBy=multi-user.target
+```
+
+`CTRL+O`, `ENTER`, `CTRL+X` to save and exit.
+
+Restart your Prysm validator client.
+
+```sh
+sudo systemctl daemon-reload
+sudo systemctl start prysmvalidator.service
+sudo systemctl status prysmvalidator.service
+```
+
+Monitor for errors.
+
+```sh
+sudo journalctl -fu prysmvalidator -o cat | ccze -A
 ```
 {% endtab %}
 {% endtabs %}
@@ -260,8 +437,3 @@ Not straightforward. Designed to assign custom `fee_recipient` addresses by runn
 {% endcontent-ref %}
 {% endtab %}
 {% endtabs %}
-
-
-
-## ETH Docker
-

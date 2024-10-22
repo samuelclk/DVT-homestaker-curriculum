@@ -52,6 +52,17 @@
 * [Validator key generation](keystore-generation-and-mev-boost/validator-key-generation.md)
 * [Set up and configure MEV-boost](keystore-generation-and-mev-boost/set-up-and-configure-mev-boost.md)
 
+## Native Solo Staking Setup
+
+* [Validator client setup](native-solo-staking-setup/validator-client-setup/README.md)
+  * [Teku VC](native-solo-staking-setup/validator-client-setup/teku-vc.md)
+  * [Nimbus VC](native-solo-staking-setup/validator-client-setup/nimbus-vc.md)
+  * [Lodestar VC](native-solo-staking-setup/validator-client-setup/lodestar-vc.md)
+  * [Lighthouse VC](native-solo-staking-setup/validator-client-setup/lighthouse-vc.md)
+  * [Prysm VC](native-solo-staking-setup/validator-client-setup/prysm-vc.md)
+* [Depositing 32 ETH into your validator](native-solo-staking-setup/depositing-32-eth-into-your-validator.md)
+* [Exiting your validator](native-solo-staking-setup/exiting-your-validator.md)
+
 ## Monitoring, Maintenance, and Updates
 
 * [Set up monitoring suite](monitoring-maintenance-and-updates/set-up-monitoring-suite/README.md)
@@ -67,17 +78,6 @@
   * [Nimbus](monitoring-maintenance-and-updates/maintenance-and-updates/nimbus.md)
   * [Lodestar](monitoring-maintenance-and-updates/maintenance-and-updates/lodestar.md)
   * [Updating the monitoring suite](monitoring-maintenance-and-updates/maintenance-and-updates/updating-the-monitoring-suite.md)
-
-## Native Solo Staking Setup
-
-* [Validator client setup](native-solo-staking-setup/validator-client-setup/README.md)
-  * [Teku VC](native-solo-staking-setup/validator-client-setup/teku-vc.md)
-  * [Nimbus VC](native-solo-staking-setup/validator-client-setup/nimbus-vc.md)
-  * [Lodestar VC](native-solo-staking-setup/validator-client-setup/lodestar-vc.md)
-  * [Lighthouse VC](native-solo-staking-setup/validator-client-setup/lighthouse-vc.md)
-  * [Prysm VC](native-solo-staking-setup/validator-client-setup/prysm-vc.md)
-* [Depositing 32 ETH into your validator](native-solo-staking-setup/depositing-32-eth-into-your-validator.md)
-* [Exiting your validator](native-solo-staking-setup/exiting-your-validator.md)
 
 ## DVT Setup
 
@@ -101,7 +101,7 @@
 * [Lido CSM](bonded-validators-setup/lido-csm/README.md)
   * [Generating CSM keystores](bonded-validators-setup/lido-csm/generating-csm-keystores.md)
   * [Set Fee Recipient Address](bonded-validators-setup/lido-csm/set-fee-recipient-address/README.md)
-    * [Method 1: Configure on validator keys (WIP)](bonded-validators-setup/lido-csm/set-fee-recipient-address/method-1-configure-on-validator-keys-wip.md)
+    * [Method 1: Configure on validator keys](bonded-validators-setup/lido-csm/set-fee-recipient-address/method-1-configure-on-validator-keys.md)
     * [Method 2: Configure on separate validator client](bonded-validators-setup/lido-csm/set-fee-recipient-address/method-2-configure-on-separate-validator-client.md)
   * [Upload/Remove/View validator keys](bonded-validators-setup/lido-csm/upload-remove-view-validator-keys.md)
   * [Rewards & bonds](bonded-validators-setup/lido-csm/rewards-and-bonds.md)

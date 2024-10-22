@@ -784,8 +784,8 @@ Generate and import CSM validator keys.
 {% tab title="ETH Docker" %}
 ETH Docker sets the `fee_recipient` address on the validator key level. Refer to the subpage below, under **"Automation Tools".**
 
-{% content-ref url="method-1-configure-on-validator-keys-wip.md" %}
-[method-1-configure-on-validator-keys-wip.md](method-1-configure-on-validator-keys-wip.md)
+{% content-ref url="method-1-configure-on-validator-keys.md" %}
+[method-1-configure-on-validator-keys.md](method-1-configure-on-validator-keys.md)
 {% endcontent-ref %}
 {% endtab %}
 {% endtabs %}
