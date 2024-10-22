@@ -67,7 +67,7 @@ ExecStart=/usr/local/bin/lighthouse vc \
   --network holesky \
   --datadir /var/lib/lighthouse_validator \
   --builder-proposals \
-  --beacon-nodes http://<Internal_IP_address>:5051 \
+  --beacon-nodes http://<Internal_IP_address>:5052 \
   --metrics \
   --metrics-port 8108 \
   --suggested-fee-recipient <your_designated_ETH_wallet address> \

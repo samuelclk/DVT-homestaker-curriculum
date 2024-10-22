@@ -92,7 +92,7 @@ ExecStart=/usr/local/bin/erigon \
   --chain holesky \
   --datadir /var/lib/erigon \
   --authrpc.jwtsecret=/var/lib/jwtsecret/jwt.hex \
-  --port 30304 \
+  --port 30303 \
   --http \
   --http.addr value <Internal_IP_address> \
   --http.port 8547 \

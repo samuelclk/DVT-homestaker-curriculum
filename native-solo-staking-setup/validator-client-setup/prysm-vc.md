@@ -113,7 +113,7 @@ ExecStart=/usr/local/bin/prysmvalidator \
   --datadir=/var/lib/prysm_validator \
   --enable-builder \
   --beacon-rpc-provider=<Internal_IP_address>:4000 \
-  --beacon-rpc-gateway-provider=<Internal_IP_address>:5051 \
+  --beacon-rpc-gateway-provider=<Internal_IP_address>:5052 \
   --wallet-dir=/var/lib/prysm_validator \
   --wallet-password-file=/var/lib/prysm_validator/password.txt \
   --monitoring-port=8108 \

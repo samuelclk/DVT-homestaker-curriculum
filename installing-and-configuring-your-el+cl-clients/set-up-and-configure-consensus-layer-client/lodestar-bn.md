@@ -123,8 +123,8 @@ services:
     environment:
       NODE_OPTIONS: --max-old-space-size=8192
     ports:
-      - "5051:5051"
-      - "9001:9001"
+      - "5052:5052"
+      - "9000:9000"
       - "8009:8009"
     extra_hosts:
       - "host.docker.internal:host-gateway"

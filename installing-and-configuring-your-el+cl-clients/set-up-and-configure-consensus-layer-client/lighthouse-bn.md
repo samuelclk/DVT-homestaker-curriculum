@@ -94,9 +94,9 @@ ExecStart=/usr/local/bin/lighthouse bn \
   --metrics \
   --metrics-port 8009 \
   --validator-monitor-auto \
-  --port 9001 \
+  --port 9000 \
   --http \
-  --http-port 5051 \
+  --http-port 5052 \
   --http-address <Internal_IP_address> \
   --builder http://127.0.0.1:18550 
 

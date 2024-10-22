@@ -116,7 +116,7 @@ services:
       - --network
       - holesky
       - --beaconNodes
-      - http://<Internal_IP_address>:5051
+      - http://<Internal_IP_address>:5052
       - --builder
       - --suggestedFeeRecipient
       - "<your_designated_ETH_wallet_address>"

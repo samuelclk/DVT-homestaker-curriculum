@@ -103,7 +103,7 @@ ExecStart=/usr/local/bin/reth node \
   --log.file.directory=/var/lib/reth/logs \
   --authrpc.jwtsecret=/var/lib/jwtsecret/jwt.hex \
   --full \
-  --port 30304 \
+  --port 30303 \
   --http \
   --http.api eth,web3,net,txpool,debug,trace \
 <strong>  --http.addr &#x3C;Internal_IP_address> \

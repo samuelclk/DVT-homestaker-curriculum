@@ -95,7 +95,7 @@ ExecStart=/usr/local/bin/besu/bin/besu \
   --data-storage-format=BONSAI \
   --engine-jwt-secret=/var/lib/jwtsecret/jwt.hex \
   --Xplugin-rocksdb-high-spec-enabled \
-  --p2p-port=30304 \
+  --p2p-port=30303 \
   --rpc-ws-enabled \
   --rpc-ws-host=<internal_IP_address> \
   --rpc-ws-port=8547 \

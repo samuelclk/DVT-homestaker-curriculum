@@ -61,7 +61,7 @@ RestartSec=5
 ExecStart=/usr/local/bin/nimbus_validator_client \
   --data-dir=/var/lib/nimbus_validator \
   --payload-builder=true \
-  --beacon-node=http://<Internal_IP_address>:5051 \
+  --beacon-node=http://<Internal_IP_address>:5052 \
   --metrics \
   --metrics-port=8108 \
   --suggested-fee-recipient=<your_designated_ETH_wallet address> \

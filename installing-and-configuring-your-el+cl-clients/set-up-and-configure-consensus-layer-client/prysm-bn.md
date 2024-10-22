@@ -90,7 +90,7 @@ ExecStart=/usr/local/bin/prysmbeacon \
   --p2p-udp-port 12000 \
   --rpc-port 4000 \
   --rpc-host <Internal_IP_address> \
-  --grpc-gateway-port 5051 \
+  --grpc-gateway-port 5052 \
   --grpc-gateway-host <Internal_IP_address> \
   --http-mev-relay=http://127.0.0.1:18550 
 

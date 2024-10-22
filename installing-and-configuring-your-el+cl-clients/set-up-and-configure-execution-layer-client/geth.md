@@ -85,7 +85,7 @@ ExecStart=/usr/local/bin/geth \
   --datadir=/var/lib/geth \
   --authrpc.jwtsecret=/var/lib/jwtsecret/jwt.hex \
   --state.scheme=path \
-  --port 30304 \
+  --port 30303 \
   --http \
   --http.addr <Internal_IP_address> \
   --http.port 8547 \
