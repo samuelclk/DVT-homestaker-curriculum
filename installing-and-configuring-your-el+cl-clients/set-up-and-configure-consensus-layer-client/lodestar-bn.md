@@ -59,7 +59,7 @@ sudo chmod 700 /var/lib/lodestar_beacon
 id lodestar
 ```
 
-_**Expected output:**_
+_**Example output:**_
 
 ```
 uid=1004(lodestar) gid=1005(lodestar) groups=1005(lodestar)

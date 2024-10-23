@@ -3,7 +3,9 @@
 ## Install the dependencies - Java Runtime Environment
 
 ```bash
-sudo apt install openjdk-17-jdk
+sudo apt-get update
+sudo add-apt-repository ppa:openjdk-r/ppa
+sudo apt-get -y install openjdk-21-jre libjemalloc-dev
 ```
 
 ## Download Teku
@@ -12,8 +14,8 @@ sudo apt install openjdk-17-jdk
 
 ```bash
 cd
-curl -LO https://artifacts.consensys.net/public/teku/raw/names/teku.tar.gz/versions/24.4.0/teku-24.4.0.tar.gz
-echo "ca28aa03f7e6b095a89adb34c30b5ec78075031e4396488389b89d6bb2864416 teku-24.4.0.tar.gz" | sha256sum --check
+curl -LO https://artifacts.consensys.net/public/teku/raw/names/teku.tar.gz/versions/24.10.2/teku-24.10.2.tar.gz
+echo "1cc76913f3b85987e2a60c9b94c6918d31773ebd3237c5fdf33de366fa259202 teku-24.10.2.tar.gz" | sha256sum --check
 ```
 
 {% hint style="info" %}
@@ -27,15 +29,15 @@ Make sure to choose the amd64 version. Right click on the linked text and select
 _**Expected output:** Verify output of the checksum verification._
 
 ```
-teku-24.4.0.tar.gz: OK
+teku-24.10.2.tar.gz: OK
 ```
 
 If checksum is verified, extract the files and move them into the `(/usr/local/bin)` directory for neatness and best practice. Then, clean up the duplicated copies.
 
 ```bash
-tar xvf teku-24.4.0.tar.gz
-sudo cp -a teku-24.4.0 /usr/local/bin/teku
-rm -r teku-24.4.0.tar.gz teku-24.4.0
+tar xvf teku-24.10.2.tar.gz
+sudo cp -a teku-24.10.2 /usr/local/bin/teku
+rm -r teku*
 ```
 
 ## Configure the Teku Consensus Client

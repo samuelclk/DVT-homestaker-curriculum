@@ -10,14 +10,14 @@ The Prysm validator client only works with a Prysm Consensus Client.
 
 ```bash
 cd
-curl -LO https://github.com/prysmaticlabs/prysm/releases/download/v5.0.3/validator-v5.0.3-linux-amd64
-curl -LO https://github.com/prysmaticlabs/prysm/releases/download/v5.0.3/validator-v5.0.3-linux-amd64.sha256
+curl -LO https://github.com/prysmaticlabs/prysm/releases/download/v5.1.2/validator-v5.1.2-linux-amd64
+curl -LO https://github.com/prysmaticlabs/prysm/releases/download/v5.1.2/validator-v5.1.2-linux-amd64.sha256
 ```
 
 Run the checksum verification process.
 
 ```sh
-sha256sum --check validator-v5.0.3-linux-amd64.sha256
+sha256sum --check validator-v5.1.2-linux-amd64.sha256
 ```
 
 {% hint style="info" %}
@@ -31,15 +31,15 @@ Make sure to choose the amd64 version. Right click on the linked text and select
 _**Expected output:** Verify output of the checksum verification._
 
 ```
-validator-v5.0.3-linux-amd64: OK
+validator-v5.1.2-linux-amd64: OK
 ```
 
 If checksum is verified, extract the files and move them into the `(/usr/local/bin)` directory for neatness and best practice. Then, clean up the duplicated copies.
 
-<pre class="language-bash"><code class="lang-bash">mv validator-v5.0.3-linux-amd64 prysmvalidator #rename the binary file for easy reference
+<pre class="language-bash"><code class="lang-bash">mv validator-v5.1.2-linux-amd64 prysmvalidator #rename the binary file for easy reference
 chmod +x prysmvalidator
 <strong>sudo cp prysmvalidator /usr/local/bin
-</strong><strong>rm -r prysmvalidator validator-v5.0.3-linux-amd64.sha256
+</strong><strong>rm -r prysmvalidator validator-v5.1.2-linux-amd64.sha256
 </strong></code></pre>
 
 ### Create a new user account

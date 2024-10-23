@@ -2,18 +2,18 @@
 
 ## Download Prysm
 
-[Download](https://github.com/sigp/lighthouse/releases) the latest version of Prysm beacon node (`beacon-chain`) and run the checksum verification process to ensure that the downloaded file has not been tampered with.
+[Download](https://github.com/prysmaticlabs/prysm/releases) the latest version of Prysm beacon node (`beacon-chain`) and run the checksum verification process to ensure that the downloaded file has not been tampered with.
 
 ```bash
 cd
-curl -LO https://github.com/prysmaticlabs/prysm/releases/download/v5.0.3/beacon-chain-v5.0.3-linux-amd64
-curl -LO https://github.com/prysmaticlabs/prysm/releases/download/v5.0.3/beacon-chain-v5.0.3-linux-amd64.sha256
+curl -LO https://github.com/prysmaticlabs/prysm/releases/download/v5.1.2/beacon-chain-v5.1.2-linux-amd64
+curl -LO https://github.com/prysmaticlabs/prysm/releases/download/v5.1.2/beacon-chain-v5.1.2-linux-amd64.sha256
 ```
 
 Run the checksum verification process.
 
 ```sh
-sha256sum --check beacon-chain-v5.0.3-linux-amd64.sha256
+sha256sum --check beacon-chain-v5.1.2-linux-amd64.sha256
 ```
 
 {% hint style="info" %}
@@ -27,15 +27,15 @@ Make sure to choose the amd64 version. Right click on the linked text and select
 _**Expected output:** Verify output of the checksum verification._
 
 ```
-beacon-chain-v5.0.3-linux-amd64: OK
+beacon-chain-v5.1.2-linux-amd64: OK
 ```
 
 If checksum is verified, extract the files and move them into the `(/usr/local/bin)` directory for neatness and best practice. Then, clean up the duplicated copies.
 
-<pre class="language-bash"><code class="lang-bash">mv beacon-chain-v5.0.3-linux-amd64 prysmbeacon #rename the binary file for easy reference
+<pre class="language-bash"><code class="lang-bash">mv beacon-chain-v5.1.2-linux-amd64 prysmbeacon #rename the binary file for easy reference
 chmod +x prysmbeacon
 <strong>sudo cp prysmbeacon /usr/local/bin
-</strong><strong>rm -r prysmbeacon beacon-chain-v5.0.3-linux-amd64.sha256
+</strong><strong>rm -r prysmbeacon beacon-chain-v5.1.2-linux-amd64.sha256
 </strong></code></pre>
 
 ## Configure the Prysm Consensus Client

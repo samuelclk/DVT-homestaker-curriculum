@@ -6,15 +6,15 @@
 
 ```bash
 cd
-curl -LO https://github.com/sigp/lighthouse/releases/download/v5.1.3/lighthouse-v5.1.3-x86_64-unknown-linux-gnu.tar.gz
-curl -LO https://github.com/sigp/lighthouse/releases/download/v5.1.3/lighthouse-v5.1.3-x86_64-unknown-linux-gnu.tar.gz.asc
+curl -LO https://github.com/sigp/lighthouse/releases/download/v5.3.0/lighthouse-v5.3.0-x86_64-unknown-linux-gnu.tar.gz
+curl -LO https://github.com/sigp/lighthouse/releases/download/v5.3.0/lighthouse-v5.3.0-x86_64-unknown-linux-gnu.tar.gz.asc
 ```
 
 Run the checksum verification process.
 
 ```sh
 gpg --keyserver keyserver.ubuntu.com --recv-keys 15E66D941F697E28F49381F426416DC3F30674B0
-gpg --verify lighthouse-v5.1.3-x86_64-unknown-linux-gnu.tar.gz.asc lighthouse-v5.1.3-x86_64-unknown-linux-gnu.tar.gz
+gpg --verify lighthouse-v5.3.0-x86_64-unknown-linux-gnu.tar.gz.asc lighthouse-v5.3.0-x86_64-unknown-linux-gnu.tar.gz
 ```
 
 Verify the release signing key (`--recv-keys`) in the first command above in the releases page [here](https://github.com/sigp/lighthouse/releases).
@@ -40,7 +40,7 @@ Primary key fingerprint: 15E6 6D94 1F69 7E28 F493  81F4 2641 6DC3 F306 74B0
 
 If checksum is verified, extract the files and move them into the `(/usr/local/bin)` directory for neatness and best practice. Then, clean up the duplicated copies.
 
-<pre class="language-bash"><code class="lang-bash">tar xvf lighthouse-v5.1.3-x86_64-unknown-linux-gnu.tar.gz
+<pre class="language-bash"><code class="lang-bash">tar xvf lighthouse-v5.3.0-x86_64-unknown-linux-gnu.tar.gz
 sudo cp lighthouse /usr/local/bin
 <strong>rm -r lighthouse*
 </strong></code></pre>

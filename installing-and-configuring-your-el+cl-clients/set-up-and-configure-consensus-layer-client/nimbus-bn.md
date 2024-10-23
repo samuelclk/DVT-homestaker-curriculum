@@ -5,11 +5,11 @@
 [Download](https://github.com/status-im/nimbus-eth2/releases) the latest version of Nimbus, extract the zipped file, and then run the checksum verification process to ensure that the "nimbus\_beacon\_node" and "nimbus\_validator\_client" files have not been tampered with during download.
 
 <pre class="language-bash"><code class="lang-bash">cd
-curl -LO https://github.com/status-im/nimbus-eth2/releases/download/v24.5.1/nimbus-eth2_Linux_amd64_24.5.1_d2a07514.tar.gz
-<strong>tar xvf nimbus-eth2_Linux_amd64_24.5.1_d2a07514.tar.gz
-</strong><strong>cd nimbus-eth2_Linux_amd64_24.5.1_d2a07514/build
-</strong>echo "4a8230a69089bbdcc7abc86f9471e034cfbd32344e9b01be85e88ed3b54d7cfb83abbf7b32aaf9c957eb4a762b0aa34e63b0ea47a3943bbd07aef8812777f7d7  nimbus_beacon_node" | sha512sum --check
-echo "1d3a826d1e5e6be58070570efe594b012fd4fb68f3ae449c37aae956d1cf8664a5286b09cc1bd47f7bdff5c2b4af9e83d8a5d8d6fe1153c540023e5bbe2276e2  nimbus_validator_client" | sha512sum --check
+curl -LO https://github.com/status-im/nimbus-eth2/releases/download/v24.9.0/nimbus-eth2_Linux_amd64_24.9.0_f54a0366.tar.gz
+<strong>tar xvf nimbus-eth2_Linux_amd64_24.9.0_f54a0366.tar.gz
+</strong><strong>cd nimbus-eth2_Linux_amd64_24.9.0_f54a0366/build
+</strong><strong>echo "e40ec8fb6ded9a085bf52f7fa4b2e3cb8f63670f4d4c0f8e190f5a3d7e0038230985083b22ed859a1ddbdce230df05ebb182a73cfa8a614b470aa7516111b7d0  nimbus_beacon_node" | sha512sum --check
+</strong>echo "35737f59e52fdc47823532b15d372a225779f38887c39664239a2171bc6f24a79633dfbb9257c7715ae640ea9037a3c6352e2e58c53af74a352d745e23d8c74b  nimbus_validator_client" | sha512sum --check
 </code></pre>
 
 {% hint style="info" %}
@@ -30,10 +30,10 @@ nimbus_validator_client: OK
 If checksum is verified, extract the consensus client and validator client binaries into the `(/usr/local/bin)` directory (as a best practice). Then, clean up the duplicated copies.
 
 ```bash
-cd ~/nimbus-eth2_Linux_amd64_24.5.1_d2a07514/build
+cd ~/nimbus-eth2_Linux_amd64_24.9.0_f54a0366/build
 sudo cp nimbus_beacon_node nimbus_validator_client /usr/local/bin
 cd
-rm -r nimbus-eth2_Linux_amd64_24.5.1_d2a07514 nimbus-eth2_Linux_amd64_24.5.1_d2a07514.tar.gz
+rm -r nimbus*
 ```
 
 ## Configure the Nimbus Consensus Client
