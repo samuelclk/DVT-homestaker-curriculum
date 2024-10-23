@@ -767,6 +767,10 @@ sudo rm -r ~/staking_deposit-cli*/validator_keys
 
 {% tabs %}
 {% tab title="ETH Pillar" %}
+{% hint style="warning" %}
+Only 1 instance of ETH Pillar can be running per device. If you are already using ETH Pillar for your own validator node setup, then you will need to use any of the other methods (e.g., ETH Docker) listed in this subpage to import your CSM validator keystores.
+{% endhint %}
+
 Select `4 - Lido CSM Validator Client Only`.
 
 <figure><img src="../../../.gitbook/assets/image (203).png" alt=""><figcaption></figcaption></figure>

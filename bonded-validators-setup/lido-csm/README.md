@@ -23,7 +23,7 @@ Instead, you simply tweak the parameters of the following steps of the native so
 3. Import the newly generated CSM keystores
 4. [On your MEV-Boost service](../../keystore-generation-and-mev-boost/set-up-and-configure-mev-boost.md), Do not set the`-min-bid` flag (or set 0) and set the \
    `-relay` flags only to the [list of designated MEV relays for Lido CSM](https://enchanted-direction-844.notion.site/6d369eb33f664487800b0dedfe32171e?v=8e5d1f1276b0493caea8a2aa1517ed65) (refer to "_**Key settings to note**_" section).
-   * **Mainnet:** Select **"Mainnet Active + Vetted"** tab. _You can choose only from relays tagged with “must use some” and “may use”, and must choose at least one tagged with “must use some”._&#x20;
+   * **Mainnet:** Select **"Mainnet Active + Vetted"** tab. _You can choose only from relays tagged with `(must use some)` and `(may use)`, and must choose at least one tagged with `(must use some)`._&#x20;
    * **Holesky :** Select **"Holesky Only"** tab
 5. [Upload the newly generated deposit data file](upload-remove-view-validator-keys.md) pertaining to your CSM keystores onto the Lido CSM Widget and provide the required bond amount in ETH/stETH/wstETH
    * **Mainnet:** [https://csm.lido.fi/](https://csm.lido.fi/)
