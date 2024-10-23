@@ -6,8 +6,8 @@
 
 ```bash
 cd
-curl -LO https://github.com/prometheus/node_exporter/releases/download/v1.8.1/node_exporter-1.8.1.linux-amd64.tar.gz
-echo "fbadb376afa7c883f87f70795700a8a200f7fd45412532cc1938a24d41078011  node_exporter-1.8.1.linux-amd64.tar.gz" | sha256sum --check
+curl -LO https://github.com/prometheus/node_exporter/releases/download/v1.8.2/node_exporter-1.8.2.linux-amd64.tar.gz
+echo "6809dd0b3ec45fd6e992c19071d6b5253aed3ead7bf0686885a51d85c6643c66 node_exporter-1.8.2.linux-amd64.tar.gz" | sha256sum --check
 ```
 
 {% hint style="info" %}
@@ -21,15 +21,15 @@ Make sure to choose the amd64 version. Right click on the linked text and select
 _**Expected output:** Verify output of the checksum verification_
 
 ```
-node_exporter-1.8.1.linux-amd64.tar.gz: OK
+node_exporter-1.8.2.linux-amd64.tar.gz: OK
 ```
 
 If checksum is verified, extract the files and move them into the `(/usr/local/bin)` directory for neatness and best practice. Then, clean up the duplicated copies.
 
 ```bash
-tar xvf node_exporter-1.8.1.linux-amd64.tar.gz
-sudo cp node_exporter-1.8.1.linux-amd64/node_exporter /usr/local/bin
-rm -r node_exporter-1.8.1.linux-amd64 node_exporter-1.8.1.linux-amd64.tar.gz
+tar xvf node_exporter-1.8.2.linux-amd64.tar.gz
+sudo cp node_exporter-1.8.2.linux-amd64/node_exporter /usr/local/bin
+rm -r node_exporter-1.8.2.linux-amd64 node_exporter-1.8.1.linux-amd64.tar.gz
 ```
 
 ### Configure the Node Exporter service
