@@ -26,8 +26,8 @@ sudo apt-get install unzip libsnappy-dev libc6-dev libc6 -y
 
 ```bash
 cd
-curl -LO https://github.com/NethermindEth/nethermind/releases/download/1.25.4/nethermind-1.25.4-20b10b35-linux-x64.zip
-echo "05848eaab4b1b621054ff507e8592d17 nethermind-1.25.4-20b10b35-linux-x64.zip" | md5sum --check
+curl -LO https://nethdev.blob.core.windows.net/builds/nethermind-1.29.1-dfea5240-linux-x64.zip
+echo "21c58995d82163d62bf7ebb78ea5916e nethermind-1.29.1-dfea5240-linux-x64.zip" | md5sum --check
 ```
 
 {% hint style="info" %}
@@ -43,15 +43,15 @@ Make sure to choose the amd64 version. Right click on the linked text and select
 _**Expected output:** Verify output of the checksum verification_
 
 ```
-nethermind-1.25.4-20b10b35-linux-x64.zip: OK
+nethermind-1.29.1-dfea5240-linux-x64.zip: OK
 ```
 
 If checksum is verified, extract the files and move them into the `(/usr/local/bin)` directory for neatness and best practice. Then, clean up the duplicated copies.
 
 ```bash
-unzip nethermind-1.25.4-20b10b35-linux-x64.zip -d nethermind
+unzip nethermind-1.29.1-dfea5240-linux-x64.zip -d nethermind
 sudo cp -a nethermind /usr/local/bin/nethermind
-rm -r nethermind-1.25.4-20b10b35-linux-x64.zip nethermind
+rm -r nethermind*
 ```
 
 Create an account (`nethermind`) without server access for Nethermind to run as a background service. This type of user account will not have root access so it restricts potential attackers to only the Nethermind service in the unlikely event that they manage to infiltrate via a compromised client update.

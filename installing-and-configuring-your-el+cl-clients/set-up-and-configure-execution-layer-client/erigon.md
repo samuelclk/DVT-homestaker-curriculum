@@ -23,12 +23,12 @@ We will be pointing the configuration files of the execution and consensus clien
 
 ### Download Erigon and configure the service
 
-[Download](https://geth.ethereum.org/downloads) the latest version of Erigon and run the checksum verification process to ensure that the downloaded file has not been tampered with.
+[Download](https://github.com/erigontech/erigon/releases) the latest version of Erigon and run the checksum verification process to ensure that the downloaded file has not been tampered with.
 
 ```bash
 cd
-curl -LO https://github.com/ledgerwatch/erigon/releases/download/v2.60.0/erigon_2.60.0_linux_amd64.tar.gz
-echo "27acb08c65c18128e78faa1c7edfae169e53f58db7bb347bc7145ce8ea1013a0 erigon_2.60.0_linux_amd64.tar.gz" | sha256sum --check
+curl -LO https://github.com/erigontech/erigon/releases/download/2.60.7/erigon_2.60.7_linux_amd64.tar.gz
+echo "ab3ed8a91a11958df1a6ee56c03acac71a1aa7beb19e271b9c5e2e639159f125  erigon_2.60.7_linux_amd64.tar.gz" | sha256sum --check
 ```
 
 {% hint style="info" %}
@@ -44,15 +44,15 @@ Make sure to choose the amd64 version. Right click on the linked text and select
 _**Expected output:** Verify output of the checksum verification_
 
 ```
-erigon_2.60.0_linux_amd64.tar.gz: OK
+erigon_2.60.7_linux_amd64.tar.gz: OK
 ```
 
 If checksum is verified, extract the files and move them into the `(/usr/local/bin)` directory for neatness and best practice. Then, clean up the duplicated copies.
 
 ```bash
-tar xvf erigon_2.60.0_linux_amd64.tar.gz
+tar xvf erigon_2.60.7_linux_amd64.tar.gz
 sudo cp erigon /usr/local/bin
-rm -r erigon README.md erigon_2.60.0_linux_amd64.tar.gz
+rm -r erigon* README.md
 ```
 
 Create an account (`erigon`) without server access for Erigon to run as a background service. This type of user account will not have root access so it restricts potential attackers to only the Geth service in the unlikely event that they manage to infiltrate via a compromised client update.

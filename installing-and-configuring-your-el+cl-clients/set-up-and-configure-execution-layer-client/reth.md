@@ -19,15 +19,15 @@ We will be pointing the configuration files of the execution and consensus clien
 
 ```bash
 cd
-curl -LO https://github.com/paradigmxyz/reth/releases/download/v0.1.0-alpha.23/reth-v0.1.0-alpha.23-x86_64-unknown-linux-gnu.tar.gz
-curl -LO https://github.com/paradigmxyz/reth/releases/download/v0.1.0-alpha.23/reth-v0.1.0-alpha.23-x86_64-unknown-linux-gnu.tar.gz.asc
+curl -LO https://github.com/paradigmxyz/reth/releases/download/v1.1.0/reth-v1.1.0-x86_64-unknown-linux-gnu.tar.gz
+curl -LO https://github.com/paradigmxyz/reth/releases/download/v1.1.0/reth-v1.1.0-x86_64-unknown-linux-gnu.tar.gz.asc
 ```
 
 Run the checksum verification process.
 
 ```
 gpg --keyserver keyserver.ubuntu.com --recv-keys A3AE097C89093A124049DF1F5391A3C4100530B4
-gpg --verify reth-v0.1.0-alpha.23-x86_64-unknown-linux-gnu.tar.gz.asc reth-v0.1.0-alpha.23-x86_64-unknown-linux-gnu.tar.gz
+gpg --verify reth-v1.1.0-x86_64-unknown-linux-gnu.tar.gz.asc reth-v1.1.0-x86_64-unknown-linux-gnu.tar.gz
 ```
 
 Verify the release signing key (`--recv-keys`) in the first command above [here](https://reth.rs/installation/binaries.html).
@@ -60,9 +60,9 @@ It seems the release key `A3AE097C89093A124049DF1F5391A3C4100530B4` used by the 
 If checksum is verified, extract the files and move them into the `(/usr/local/bin)` directory for neatness and best practice. Then, clean up the duplicated copies.
 
 ```bash
-tar xvf reth-v0.1.0-alpha.23-x86_64-unknown-linux-gnu.tar.gz
+tar xvf reth-v1.1.0-x86_64-unknown-linux-gnu.tar.gz
 sudo cp reth /usr/local/bin
-rm -r reth reth-v0.1.0-alpha.23-x86_64-unknown-linux-gnu.tar.gz.asc reth-v0.1.0-alpha.23-x86_64-unknown-linux-gnu.tar.gz
+rm -r reth*
 ```
 
 Create an account (`reth`) without server access for Reth to run as a background service. This type of user account will not have root access so it restricts potential attackers to only the Reth service in the unlikely event that they manage to infiltrate via a compromised client update.

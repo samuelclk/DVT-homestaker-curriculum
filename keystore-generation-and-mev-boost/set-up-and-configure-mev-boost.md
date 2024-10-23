@@ -48,8 +48,8 @@ Download latest version of MEV-boost [here](https://github.com/flashbots/mev-boo
 
 ```bash
 cd 
-curl -LO https://github.com/flashbots/mev-boost/releases/download/v1.7/mev-boost_1.7_linux_amd64.tar.gz
-echo "92b435d200451e190000c4f8d82eef0b3ce72d2759153357883e81261ffe98e3 mev-boost_1.7_linux_amd64.tar.gz" | sha256sum --check
+curl -LO https://github.com/flashbots/mev-boost/releases/download/v1.8/mev-boost_1.8_linux_amd64.tar.gz
+echo "18b8af03787a0a57557ab8f8c483fe5143d81208b28f813fd93ad256ad52e5db mev-boost_1.8_linux_amd64.tar.gz" | sha256sum --check
 ```
 
 {% hint style="info" %}
@@ -63,16 +63,15 @@ Make sure to choose the amd64 version. Right click on the linked text and select
 _**Expected output:** Verify output of the checksum verification_
 
 ```
-mev-boost_1.7_linux_amd64.tar.gz: Ok
+mev-boost_1.8_linux_amd64.tar.gz: Ok
 ```
 
 If checksum is verified, extract the files and move them into the `(/usr/local/bin)` directory for neatness and best practice. Then, clean up the duplicated copies.
 
 ```bash
-tar xvf mev-boost_1.7_linux_amd64.tar.gz
+tar xvf mev-boost_1.8_linux_amd64.tar.gz
 sudo cp mev-boost /usr/local/bin
-rm mev-boost LICENSE README.md mev-boost_1.7_linux_amd64.tar.gz
-
+rm mev-boost* LICENSE README.md
 ```
 {% endtab %}
 {% endtabs %}

@@ -19,8 +19,8 @@ We will be pointing the configuration files of the execution and consensus clien
 
 ```bash
 cd
-curl -LO https://gethstore.blob.core.windows.net/builds/geth-linux-amd64-1.14.3-ab48ba42.tar.gz
-echo "734653ddbc3a6877cba40583dcaf26f5 geth-linux-amd64-1.14.3-ab48ba42.tar.gz" | md5sum --check
+curl -LO https://gethstore.blob.core.windows.net/builds/geth-linux-amd64-1.14.11-f3c696fa.tar.gz
+echo "34b08faca981f738cf6c6d9ebe266be7 geth-linux-amd64-1.14.11-f3c696fa.tar.gz" | md5sum --check
 ```
 
 {% hint style="info" %}
@@ -36,15 +36,15 @@ Make sure to choose the amd64 version. Right click on the linked text and select
 _**Expected output:** Verify output of the checksum verification_
 
 ```
-geth-linux-amd64-1.14.3-ab48ba42.tar.gz: OK
+geth-linux-amd64-1.14.11-f3c696fa.tar.gz: OK
 ```
 
 If checksum is verified, extract the files and move them into the `(/usr/local/bin)` directory for neatness and best practice. Then, clean up the duplicated copies.
 
 ```bash
-tar xvf geth-linux-amd64-1.14.3-ab48ba42.tar.gz
-sudo cp geth-linux-amd64-1.14.3-ab48ba42/geth /usr/local/bin
-rm -r geth-linux-amd64-1.14.3-ab48ba42 geth-linux-amd64-1.14.3-ab48ba42.tar.gz
+tar xvf geth-linux-amd64-1.14.11-f3c696fa.tar.gz
+sudo cp geth-linux-amd64-1.14.11-f3c696fa/geth /usr/local/bin
+rm -r geth*
 ```
 
 Create an account (`geth`) without server access for Geth to run as a background service. This type of user account will not have root access so it restricts potential attackers to only the Geth service in the unlikely event that they manage to infiltrate via a compromised client update.
