@@ -82,7 +82,7 @@ cd staking_deposit-cli-fdab65d-linux-amd64
 Run the following command to generate your validator keys. Replace `<number>` with the number of validators you want to set up and `<YourWithdrawalAddress>` with the actual withdrawal address depending on your setup choice.
 
 ```
-./deposit new-mnemonic --num_validators <number> --chain holesky --eth1_withdrawal_address <YourWithdrawalAaddress>
+./deposit new-mnemonic --num_validators <number> --chain <network> --eth1_withdrawal_address <YourWithdrawalAaddress>
 ```
 
 1. **Native Solo Staking Setup:** Use a secure Ethereum wallet address that you own--e.g., cold wallet address, SAFE multi-sig address
