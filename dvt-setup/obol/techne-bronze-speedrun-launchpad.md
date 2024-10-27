@@ -134,7 +134,8 @@ This is an alternative method if you have not set up SSH access to your server f
 * Zip up the .charon folder and convert the zipped file into a base64 string. Then print out the resulting contents.
 
 ```sh
-sudo tar -czvf - $HOME/.charon | base64 > dot_charon.tar.gz.b64
+cd
+sudo tar -czvf - .charon | base64 > dot_charon.tar.gz.b64
 cat dot_charon.tar.gz.b64
 ```
 
