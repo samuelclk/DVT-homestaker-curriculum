@@ -166,8 +166,8 @@ Then, set the following permissions.&#x20;
 
 ```sh
 sudo chmod +x ~/.charon
-sudo chmod 666 ~/.charon
-sudo chmod 644 ~/.charon/charon-enr-private-key
+sudo chmod 755 ~/.charon
+sudo chmod 600 ~/.charon/charon-enr-private-key
 ```
 
 ## Set up ETH Docker
