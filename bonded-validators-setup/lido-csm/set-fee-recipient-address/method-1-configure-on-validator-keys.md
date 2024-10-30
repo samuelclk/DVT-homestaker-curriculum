@@ -201,7 +201,8 @@ default_config:
   builder:
     enabled: true
     gas_limit: "30000000"
-    selection: "builderalways"
+    selection: "maxprofit"
+    boost_factor: "100"
 ```
 
 **Replace** `YOUR_OWN_VALIDATOR_PUBKEY_(NOT_CSM)` with your own actual validator pubkeys <mark style="color:red;">**(NOT CSM).**</mark>
