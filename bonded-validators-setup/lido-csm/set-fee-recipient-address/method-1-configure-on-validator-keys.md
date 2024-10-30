@@ -231,10 +231,13 @@ sudo chown -R lodestar_validator:lodestar_validator /var/lib/lodestar_validator
 
 ### Adding more <mark style="color:red;">non-CSM</mark> validator keystores:
 
-If you want to add more of your own validator keystores, replicate the following segment, taking note of the indentation.
+If you want to add more of your own validator keystores, replicate the following segment and place them under the `proposer_config` section, taking note of the indentation.
 
 ```
-  'YOUR_OWN_VALIDATOR_PUBKEY_(NOT_CSM)':
+proposer_config:
+
+
+    'YOUR_OWN_VALIDATOR_PUBKEY_(NOT_CSM)':
     fee_recipient: 'YOUR_OWN_FEE_RECIPIENT_ADDRESS'
     builder:
       enabled: "true"
