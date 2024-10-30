@@ -172,7 +172,154 @@ Configure a separate validator client and set the `fee_recipient` address to the
 The `--proposerSettingsFile` feature of Lodestar and its format is in [alpha and subject to change](https://chainsafe.github.io/lodestar/run/validator-management/validator-cli#--proposersettingsfile). Hence we will fallback to running a separate validator client to customise the `fee_recipient` address.
 {% endhint %}
 
-Configure a separate validator client and set the `fee_recipient` address to the Lido Execution Layer Rewards Vault there. Refer to the following subpage.
+Create a custom `proposer_settings.yml` file.
+
+```
+sudo nano /var/lib/lodestar_validator/proposer_settings.yml
+```
+
+Use the following template and make the necessary edits.
+
+```
+proposer_config:
+  'YOUR_OWN_VALIDATOR_PUBKEY_(NOT_CSM)_01':
+    graffiti: 'non-CSM graffiti'
+    strict_fee_recipient_check: false
+    fee_recipient: 'YOUR_OWN_FEE_RECIPIENT_ADDRESS'
+    builder:
+      enabled: true
+      gas_limit: "30000000"
+  'YOUR_OWN_VALIDATOR_PUBKEY_(NOT_CSM)_02':
+    fee_recipient: 'YOUR_OWN_FEE_RECIPIENT_ADDRESS'
+    builder:
+      enabled: "true"
+      gas_limit: "30000000"
+default_config:
+  graffiti: 'CSM graffiti'
+  strict_fee_recipient_check: true
+  fee_recipient: 'LIDO_EXECUTION_LAYER_REWARDS_VAULT'
+  builder:
+    enabled: true
+    gas_limit: "30000000"
+```
+
+**Replace** `YOUR_OWN_VALIDATOR_PUBKEY_(NOT_CSM)` with your own actual validator pubkeys <mark style="color:red;">**(NOT CSM).**</mark>
+
+**Replace** `YOUR_OWN_FEE_RECIPIENT_ADDRESS` with your desired wallet address.
+
+**Replace** `LIDO_EXECUTION_LAYER_REWARDS_VAULT` with the following options.
+
+* **Mainnet**
+
+```
+suggested_fee_recipient: "0x388C818CA8B9251b393131C08a736A67ccB19297"
+```
+
+* **Holesky**
+
+```
+suggested_fee_recipient: "0xE73a3602b99f1f913e72F8bdcBC235e206794Ac8"
+```
+
+`CTRL+O`, `ENTER`, `CTRL+X` to save and exit.
+
+Set the permissions of the custom proposer configuration file.
+
+```sh
+sudo chown -R lodestar_validator:lodestar_validator /var/lib/lodestar_validator
+```
+
+### Adding more <mark style="color:red;">non-CSM</mark> validator keystores:
+
+If you want to add more of your own validator keystores, replicate the following segment, taking note of the indentation.
+
+```
+  'YOUR_OWN_VALIDATOR_PUBKEY_(NOT_CSM)':
+    fee_recipient: 'YOUR_OWN_FEE_RECIPIENT_ADDRESS'
+    builder:
+      enabled: "true"
+      gas_limit: "30000000"
+```
+
+`CTRL+O`, `ENTER`, `CTRL+X` to save and exit.
+
+Edit the `docker-compose.yml` file in the Lodestar folder.
+
+```sh
+cd ~/lodestar_validator
+sudo nano docker-compose.yml
+```
+
+Add the `--proposerSettingsFile` flag and point it to the `proposer_settings.yml` file.
+
+```
+      - --proposerSettingsFile
+      - /var/lib/lodestar_validator/proposer_settings.yml
+```
+
+Then remove the following flags.
+
+```
+      - --suggestedFeeRecipient
+      - "<your_designated_ETH_wallet_address>"
+```
+
+**New example:**
+
+```yaml
+services:
+  validator_client:
+    image: chainsafe/lodestar:latest
+    container_name: lodestar_validator
+    user: <UID>:<GID>
+    restart: unless-stopped
+    volumes:
+      - /var/lib/lodestar_validator:/var/lib/lodestar_validator
+    command:
+      - validator
+      - --dataDir
+      - /var/lib/lodestar_validator
+      - --importKeystores
+      - /var/lib/lodestar_validator/validator_keystores
+      - --importKeystoresPassword
+      - /var/lib/lodestar_validator/keystore_password/<validator_signing_keystore_password_file_name>.txt
+      - --network
+      - holesky
+      - --beaconNodes
+      - http://127.0.0.1:5052
+      - --builder
+      - --proposerSettingsFile
+      - /var/lib/lodestar_validator/proposer_settings.yml
+      - --doppelgangerProtection
+      - --metrics
+      - --metrics.port
+      - "5064"
+      - --graffiti
+      - "your_graffiti_of_choice"
+    environment:
+      NODE_OPTIONS: --max-old-space-size=2048
+    ports:
+      - "5064:5064"
+```
+
+`CTRL+O`, `ENTER`, `CTRL+X` to save and exit.
+
+Restart your Lodestar validator client.
+
+```sh
+docker compose down
+docker compose up -d
+```
+
+Monitor for errors.
+
+```sh
+docker logs lodestar_validator -f
+```
+
+#### Method 2:
+
+Alternatively, to configure a separate validator client and set the `fee_recipient` address to the Lido Execution Layer Rewards Vault there, refer to the following subpage.
 
 {% content-ref url="method-2-configure-on-separate-validator-client.md" %}
 [method-2-configure-on-separate-validator-client.md](method-2-configure-on-separate-validator-client.md)

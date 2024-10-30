@@ -37,7 +37,7 @@ ssh <user>@<IP_address> -p <port_no.> -i <SSH_key> -v
 \*Skip this step if you are using the Lodestar consensus client.
 
 ```sh
-sudo useradd --no-create-home --shell /bin/false lodestar
+sudo useradd --no-create-home --shell /bin/false lodestar_validator
 ```
 
 ## Prepare the validator data directory
