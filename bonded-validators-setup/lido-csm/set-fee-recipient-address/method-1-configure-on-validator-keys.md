@@ -184,7 +184,7 @@ Use the following template and make the necessary edits.
 proposer_config:
   'YOUR_OWN_VALIDATOR_PUBKEY_(NOT_CSM)_01':
     graffiti: 'non-CSM graffiti'
-    strict_fee_recipient_check: false
+    strict_fee_recipient_check: true
     fee_recipient: 'YOUR_OWN_FEE_RECIPIENT_ADDRESS'
     builder:
       enabled: true
@@ -201,6 +201,7 @@ default_config:
   builder:
     enabled: true
     gas_limit: "30000000"
+    selection: "builderalways"
 ```
 
 **Replace** `YOUR_OWN_VALIDATOR_PUBKEY_(NOT_CSM)` with your own actual validator pubkeys <mark style="color:red;">**(NOT CSM).**</mark>
