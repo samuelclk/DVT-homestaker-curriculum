@@ -373,22 +373,27 @@ suggested_fee_recipient: "0xE73a3602b99f1f913e72F8bdcBC235e206794Ac8"
 
 #### Example with Mainnet fee recipient:
 
+{% hint style="danger" %}
+To be appended, not replacing your existing file contents
+{% endhint %}
+
 ```
----
 - enabled: true
-  voting_public_key: 0xa1a6d4a72db3fff3a81401cb9a80e1a7d18a96c3a6c3c9b50531e3b02e50b2baeba06e3a7c9fe24374e48091006b11f7
+  voting_public_key: CSM_VALIDATOR_PUBKEY_01
   description: ''
   type: local_keystore
   voting_keystore_path: /var/lib/lighthouse_validator/validators/0xa1a6d4a72db3fff3a81401cb9a80e1a7d18a96c3a6c3c9b50531e3b02e50b2baeba06e3a7c9fe24374e48091006b11f7/keystore-m>
   voting_keystore_password: password
   suggested_fee_recipient: "0x388C818CA8B9251b393131C08a736A67ccB19297"
+  builder_boost_factor: 100
 - enabled: true
-  voting_public_key: 0x8e2a8abfeeca058d757f6d6ff5c058c61ab1d40804c28298d44bfe4486265c96e5d30f781a2a3cee6e2b250a85c40e38
+  voting_public_key: CSM_VALIDATOR_PUBKEY_02
   description: ''
   type: local_keystore
   voting_keystore_path: /var/lib/lighthouse_validator/validators/0x8e2a8abfeeca058d757f6d6ff5c058c61ab1d40804c28298d44bfe4486265c96e5d30f781a2a3cee6e2b250a85c40e38/keystore-m>
   voting_keystore_password: password
   suggested_fee_recipient: "0x388C818CA8B9251b393131C08a736A67ccB19297"
+  builder_boost_factor: 100
 ```
 
 Restart your Lighthouse validator client.
