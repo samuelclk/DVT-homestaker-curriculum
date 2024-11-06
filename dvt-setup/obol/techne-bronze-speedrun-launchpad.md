@@ -122,7 +122,7 @@ Once the DKG ceremony is completed, **back up the `.charon` folder containing th
 This is the most secure method but requires having SSH access to your server from your laptop's terminal (i.e., after manually adding SSH public keys to your server).&#x20;
 
 ```sh
-scp -i PATH_TO_SSH_PRIVATE_KEY -r $USER@EXTERNAL_IP_ADDRESS:~/.charon $HOME/Documents
+scp -i PATH_TO_SSH_PRIVATE_KEY -r USER@EXTERNAL_IP_ADDRESS:~/.charon $HOME/Documents
 ```
 
 Your .charon folder will now be found on your laptop's `Documents` folder. Note that `.charon` is a hidden folder so you will not see it being displayed in your file system.
@@ -134,8 +134,7 @@ This is an alternative method if you have not set up SSH access to your server f
 * Zip up the .charon folder and convert the zipped file into a base64 string. Then print out the resulting contents.
 
 ```sh
-cd
-sudo tar -czvf - .charon | base64 > dot_charon.tar.gz.b64
+sudo tar -czvf - $HOME/.charon | base64 > dot_charon.tar.gz.b64
 cat dot_charon.tar.gz.b64
 ```
 

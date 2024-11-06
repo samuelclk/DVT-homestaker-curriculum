@@ -45,7 +45,7 @@ gpg --armor --export <your-email@example.com> > my-public-key.asc
 gpg --fingerprint <your-email@example.com>
 ```
 
-* You’ll see the fingerprint printed as a series of hex digits.
+* You’ll see the fingerprint printed as a series of hex digits. e.g., `B365 BB56 85E2 2A50 540A 12C6 E42C FC8D 577E 83F5`
 * Copy this fingerprint and email it to the EtherFi programme coordinator
 
 ### Receive EtherFi GPG fingerprint

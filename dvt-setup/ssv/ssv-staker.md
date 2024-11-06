@@ -44,7 +44,7 @@ ethd cmd run --rm deposit-cli-new --execution_address YOURHARDWAREWALLETADDRESS 
 Copy the validator keystore onto your laptop. _**Open the terminal on your laptop and run:**_
 
 ```sh
-scp $USER@EXTERNAL_IP_ADDRESS:$HOME/eth-docker/.eth/validators/keystore*.json $HOME/Documents
+scp $USER@EXTERNAL_IP_ADDRESS:~/eth-docker/.eth/validators/keystore*.json $HOME/Documents
 ```
 
 **Note:** Replace EXTERNAL\_IP\_ADDRESS with your actual VM's external IP
@@ -94,7 +94,7 @@ Back up all DKG output files located in `$HOME/ceremony*` folder.
 
 ```sh
 #run on your laptop
-scp -r $USER@<EXTERNAL_IP_ADDRESS>:$HOME/ceremony* $HOME
+scp -r $USER@<EXTERNAL_IP_ADDRESS>:~/ceremony* $HOME
 ```
 
 Save this folder onto a USB drive and delete the copy on your laptop.

@@ -104,7 +104,7 @@ Restart=always
 RestartSec=5
 ExecStart=/usr/local/bin/mev-boost \
     -holesky \
-    -min-bid 0.05 \
+    -min-bid 0.07 \
     -relay-check \
     -relay <https://example.com> \
     -relay <https://example.com> \
