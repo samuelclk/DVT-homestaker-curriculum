@@ -413,6 +413,8 @@ services:
       - --beaconNodes
       - http://<Internal_IP_address>:5051
       - --builder
+      - --builder.boostFactor
+      - 100
       - --suggestedFeeRecipient
       - "<holesky_or_mainnet_fee_recipient_address>"
       - --doppelgangerProtection
@@ -468,6 +470,7 @@ ExecStart=/usr/local/bin/lighthouse vc \
   --network <holesky_or_mainnet> \
   --datadir /var/lib/csm_lighthouse_validator \
   --builder-proposals \
+  --builder-boost-factor 100 \
   --beacon-nodes http://<Internal_IP_address>:5051 \
   --metrics \
   --metrics-port 8108 \

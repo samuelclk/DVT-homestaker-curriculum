@@ -88,7 +88,8 @@ ExecStart=/usr/local/bin/nimbus_beacon_node \
   --rest-address=<Internal_IP_address> \
   --rest-port=5052 \
   --metrics \
-  --metrics-port=8009 
+  --metrics-port=8009 \
+  --local-block-value-boost=0
   
 [Install]
 WantedBy=multi-user.target
@@ -110,6 +111,7 @@ Once you're done, save with `Ctrl+O` and `Enter`, then exit with `Ctrl+X`. Under
 10. `--rest-port`: Port to connect to the REST API endpoint
 11. `--metrics`: Enable monitoring of consensus client metrics
 12. `--metrics-port`: Port to connect to the metrics endpoint
+13. `--local-block-value-boost`: How much more (in %) must the value of externally-built blocks be in order to outsource block building vs building blocks locally. Set to `0` to be indifferent. Default `=10`
 
 ## Run the checkpoint sync process
 

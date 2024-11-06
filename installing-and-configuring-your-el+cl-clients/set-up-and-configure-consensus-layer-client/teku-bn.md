@@ -96,6 +96,7 @@ ExecStart=/usr/local/bin/teku/bin/teku \
   --rest-api-port=5052 \
   --builder-endpoint=http://127.0.0.1:18550 \
   --validators-builder-registration-default-enabled=true \
+  --builder-bid-compare-factor=100 \
   --p2p-nat-method=UPNP 
 
 [Install]
@@ -119,7 +120,8 @@ Once you're done, save with `Ctrl+O` and `Enter`, then exit with `Ctrl+X`. Under
 11. `--rest-api-port`: Sets the port to connect to the consensus client
 12. `--builder-endpoint`: URL to connect to external builders (e.g. MEV relays)
 13. `--validators-builder-registration-default-enabled`: Required when using external builders to build blocks (e.g. MEV relays)
-14. `--p2p-nat-method=UPNP`: Enables your Consensus Client to better discover and connect to other Consensus Clients in the ETH network without needing to use port forwarding
+14. `--builder-bid-compare-factor`: What is the multiplier (in %) of the value of externally-built blocks in order to outsource block building vs building blocks locally. Set to `100` to be indifferent. Default `=90`
+15. `--p2p-nat-method=UPNP`: Enables your Consensus Client to better discover and connect to other Consensus Clients in the ETH network without needing to use port forwarding
 
 ## Start the Teku Consensus Client
 

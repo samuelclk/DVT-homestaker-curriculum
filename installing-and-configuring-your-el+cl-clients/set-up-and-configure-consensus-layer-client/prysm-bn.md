@@ -92,7 +92,8 @@ ExecStart=/usr/local/bin/prysmbeacon \
   --rpc-host <Internal_IP_address> \
   --grpc-gateway-port 5052 \
   --grpc-gateway-host <Internal_IP_address> \
-  --http-mev-relay=http://127.0.0.1:18550 
+  --http-mev-relay=http://127.0.0.1:18550 \
+  --local-block-value-boost 100
 
 [Install]
 WantedBy=multi-user.target
@@ -115,6 +116,7 @@ Once you're done, save with `Ctrl+O` and `Enter`, then exit with `Ctrl+X`. Under
 11. `--grpc-gateway-port`: Sets the port to connect to the consensus client
 12. `--grpc-gateway-host`: Sets the IP address to connect to the REST API of the consensus client that will be used by the validator and DVT clients. Use the internal IP address of your device here (check by running `ip a`) - e.g. `192.168.x.x`. Defaults to `127.0.0.1` otherwise
 13. `--http-mev-relay`: URL to connect to external builders (e.g. MEV relays)
+14. `--local-block-value-boost`: What is the multiplier (in %) of the value of externally-built blocks in order to outsource block building vs building blocks locally. Set to `100` to be indifferent. Default `=90`
 
 ## Start the Prysm Consensus Client
 
