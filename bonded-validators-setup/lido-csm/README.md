@@ -215,7 +215,11 @@ For existing solo stakers, you can set the `fee_recipient` address in one of 2 w
 To verify that your validator pubkeys have been successfully registered onto the builder network, look out for the following lines in your logs.
 
 * **Validator client logs:** `Validator *** 1 out of 1 validator registration(s) were successfully sent to the builder network via the Beacon Node.`
-* **Mevboost logs:** `level=info msg="http: POST /eth/v1/builder/validators 200"`
+* **Mev-boost logs:** `level=info msg="http: POST /eth/v1/builder/validators 200" duration=0.076901 method=POST`
+
+{% hint style="info" %}
+Make sure you are seeing **method=POST** instead of **method=GET** in the Mev-boost logs.
+{% endhint %}
 
 #### Verifying the MEV Relay List
 

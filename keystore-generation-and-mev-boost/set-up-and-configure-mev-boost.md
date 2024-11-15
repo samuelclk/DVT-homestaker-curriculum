@@ -147,7 +147,7 @@ sudo journalctl -fu mevboost -o cat | ccze -A
 **Expected output:**
 
 {% hint style="info" %}
-Make sure you see the <mark style="background-color:yellow;">**`method=POST path=/eth/v1/builder/validators status=200`**</mark> lines in the logs
+Make sure you see the <mark style="background-color:yellow;">**`method=POST path=/eth/v1/builder/validators status=200`**</mark> lines in the logs and not <mark style="background-color:yellow;">**`method=GET`**</mark>
 {% endhint %}
 
 ```
