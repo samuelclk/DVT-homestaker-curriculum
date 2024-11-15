@@ -205,10 +205,17 @@ For existing solo stakers, you can set the `fee_recipient` address in one of 2 w
 
 ### **MEV-Boost Setup--Relay endpoints**
 
-1. Do not set the `-min-bid` flag or set it to 0
+1. Set the `-min-bid` flag or set it to 0.07
 2. During the MEV-Boost setup step, set the `-relay` flags only to the [list of designated MEV relays for Lido CSM](https://enchanted-direction-844.notion.site/6d369eb33f664487800b0dedfe32171e?v=8e5d1f1276b0493caea8a2aa1517ed65)
    * **Mainnet:** Select **"Mainnet Active + Vetted"** tab. _You can choose only from relays tagged with “must use some” and “may use”, and must choose at least one tagged with “must use some”._&#x20;
    * **Holesky :** Select **"Holesky Only"** tab
+
+#### Verifying your MEV Boost setup
+
+To verify that your validator pubkeys have been successfully registered onto the builder network, look out for the following lines in your logs.
+
+* **Validator client logs:** `Validator *** 1 out of 1 validator registration(s) were successfully sent to the builder network via the Beacon Node.`
+* **Mevboost logs:** `level=info msg="http: POST /eth/v1/builder/validators 200"`
 
 #### Verifying the MEV Relay List
 
@@ -217,10 +224,11 @@ You can verify the latest MEV Relay List for the Lido CSM below.
 * **Holesky:** [https://holesky.etherscan.io/address/0x2d86C5855581194a386941806E38cA119E50aEA3#readContract](https://holesky.etherscan.io/address/0x2d86C5855581194a386941806E38cA119E50aEA3#readContract)
 * **Mainnet:** [https://etherscan.io/address/0xf95f069f9ad107938f6ba802a3da87892298610e#readContract](https://etherscan.io/address/0xf95f069f9ad107938f6ba802a3da87892298610e#readContract)
 
-**Steps to verify:**&#x20;
+**Steps to verify list of approved MEV Relays:**&#x20;
 
 1. Go to the Etherscan link above and it will bring you to the MEV Relay Inclusion List used by the Lido CSM
 2.  Under `Contract`>>`Read Contract`>>`4. get_relays`>>`Query`
 
     <figure><img src="../../.gitbook/assets/image (179).png" alt=""><figcaption></figcaption></figure>
 3. A list of relay endpoints will appear under this section `4. get_relays`. Verify that you are only using relay endpoints from this list.
+

@@ -146,7 +146,17 @@ sudo journalctl -fu mevboost -o cat | ccze -A
 
 **Expected output:**
 
-<figure><img src="../.gitbook/assets/image (61).png" alt=""><figcaption></figcaption></figure>
+{% hint style="info" %}
+Make sure you see the <mark style="background-color:yellow;">**`method=POST path=/eth/v1/builder/validators status=200`**</mark> lines in the logs
+{% endhint %}
+
+```
+mev-boost-1  | time="2024-11-15T05:56:56.094Z" level=info msg="http: POST /eth/v1/builder/validators 200" duration=0.072986 method=POST path=/eth/v1/builder/validators status=200 version=v1.8.1
+mev-boost-1  | time="2024-11-15T05:56:59.122Z" level=info msg="http: POST /eth/v1/builder/validators 200" duration=0.074820 method=POST path=/eth/v1/builder/validators status=200 version=v1.8.1
+mev-boost-1  | time="2024-11-15T05:56:59.184Z" level=info msg="http: POST /eth/v1/builder/validators 200" duration=0.097007 method=POST path=/eth/v1/builder/validators status=200 version=v1.8.1
+mev-boost-1  | time="2024-11-15T05:57:11.122Z" level=info msg="http: POST /eth/v1/builder/validators 200" duration=0.075100 method=POST path=/eth/v1/builder/validators status=200 version=v1.8.1
+mev-boost-1  | time="2024-11-15T05:57:11.188Z" level=info msg="http: POST /eth/v1/builder/validators 200" duration=0.100271 method=POST path=/eth/v1/builder/validators status=200 version=v1.8.1
+```
 
 Press `CTRL-C` to exit.
 
