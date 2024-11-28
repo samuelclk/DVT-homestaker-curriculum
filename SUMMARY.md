@@ -111,6 +111,7 @@
   * [Automations](bonded-validators-setup/lido-csm/automations/README.md)
     * [CSM with ETHPillar](bonded-validators-setup/lido-csm/automations/csm-with-ethpillar.md)
     * [CSM with ETH Docker](bonded-validators-setup/lido-csm/automations/csm-with-eth-docker.md)
+    * [CSM with Dappnode](bonded-validators-setup/lido-csm/automations/csm-with-dappnode.md)
 * [Puffer](bonded-validators-setup/puffer/README.md)
   * [Non-Enclave: 2 ETH](bonded-validators-setup/puffer/non-enclave-2-eth.md)
   * [Enclave: 1 ETH (WIP)](bonded-validators-setup/puffer/enclave-1-eth-wip.md)
