@@ -57,7 +57,7 @@ After the checksum verification, move the zipped file into a new and empty USB d
 
 ## Flash and install OS
 
-1\) Download latest Ubuntu OS [here](https://ubuntu.com/download) or TailsOS [here](https://tails.net/install/download/) and follow the respective instructions to verify the checksums of the downloaded file.
+1\) Download latest TailsOS [here](https://tails.net/install/download/) and follow the respective instructions to verify the checksums of the downloaded file.
 
 2\) Download an ISO flasher (e.g. [BalenaEtcher](https://etcher.balena.io/)) and flash another new and empty USB drive with your preferred OS. Refer to the section below under steps (1) and (2) if needed.
 
@@ -126,11 +126,7 @@ Follow the instructions on the `Wagyu Keygen` GUI to:
 1. A `keystore-m_<timestamp>.json` file: This is your validator signing keystore that your validator node will use to sign attestations. Keep this file extremely secure.
 2. A `deposit_data-<timestamp>.json`: This is the file that links your ETH deposit to your validator. You will only use this once, during the deposit process.
 
-Store both files on a new USB drive by copying the entire staking-deposit-cli folder into it. After that, remove the original copy by running:
-
-```
-sudo rm -r $HOME/Desktop/staking-deposit-cli/validator_keys
-```
+Store both files on a new USB drive by copying the entire staking-deposit-cli folder into it.&#x20;
 
 Restart your host device (e.g. working laptop) and remove the OS-on-a-stick. There will not be any persistent memory stored on it.
 {% endtab %}
@@ -202,11 +198,7 @@ If you typed in your mnemonic correctly, you will be greeted by an ASCII art of 
 1. A `keystore-m_<timestamp>.json` file: This is your validator signing keystore that your validator node will use to sign attestations. Keep this file extremely secure.
 2. A `deposit_data-<timestamp>.json`: This is the file that links your ETH deposit to your validator. You will only use this once, during the deposit process.
 
-Store both files on a new USB drive by copying the entire staking-deposit-cli folder into it. After that, remove the original copy by running:
-
-```
-sudo rm -r $HOME/Desktop/staking-deposit-cli/validator_keys
-```
+Store both files on a new USB drive by copying the entire staking-deposit-cli folder into it.&#x20;
 
 Restart your host device (e.g. working laptop) and remove the OS-on-a-stick. There will not be any persistent memory stored on it.
 {% endtab %}
@@ -299,11 +291,7 @@ If you typed in your mnemonic correctly, you will be greeted by an ASCII art of 
 1. A `keystore-m_<timestamp>.json` file: This is your validator signing keystore that your validator node will use to sign attestations. Keep this file extremely secure.
 2. A `deposit_data-<timestamp>.json`: This is the file that links your ETH deposit to your validator. You will only use this once, during the deposit process.
 
-Store both files on a new USB drive by copying the entire staking-deposit-cli folder into it. After that, remove the original copy by running:
-
-```
-sudo rm -r $HOME/Desktop/staking-deposit-cli/validator_keys
-```
+Store both files on a new USB drive by copying the entire staking-deposit-cli folder into it.&#x20;
 
 Restart your host device (e.g. working laptop) and remove the OS-on-a-stick. There will not be any persistent memory stored on it.
 {% endtab %}
@@ -311,6 +299,8 @@ Restart your host device (e.g. working laptop) and remove the OS-on-a-stick. The
 
 ## Add validator key to the Node
 
+{% tabs %}
+{% tab title="Command line" %}
 Now that we have our validator signing keystore, we will need to place it in our validator node itself so that the node can sign attestations and propose blocks.
 
 Plug in the USB drive with your validator signing keystores into your node device. Once the USB drive is plugged in, we will need to identify it. On the terminal of your node, run:
@@ -364,5 +354,31 @@ With the `validator_signing_keystore_file_name` copied, create the password file
 </code></pre>
 
 Type in the password you used when generating your validator keys in the earlier step. Then save and exit the file with `CTRL + O, enter, CTRL + X`.
+{% endtab %}
+
+{% tab title="Dappnode" %}
+## 32 ETH Solo Staking
+
+Go to the Dappnode UI and navigate to the Stakers > Ethereum menu. Your Web3Signer will have a link saying `Upload Keystores` . If it doesn’t, make sure that you have waited enough time for all the packages to be installed (around 5 minutes) and refresh the page.
+
+Then click on the `Import Keystores` button on the lower part of the Web3Signer UI.
+
+Here browse for the keystore file(s) you generated in the previous step and enter them along with the password you chose to secure your keystores.
+
+You are now ready to fund these validator accounts and start validating!
+
+[Source here.](https://docs.dappnode.io/docs/user/staking/ethereum/solo/mainnet)
+
+## Lido CSM
+
+* Go to the Web3signer UI for [Ethereum](http://brain.web3signer.dappnode/) or [Holesky](http://brain.web3signer-holesky.dappnode/).
+* Upload the keystores and tag them with "Lido".
+* The fee recipient will be automatically set to `0xE73a3602b99f1f913e72F8bdcBC235e206794Ac8` for Holesky and `0x388C818CA8B9251b393131C08a736A67ccB19297` for Mainnet. **It is not editable.**
+
+You are now ready to fund these validator accounts and start validating!
+
+[Source here.](https://docs.dappnode.io/docs/user/staking/ethereum/lsd-pools/lido)
+{% endtab %}
+{% endtabs %}
 
 [^1]: 
