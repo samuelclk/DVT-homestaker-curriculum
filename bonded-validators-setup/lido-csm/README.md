@@ -203,7 +203,9 @@ For existing solo stakers, you can set the `fee_recipient` address in one of 2 w
 * Method 1:  Set the `fee_recipient` address per validator key
 * Method 2: Spin up a new validator client service specifically for your CSM validator keys so that you can retain your own `fee_recipient` address for your solo staking keys.&#x20;
 
-### **MEV-Boost Setup--Relay endpoints**
+### **MEV-Boost Setup**
+
+### **Relay endpoints**
 
 1. Set the `-min-bid` flag or set it to 0.07
 2. During the MEV-Boost setup step, set the `-relay` flags only to the [list of designated MEV relays for Lido CSM](https://enchanted-direction-844.notion.site/6d369eb33f664487800b0dedfe32171e?v=8e5d1f1276b0493caea8a2aa1517ed65)
@@ -235,4 +237,74 @@ You can verify the latest MEV Relay List for the Lido CSM below.
 
     <figure><img src="../../.gitbook/assets/image (179).png" alt=""><figcaption></figcaption></figure>
 3. A list of relay endpoints will appear under this section `4. get_relays`. Verify that you are only using relay endpoints from this list.
+
+### Other MEV Boost Settings
+
+<details>
+
+<summary><em>How to configure Builder/Local Boost settings per CL/VC client</em> ❓</summary>
+
+**Teku**
+
+* Teku CL (action: set to 100), [Source](https://docs.teku.consensys.io/reference/cli#builder-bid-compare-factor)
+
+```
+--builder-bid-compare-factor
+```
+
+(Default: 90) For example, a builder bid comparison factor of 90 means the builder's payload is chosen when its value is at least 10% greater than what can be built locally.
+
+**Prysm**
+
+* Prysm CL (action: set to 0), [Source](https://docs.prylabs.network/docs/prysm-usage/parameters#client-stats-flags)
+
+```
+--local-block-value-boost
+```
+
+(Default: 10) Use builder block if: builder\_bid\_value \* 100 > local\_block\_value \* (local-block-value-boost + 100)
+
+**Lighthouse**
+
+* Lighthouse VC (action: set to 100), [Source](https://lighthouse-book.sigmaprime.io/help_vc.html)
+
+```
+--builder-boost-factor
+```
+
+(Default: 100)
+
+**Nimbus**
+
+For Nimbus, which setting has the priority:
+
+**depends where the validators live (which component owns the private keys). If they're in the VC, then the VC determines it. if in the BN, then the BN does**
+
+* Nimbus CL (action: set to 0), [Source](https://nimbus.guide/external-block-builder.html), [Source 2](https://nimbus.guide/options.html)
+
+```
+--local-block-value-boost
+```
+
+&#x20;(Default =10) Increase execution layer block values for builder bid comparison by a percentage.
+
+* Nimbus VC (no action)
+
+```
+--builder-boost-factor
+```
+
+(Default: 100) Percentage multiplier to apply to the builder's payload value when choosing between a builder payload header and payload from the paired execution node.
+
+**Lodestar**
+
+Lodestar VC (action: --builder.selection = ‘maxprofit’), [Source](https://chainsafe.github.io/lodestar/run/validator-management/vc-configuration/#configure-your-builder-selection-andor-builder-boost-factor)
+
+```
+--builder.selection
+```
+
+(Default: "executiononly"). maxprofit: An alias of--builder.boostFactor=100, which will always choose the more profitable block.
+
+</details>
 
