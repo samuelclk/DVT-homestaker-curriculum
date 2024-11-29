@@ -31,8 +31,18 @@ Either builds are good options but the Intel NUC CPU set is slightly more expens
 
 {% hint style="info" %}
 * If you plan to purchase any other SSDs, you should first refer to this list compiled by Yorick Downe and prioritise SSD models listed in the “Good” category — [https://gist.github.com/yorickdowne/f3a3e79a573bf35767cd002cc977b038](https://gist.github.com/yorickdowne/f3a3e79a573bf35767cd002cc977b038)
-* You may also refer to the full list in this google sheet and filter for models with **DRAM** and **TLC** (under NAND type) - [https://docs.google.com/spreadsheets/d/1B27\_j9NDPU3cNlj2HKcrfpJKHkOf-Oi1DbuuQva2gT4/edit#gid=0](https://docs.google.com/spreadsheets/d/1B27\_j9NDPU3cNlj2HKcrfpJKHkOf-Oi1DbuuQva2gT4/edit#gid=0)
+* You may also refer to the full list in this google sheet and filter for models with **DRAM** and **TLC** (under NAND type) - [https://docs.google.com/spreadsheets/d/1B27\_j9NDPU3cNlj2HKcrfpJKHkOf-Oi1DbuuQva2gT4/edit#gid=0](https://docs.google.com/spreadsheets/d/1B27_j9NDPU3cNlj2HKcrfpJKHkOf-Oi1DbuuQva2gT4/edit#gid=0)
 {% endhint %}
+
+**Dappnode**
+
+If you don't want the hassle of sourcing and assembling your own components, you can go for pre-built Ethereum home staking hardware for a premium.
+
+Dappnode selects the optimal hardware components by taking into account upcoming Ethereum network upgrades and testing them rigorously so you can be assured about future-proofing and  quality.
+
+Check out the various options on their site using my affiliate link below (no price difference):
+
+{% embed url="https://dappnode.com/collections/frontpage?sca_ref=6421280.pl3ldyi9Vn&utm_campaign=affiliate&utm_medium=socialmedia&utm_source=twitter" %}
 
 ### **Optional**
 
@@ -59,3 +69,4 @@ For learners with more advanced knowledge in building home servers, you might wa
 {% embed url="https://eth-docker.net/Usage/Hardware/" %}
 
 The trade-offs, however, are that (i) you will likely require a larger form factor and (ii) because ECC RAMs non-consumer components, it might take a few weeks for your vendor to replace (not readily available) your RAM if there is a RAM failure.
+
