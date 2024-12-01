@@ -55,4 +55,4 @@ This tab allows you to replenish your `Locked bonds` due to MEV theft and resume
 
 ## Resources
 
-<table><thead><tr><th width="202">Category</th><th>Navigation</th></tr></thead><tbody><tr><td><a href="../../curriculum-breakdown-and-timeline.md">Bond &#x26; Rewards</a></td><td> CSM Operator Portal: "Economics" section</td></tr><tr><td><a href="https://operatorportal.lido.fi/modules/community-staking-module#block-3951aa72ba1e471bafe95b40fef65d2b">Bond Penalties</a></td><td>CSM Operator Portal: "Penalties" sub-section</td></tr></tbody></table>
+<table><thead><tr><th width="202">Category</th><th>Navigation</th></tr></thead><tbody><tr><td><a href="https://operatorportal.lido.fi/modules/community-staking-module#block-88e6d7eca6364a758541dc1ee66a278f">Bond &#x26; Rewards</a></td><td> CSM Operator Portal: "Economics" section</td></tr><tr><td><a href="https://operatorportal.lido.fi/modules/community-staking-module#block-3951aa72ba1e471bafe95b40fef65d2b">Bond Penalties</a></td><td>CSM Operator Portal: "Penalties" sub-section</td></tr></tbody></table>

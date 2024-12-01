@@ -103,7 +103,7 @@ As an overview, the Lido CSM deposits valid validator keys uploaded by node oper
 Solo stakers receive rewards from 2 sources:
 
 1. **Bond rebase**: staking rewards generated from the bonded tokens ((w)stETH)--e.g., `90% * ETH PoS staking yield * total ETH bond provided`
-2. **Node Operator rewards**: a 7% share of rewards from the active validator keys deposited by the Lido Protocol with possible reductions for bad performance--e.g., `7% * ETH PoS staking yield * total validator keys deposited (32 ETH each) - poor performance penalties`
+2. **Node Operator rewards**: 6% share of rewards from the active validator keys deposited by the Lido Protocol with possible reductions for bad performance--e.g., `6% * ETH PoS staking yield * total validator keys deposited (32 ETH each) - poor performance penalties`
 
 {% hint style="info" %}
 **Note:** The share of rewards % above apply only on CSM Holesky testnet. The values for mainnet may differ and will be set upon the mainnet launch by DAO vote
