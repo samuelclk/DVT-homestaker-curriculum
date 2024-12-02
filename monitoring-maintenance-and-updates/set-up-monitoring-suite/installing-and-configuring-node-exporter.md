@@ -80,7 +80,7 @@ sudo systemctl status node_exporter.service
 
 <figure><img src="../../.gitbook/assets/Screenshot 2023-08-10 at 5.20.13 PM.png" alt=""><figcaption><p>sudo systemctl status node_exporter.service</p></figcaption></figure>
 
-Use the following command to check the logs of Teku Beacon Node’s syncing process. Watch out for any warnings or errors.
+Use the following command to check the logs of Node Exporter. Watch out for any warnings or errors.
 
 ```bash
 sudo journalctl -fu node_exporter -o cat | ccze -A
