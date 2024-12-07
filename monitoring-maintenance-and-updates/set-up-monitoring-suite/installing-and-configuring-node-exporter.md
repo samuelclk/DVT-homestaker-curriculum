@@ -2,7 +2,7 @@
 
 ### Download and install Node Exporter
 
-[Download](https://prometheus.io/download/#node\_exporter) the latest version of Node Exporter and run the checksum verification process to ensure that the downloaded file has not been tampered with.
+[Download](https://prometheus.io/download/#node_exporter) the latest version of Node Exporter and run the checksum verification process to ensure that the downloaded file has not been tampered with.
 
 ```bash
 cd
@@ -29,7 +29,7 @@ If checksum is verified, extract the files and move them into the `(/usr/local/b
 ```bash
 tar xvf node_exporter-1.8.2.linux-amd64.tar.gz
 sudo cp node_exporter-1.8.2.linux-amd64/node_exporter /usr/local/bin
-rm -r node_exporter-1.8.2.linux-amd64 node_exporter-1.8.1.linux-amd64.tar.gz
+rm -r node_exporter-1.8.2.linux-amd64 node_exporter-1.8.2.linux-amd64.tar.gz
 ```
 
 ### Configure the Node Exporter service

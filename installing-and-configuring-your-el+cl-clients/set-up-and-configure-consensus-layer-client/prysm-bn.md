@@ -85,7 +85,7 @@ ExecStart=/usr/local/bin/prysmbeacon \
   --execution-endpoint=http://127.0.0.1:8551 \
   --jwt-secret=/var/lib/jwtsecret/jwt.hex \
   --checkpoint-sync-url=https://holesky.beaconstate.ethstaker.cc/ \
-  --monitoring-port 8009 \
+  --monitoring-port 8008 \
   --p2p-tcp-port 13000 \
   --p2p-udp-port 12000 \
   --rpc-port 4000 \

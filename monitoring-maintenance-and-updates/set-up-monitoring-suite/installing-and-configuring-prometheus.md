@@ -78,7 +78,7 @@ scrape_configs:
   - job_name: nethermind
     static_configs:
       - targets:
-          - localhost:8009
+          - localhost:6060
 ```
 {% endtab %}
 
@@ -192,7 +192,6 @@ According to your selected consensus client, append the following block to the g
     scheme: http
     static_configs:
       - targets: ["localhost:8009"]
-      
   - job_name: "teku_validator" #for validator client
     scrape_timeout: 10s
     metrics_path: /metrics
@@ -208,7 +207,6 @@ According to your selected consensus client, append the following block to the g
 </strong>    metrics_path: /metrics
     static_configs:
       - targets: ['localhost:8009']
-      
   - job_name: 'Nimbus_validator' #for validator client
     metrics_path: /metrics
     static_configs:
@@ -222,7 +220,6 @@ According to your selected consensus client, append the following block to the g
     metrics_path: /metrics
     static_configs:
       - targets: ['localhost:8009']
-      
   - job_name: 'lodestar_validator' #for validator client
     metrics_path: /metrics
     static_configs:
@@ -235,7 +232,6 @@ According to your selected consensus client, append the following block to the g
 </strong>    metrics_path: /metrics    
     static_configs:
       - targets: ['localhost:8009']
-      
   - job_name: 'lighthouse_validator' #for validator client
     metrics_path: /metrics
     static_configs:
@@ -249,7 +245,6 @@ According to your selected consensus client, append the following block to the g
     metrics_path: /metrics
     static_configs:
       - targets: ['localhost:8009']
-      
   - job_name: 'prysm_validator' #for validator client
     metrics_path: /metrics  
     static_configs:

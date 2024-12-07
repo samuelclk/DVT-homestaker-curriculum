@@ -92,7 +92,7 @@ ExecStart=/usr/local/bin/lighthouse bn \
   --execution-jwt /var/lib/jwtsecret/jwt.hex \
   --checkpoint-sync-url=https://holesky.beaconstate.ethstaker.cc/ \
   --metrics \
-  --metrics-port 8009 \
+  --metrics-port 8008 \
   --validator-monitor-auto \
   --port 9000 \
   --http \

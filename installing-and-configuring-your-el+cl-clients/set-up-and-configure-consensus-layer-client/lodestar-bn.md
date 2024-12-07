@@ -111,15 +111,15 @@ services:
       - --builder.urls
       - http://host.docker.internal:18550
       - --port
-      - "9001"
+      - "9000"
       - --rest
       - --rest.address
       - 0.0.0.0
       - --rest.port
-      - "5051"
+      - "5052"
       - --metrics
       - --metrics.port
-      - "8009"
+      - "8008"
     environment:
       NODE_OPTIONS: --max-old-space-size=8192
     ports:

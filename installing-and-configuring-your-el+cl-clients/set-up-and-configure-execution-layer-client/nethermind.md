@@ -101,7 +101,7 @@ ExecStart=/usr/local/bin/nethermind/nethermind \
   --JsonRpc.Port 8547 \
   --HealthChecks.Enabled true \
   --Metrics.Enabled true \
-  --Metrics.ExposePort=8009
+  --Metrics.ExposePort=6060
   
 [Install]
 WantedBy=default.target

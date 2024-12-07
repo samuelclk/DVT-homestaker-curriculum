@@ -88,7 +88,7 @@ ExecStart=/usr/local/bin/nimbus_beacon_node \
   --rest-address=<Internal_IP_address> \
   --rest-port=5052 \
   --metrics \
-  --metrics-port=8009 \
+  --metrics-port=8008 \
   --local-block-value-boost=0
   
 [Install]
