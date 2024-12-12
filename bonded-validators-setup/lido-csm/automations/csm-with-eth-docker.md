@@ -171,6 +171,12 @@ cadvisor                   ethereum-metrics-exporter  grafana                   
 
 **Grafana Dashboards:**
 
+Bring down all ETH Docker containers.
+
+```
+ethd down
+```
+
 Edit the `.env` file of ETH Docker.
 
 ```
@@ -180,6 +186,14 @@ nano ~/eth-docker/.env
 Scroll down to the **`GRAFANA_PORT=3000`** line and change the number to **`443`**.
 
 `CTRL+O`, `ENTER`, `CTRL+X` to save and exit.
+
+Bring ETH Docker back up.
+
+```
+ethd up
+```
+
+To access your Grafana dashboard, navigate to `PUBLIC_IP:443` on your web browser.&#x20;
 
 ### Useful commands
 
