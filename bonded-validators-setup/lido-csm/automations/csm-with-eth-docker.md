@@ -79,11 +79,23 @@ ethd config
 
 1. Choose `Holešovice Testnet` >> `Lido-compatible node (Community Staking / Simple DVT)` >> `[Community Staking] CSM node`
 2. Select the **Nimbus** (Consensus) and **Nethermind** (Execution) for the client choices
-3. Use the `provided URL` for **Checkpoint Sync**, select `yes` for **MEV Boost**, `select all` **relays**, `yes` for **Grafana dashboards**, `default` **Graffiti**, `yes` for **generate validator keys**
+3. Use the [`https://checkpoint-sync.holesky.ethpandaops.io`](https://checkpoint-sync.holesky.ethpandaops.io) for the **Checkpoint Sync URL**, select `yes` for **MEV Boost**, `select all` **relays**, `yes` for **Grafana dashboards**, `default` **Graffiti**, `yes` for **generate validator keys**
 4. Generate suitable validator keys to participate in the Lido CSM
    * Generate `1` validator key and set the encryption password for the key
    * Save your 24-word mnemonic
    * Verify the fee recipient and withdrawal address on the [CSM Operator Portal](https://operatorportal.lido.fi/modules/community-staking-module)
+
+{% tabs %}
+{% tab title="Withdrawal Address" %}
+* **Mainnet:** [`0xB9D7934878B5FB9610B3fE8A5e441e8fad7E293f`](https://etherscan.io/address/0xb9d7934878b5fb9610b3fe8a5e441e8fad7e293f)&#x20;
+* **Holesky:** [`0xF0179dEC45a37423EAD4FaD5fCb136197872EAd9`](https://holesky.etherscan.io/address/0xF0179dEC45a37423EAD4FaD5fCb136197872EAd9)&#x20;
+{% endtab %}
+
+{% tab title="Fee Recipient Address" %}
+* **Mainnet:** [`0x388C818CA8B9251b393131C08a736A67ccB19297`](https://etherscan.io/address/0x388C818CA8B9251b393131C08a736A67ccB19297)&#x20;
+* **Holesky:** [`0xE73a3602b99f1f913e72F8bdcBC235e206794Ac8`](https://holesky.etherscan.io/address/0xE73a3602b99f1f913e72F8bdcBC235e206794Ac8)&#x20;
+{% endtab %}
+{% endtabs %}
 
 #### ETH Docker TUI Navigation
 
