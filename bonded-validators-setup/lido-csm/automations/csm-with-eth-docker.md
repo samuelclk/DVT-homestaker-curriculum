@@ -79,7 +79,7 @@ ethd config
 
 1. Choose `Holešovice Testnet` >> `Lido-compatible node (Community Staking / Simple DVT)` >> `[Community Staking] CSM node`
 2. Select the **Nimbus** (Consensus) and **Nethermind** (Execution) for the client choices
-3. Use the [`https://checkpoint-sync.holesky.ethpandaops.io`](https://checkpoint-sync.holesky.ethpandaops.io) for the **Checkpoint Sync URL**, select `yes` for **MEV Boost**, `select all` **relays**, `yes` for **Grafana dashboards**, `default` **Graffiti**, `yes` for **generate validator keys**
+3. Use the `https://checkpoint-sync.holesky.ethpandaops.io` for the **Checkpoint Sync URL**, select `yes` for **MEV Boost**, `select all` **relays**, `yes` for **Grafana dashboards**, `default` **Graffiti**, `yes` for **generate validator keys**
 4. Generate suitable validator keys to participate in the Lido CSM
    * Generate `1` validator key and set the encryption password for the key
    * Save your 24-word mnemonic
@@ -168,6 +168,18 @@ Choose one to replace the `<container_name>` above.
 blackbox-exporter          consensus                  execution                  json-exporter              node-exporter              promtail
 cadvisor                   ethereum-metrics-exporter  grafana                    loki                       prometheus                 validator
 ```
+
+**Grafana Dashboards:**
+
+Edit the `.env` file of ETH Docker.
+
+```
+nano ~/eth-docker/.env
+```
+
+Scroll down to the **`GRAFANA_PORT=3000`** line and change the number to **`443`**.
+
+`CTRL+O`, `ENTER`, `CTRL+X` to save and exit.
 
 ### Useful commands
 
