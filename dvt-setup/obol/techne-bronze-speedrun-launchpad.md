@@ -325,6 +325,73 @@ Make sure to also configure port forwarding on the ports allowed above.&#x20;
 [device-level-security-setup.md](../../linux-os-networking-and-security/device-level-security-setup.md)
 {% endcontent-ref %}
 
+## Exiting your DV
+
+I'm still working on the way to exit for each CL client. For now I only managed to test it successfully with Lodestar & Teku so we will switch to the those CLs before signing the exit messages.
+
+Bring down your ETH Docker services.
+
+```
+ethd down
+```
+
+Open the `.env` file for editing and switch your CL client to `lodestar.yml` or `teku.yml` in the `COMPOSE_FILE` line.
+
+```
+nano ~/eth-docker/.env
+```
+
+Bring your ETH Docker back up.
+
+```
+ethd up
+```
+
+Wait for 2 - 3 minutes and re-import your validator keyshards. **Note:** Select _**"N"**_ for "Do all keys have the same password
+
+```
+ethd keys import
+```
+
+Then run the following
+
+{% tabs %}
+{% tab title="Lodestar" %}
+```sh
+docker exec -it eth-docker-validator-1 node /usr/app/packages/cli/bin/lodestar validator voluntary-exit \
+--beaconNodes="http://charon:3600" \
+--dataDir="/var/lib/lodestar/validators" \
+--exitEpoch=256 \
+--network=holesky \
+--yes
+```
+
+
+{% endtab %}
+
+{% tab title="Teku" %}
+```sh
+#WIP
+docker exec -it eth-docker-validator-1 /opt/teku/bin/teku voluntary-exit \
+--beacon-node-api-endpoint="http://charon:3600/" \
+--confirmation-enabled=false \
+--validator-keys="/var/lib/teku/validator/key-manager/local:/var/lib/teku/validator/key-manager/local-passwords" \
+--epoch=256
+```
+{% endtab %}
+
+{% tab title="Nimbus" %}
+```sh
+#WIP
+docker exec -it eth-docker-validator-1 /bin/bash -c ' \
+    mkdir -p /var/lib/nimbus/wd && \
+    cp -r /var/lib/nimbus/ /var/lib/nimbus/wd && \
+    /usr/local/bin/nimbus_beacon_node deposits exit --all --epoch=256 \
+    --rest-url=http://charon:3600/ --data-dir=/var/lib/nimbus/wd
+```
+{% endtab %}
+{% endtabs %}
+
 ## Support
 
 {% embed url="https://t.me/stakesaurus" %}
