@@ -18,11 +18,13 @@ There are 3 different ways to access your dappnode.
 
 The Dappnode team has put together a guide for using Dappnode to setup and run ETH validators via Lido CSM.
 
-{% embed url="https://docs.dappnode.io/docs/user/staking/ethereum/lsd-pools/lido/" %}
+{% embed url="https://docs.dappnode.io/docs/user/staking/ethereum/lsd-pools/lido/overview" %}
 (Open this link in a new tab)
 {% endembed %}
 
-Note that the steps for **Step 2: Create the Keystores & Deposit Data** on testnet and mainnet will differ.&#x20;
+## Validator Key Generation
+
+Note that the steps for [**Generate Keystores and Deposit Data**](https://docs.dappnode.io/docs/user/staking/ethereum/lsd-pools/lido/register) on testnet and mainnet will differ.&#x20;
 
 ## Testnet KeyGen Process
 
@@ -36,6 +38,4 @@ Because the keystore generation process for Mainnet needs to be a lot more secur
 [validator-key-generation.md](../../../keystore-generation-and-mev-boost/validator-key-generation.md)
 {% endcontent-ref %}
 
-Refer back to the Dappnode CSM guide for Steps 3 & 4 once your **validator keystores** and **deposit data** have been generated.
-
-{% embed url="https://docs.dappnode.io/docs/user/staking/ethereum/lsd-pools/lido" %}
+Refer back to the [**Dappnode CSM guide for Steps 3 & 4**](https://docs.dappnode.io/docs/user/staking/ethereum/lsd-pools/lido/register#3-install-the-lido-csm-package) once your **validator keystores** and **deposit data** have been generated.
