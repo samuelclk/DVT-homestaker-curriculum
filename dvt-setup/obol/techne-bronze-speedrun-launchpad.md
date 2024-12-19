@@ -347,7 +347,11 @@ Bring your ETH Docker back up.
 ethd up
 ```
 
-Wait for 2 - 3 minutes and re-import your validator keyshards. **Note:** Select _**"N"**_ for "Do all keys have the same password
+**Wait for 15 minutes** and re-import your validator keyshards. **Note:** Select _**"N"**_ for "Do all keys have the same password.
+
+{% hint style="info" %}
+**IMPORTANT:** DO NOT IMPORT YOUR KEYS BEFORE WAITING FOR 15 MINUTES. If everyone does not wait before importing, your cluster will be slashed.
+{% endhint %}
 
 ```
 ethd keys import

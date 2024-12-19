@@ -94,7 +94,7 @@
   * [Obol + Bonded Validators (Techne Silver)](dvt-setup/obol/obol-+-bonded-validators-techne-silver/README.md)
     * [Obol + Lido CSM](dvt-setup/obol/obol-+-bonded-validators-techne-silver/obol-+-lido-csm.md)
 * [SSV](dvt-setup/ssv/README.md)
-  * [SSV + Lido CSM](dvt-setup/ssv/ssv-+-lido-csm.md)
+  * [SSV + Lido CSM (WIP)](dvt-setup/ssv/ssv-+-lido-csm-wip.md)
   * [SSV Operator](dvt-setup/ssv/ssv-operator.md)
   * [SSV Staker](dvt-setup/ssv/ssv-staker.md)
 

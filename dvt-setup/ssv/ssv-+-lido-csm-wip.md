@@ -2,16 +2,19 @@
 description: >-
   This guide is used as reference material for in-person workshops with mainly
   non-technical audiences
-hidden: true
 ---
 
-# SSV + Lido CSM
+# SSV + Lido CSM (WIP)
 
 ## Credits
 
-This guide references the ideas and work of one of the Lido Community Staking members, [@ivans\_music](https://x.com/ivans\_music). _**Check out his original work below!**_
+This guide references the ideas and work of one of the Lido Community Staking members, [@ivans\_music](https://x.com/ivans_music). _**Check out his original work below!**_
 
 {% embed url="https://hackmd.io/@9u0cieIUT2Gsdm7YYOCKUg/HkEsIu4pR#Comprehensive-guide-to-setting-up-a-distributed-Lido-CSM-validator-cluster-with-SSV-Network" %}
+
+{% hint style="danger" %}
+<mark style="color:red;">**WIP. DO NOT USE YET**</mark>
+{% endhint %}
 
 ## Hardware (Holesky)
 
@@ -60,19 +63,11 @@ ethd config
 
 * `Arrow keys & Tab key`: Cycle options
 
-<!---->
-
-* `Space bar`: Select option
-
-<!---->
+- `Space bar`: Select option
 
 * `Enter`: Confirm option
 
-<!---->
-
-* `CTRL+C`: Exit individual screen monitoring view
-
-<!---->
+- `CTRL+C`: Exit individual screen monitoring view
 
 * `ESC`: Quit
 
