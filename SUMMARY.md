@@ -91,6 +91,8 @@
 * [Obol](dvt-setup/obol/README.md)
   * [Techne Bronze Speedrun (Launchpad)](dvt-setup/obol/techne-bronze-speedrun-launchpad.md)
   * [Techne Bronze Speedrun (CLI)](dvt-setup/obol/techne-bronze-speedrun-cli.md)
+  * [Obol + Bonded Validators (Techne Silver)](dvt-setup/obol/obol-+-bonded-validators-techne-silver/README.md)
+    * [Obol + Lido CSM](dvt-setup/obol/obol-+-bonded-validators-techne-silver/obol-+-lido-csm.md)
 * [SSV](dvt-setup/ssv/README.md)
   * [SSV + Lido CSM](dvt-setup/ssv/ssv-+-lido-csm.md)
   * [SSV Operator](dvt-setup/ssv/ssv-operator.md)
