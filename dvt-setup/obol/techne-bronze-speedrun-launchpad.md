@@ -329,6 +329,12 @@ Make sure to also configure port forwarding on the ports allowed above.&#x20;
 
 I'm still working on the way to exit for each CL client. For now I only managed to test it successfully with Lodestar & Teku so we will switch to the those CLs before signing the exit messages.
 
+Delete all the validator keyshards currently imported onto validator client and export their slashing protection databases.
+
+```
+ethd keys delete all
+```
+
 Bring down your ETH Docker services.
 
 ```
@@ -347,10 +353,10 @@ Bring your ETH Docker back up.
 ethd up
 ```
 
-**Wait for 15 minutes** and re-import your validator keyshards. **Note:** Select _**"N"**_ for "Do all keys have the same password.
+**Wait for 15 minutes** before re-importing your validator keyshards into the new validator client (comes with the new CL). **Note:** Select _**"N"**_ for "Do all keys have the same password.
 
 {% hint style="info" %}
-**IMPORTANT:** DO NOT IMPORT YOUR KEYS BEFORE WAITING FOR 15 MINUTES. If everyone does not wait before importing, your cluster will be slashed.
+**IMPORTANT:** DO NOT IMPORT YOUR KEYS BEFORE WAITING FOR 15 MINUTES. If everyone does not wait before importing, your cluster may be slashed.
 {% endhint %}
 
 ```
