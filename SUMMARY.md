@@ -142,6 +142,7 @@
 
 * [Advanced networking](tips/advanced-networking.md)
 * [Downloading files from your node](tips/downloading-files-from-your-node.md)
+* [Automated power on/off](tips/automated-power-on-off.md)
 
 ## Useful resources
 
