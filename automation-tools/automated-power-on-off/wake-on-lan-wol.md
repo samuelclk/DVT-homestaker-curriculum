@@ -1,32 +1,4 @@
-# Automated power on/off (WIP)
-
-## NUT
-
-```
-sudo apt install libneon27-dev libipmimonitoring-dev nut-client
-```
-
-```
-sudo nut-scanner
-```
-
-```
-Scanning USB bus.
-No start IP, skipping SNMP
-Scanning XML/HTTP bus.
-No start IP, skipping NUT bus (old connect method)
-Scanning IPMI bus.
-[nutdev1]
-	driver = "blazer_usb"
-	port = "auto"
-	vendorid = "0665"
-	productid = "5161"
-	product = "USB to Serial"
-	vendor = "INNO TECH"
-	bus = "003"
-```
-
-
+# Wake-on-LAN (WoL)
 
 ## Configure Wake-on-LAN (WOL)
 
@@ -49,7 +21,7 @@ ip a
 
 It will be the one that has the 192.168.xx.xx IP address assigned. **For example:**
 
-<figure><img src="../.gitbook/assets/image (205).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (205).png" alt=""><figcaption></figcaption></figure>
 
 Check your existing Wake-on-LAN status. Replace `enp2s0`with the actual ethernet interface of your device.
 
@@ -82,7 +54,6 @@ Add the following lines to your file.
   ethernets:
     <ETHERNET_INTERFACE>:
       wakeonlan: true
-
 ```
 
 Example of how your file should look like.
@@ -106,7 +77,14 @@ sudo netplan apply
 
 ### Enable Wake-on-LAN in BIOS
 
-WIP
+{% hint style="info" %}
+Wake-on-LAN may not be enabled on your devices by default. If so, you will need to plug in a monitor and keyboard into your device to enable it.
+{% endhint %}
+
+1. Restart your device and **press** _**F2**_ repeatedly during boot to enter BIOS Setup.
+2. **Select** `Advanced`, then **select** the `Power menu`.
+3. Expand the _`Secondary Power Settings`_ sub-menu and set _Wake-on-LAN from S4/S5_ to: _**Power On - Normal Boot**_.
+4. **Press** _**F10**_ to save and exit the BIOS Setup.
 
 ### Setup an automated Wake-on-LAN server
 

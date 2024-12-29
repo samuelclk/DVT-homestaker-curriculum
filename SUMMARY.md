@@ -142,7 +142,6 @@
 
 * [Advanced networking](tips/advanced-networking.md)
 * [Downloading files from your node](tips/downloading-files-from-your-node.md)
-* [Automated power on/off (WIP)](tips/automated-power-on-off-wip.md)
 
 ## Useful resources
 
@@ -153,3 +152,7 @@
 
 * [ETHPillar](automation-tools/ethpillar.md)
 * [ETH Docker](automation-tools/eth-docker.md)
+* [Automated power on/off](automation-tools/automated-power-on-off/README.md)
+  * [Backup of Network UPS Tools (NUT)](automation-tools/automated-power-on-off/backup-of-network-ups-tools-nut.md)
+  * [Network UPS Tools (NUT)](automation-tools/automated-power-on-off/network-ups-tools-nut.md)
+  * [Wake-on-LAN (WoL)](automation-tools/automated-power-on-off/wake-on-lan-wol.md)
