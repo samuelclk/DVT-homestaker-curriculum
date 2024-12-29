@@ -124,6 +124,10 @@ sudo nano /usr/local/bin/wake_devices
 
 Paste the following content:
 
+{% hint style="info" %}
+Add more devices as needed as new lines in the format \["Name"]="MAC Address" within the `declare -A devices=(...)` segment.
+{% endhint %}
+
 ```sh
 #!/bin/bash
 # Wake all devices by sending magic packets using wakeonlan
@@ -139,7 +143,7 @@ mkdir -p "$LOG_FOLDER"
 # Define a list of devices with their names and MAC addresses
 declare -A devices=(
     ["testnode"]="aa:bb:cc:dd:ee:ff" # replace with your actual device name and MAC address 
-    # Add more devices as needed in the format ["Name"]="MAC"
+    # Add more devices as needed as new lines here in the format ["Name"]="MAC"
 )
 
 # Start logging
@@ -188,7 +192,8 @@ After=network.target
 ExecStartPre=/bin/sleep 300
 ExecStart=/usr/local/bin/wake_devices
 Restart=on-failure
-User=raspberrypi #use your actual system user here
+User=raspberrypi 
+#use your actual system user above
 
 [Install]
 WantedBy=multi-user.target
@@ -236,20 +241,20 @@ Create a new Telegram bot by following the steps below.
    * Invite the bot to your Telegram group.
 5. **Get Your Chat ID:**
    * Use the bot to retrieve the **chat ID:**
-     * Send a message in your group.
-     * Navigate to `https://api.telegram.org/bot<YourBOTToken>/getUpdates` on your browser while replaceing `<YourBOTToken>` with your actual Telegram bot API token
+     * Send a message in the Telegram group with your bot&#x20;
+     * Navigate to `https://api.telegram.org/bot<YourBOTToken>/getUpdates` on your browser while replacing `<YourBOTToken>` with your actual Telegram bot API token
 
 Install dependencies on your WOL server.
 
 ```
 sudo apt install python3-pip
-pip install python-dotenv
-pip install python-telegram-bot
+sudo apt install python3-dotenv
+sudo apt install python3-python-telegram-bot
 ```
 
 Create a new folder to store the bot files.
 
-```
+```sh
 sudo mkdir -p /usr/local/bin/TG_WOL_BOT
 ```
 
@@ -269,10 +274,11 @@ ALLOWED_CHAT_ID=-123456789
 
 `CTRL+O`, `ENTER`, `CTRL+X` to save and exit.
 
-Secure the .env file so that only your current user can access the file.
+Secure the `.env` file so that only your current user can access the file.
 
 ```sh
-sudo chmod 600 .env
+sudo chmod 600 /usr/local/bin/TG_WOL_BOT/.env
+sudo chown -R $USER:$USER /usr/local/bin/TG_WOL_BOT
 ```
 
 Create the Telegram bot script.
@@ -284,37 +290,33 @@ sudo nano /usr/local/bin/TG_WOL_BOT/WOL_bot.py
 Paste the following content:
 
 ```python
-import os
-from telegram.ext import Updater, CommandHandler
+from telegram.ext import Application, CommandHandler
 import subprocess
-import logging
+import os
+from dotenv import load_dotenv
 
-# Load .env variables    
-load_dotenv()
+# Load environment variables
+load_dotenv("/usr/local/bin/TG_WOL_BOT/.env")
 
-# Get environment variables
-BOT_TOKEN = os.environ.get("BOT_TOKEN")
-ALLOWED_CHAT_ID = int(os.environ.get("ALLOWED_CHAT_ID"))
+BOT_TOKEN = os.getenv("BOT_TOKEN")
+ALLOWED_CHAT_ID = int(os.getenv("ALLOWED_CHAT_ID"))
 
-# Configure logging
-logging.basicConfig(format='%(asctime)s - %(message)s', level=logging.INFO)
-
-def start(update, context):
+async def start(update, context):
     """Send a welcome message."""
     chat_id = update.effective_chat.id
     if chat_id != ALLOWED_CHAT_ID:
-        update.message.reply_text("Unauthorized!")
+        await update.message.reply_text("Unauthorized!")
         return
-    update.message.reply_text("Hi! I'm your Wake-on-LAN bot.")
+    await update.message.reply_text("Hi! I'm your Wake-on-LAN bot.")
 
-def wol_command(update, context):
+async def wol_command(update, context):
     """Run the Wake-on-LAN script."""
     chat_id = update.effective_chat.id
     if chat_id != ALLOWED_CHAT_ID:
-        update.message.reply_text("Unauthorized!")
+        await update.message.reply_text("Unauthorized!")
         return
     try:
-        update.message.reply_text("Running Wake-on-LAN script...")
+        await update.message.reply_text("Running Wake-on-LAN script...")
         # Run the WoL script
         result = subprocess.run(
             ["/usr/local/bin/wake_devices"],
@@ -323,11 +325,11 @@ def wol_command(update, context):
             text=True
         )
         if result.returncode == 0:
-            update.message.reply_text("Wake-on-LAN script executed successfully!")
+            await update.message.reply_text("Wake-on-LAN script executed successfully!")
         else:
-            update.message.reply_text(f"Script failed with error:\n{result.stderr}")
+            await update.message.reply_text(f"Script failed with error:\n{result.stderr}")
     except Exception as e:
-        update.message.reply_text(f"An error occurred: {str(e)}")
+        await update.message.reply_text(f"An error occurred: {str(e)}")
 
 def main():
     """Start the bot."""
@@ -338,20 +340,18 @@ def main():
         print("Error: ALLOWED_CHAT_ID environment variable not set.")
         return
 
-    updater = Updater(BOT_TOKEN, use_context=True)
-    dp = updater.dispatcher
+    # Create the application instance
+    application = Application.builder().token(BOT_TOKEN).build()
 
-    # Command handlers
-    dp.add_handler(CommandHandler("start", start))
-    dp.add_handler(CommandHandler("wol", wol_command))
+    # Add command handlers
+    application.add_handler(CommandHandler("start", start))
+    application.add_handler(CommandHandler("wol", wol_command))
 
     # Start the bot
-    updater.start_polling()
-    updater.idle()
+    application.run_polling()
 
 if __name__ == "__main__":
     main()
-
 ```
 
 `CTRL+O`, `ENTER`, `CTRL+X` to save and exit.
@@ -369,6 +369,7 @@ Make this python file executable.
 
 ```
 sudo chmod +x /usr/local/bin/TG_WOL_BOT/WOL_bot.py
+sudo chown -R $USER:$USER /usr/local/bin/TG_WOL_BOT
 ```
 
 Create a systemd service file for the bot:
@@ -387,7 +388,9 @@ After=network.target
 [Service]
 ExecStart=/usr/bin/python3 /usr/local/bin/TG_WOL_BOT/WOL_bot.py
 Restart=always
-User=raspberrypi #use your actual system user here
+User=raspberrypi
+#use your actual system user above
+WorkingDirectory=/usr/local/bin/TG_WOL_BOT
 
 [Install]
 WantedBy=multi-user.target
@@ -403,7 +406,7 @@ sudo systemctl daemon-reload
 sudo systemctl enable WOL_bot.service
 sudo systemctl start WOL_bot.service
 sudo systemctl status WOL_bot.service
-sudo journalctl -u WOL_bot.service
+sudo journalctl -fu WOL_bot.service
 ```
 
 Use `CTRL+C` to exit the monitoring/logging view.

@@ -117,8 +117,8 @@
 * [Puffer](bonded-validators-setup/puffer/README.md)
   * [Non-Enclave: 2 ETH](bonded-validators-setup/puffer/non-enclave-2-eth.md)
   * [Enclave: 1 ETH (WIP)](bonded-validators-setup/puffer/enclave-1-eth-wip.md)
-* [Ether.fi (WIP)](bonded-validators-setup/ether.fi-wip/README.md)
-  * [Receive distributed validator keyshares](bonded-validators-setup/ether.fi-wip/receive-distributed-validator-keyshares.md)
+* [Ether.fi](bonded-validators-setup/ether.fi/README.md)
+  * [Receive distributed validator keyshares](bonded-validators-setup/ether.fi/receive-distributed-validator-keyshares.md)
 * [Stader (WIP)](bonded-validators-setup/stader-wip.md)
 * [Rocketpool (WIP)](bonded-validators-setup/rocketpool-wip.md)
 
