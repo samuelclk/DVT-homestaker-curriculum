@@ -71,5 +71,11 @@ gpg --fingerprint <etherfi-email@example.com>
 After receiving the encrypted keyshare files from EtherFi, move them into the same machine that you generated your GPG key pairs in and decrypt them.
 
 ```
-gpg --decrypt <encrypted-file.gpg> > decrypted-file.zip
+gpg --decrypt <encrypted-file.gpg> > decrypted-file.tar.gz
+```
+
+## Extract your keyshare files
+
+```
+tar xvf decrypted-file.tar.gz
 ```
