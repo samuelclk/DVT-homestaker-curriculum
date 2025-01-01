@@ -154,5 +154,5 @@
 * [ETH Docker](automation-tools/eth-docker.md)
 * [Automated power on/off](automation-tools/automated-power-on-off/README.md)
   * [Backup of Network UPS Tools (NUT)](automation-tools/automated-power-on-off/backup-of-network-ups-tools-nut.md)
-  * [Network UPS Tools (NUT)](automation-tools/automated-power-on-off/network-ups-tools-nut.md)
   * [Wake-on-LAN (WoL)](automation-tools/automated-power-on-off/wake-on-lan-wol.md)
+  * [Network UPS Tools (NUT)](automation-tools/automated-power-on-off/network-ups-tools-nut.md)

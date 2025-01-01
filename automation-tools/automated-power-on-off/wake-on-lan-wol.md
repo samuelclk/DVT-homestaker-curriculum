@@ -1,6 +1,6 @@
 # Wake-on-LAN (WoL)
 
-## Configure Wake-on-LAN (WOL)
+## Configure Wake-on-LAN (WoL)
 
 {% hint style="info" %}
 This configuration is applied to any device that needs to be remotely powered on automatically after recovering from a power failure. _**i.e., the Wake-on-LAN clients**_
@@ -64,6 +64,7 @@ network:
   renderer: NetworkManager
   ethernets:
     enp2s0:
+      dhcp4: true
       wakeonlan: true
 ```
 
@@ -193,7 +194,7 @@ sudo journalctl -u wake_devices
 
 Use `CTRL+C` to exit the monitoring/logging view.
 
-### Manual Wake-on-LAN via Telegram Bot
+### Manual Wake-on-LAN via Telegram Bot (Optional)
 
 This is useful as a backup to the automated WOL setup above in case you need to manually "wake up" your devices remote after recovery from a power failure.
 
