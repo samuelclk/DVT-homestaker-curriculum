@@ -10,11 +10,11 @@ You will need a UPS with a USB port for this setup.
 
 Plug your Raspberry Pi into the UPS power socket and connect them via a USB cable.
 
-Install the Network UPS Tools package on your Raspberry Pi.
+Install the Network UPS Tools server package on your Raspberry Pi.
 
 ```
 sudo apt update
-sudo apt install nut nut-client nut-server
+sudo apt install nut nut-server
 ```
 
 Inspect the NUT folder.&#x20;
@@ -231,11 +231,61 @@ nut-monitor.service: Supervising process 1206 which is not our child. We'll most
 
 `CTRL+C` to exit logging view.
 
-## NUT Clients (WIP)
+## NUT Clients
 
 {% hint style="info" %}
-The following steps need to be configured on all your other devices to power down gracefully when there is a power outage.
+The following steps need to be configured on all your other devices (e.g., validator node) to power down gracefully when there is a power outage.
 {% endhint %}
+
+Install the Network UPS Tools client on your device.&#x20;
+
+```
+sudo apt update
+sudo apt install nut nut-client
+```
+
+Inspect the NUT folder.&#x20;
+
+```
+sudo ls -l /etc/nut
+```
+
+You should see the following configuration files which we will be customising in this guide.
+
+```
+nut.conf ups.conf  upsd.conf  upsd.users  upsmon.conf  upssched.conf
+```
+
+**Back up the exiting `nut.conf` file as a copy and edit the main file.**
+
+<pre><code><strong>sudo cp /etc/nut/nut.conf /etc/nut/nut.conf.example
+</strong><strong>sudo nano /etc/nut/nut.conf
+</strong></code></pre>
+
+Replace the file contents with the following. Use `CTRL+T` and then `CTRL+V` to clear all file contents.
+
+```
+MODE=netclient
+```
+
+`CTRL+O`, `ENTER`, `CTRL+X` to save and exit.
+
+**Back up the exiting `upsmon.conf` file as a copy and edit the main file.**
+
+<pre><code><strong>sudo cp /etc/nut/upsmon.conf /etc/nut/upsmon.conf.example
+</strong><strong>sudo nano /etc/nut/upsmon.conf
+</strong></code></pre>
+
+_**Add the following as new lines** to the bottom of the existing file content. Replace `IP_ADDRESS_OF_NUT_SERVER` with the actual internal IP address of your Raspberry Pi._
+
+```sh
+MONITOR nutdev1@IP_ADDRESS_OF_NUT_SERVER 1 upsmon secret slave
+#"upsmon" and "secret" need to match the contents of the upsd.users set in your NUT server
+NOTIFYFLAG ONBATT SYSLOG+EXEC+WALL
+NOTIFYCMD /etc/nut/onbatt.sh # we will create this shell script later
+```
+
+`CTRL+O`, `ENTER`, `CTRL+X` to save and exit.
 
 **Create the `onbatt.sh` shell script** which tells your device to shut down gracefully when it detects that power supply to your UPS has been cut off (e.g., due to a power outage).
 
@@ -254,18 +304,18 @@ Paste the following content.&#x20;
 # Log the start of the script
 logger "NUT: Checking UPS status for ONBATT event"
 
-# Fetch the UPS status
-status=$(upsc prolink@localhost ups.status)
+# Fetch the UPS status; Set to the actual IP Address of your NUT server here
+status=$(upsc prolink@IP_ADDRESS_OF_NUT_SERVER ups.status)
 
 # Check if the UPS is on battery
 if [[ "$status" == "OB" ]]; then
-    logger "NUT: UPS on battery power detected. Waiting 60 seconds before shutting down."
+    logger "NUT: UPS on battery power detected. Waiting 120 seconds before shutting down."
     
-    # Wait for 60 seconds
-    sleep 60
+    # Wait for 120 seconds
+    sleep 120
     
     # Log the shutdown initiation
-    logger "NUT: Initiating shutdown after 60-second delay."
+    logger "NUT: Initiating shutdown after 120-second delay."
     sudo /sbin/shutdown -h now "UPS on battery power"
 else
     logger "NUT: UPS status is not ONBATT (status: $status). No shutdown triggered."
@@ -284,7 +334,7 @@ sudo chmod +x /etc/nut/onbatt.sh
 Allow the nut user to run only the `/sbin/shutdown` to power down your device without needing the `sudo` (superuser) password.
 
 ```sh
-sudo visduo
+sudo visudo
 ```
 
 Add the following as a new line in the file.
