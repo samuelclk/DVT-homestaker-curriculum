@@ -111,7 +111,6 @@ Once the DKG ceremony is completed, **back up the `.charon` folder containing th
 
 * charon-enr-private-key
 * cluster-lock.json
-* cluster-definition.yml
 * validator\_keys/
 * deposit-data.json
 

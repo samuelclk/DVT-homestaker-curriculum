@@ -179,10 +179,12 @@ fi
 This online.sh script makes use of the wake\_devices script that we created in the Wake-on-LAN page.
 {% endhint %}
 
-Make this shell script executable.
+Make this shell script executable but set proper permissions for security.
 
 ```sh
 sudo chmod +x /etc/nut/online.sh
+sudo chown root:nut /etc/nut/online.sh
+sudo chmod 750 /etc/nut/online.sh
 ```
 
 Restart the NUT services.
@@ -325,10 +327,12 @@ fi
 
 `CTRL+O`, `ENTER`, `CTRL+X` to save and exit.
 
-Make this shell script executable.
+Make this shell script executable but set proper permissions for security.
 
 ```sh
 sudo chmod +x /etc/nut/onbatt.sh
+sudo chown root:nut /etc/nut/onbatt.sh
+sudo chmod 750 /etc/nut/onbatt.sh
 ```
 
 Allow the nut user to run only the `/sbin/shutdown` to power down your device without needing the `sudo` (superuser) password.
