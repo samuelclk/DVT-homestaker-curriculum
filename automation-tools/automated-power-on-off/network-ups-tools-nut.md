@@ -243,7 +243,7 @@ Install the Network UPS Tools client on your device.&#x20;
 
 ```
 sudo apt update
-sudo apt install nut nut-client
+sudo apt install nut-client
 ```
 
 Inspect the NUT folder.&#x20;
@@ -255,7 +255,7 @@ sudo ls -l /etc/nut
 You should see the following configuration files which we will be customising in this guide.
 
 ```
-nut.conf ups.conf  upsd.conf  upsd.users  upsmon.conf  upssched.conf
+nut.conf  upsmon.conf  upssched.conf
 ```
 
 **Back up the exiting `nut.conf` file as a copy and edit the main file.**
@@ -284,7 +284,8 @@ _**Add the following as new lines** to the bottom of the existing file content. 
 MONITOR nutdev1@IP_ADDRESS_OF_NUT_SERVER 1 upsmon secret slave
 #"upsmon" and "secret" need to match the contents of the upsd.users set in your NUT server
 NOTIFYFLAG ONBATT SYSLOG+EXEC+WALL
-NOTIFYCMD /etc/nut/onbatt.sh # we will create this shell script later
+NOTIFYCMD /etc/nut/onbatt.sh 
+# we will create this shell script later
 ```
 
 `CTRL+O`, `ENTER`, `CTRL+X` to save and exit.
@@ -352,8 +353,7 @@ Restart the NUT services.
 ```sh
 sudo service nut-client restart
 sudo systemctl restart nut-monitor
-sudo upsdrvctl stop
-sudo upsdrvctl start
+sudo systemctl status nut-client nut-monitor
 ```
 
 ### Enable auto-power-on in BIOS (Optional)

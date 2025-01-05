@@ -95,6 +95,26 @@ You will need to use a Raspberry Pi or a similar low-powered device without a st
 This device will serve as the **Wake-on-LAN server** that sends "power on" signals to all your other devices in the same network after recovering from a power failure.
 {% endhint %}
 
+#### OPTIONAL: Connect your Raspberry Pi to your WiFi network
+
+Install the network manager package.
+
+```
+sudo apt install network-manager -y
+```
+
+Connect to your WiFi network.
+
+```
+sudo nmtui
+```
+
+Follow the terminal UI to `Activate a connection`>>**Choose WiFi SSID**>>**Enter password**. _Just like how you would normally connect to a WiFi network!_
+
+Once you are connected to your WiFi network, press `ESC` to exit the `nmtui` terminal UI.
+
+#### Configure the Wake-on-LAN server&#x20;
+
 Create a wake-on-LAN script on your Raspberry Pi that covers all your other devices.
 
 ```
