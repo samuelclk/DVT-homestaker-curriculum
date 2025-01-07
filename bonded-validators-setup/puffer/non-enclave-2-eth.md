@@ -147,7 +147,7 @@ Do not use any other method to transfer the registration.json file onto your lap
 
 Purchase 2 ETH worth of pufETH and at least 28 days worth of validator tickets.
 
-<figure><img src="../../.gitbook/assets/image (1) (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (1) (1) (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 * Non-enclave users must deposit 2 ETH worth of pufETH to register
 * A minimum of 28 Validator Tickets (VTs) are required to be deposited when registering a validator. The Guardians will exit validators if their VTs expire after 28 days without being refilled.

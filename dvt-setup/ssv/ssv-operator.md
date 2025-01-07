@@ -2,7 +2,7 @@
 
 ## Credits
 
-This guide references the ideas and work of one of the Lido Community Staking members, [@ivans\_music](https://x.com/ivans\_music). _**Check out his original work below!**_
+This guide references the ideas and work of one of the Lido Community Staking members, [@ivans\_music](https://x.com/ivans_music). _**Check out his original work below!**_
 
 {% embed url="https://hackmd.io/@9u0cieIUT2Gsdm7YYOCKUg/HkEsIu4pR#Comprehensive-guide-to-setting-up-a-distributed-Lido-CSM-validator-cluster-with-SSV-Network" %}
 
@@ -41,7 +41,7 @@ ethd config
 * Select `yes` for _**Do you want to participate in DKG ceremonies as an operator?**_
 * Once you see the screen below, select `<Cancel>` as we don't have our Operator ID yet.&#x20;
 
-<figure><img src="../../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 * _<mark style="background-color:yellow;">**Then copy your SSV node public key from your terminal output and save it on a text editor**</mark>_
 
@@ -53,19 +53,11 @@ ethd config
 
 * `Arrow keys & Tab key`: Cycle options
 
-<!---->
-
-* `Space bar`: Select option
-
-<!---->
+- `Space bar`: Select option
 
 * `Enter`: Confirm option
 
-<!---->
-
-* `CTRL+C`: Exit individual screen monitoring view
-
-<!---->
+- `CTRL+C`: Exit individual screen monitoring view
 
 * `ESC`: Quit
 

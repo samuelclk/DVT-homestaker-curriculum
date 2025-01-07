@@ -26,7 +26,7 @@ az vm list-skus --size Standard_DC --all --output table
 
 ```
 
-#### List updated as at 19/08/2024 [here](https://docs.google.com/spreadsheets/d/1CyvMuyvTzpgCJdc8Tu5dA98l-z00GPQ78mC3FjMJ\_tQ/edit?usp=sharing).
+#### List updated as at 19/08/2024 [here](https://docs.google.com/spreadsheets/d/1CyvMuyvTzpgCJdc8Tu5dA98l-z00GPQ78mC3FjMJ_tQ/edit?usp=sharing).
 
 ## Checks
 
@@ -82,7 +82,7 @@ Copy the entire output starting from the opening curly brackets `{` to the closi
 
 **Example:**
 
-<figure><img src="../../.gitbook/assets/image (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (1) (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 Save this plain text file as `registration_docker_001.json`.&#x20;
 

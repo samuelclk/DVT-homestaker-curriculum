@@ -40,7 +40,7 @@ Make sure to choose the amd64 version. Right click on the linked text and select
 {% endhint %}
 {% endhint %}
 
-<figure><img src="../../.gitbook/assets/image (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 _**Expected output:** Verify output of the checksum verification_
 
@@ -148,7 +148,7 @@ sudo systemctl status reth.service
 
 **Expected output:** The output should say Reth is **“active (running)”.** Press CTRL-C to exit and Reth will continue to run. It should take around 6 hours for Reth to sync on the Holesky testnet.
 
-<figure><img src="../../.gitbook/assets/image (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 Use the following command to check the logs of Reth’s syncing process. Watch out for any warnings or errors.
 
@@ -183,4 +183,4 @@ Created symlink /etc/systemd/system/default.target.wants/reth.service → /etc/s
 
 1. Releases: [https://github.com/paradigmxyz/reth/releases](https://github.com/paradigmxyz/reth/releases)
 2. Documentation: [https://reth.rs/](https://reth.rs/)
-3. Telegram: [https://t.me/paradigm\_reth](https://t.me/paradigm\_reth)
+3. Telegram: [https://t.me/paradigm\_reth](https://t.me/paradigm_reth)
