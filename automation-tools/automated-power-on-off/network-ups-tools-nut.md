@@ -155,7 +155,7 @@ Paste the following content.&#x20;
 logger "NUT: Checking UPS status for ONLINE event"
 
 # Fetch the UPS status
-status=$(upsc prolink@localhost ups.status)
+status=$(upsc nutdev1@localhost ups.status)
 
 # Check if the UPS is on battery
 if [[ "$status" == "OL" ]]; then
@@ -308,7 +308,7 @@ Paste the following content.&#x20;
 logger "NUT: Checking UPS status for ONBATT event"
 
 # Fetch the UPS status; Set to the actual IP Address of your NUT server here
-status=$(upsc prolink@IP_ADDRESS_OF_NUT_SERVER ups.status)
+status=$(upsc nutdev1@IP_ADDRESS_OF_NUT_SERVER ups.status)
 
 # Check if the UPS is on battery
 if [[ "$status" == "OB" ]]; then
