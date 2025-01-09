@@ -9,7 +9,7 @@
 ## Creating an air-gapped machine
 
 1. The least technical way is to buy a cheap single board computer like the Raspberry Pi from official distributors for less than S$100 SGD
-2. **"OS-on-a-stick":** For more technical workarounds, we can flash a new USB drive with either Ubuntu or TailsOS and run a completely fresh OS from this USB drive itself. This system will be completely isolated from your host device (e.g. working laptop) and the described method below will not store any files after you remove the USB drive
+2. **"OS-on-a-stick":** For more technical workarounds, we can flash a new USB drive with TailsOS and run a completely fresh OS from this USB drive itself. This system will be completely isolated from your host device (e.g. working laptop) and the described method below will not store any files after you remove the USB drive
 
 #### _**We will cover Method 2 in this guide.**_&#x20;
 
@@ -85,7 +85,7 @@ After the checksum verification, move the zipped file into a new and empty USB d
 
 <figure><img src="../.gitbook/assets/image (66).png" alt=""><figcaption></figcaption></figure>
 
-5\) Select `*Try or Install Ubuntu` and then `Try Ubuntu` when you get to the next screen
+5\) Select `*Try or Install Tails` and then `Try Tails`when you get to the next screen
 
 <figure><img src="../.gitbook/assets/image (67).png" alt=""><figcaption></figcaption></figure>
 
