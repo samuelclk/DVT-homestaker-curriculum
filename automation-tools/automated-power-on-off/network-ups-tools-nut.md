@@ -2,7 +2,7 @@
 
 ## NUT Server
 
-> **Pre-requisites:** The [Wake-on-LAN page](wake-on-lan-wol.md) must be completed in order to use this guide
+> **Pre-requisites:** The [Wake-on-LAN setup](wake-on-lan-wol.md) must be completed in order to fully use this guide
 
 {% hint style="warning" %}
 You will need a UPS with a USB port for this setup.
@@ -53,13 +53,13 @@ Scanning IPMI bus.
 	bus = "003"
 ```
 
-**Back up the exiting `ups.conf` file as a copy and edit the main file.**
+**Back up the exiting `ups.conf` file as a copy and edit the main file.**&#x20;
 
 <pre><code><strong>sudo cp /etc/nut/ups.conf /etc/nut/ups.conf.example
 </strong><strong>sudo nano /etc/nut/ups.conf
 </strong></code></pre>
 
-Replace the file contents by matching the output from the `nut-scanner` output above. Use `CTRL+T` and then `CTRL+V` to clear all file contents.
+Replace the file contents by matching the output from the `nut-scanner` output above. Use `CTRL+T` and then `CTRL+V` to clear all file contents. **This defines the user and driver information of your UPS.**
 
 **Example:**
 
@@ -80,7 +80,7 @@ Replace the file contents by matching the output from the `nut-scanner` output a
 </strong><strong>sudo nano /etc/nut/upsd.conf
 </strong></code></pre>
 
-Replace the file contents with the following. This will enable your other devices (NUT clients) to talk to your NUT server for shutdown/power-on signals. Use `CTRL+T` and then `CTRL+V` to clear all file contents.
+Replace the file contents with the following. Use `CTRL+T` and then `CTRL+V` to clear all file contents. **This will enable your other devices (NUT clients) to talk to your NUT server for shutdown/power-on signals.**
 
 ```
 LISTEN 0.0.0.0 3493
@@ -94,7 +94,7 @@ LISTEN 0.0.0.0 3493
 </strong><strong>sudo nano /etc/nut/nut.conf
 </strong></code></pre>
 
-Replace the file contents with the following. Use `CTRL+T` and then `CTRL+V` to clear all file contents.
+Replace the file contents with the following. Use `CTRL+T` and then `CTRL+V` to clear all file contents. **This sets your Raspberry Pi to the NUT `server` mode.**
 
 ```
 MODE=netserver
@@ -108,13 +108,13 @@ MODE=netserver
 </strong><strong>sudo nano /etc/nut/upsd.users
 </strong></code></pre>
 
-Replace the file contents with the following. Use `CTRL+T` and then `CTRL+V` to clear all file contents.
+Replace the file contents with the following. Use `CTRL+T` and then `CTRL+V` to clear all file contents. **This sets the credentials for the NUT user.**
 
 ```sh
 [monuser]
   password = secret
   upsmon master
-#"upsmon", "secret", and "master" need to match the contents of the upsd.users
+#"monuser", "secret", and "master" need to match the contents of the upsd.users
 # to be set below
 ```
 
@@ -126,11 +126,11 @@ Replace the file contents with the following. Use `CTRL+T` and then `CTRL+V` to 
 </strong><strong>sudo nano /etc/nut/upsmon.conf
 </strong></code></pre>
 
-_**Add the following as new lines** to the bottom of the existing file content._
+_**Add the following as new lines** to the bottom of the existing file content. **This defines the actual power monitoring activities and consequent actions upon detecting a power restoration.**_&#x20;
 
 ```sh
-MONITOR nutdev1@localhost 1 upsmon secret master
-#"upsmon", "secret", and "master" need to match the contents of the upsd.users set above
+MONITOR nutdev1@localhost 1 monuser secret master
+#"monuser", "secret", and "master" need to match the contents of the upsd.users set above
 NOTIFYFLAG ONLINE SYSLOG+EXEC+WALL
 NOTIFYCMD /etc/nut/online.sh # we will create this shell script later
 ```
@@ -164,7 +164,7 @@ if [[ "$status" == "OL" ]]; then
     # Wait for 60 seconds
     sleep 60
     
-    # Log the shutdown initiation
+    # Log the power up initiation
     logger "NUT: Initiating power up after 60-second delay."
     /usr/local/bin/wake_devices "UPS online"
 else
@@ -264,7 +264,7 @@ nut.conf  upsmon.conf  upssched.conf
 </strong><strong>sudo nano /etc/nut/nut.conf
 </strong></code></pre>
 
-Replace the file contents with the following. Use `CTRL+T` and then `CTRL+V` to clear all file contents.
+Replace the file contents with the following. Use `CTRL+T` and then `CTRL+V` to clear all file contents. **This sets your Validator Node to the NUT `server` mode.**
 
 ```
 MODE=netclient
@@ -278,10 +278,10 @@ MODE=netclient
 </strong><strong>sudo nano /etc/nut/upsmon.conf
 </strong></code></pre>
 
-_**Add the following as new lines** to the bottom of the existing file content. Replace `IP_ADDRESS_OF_NUT_SERVER` with the actual internal IP address of your Raspberry Pi._
+_**Add the following as new lines** to the bottom of the existing file content. Replace `IP_ADDRESS_OF_NUT_SERVER` with the actual internal IP address of your Raspberry Pi. **This defines the actual power monitoring activities and consequent actions upon detecting a power restoration.**_&#x20;
 
 ```sh
-MONITOR nutdev1@IP_ADDRESS_OF_NUT_SERVER 1 upsmon secret slave
+MONITOR nutdev1@IP_ADDRESS_OF_NUT_SERVER 1 monuser secret slave
 #"upsmon" and "secret" need to match the contents of the upsd.users set in your NUT server
 NOTIFYFLAG ONBATT SYSLOG+EXEC+WALL
 NOTIFYCMD /etc/nut/onbatt.sh 
@@ -336,7 +336,7 @@ sudo chown root:nut /etc/nut/onbatt.sh
 sudo chmod 750 /etc/nut/onbatt.sh
 ```
 
-Allow the nut user to run only the `/sbin/shutdown` to power down your device without needing the `sudo` (superuser) password.
+Allow the nut user to run _**only the**_ `/sbin/shutdown` to power down your device without needing the `sudo` (superuser) password.
 
 ```sh
 sudo visudo

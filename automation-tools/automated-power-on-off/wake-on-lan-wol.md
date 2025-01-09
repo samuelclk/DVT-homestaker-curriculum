@@ -1,6 +1,6 @@
 # Wake-on-LAN (WoL)
 
-## Configure Wake-on-LAN (WoL)
+## Configure the Wake-on-LAN (WoL) Clients
 
 {% hint style="info" %}
 This configuration is applied to any device that needs to be remotely powered on automatically after recovering from a power failure. _**i.e., the Wake-on-LAN clients**_
@@ -87,7 +87,7 @@ Wake-on-LAN may not be enabled on your devices by default. If so, you will need 
 3. Expand the _`Secondary Power Settings`_ sub-menu and set _Wake-on-LAN from S4/S5_ to: _**Power On - Normal Boot**_.
 4. **Press** _**F10**_ to save and exit the BIOS Setup.
 
-### Setup an automated Wake-on-LAN server
+## Set up Wake-on-LAN server
 
 {% hint style="info" %}
 You will need to use a Raspberry Pi or a similar low-powered device without a standby power mode for this setup. _**i.e., no on/off button, turns on once connected to a power source.**_&#x20;
@@ -243,7 +243,7 @@ Create a new Telegram bot by following the steps below.
      * Send a message in the Telegram group with your bot&#x20;
      * Navigate to `https://api.telegram.org/bot<YourBOTToken>/getUpdates` on your browser while replacing `<YourBOTToken>` with your actual Telegram bot API token
 
-Install dependencies on your WOL server.
+Install dependencies on your **WoL server (Raspberry Pi).**
 
 ```
 sudo apt install python3-pip
@@ -311,6 +311,7 @@ async def start(update, context):
 async def wol_command(update, context):
     """Run the Wake-on-LAN script."""
     chat_id = update.effective_chat.id
+    # Check if chat_id is authorised
     if chat_id != ALLOWED_CHAT_ID:
         await update.message.reply_text("Unauthorized!")
         return
@@ -323,6 +324,7 @@ async def wol_command(update, context):
             stderr=subprocess.PIPE,
             text=True
         )
+        # Log results & notify user
         if result.returncode == 0:
             await update.message.reply_text("Wake-on-LAN script executed successfully!")
         else:
