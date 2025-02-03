@@ -25,8 +25,8 @@ Follow me on [Twitter](https://x.com/stakesaurus) or subscribe to my [newsletter
 
 #### Telegram bot token & Chat ID
 
-1. Open Telegram and search for @BotFather.
-2. Start a chat with BotFather by clicking the Start button.
+1. Open Telegram and search for **@BotFather**
+2. Start a chat with **BotFather** by clicking the Start button
 3. Send the command:
 
 ```
