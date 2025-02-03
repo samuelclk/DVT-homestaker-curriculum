@@ -156,3 +156,4 @@
   * [Backup of Network UPS Tools (NUT)](automation-tools/automated-power-on-off/backup-of-network-ups-tools-nut.md)
   * [Wake-on-LAN (WoL)](automation-tools/automated-power-on-off/wake-on-lan-wol.md)
   * [Network UPS Tools (NUT)](automation-tools/automated-power-on-off/network-ups-tools-nut.md)
+* [Validator Healthcheck Alerts](automation-tools/validator-healthcheck-alerts.md)
