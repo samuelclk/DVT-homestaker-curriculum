@@ -298,6 +298,7 @@ ExecStart=/usr/local/bin/teku/bin/teku vc \
   --beacon-node-api-endpoint=http://<Internal_IP_address>:5051 \
   --validators-proposer-default-fee-recipient=<holesky_or_mainnet_fee_recipient_address> \
   --validators-proposer-blinded-blocks-enabled=true \
+  --validators-builder-registration-default-enabled=true \
   --validators-graffiti="<your_graffiti>" \
   --metrics-enabled=true \
   --metrics-port=8108 \

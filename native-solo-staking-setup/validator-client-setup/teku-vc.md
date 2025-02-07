@@ -66,6 +66,7 @@ ExecStart=/usr/local/bin/teku/bin/teku vc \
   --beacon-node-api-endpoint=http://<Internal_IP_address>:5052 \
   --validators-proposer-default-fee-recipient=<your_designated_ETH_wallet address> \
   --validators-proposer-blinded-blocks-enabled=true \
+  --validators-builder-registration-default-enabled=true \
   --validators-graffiti="<your_graffiti_of_choice>" \
   --metrics-enabled=true \
   --metrics-port=8108 \
