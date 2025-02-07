@@ -297,7 +297,6 @@ ExecStart=/usr/local/bin/teku/bin/teku vc \
   --validator-keys=/var/lib/csm_teku_validator/validator_keystores:/var/lib/csm_teku_validator/keystore_password \
   --beacon-node-api-endpoint=http://<Internal_IP_address>:5051 \
   --validators-proposer-default-fee-recipient=<holesky_or_mainnet_fee_recipient_address> \
-  --validators-proposer-blinded-blocks-enabled=true \
   --validators-builder-registration-default-enabled=true \
   --validators-graffiti="<your_graffiti>" \
   --metrics-enabled=true \
