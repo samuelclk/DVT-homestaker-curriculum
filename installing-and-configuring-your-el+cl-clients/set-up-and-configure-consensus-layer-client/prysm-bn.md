@@ -93,7 +93,7 @@ ExecStart=/usr/local/bin/prysmbeacon \
   --grpc-gateway-port 5052 \
   --grpc-gateway-host <Internal_IP_address> \
   --http-mev-relay=http://127.0.0.1:18550 \
-  --local-block-value-boost 100
+  --local-block-value-boost 0
 
 [Install]
 WantedBy=multi-user.target
