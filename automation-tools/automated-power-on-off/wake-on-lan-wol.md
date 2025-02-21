@@ -191,6 +191,7 @@ After=network.target
 ExecStartPre=/bin/sleep 300
 ExecStart=/usr/local/bin/wake_devices
 Restart=on-failure
+RestartSec=5s
 User=raspberrypi 
 #use your actual system user above
 
@@ -389,6 +390,7 @@ After=network.target
 [Service]
 ExecStart=/usr/bin/python3 /usr/local/bin/TG_WOL_BOT/WOL_bot.py
 Restart=always
+RestartSec=5s
 User=raspberrypi
 #use your actual system user above
 WorkingDirectory=/usr/local/bin/TG_WOL_BOT
