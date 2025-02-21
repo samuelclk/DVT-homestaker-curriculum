@@ -78,3 +78,11 @@ More details on Rewards vs Manager addresses [here](https://operatorportal.lido.
     3. Submit the onchain transaction
 
     <figure><img src="../../.gitbook/assets/image (2).png" alt="" width="563"><figcaption></figcaption></figure>
+
+{% hint style="danger" %}
+**Changing the Rewards Address:** All of your uploaded validator keys, deposited bond, and accrued rewards will now be owned by the new Rewards Address after the change
+{% endhint %}
+
+{% hint style="warning" %}
+**Changing the Manager Address:** All of your uploaded validator keys, deposited bond, and accrued rewards will still be owned by current Rewards Address after the change
+{% endhint %}
