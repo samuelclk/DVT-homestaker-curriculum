@@ -91,9 +91,9 @@ https://hc-ping.com/your-unique-id
 6. Enter your Telegram **Bot Token** and **Chat ID**
 7. Add the Healthchecks.io bot into your Telegram chat group: `@Healthchecks_io_bot`
 
-You now have your `HEALTHCHECK_URL` and have both your own Telegram bot and the Healthchecks.io bot in your Telegram group. e.g.,
+You now have your `HEALTHCHECK_URL` and have both your own Telegram bot and the Healthchecks.io bot in your Telegram group. e.g.
 
-[![Screenshot 2025-01-28 at 11 27 18 PM](https://private-user-images.githubusercontent.com/31040627/407378623-61cb2a70-6c37-4dc9-adcc-5cfbfd72fa06.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3Mzg1NDUzMDQsIm5iZiI6MTczODU0NTAwNCwicGF0aCI6Ii8zMTA0MDYyNy80MDczNzg2MjMtNjFjYjJhNzAtNmMzNy00ZGM5LWFkY2MtNWNmYmZkNzJmYTA2LnBuZz9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNTAyMDMlMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjUwMjAzVDAxMTAwNFomWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPWYwZWQwOTU4ZDI3NDNkNTJkYWYzYjNhYzcwMjJjMTk0MzE0OTMxNzdiOTBmMWJhNmRlMTM2Zjg5NGE5ZWY3YTImWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0In0.krd4b6KkdjSKRAk6y0STUrwaNYFisBnyctWz-dmZ0KQ)](https://private-user-images.githubusercontent.com/31040627/407378623-61cb2a70-6c37-4dc9-adcc-5cfbfd72fa06.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3Mzg1NDUzMDQsIm5iZiI6MTczODU0NTAwNCwicGF0aCI6Ii8zMTA0MDYyNy80MDczNzg2MjMtNjFjYjJhNzAtNmMzNy00ZGM5LWFkY2MtNWNmYmZkNzJmYTA2LnBuZz9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNTAyMDMlMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjUwMjAzVDAxMTAwNFomWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPWYwZWQwOTU4ZDI3NDNkNTJkYWYzYjNhYzcwMjJjMTk0MzE0OTMxNzdiOTBmMWJhNmRlMTM2Zjg5NGE5ZWY3YTImWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0In0.krd4b6KkdjSKRAk6y0STUrwaNYFisBnyctWz-dmZ0KQ)
+<figure><img src="../.gitbook/assets/image (207).png" alt=""><figcaption></figcaption></figure>
 
 #### Make sure your monitoring endpoints are accessible
 
@@ -232,7 +232,7 @@ HTTP_SSV_NODE=http://127.0.0.1:16000/v1/node/health
 # Command-based monitoring for validator clients
 COMMAND_VALIDATOR_CLIENT=curl -s http://127.0.0.1:8009/metrics | grep -E -q '(get_validators_liveness|beacon_attestation_included_total|lighthouse_validator_beacon_node_requests_total|nimbus_validator_attestations_total)' && echo "200 OK" || echo "500 ERROR"
 ## For Geth EL
-COMMAND_GETH_EL=curl -s http://127.0.0.1:6061/debug/metrics | jq -r '.["chain/head/block"] == .["chain/head/header"] and .["chain/head/block"] > 0' | grep -q true && echo "200 OK" || echo "500 ERROR"
+COMMAND_GETH_EL=curl -s http://127.0.0.1:6061/debug/metrics | tr -d "\n" | grep -E -q "\"chain/head/block\":[[:space:]]*([0-9]+).*\"chain/head/header\":[[:space:]]*\\1" && echo "200 OK" || echo "500 ERROR"
 ## For other ELs
 COMMAND_EXECUTION_CLIENT=curl -s http://127.0.0.1:6060/metrics | tr -d '\n' | grep -E -q 'ethereum_blockchain_height.*} [0-9]+.*ethereum_best_known_block_number.*} [0-9]+' && echo "200 OK" || echo "500 ERROR"
 
