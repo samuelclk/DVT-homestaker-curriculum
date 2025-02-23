@@ -292,6 +292,16 @@ If any of your monitored services are unhealthy or unreachable, it will send a t
 
 If Healthchecks.io does not receive a message from your health checker service, it will send a message to your Telegram chat group to notify that your health checker service itself is offline.
 
+### Restarting after editing the `.env` file
+
+You will need to rebuild the docker image every time you edit the `.env` file.
+
+```
+cd ~/validator-healthchecks
+docker compose down
+docker compose up -d --build
+```
+
 ## More Context
 
 Most solo/home stakers rely on [beaconcha.in](https://beaconcha.in/) watchlists to notify them when their validators are missing attestations.
