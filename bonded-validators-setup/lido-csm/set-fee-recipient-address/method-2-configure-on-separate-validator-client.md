@@ -499,7 +499,7 @@ Refer to the native Lighthouse validator client setup section for more informati
 {% endtab %}
 
 {% tab title="Prysm" %}
-Create a systemd configuration file for the Lighthouse Validator Client service to run in the background.
+Create a systemd configuration file for the Prysm Validator Client service to run in the background.
 
 ```bash
 sudo nano /etc/systemd/system/csm_prysmvalidator.service

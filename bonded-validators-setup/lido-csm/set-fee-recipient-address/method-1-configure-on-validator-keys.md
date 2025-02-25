@@ -22,7 +22,7 @@ For each `resulting filepath`, run:
 grep -oP '"pubkey": *"\K[^"]+' RESULTING_FILEPATH
 ```
 
-_**You should now have a list of all your own**** **<mark style="color:red;">**non-CSM**</mark>** ****validator keystore pubkeys.**_
+_**You should now have a list of all your own****&#x20;**<mark style="color:red;">**non-CSM**</mark>**&#x20;****validator keystore pubkeys.**_
 
 Create a custom proposer configuration file.
 
@@ -132,7 +132,7 @@ ExecStart=/usr/local/bin/teku/bin/teku vc \
   --validator-keys=/var/lib/teku_validator/validator_keystores:/var/lib/teku_validator/keystore_password \
   --beacon-node-api-endpoint=http://<Internal_IP_address>:5051 \
   --validators-proposer-config=/var/lib/teku_validator/validator/proposer_configuration.json \
-  --validators-proposer-blinded-blocks-enabled=true \
+  --validators-builder-registration-default-enabled=true \
   --validators-graffiti="<your_graffiti_of_choice>" \
   --metrics-enabled=true \
   --metrics-port=8108 \
@@ -429,7 +429,7 @@ For each `resulting filepath`, run:
 grep -oP '"pubkey": *"\K[^"]+' RESULTING_FILEPATH
 ```
 
-_**You should now have a list of all your own**** **<mark style="color:red;">**non-CSM**</mark>** ****validator keystore pubkeys.**_
+_**You should now have a list of all your own****&#x20;**<mark style="color:red;">**non-CSM**</mark>**&#x20;****validator keystore pubkeys.**_
 
 Create a custom proposer configuration file.
 
@@ -533,7 +533,7 @@ Restart=always
 RestartSec=5
 ExecStart=/usr/local/bin/prysmvalidator \
   --accept-terms-of-use \
-  --holesky \
+  --<holesky_or_mainnet> \
   --datadir=/var/lib/prysm_validator \
   --enable-builder \
   --beacon-rpc-provider=<Internal_IP_address>:4000 \
