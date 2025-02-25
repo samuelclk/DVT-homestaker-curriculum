@@ -105,6 +105,7 @@
   * [Set Fee Recipient Address](bonded-validators-setup/lido-csm/set-fee-recipient-address/README.md)
     * [Method 1: Configure on validator keys](bonded-validators-setup/lido-csm/set-fee-recipient-address/method-1-configure-on-validator-keys.md)
     * [Method 2: Configure on separate validator client](bonded-validators-setup/lido-csm/set-fee-recipient-address/method-2-configure-on-separate-validator-client.md)
+    * [Verifying Fee Recipient Registered on MEV Relays](bonded-validators-setup/lido-csm/set-fee-recipient-address/verifying-fee-recipient-registered-on-mev-relays.md)
   * [Upload/Remove/View validator keys](bonded-validators-setup/lido-csm/upload-remove-view-validator-keys.md)
   * [Rewards & bonds](bonded-validators-setup/lido-csm/rewards-and-bonds.md)
   * [Exiting CSM validators](bonded-validators-setup/lido-csm/exiting-csm-validators/README.md)
