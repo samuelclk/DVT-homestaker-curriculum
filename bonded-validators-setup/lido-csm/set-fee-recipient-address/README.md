@@ -11,3 +11,7 @@ There are 2 ways to set custom fee recipient addresses for your CSM validator ke
 {% content-ref url="method-2-configure-on-separate-validator-client.md" %}
 [method-2-configure-on-separate-validator-client.md](method-2-configure-on-separate-validator-client.md)
 {% endcontent-ref %}
+
+{% content-ref url="verifying-fee-recipient-registered-on-mev-relays.md" %}
+[verifying-fee-recipient-registered-on-mev-relays.md](verifying-fee-recipient-registered-on-mev-relays.md)
+{% endcontent-ref %}
