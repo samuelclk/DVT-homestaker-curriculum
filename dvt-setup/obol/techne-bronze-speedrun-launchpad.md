@@ -79,9 +79,9 @@ The cluster leader will collect the wallet addresses of all members and configur
 
 <img src="../../.gitbook/assets/image (4) (1).png" alt="" data-size="original">
 
-![](<../../.gitbook/assets/image (1) (1) (1) (1) (1) (1).png>)
+![](<../../.gitbook/assets/image (1) (1) (1) (1) (1) (1) (1).png>)
 
-![](<../../.gitbook/assets/image (2) (1) (1) (1).png>)
+![](<../../.gitbook/assets/image (2) (1) (1) (1) (1).png>)
 
 ![](<../../.gitbook/assets/image (3) (1) (1).png>)
 

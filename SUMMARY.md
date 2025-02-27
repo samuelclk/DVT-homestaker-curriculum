@@ -110,6 +110,7 @@
   * [Rewards & bonds](bonded-validators-setup/lido-csm/rewards-and-bonds.md)
   * [Exiting CSM validators](bonded-validators-setup/lido-csm/exiting-csm-validators/README.md)
     * ["Lazy" exits (TESTNET ONLY)](bonded-validators-setup/lido-csm/exiting-csm-validators/lazy-exits-testnet-only.md)
+    * [Proper Exits](bonded-validators-setup/lido-csm/exiting-csm-validators/proper-exits.md)
   * [Monitoring & Address management](bonded-validators-setup/lido-csm/monitoring-and-address-management.md)
   * [Automations](bonded-validators-setup/lido-csm/automations/README.md)
     * [CSM with ETHPillar](bonded-validators-setup/lido-csm/automations/csm-with-ethpillar.md)
