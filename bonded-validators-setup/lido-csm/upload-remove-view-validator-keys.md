@@ -54,6 +54,10 @@ More details [here](https://operatorportal.lido.fi/modules/community-staking-mod
 
 <figure><img src="../../.gitbook/assets/Screenshot 2024-06-27 at 6.12.59 PM.png" alt="" width="375"><figcaption></figcaption></figure>
 
+Once your keys have been removed, the associated bond amounts that you deposited earlier will be available for claiming under the `Bond & Rewards` tab.
+
+<figure><img src="../../.gitbook/assets/image (208).png" alt="" width="375"><figcaption></figcaption></figure>
+
 {% hint style="warning" %}
 Keys that have been deposited cannot be deleted and only can be exited.
 {% endhint %}
