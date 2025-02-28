@@ -1,5 +1,103 @@
 # Verifying Fee Recipient Registered on MEV Relays
 
+## Checker Script
+
+### Mainnet
+
+Install dependencies.
+
+```sh
+sudo apt update
+sudo apt install git python3 python3-pip python3-requests
+pip3 install web3
+```
+
+Download the Fee Recipient checker script ([Source](https://gist.github.com/skhomuti/bc188884f6bdc1ce2c65a949e84b0dc5)).
+
+```
+git clone https://gist.github.com/bc188884f6bdc1ce2c65a949e84b0dc5.git check_no_relays
+cd check_no_relays
+```
+
+Set the RPC endpoint using your local execution client or one of the free publicly available ones here: [https://ethereumnodes.com/](https://ethereumnodes.com/)
+
+```
+export RPC_URL="http://127.0.0.1:8545"
+```
+
+**or;**
+
+```
+export RPC_URL="https://eth.llamarpc.com"
+```
+
+Run the Checker Script and enter your CSM Node Operator ID when prompted.
+
+```sh
+python3 check_no_relays.py
+```
+
+**Expected output:**
+
+<figure><img src="../../../.gitbook/assets/Screenshot 2025-02-28 at 5.06.55 PM.png" alt=""><figcaption><p>example output using dummy data</p></figcaption></figure>
+
+### **Troubleshooting:**
+
+```
+ConnectionRefusedError: [Errno 111] Connection refused
+```
+
+If you face a "connection refused" error as seen above, it either means the RPC endpoint of your Execution Client is not enabled or the `RPC_URL` used is incorrect
+
+**How to fix?**
+
+{% tabs %}
+{% tab title="Eth Docker" %}
+Edit the `.env` file.
+
+```
+nano ~/eth-docker/.env
+```
+
+Add **`:el-shared.yml`** to the back of the `COMPOSE_FILE=` line.
+
+Save and exit with `CTRL+O`, `ENTER`, `CTRL+X`.
+
+Restart the Eth Docker stack with `ethd down` then `ethd up`.
+{% endtab %}
+
+{% tab title="systemd" %}
+Enable RPC or HTTP endpoint on your Execution Client.
+
+```sh
+sudo nano /etc/systemd/system/EXECUTION_CLIENT.service
+# replace EXECUTION_CLIENT with the actual file name
+```
+
+Make sure the following flags are added.
+
+1. Geth, Reth, Erigon: `--http`
+2. Nethermind: `--JsonRpc.Enabled`
+3. Besu: `--rpc-http-enabled`
+
+Save and exit with `CTRL+O`, `ENTER`, `CTRL+X`.
+
+Restart your execution client.
+
+```sh
+sudo systemctl daemon-reload
+sudo systemctl restart EXECUTION_CLIENT
+# replace EXECUTION_CLIENT with the actual file name
+```
+{% endtab %}
+
+{% tab title="Eth Pillar" %}
+Enabled by default.
+{% endtab %}
+{% endtabs %}
+
+## Manual Check
+
 For each MEV Relay you have configured, replace `<VALIDATOR_PUBKEY>` for each of the commands below and run them on your terminal.&#x20;
 
 Then verify that the Fee Recipient Address matches with the Lido Execution Layer Rewards Vaults on Mainnet or Holesky depending on your setup ([Source](https://operatorportal.lido.fi/modules/community-staking-module)).&#x20;
@@ -8,7 +106,7 @@ Then verify that the Fee Recipient Address matches with the Lido Execution Layer
 
 > {"message":{"fee\_recipient":"<mark style="background-color:yellow;">0x388C818CA8B9251b393131C08a736A67ccB19297</mark>","gas\_limit":"30000000","timestamp":"1739938746","pubkey":"0x...."},"signature":"0x...."}
 
-## Mainnet
+### Mainnet
 
 Lido Execution Layer Rewards Vault on mainnet = [`0x388C818CA8B9251b393131C08a736A67ccB19297`](https://etherscan.io/address/0x388C818CA8B9251b393131C08a736A67ccB19297)
 
