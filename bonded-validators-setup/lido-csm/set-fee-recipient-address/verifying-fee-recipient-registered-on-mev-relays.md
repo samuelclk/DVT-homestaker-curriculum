@@ -42,7 +42,7 @@ python3 check_no_relays.py
 
 **Expected output:**
 
-<figure><img src="../../../.gitbook/assets/image.png" alt=""><figcaption><p>example output using dummy pubkeys</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/Screenshot 2025-02-28 at 5.06.55 PM (1).png" alt=""><figcaption><p>Example output using dummy pubkeys</p></figcaption></figure>
 
 Once done, you can deactivate the Python virtual environment.
 
