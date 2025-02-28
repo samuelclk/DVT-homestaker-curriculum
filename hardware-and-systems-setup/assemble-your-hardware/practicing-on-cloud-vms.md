@@ -47,7 +47,7 @@ Select `No service account` under **"Identity and API access"**.
 
 Check the first 2 boxes under the **"Firewall"** section.
 
-<figure><img src="../../.gitbook/assets/image (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 Once you are done, click on the **"Create"** button at the bottom of the screen.
 

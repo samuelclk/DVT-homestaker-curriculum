@@ -48,7 +48,7 @@ This process helps Node Operators to avoid incorrect changes to the non-existing
 
 Node operators can view their Address assignments in the `INBOX REQUESTS` tab under the `ROLES` header of the [CSM Widget](https://csm.testnet.fi/).
 
-<figure><img src="../../.gitbook/assets/image (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 ### Reset Reward/Manager Address Change
 
@@ -68,7 +68,7 @@ More details on Rewards vs Manager addresses [here](https://operatorportal.lido.
    2. Paste your new addresses for the change
    3.  Submit the onchain transaction
 
-       <figure><img src="../../.gitbook/assets/image (1) (1).png" alt="" width="563"><figcaption></figcaption></figure>
+       <figure><img src="../../.gitbook/assets/image (1) (1) (1).png" alt="" width="563"><figcaption></figcaption></figure>
 3. &#x20;Disconnect your current Rewards Address from the Lido CSM Widget
 4. Connect your new Rewards or Manager Address to the Lido CSM Widget
 5.  &#x20;Accept the Rewards or Manager Address assignment
