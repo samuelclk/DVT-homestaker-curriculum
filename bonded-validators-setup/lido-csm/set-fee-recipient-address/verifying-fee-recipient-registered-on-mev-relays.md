@@ -4,30 +4,33 @@
 
 ### Mainnet
 
-Install dependencies.
+Install dependencies and activate a Python virtual environment.
 
 ```sh
 sudo apt update
-sudo apt install git python3 python3-pip python3-requests
-pip3 install web3
+sudo apt install git python3-venv python3-full python3-requests
+# Activate Python virtual environment
+python3 -m venv ~/check_relay_env
+source ~/check_relay_env/bin/activate
+pip install web3 requests
 ```
 
 Download the Fee Recipient checker script ([Source](https://gist.github.com/skhomuti/bc188884f6bdc1ce2c65a949e84b0dc5)).
 
-```
+```sh
 git clone https://gist.github.com/bc188884f6bdc1ce2c65a949e84b0dc5.git check_no_relays
 cd check_no_relays
 ```
 
 Set the RPC endpoint using your local execution client or one of the free publicly available ones here: [https://ethereumnodes.com/](https://ethereumnodes.com/)
 
-```
+```sh
 export RPC_URL="http://127.0.0.1:8545"
 ```
 
 **or;**
 
-```
+```sh
 export RPC_URL="https://eth.llamarpc.com"
 ```
 
@@ -40,6 +43,12 @@ python3 check_no_relays.py
 **Expected output:**
 
 <figure><img src="../../../.gitbook/assets/Screenshot 2025-02-28 at 5.06.55 PM.png" alt=""><figcaption><p>example output using dummy data</p></figcaption></figure>
+
+Once done, you can deactivate the Python virtual environment.
+
+```sh
+deactivate
+```
 
 ### **Troubleshooting:**
 
