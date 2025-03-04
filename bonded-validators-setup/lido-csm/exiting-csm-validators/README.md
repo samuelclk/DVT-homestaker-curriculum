@@ -1,5 +1,11 @@
 # Exiting CSM validators
 
+## Monitoring for exit requests
+
+The `DASHBOARD` header provides a consolidated view of any exit requests issued to you in the form of `Unbonded` and `Stuck` keys.
+
+<figure><img src="../../../.gitbook/assets/image (2) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
+
 ## How to Exit Keys and Withdraw Your Bond
 
 1\) Sign & broadcast an exit message for each validator key you want to exit. Refer to sub-sections/pages below.

@@ -1,35 +1,9 @@
-# Monitoring & Address management
+# Role/Address management
 
 ## Lido CSM Widget URLS
 
 * **Mainnet:** [https://csm.lido.fi/](https://csm.lido.fi/)
 * **Holesky:** [https://csm.testnet.fi/](https://csm.testnet.fi/)
-
-## Monitoring validator performance
-
-Refer to the monitoring section below.
-
-{% content-ref url="broken-reference" %}
-[Broken link](broken-reference)
-{% endcontent-ref %}
-
-## Status of uploaded keys
-
-Review the status of your uploaded keys at the end of the **Lido CSM: Upload/Remove/View keys** section.
-
-{% content-ref url="upload-remove-view-validator-keys.md" %}
-[upload-remove-view-validator-keys.md](upload-remove-view-validator-keys.md)
-{% endcontent-ref %}
-
-## Monitoring for exit requests
-
-The `DASHBOARD` header provides a consolidated view of any exit requests issued to you in the form of `Unbonded` and `Stuck` keys.
-
-<figure><img src="../../.gitbook/assets/image (2) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
-
-{% hint style="info" %}
-As there are no custom alerts available yet, you should check this once every 3 days for now.
-{% endhint %}
 
 ## Changing Rewards & Manager Address
 
