@@ -44,7 +44,7 @@ For more detailed monitoring, refer to the section below.
 [Broken link](broken-reference)
 {% endcontent-ref %}
 
-## Staying Above CSM Performance Threshold
+## CSM Performance Threshold
 
 Staying above the Lido CSM `Performance Threshold` enables CSM Operators to qualify for the socialized node operator rewards.
 
@@ -58,3 +58,9 @@ Lido CSM uses the following parameters to measure the Performance Threshold, whe
 * Frame = `28 days`
 
 e.g., For a 28 day period, if the Average Validator Network Performance is 99.6%, then your validators will need to achieve a 94.6% Performance level in order to qualify for the socialized node operator rewards.
+
+### Tips to improve performance
+
+{% content-ref url="../../best-practices/maximising-uptime-and-performance.md" %}
+[maximising-uptime-and-performance.md](../../best-practices/maximising-uptime-and-performance.md)
+{% endcontent-ref %}
