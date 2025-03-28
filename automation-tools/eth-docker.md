@@ -4,12 +4,12 @@
 
 You will need to prepare your virtual machine (VM) or home staking hardware for all options below. Step-by-step guide below.
 
-{% content-ref url="../hardware-and-systems-setup/assemble-your-hardware/practicing-on-cloud-vms.md" %}
-[practicing-on-cloud-vms.md](../hardware-and-systems-setup/assemble-your-hardware/practicing-on-cloud-vms.md)
+{% content-ref url="../hardware-and-systems-setup/practicing-for-free-on-cloud-vms/google-cloud.md" %}
+[google-cloud.md](../hardware-and-systems-setup/practicing-for-free-on-cloud-vms/google-cloud.md)
 {% endcontent-ref %}
 
-{% content-ref url="../hardware-and-systems-setup/assemble-your-hardware/" %}
-[assemble-your-hardware](../hardware-and-systems-setup/assemble-your-hardware/)
+{% content-ref url="../hardware-and-systems-setup/assemble-your-hardware.md" %}
+[assemble-your-hardware.md](../hardware-and-systems-setup/assemble-your-hardware.md)
 {% endcontent-ref %}
 
 ## Solo Staking testnet workflow

@@ -25,8 +25,8 @@ Spin up a virtual machine on a cloud service with the following specifications u
 * SSD: 250GB
 * OS: Ubuntu 24.04
 
-{% content-ref url="../../hardware-and-systems-setup/assemble-your-hardware/practicing-on-cloud-vms.md" %}
-[practicing-on-cloud-vms.md](../../hardware-and-systems-setup/assemble-your-hardware/practicing-on-cloud-vms.md)
+{% content-ref url="../../hardware-and-systems-setup/practicing-for-free-on-cloud-vms/google-cloud.md" %}
+[google-cloud.md](../../hardware-and-systems-setup/practicing-for-free-on-cloud-vms/google-cloud.md)
 {% endcontent-ref %}
 
 {% hint style="success" %}

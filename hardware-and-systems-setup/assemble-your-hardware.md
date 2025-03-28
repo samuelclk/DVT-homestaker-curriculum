@@ -4,8 +4,8 @@
 If your hardware has not arrived yet, follow the link below to spin up a Google Cloud virtual machine (VM) to perform the **"Prepare your OS"** steps.
 {% endhint %}
 
-{% content-ref url="practicing-on-cloud-vms.md" %}
-[practicing-on-cloud-vms.md](practicing-on-cloud-vms.md)
+{% content-ref url="practicing-for-free-on-cloud-vms/google-cloud.md" %}
+[google-cloud.md](practicing-for-free-on-cloud-vms/google-cloud.md)
 {% endcontent-ref %}
 
 ## Inspect your hardware
@@ -14,7 +14,7 @@ Inspecting your hardware physically is an important step to remove the possibili
 
 Open up your node device - the Intel NUC in this case - and make sure there are no unknown components that look badly soldered onto your motherboard (the big green plate). &#x20;
 
-<figure><img src="../../.gitbook/assets/image (97).png" alt=""><figcaption><p>Basic anatomy of the Intel NUC device</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (97).png" alt=""><figcaption><p>Basic anatomy of the Intel NUC device</p></figcaption></figure>
 
 ## Assembling your hardware
 
