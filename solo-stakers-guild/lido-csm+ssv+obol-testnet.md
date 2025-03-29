@@ -279,11 +279,16 @@ Edit the `.env` file of Eth Docker.
 nano ~/eth-docker/.env
 ```
 
-* Append `:lido-obol.yml` and `:cl-shared.yml` in the `COMPOSE_FILE` line.
+In the `COMPOSE_FILE` line:
+
+* Append `:lido-obol.yml` and `:cl-shared.yml` i
+* Edit the `"consensus"-cl-only.yml` file to `"consensus".yml`. e.g., From `nimbus-cl-only.yml` to `nimbus.yml`
 
 **Example:**
 
-<figure><img src="../.gitbook/assets/image (198).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (220).png" alt=""><figcaption></figcaption></figure>
+
+Press `CTRL+W`, type **"CL\_NODE"** and hit `ENTER`.&#x20;
 
 * Change the `CL_NODE` line to **http://charon:3600** (from http://consensus:5052)
 
@@ -291,8 +296,7 @@ nano ~/eth-docker/.env
 
 <figure><img src="../.gitbook/assets/image (200).png" alt=""><figcaption></figcaption></figure>
 
-`CTRL+O`, `ENTER`, `CTRL+X` to save and exit.\
-
+`CTRL+O`, `ENTER`, `CTRL+X` to save and exit.
 
 ### Restart ETH Docker
 
@@ -303,7 +307,7 @@ ethd up
 
 After all your services running via Docker "warmed up" for \~5 minutes, import your validator key shards.
 
-```
+```sh
 ethd keys import
 ```
 
@@ -311,7 +315,7 @@ ethd keys import
 
 Print the logs of the Obol Charon & Validator Client.
 
-```
+```sh
 ethd logs charon -f --tail 20
 ethd logs validator -f --tail 20
 ```
