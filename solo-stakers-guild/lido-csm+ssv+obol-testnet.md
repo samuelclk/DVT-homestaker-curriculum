@@ -281,7 +281,7 @@ nano ~/eth-docker/.env
 
 In the `COMPOSE_FILE` line:
 
-* Append `:lido-obol.yml` and `:cl-shared.yml` i
+* Append `:lido-obol.yml` and `:cl-shared.yml`
 * Edit the `"consensus"-cl-only.yml` file to `"consensus".yml`. e.g., From `nimbus-cl-only.yml` to `nimbus.yml`
 
 **Example:**
