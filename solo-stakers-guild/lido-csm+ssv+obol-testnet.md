@@ -134,11 +134,18 @@ Using the arrow keys & keyboard only, change the value of **SSV\_NODE\_TAG=** fr
 
 `CTRL+O, ENTER, CTRL+X` to save and exit.
 
+### Start ETH Docker
+
+```sh
+cd
+ethd up
+```
+
 ### Configure DKG endpoint
 
 Find the external IP address of your VM on your Cloud account >> Console >> Compute Engine >> Look under "External IP".
 
-Your **DKG endpoint** will be `<EXTERNAL_IP_ADDRESS>:443`,without the pointy brackets. _<mark style="background-color:yellow;">**Note that down and save it in a text editor file.**</mark>_
+Your **DKG endpoint** will be `<EXTERNAL_IP_ADDRESS>:3030`,without the pointy brackets. _<mark style="background-color:yellow;">**Note that down and save it in a text editor file.**</mark>_
 
 Verify that your DKG endpoint is accessible from external sources.
 
@@ -150,13 +157,6 @@ sudo docker compose run --rm ssv-dkg ping --ip https://<External_IP>:3030
 **Expected output:**
 
 <figure><img src="../.gitbook/assets/image (10).png" alt=""><figcaption></figcaption></figure>
-
-### Start ETH Docker
-
-```sh
-cd
-ethd up
-```
 
 ### View logs
 
