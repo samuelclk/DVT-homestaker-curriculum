@@ -268,7 +268,7 @@ docker run -u $(id -u):$(id -g) --rm -v "$(pwd)/:/opt/charon" obolnetwork/charon
 Copy the following files from one of the cluster folders (e.g., `node0`) above into the `~/eth-docker/.eth` folder and set the necessary permissions.
 
 ```sh
-sudo cp ~/cluster/node0/validators/* ~/eth-docker/.eth/validator_keys
+sudo cp ~/cluster/node0/validator_keys/* ~/eth-docker/.eth/validator_keys
 sudo cp ~/cluster/node0/* ~/eth-docker/.eth
 sudo chown -R $USER:$USER ~/eth-docker/.eth
 ```
@@ -301,11 +301,16 @@ Press `CTRL+W`, type **"CL\_NODE"** and hit `ENTER`.&#x20;
 ### Restart ETH Docker
 
 ```sh
-ethd down
-ethd up
+ethd down && ethd up
 ```
 
-After all your services running via Docker "warmed up" for \~5 minutes, import your validator key shards.
+Print the generated password of your Obol validator keyshard and copy the output to your clipboard.
+
+```sh
+cat ~/eth-docker/.eth/validator_keys/keystore*.txt && echo
+```
+
+After all your services running via Docker "warmed up" for \~5 minutes, import your validator keyshard and paste the password when prompted.
 
 ```sh
 ethd keys import
@@ -317,6 +322,9 @@ Print the logs of the Obol Charon & Validator Client.
 
 ```sh
 ethd logs charon -f --tail 20
+```
+
+```sh
 ethd logs validator -f --tail 20
 ```
 
@@ -356,7 +364,7 @@ The links below include the referral IDs of the tools that we are using today to
 * **Hoodi:** [https://csm.testnet.fi/](https://csm.testnet.fi/)[?ref=ethpillar](https://csm.lido.fi/?ref=ethpillar)
 
 ```sh
-cat $(find /home/ubuntu/ethstaker_deposit-cli -name "deposit*.json" 2>/dev/null)
+cat $(find ~/ethstaker_deposit-cli -name "deposit*.json" 2>/dev/null)
 ```
 
 **Example output:**
