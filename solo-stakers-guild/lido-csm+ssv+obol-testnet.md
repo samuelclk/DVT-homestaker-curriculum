@@ -212,6 +212,12 @@ The other fields are optional but fill them up to attract stakers to select your
 
 ## Obol Setup
 
+Go back to your Home folder.
+
+```sh
+cd
+```
+
 ### Cluster Creation
 
 1. Go to the [Obol Hoodi Launchpad](https://hoodi.launchpad.obol.org/), scroll down and select **"Create a distributed validator alone"**
