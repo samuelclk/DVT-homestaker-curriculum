@@ -29,5 +29,3 @@
 {% hint style="danger" %}
 However, as the size is too small even for a testnet validator node, you can only practice the configuration steps without actually running the services using this.
 {% endhint %}
-
-2\)&#x20;
