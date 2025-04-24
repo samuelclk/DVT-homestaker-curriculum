@@ -403,6 +403,26 @@ Run the `ethpillar` command and select the `view logs` option
 
 </details>
 
+## Exiting validator keys
+
+### Lido CSM
+
+Find the file path of your validator keystores.
+
+```
+cat $(find /var/lib -name "keystore*.json" 2>/dev/null)
+```
+
+Copy the output file path.
+
+Run `ethpillar` and navigate to `validator client` >> `exit keys` and input the file path of your validator keystore.
+
+Enter the password set for your validator keystore when prompted.
+
+{% hint style="info" %}
+You can only exit your validator keystores after they have been activated on the Ethereum beacon chain.
+{% endhint %}
+
 ## Securing your device
 
 ### Firewall Rules
