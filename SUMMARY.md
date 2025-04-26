@@ -80,6 +80,7 @@
   * [Nimbus](monitoring-maintenance-and-updates/maintenance-and-updates/nimbus.md)
   * [Lodestar](monitoring-maintenance-and-updates/maintenance-and-updates/lodestar.md)
   * [Updating the monitoring suite](monitoring-maintenance-and-updates/maintenance-and-updates/updating-the-monitoring-suite.md)
+  * [Preparing for Pectra](monitoring-maintenance-and-updates/maintenance-and-updates/preparing-for-pectra.md)
 
 ## DVT Setup
 
