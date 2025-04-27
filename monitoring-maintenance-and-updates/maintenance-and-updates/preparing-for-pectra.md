@@ -34,7 +34,7 @@ Follow the respective guides in this section to download and run the latest clie
 
 ```sh
 cd ~/ssv-stack #change the file path according to your ssv directory
-docker pull ssvlabs/ssv-node:v2.3.0
+docker pull ssvlabs/ssv-node:v2.3.1
 docker compose down && docker compose up -d
 ```
 
