@@ -1,3 +1,7 @@
+---
+hidden: true
+---
+
 # Techne Bronze Speedrun (CLI)
 
 ## Requirements

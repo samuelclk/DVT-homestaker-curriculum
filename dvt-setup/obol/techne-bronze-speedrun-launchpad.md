@@ -33,9 +33,8 @@ exit
 
 ```sh
 cd
-
 # Use docker to create an ENR. Backup the file `.charon/charon-enr-private-key`.
-docker run --rm -v "$(pwd):/opt/charon" -u $(id -u):$(id -g) obolnetwork/charon:v1.1.0 create enr
+docker run --rm -v "$(pwd):/opt/charon" -u $(id -u):$(id -g) obolnetwork/charon:v1.3.0 create enr
 ```
 
 You should expect to see a console output like this:
@@ -62,7 +61,9 @@ sudo rm -r .charon
 
 Appoint a cluster leader among your cluster.
 
-The cluster leader will collect the wallet addresses of all members and configure the parameters of your cluster on the Obol Launchpad.
+The cluster leader will collect the wallet addresses of all members and configure the parameters of your cluster on the[ Obol Launchpad](https://hoodi.launchpad.obol.org/).
+
+{% embed url="https://hoodi.launchpad.obol.org/" %}
 
 1. Select Create a cluster with a group >> read, click through, & sign the disclaimers with your wallet
 2. Choose your cluster name and size (4, 7, or 10)
@@ -371,7 +372,7 @@ docker exec -it eth-docker-validator-1 node /usr/app/packages/cli/bin/lodestar v
 --beaconNodes="http://charon:3600" \
 --dataDir="/var/lib/lodestar/validators" \
 --exitEpoch=256 \
---network=holesky \
+--network=hoodi \
 --yes
 ```
 
