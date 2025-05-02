@@ -244,3 +244,9 @@ Look for the following line and uncomment it by removing the `//` prefix.
 ```
 // Unattended-Upgrade::OnlyOnACPower "false";
 ```
+
+Once you're done, save and exit with `Ctrl+O`and `Enter`, then `Ctrl+X`. Then restart your Unattended Upgrades service.
+
+```sh
+sudo systemctl restart unattended-upgrades
+```
