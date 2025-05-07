@@ -274,8 +274,8 @@ docker run -u $(id -u):$(id -g) --rm -v "$(pwd)/:/opt/charon" obolnetwork/charon
 Set the necessary permissions to your newly generated Obol ENR private key and cluster file.
 
 ```sh
-sudo chmod 600 ~/cluster/node0/charon-enr-private-key
-sudo chmod 600 ~/cluster/node0/cluster-lock.json
+sudo chmod 777 ~/cluster/node0/charon-enr-private-key
+sudo chmod 777 ~/cluster/node0/cluster-lock.json
 ```
 
 Copy the following files from one of the cluster folders (e.g., `node0`) above into the `~/eth-docker/.eth` folder and set the necessary permissions.
