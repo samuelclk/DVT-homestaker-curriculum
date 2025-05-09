@@ -14,7 +14,7 @@
    * If not, just mine a small amount and continue on the following steps.
 2. Join the discord server here - [https://discord.gg/ethstaker](https://discord.gg/ethstaker)
 3. Join the #cheap-holesky-validator channel
-4. Type “/cheap-holeskysky-deposit `<your ETH address>` ” in the text box and press enter
+4. Type “/cheap-holesky-deposit `<your ETH address>` ” in the text box and press enter
 5.  Click on the link generated (ie. the [**Signer.is**](http://signer.is) text shown below)&#x20;
 
     <figure><img src="../.gitbook/assets/image (144).png" alt=""><figcaption></figcaption></figure>
