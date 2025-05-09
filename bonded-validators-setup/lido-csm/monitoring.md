@@ -4,7 +4,7 @@
 
 Basic on-chain monitoring can be done using the following tools found on the CSM Widget directly. Under the `Dashboard` navbar tab scroll all the way down to the `External Dashboards` expandable list.
 
-<figure><img src="../../.gitbook/assets/image (209).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (209) (1).png" alt=""><figcaption></figcaption></figure>
 
 ### Beaconcha.in V2
 

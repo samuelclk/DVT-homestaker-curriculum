@@ -130,7 +130,7 @@ sudo systemctl status prysmbeacon.service
 
 **Expected output:** The output should say Prysm Consensus Client is **“active (running)”.** Press `CTRL-C` to exit and Prysm Consensus Client will continue to run. It should take just a few minutes for Prysm to sync on Holesky.
 
-<figure><img src="../../.gitbook/assets/image (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 Use the following command to check the logs of Prysm Consensus Client’s syncing process. Watch out for any warnings or errors.
 

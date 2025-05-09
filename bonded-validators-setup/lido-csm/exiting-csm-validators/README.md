@@ -16,11 +16,11 @@ The `DASHBOARD` header provides a consolidated view of any exit requests issued 
 
 4\) Navigate to `Keys`>>`View Keys` to verify that the status of your validator key is marked as `Withdrawn`
 
-<figure><img src="../../../.gitbook/assets/image (1).png" alt="" width="375"><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (1) (1).png" alt="" width="375"><figcaption></figcaption></figure>
 
 5\) Navigate to `Bond & Rewards`>>`Claim` to claim your deposited bond and any accumulated rewards
 
-<figure><img src="../../../.gitbook/assets/image (1) (1).png" alt="" width="375"><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (1) (1) (1).png" alt="" width="375"><figcaption></figcaption></figure>
 
 {% hint style="warning" %}
 The 32 ETH deposited to activate each validator key will return to the Lido Protocol. Meanwhile, CSM Operators get their ETH-based bond deposits back from the Lido CSM Contract.

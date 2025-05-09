@@ -123,7 +123,7 @@ sudo systemctl status geth.service
 
 **Expected output:** The output should say Geth is **“active (running)”.** Press CTRL-C to exit and Geth will continue to run. It should take around 6 hours for Geth to sync on the Holesky testnet.
 
-<figure><img src="../../.gitbook/assets/image (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 Use the following command to check the logs of Geth’s syncing process. Watch out for any warnings or errors.
 

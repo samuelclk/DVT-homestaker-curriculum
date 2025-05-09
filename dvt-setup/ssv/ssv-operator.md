@@ -41,7 +41,7 @@ ethd config
 * Select `yes` for _**Do you want to participate in DKG ceremonies as an operator?**_
 * Once you see the screen below, select `<Cancel>` as we don't have our Operator ID yet.&#x20;
 
-<figure><img src="../../.gitbook/assets/image (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (1) (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 * _<mark style="background-color:yellow;">**Then copy your SSV node public key from your terminal output and save it on a text editor**</mark>_
 

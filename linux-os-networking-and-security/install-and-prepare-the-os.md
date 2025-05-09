@@ -7,28 +7,37 @@
 Now that you have assembled your hardware, you will need to install the Ubuntu OS onto your device. To do that, we will need to **create a bootable USB drive flashed with the latest Ubuntu OS.** Follow the steps below:
 
 1. Prepare a new USB drive of at least 8GB
-2.  On your working laptop, download the latest version of Ubuntu here (this might take around 30 minute&#x73;**)** - [https://ubuntu.com/download/desktop](https://ubuntu.com/download/desktop) -&#x20;
+2. On your working laptop, download the latest version of Ubuntu here (this might take around 30 minute&#x73;**)** - [https://ubuntu.com/download/desktop](https://ubuntu.com/download/desktop) -&#x20;
 
-    <figure><img src="../.gitbook/assets/image (98).png" alt=""><figcaption></figcaption></figure>
-3. Once the download is complete, you will need to verify the checksum of the downloaded file to ensure it has not been tampered with during the download&#x20;
+<figure><img src="../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+
+1. Once the download is complete, you will need to verify the checksum of the downloaded file to ensure it has not been tampered with during the download&#x20;
 
 ### Verify the checksum of download
 
-Click on "verify your download" and you should see a window appearing.&#x20;
+Click on "verify your download" and you should see a window appearing.
 
-<figure><img src="../.gitbook/assets/image (100).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
 
 Open up your terminal (Mac) or Windows Power Shell (Windows) and run the following commands.
 
+**Mac:**
+
 ```sh
 cd Downloads
-echo "a435f6f393dda581172490eda9f683c32e495158a780b5a1de422ee77d98e909 *ubuntu-22.04.3-desktop-amd64.iso" | shasum -a 256 --check
+echo "d7fe3d6a0419667d2f8eff12796996328daa2d4f90cd9f87aa9371b362f987bf *ubuntu-24.04.2-desktop-amd64.iso" | shasum -a 256 --check
+```
+
+**Windows:**
+
+```sh
+cd ~\Downloads; "d7fe3d6a0419667d2f8eff12796996328daa2d4f90cd9f87aa9371b362f987bf" -eq (Get-FileHash ubuntu-24.04.2-desktop-amd64.iso -Algorithm SHA256).Hash.ToLower() | ForEach-Object { if($_){"OK"}else{"FAILED"} }
 ```
 
 You are good to go if you see an "OK" in the output.
 
 ```sh
-ubuntu-22.04.3-desktop-amd64.iso: OK
+ubuntu-24.04.2-desktop-amd64.iso: OK
 ```
 
 ### Download an ISO writer
@@ -125,82 +134,48 @@ sudo apt install curl jq htop
 
 ### Configure timekeeping
 
-We need to make sure the time on our device is the same with all other nodes so that we are able to sync with everyone else. If our timekeeping is off, we will start missing attestations (and rewards!). Verify this by running:
+We need to make sure the time on our device is the same with all other nodes so that we are able to sync with everyone else. If our timekeeping is off, we will start missing attestations (and rewards!).&#x20;
 
-```bash
-timedatectl
+First, install `chrony`
+
+```
+sudo apt install chrony
 ```
 
-And check that NTP service is “active”. See screenshot below.
+Stop and disable the default timekeeping service.
 
-<figure><img src="../.gitbook/assets/Untitled (6).png" alt=""><figcaption></figcaption></figure>
-
-If not, turn it on by running:
-
-```bash
-sudo timedatectl set-ntp on
+```
+sudo systemctl stop systemd-timesyncd
+sudo systemctl disable systemd-timesyncd
 ```
 
-### **Create a Swap Space**
+Start and enable `chrony`
 
-A swap space _(”back-up” memory space carved out from disk space)_ is used to prevent out-of-memory errors.
-
-Recommended swap space:
-
-```bash
-RAM     Swap Size
-  8GB           3GB
- 12GB           3GB
- 16GB           4GB
- 24GB           5GB
- 32GB           6GB
- 64GB           8GB
-128GB          11GB
+```
+sudo systemctl enable chronyd
+sudo systemctl start chronyd
 ```
 
-Disable existing swap:
+Verify that `chrony` is running:
 
-```sh
-sudo swapoff /swapfile
+```
+chronyc tracking
 ```
 
-Create swap file:
+**Expected output:** Check that the time shown is correct and has low offset. i.e., system vs benchmark (NTP)  time.&#x20;
 
-```bash
-sudo fallocate -l 6G /swapfile 
-sudo chmod 600 /swapfile 
-sudo mkswap /swapfile 
-sudo swapon /swapfile
 ```
-
-Make your OS remember the swap space settings even after rebooting: &#x20;
-
-```bash
-sudo cp /etc/fstab /etc/fstab.bak
-echo '/swapfile none swap sw 0 0' | sudo tee -a /etc/fstab
-sudo sysctl vm.swappiness=10
-sudo sysctl vm.vfs_cache_pressure=50
-sudo nano /etc/sysctl.conf
+Reference ID    : 192.168.1.1 (time1.google.com)
+Stratum         : 3
+Ref time (UTC)  : Fri May 09 10:15:23 2025
+System time     : 0.000024685 seconds slow of NTP time
+Last offset     : +0.000031502 seconds
+RMS offset      : 0.000031502 seconds
+Frequency       : 10.141 ppm slow
+Residual freq   : -0.004 ppm
+Skew            : 0.012 ppm
+Root delay      : 0.001655 seconds
+Root dispersion : 0.000544 seconds
+Update interval : 64.2 seconds
+Leap status     : Normal
 ```
-
-Add the following to the end of the `sysctl.conf` configuration file:
-
-```bash
-vm.swappiness=10
-vm.vfs_cache_pressure=50
-```
-
-Save and exit the file with `CTRL + O, enter, CTRL + X`
-
-Check your new swap space with the following commands.
-
-```bash
-htop
-free -h
-```
-
-_**Expected output:**_
-
-<figure><img src="../.gitbook/assets/image (59).png" alt=""><figcaption><p><code>htop</code></p></figcaption></figure>
-
-<figure><img src="../.gitbook/assets/image (58).png" alt=""><figcaption><p><code>free -h</code></p></figcaption></figure>
