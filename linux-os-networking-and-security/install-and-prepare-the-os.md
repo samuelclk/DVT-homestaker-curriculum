@@ -4,7 +4,7 @@
 
 ### Download the latest version of Ubuntu
 
-Now that you have assembled your hardware, you will need to install the Ubuntu OS onto your device. To do that, we will need to **create a bootable USB drive flashed with the latest Ubuntu OS.** Follow the steps below:
+Now that you have assembled your hardware, you will need to install the Ubuntu OS onto your device. To do that, we will need to **create a bootable USB drive flashed with the latest Ubuntu OS&#x20;**<mark style="color:red;">**(Currently 24.04.2 LTS)**</mark>**.** Follow the steps below:
 
 1. Prepare a new USB drive of at least 8GB
 2. On your working laptop, download the latest version of Ubuntu here (this might take around 30 minute&#x73;**)** - [https://ubuntu.com/download/desktop](https://ubuntu.com/download/desktop) -&#x20;

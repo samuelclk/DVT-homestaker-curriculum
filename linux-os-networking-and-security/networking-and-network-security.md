@@ -33,6 +33,7 @@ Adding a dedicated router in between your validator node and existing home route
 If you need to be away from home for long periods, port forwarding will need to be configured on both your Home Modem and your Home Router (i.e. Modem->Home Router->Node Router) to allow incoming connections from outside of your home network.&#x20;
 
 * This is so that you can access your validator node for troubleshooting and maintenance even if you are not at home.
+* You can also setup a VPN for remote access
 * Turn off port forwarding on your Home Modem when you are no longer away from home
 {% endhint %}
 

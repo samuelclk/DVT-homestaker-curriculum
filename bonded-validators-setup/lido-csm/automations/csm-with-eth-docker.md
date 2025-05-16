@@ -112,6 +112,10 @@ ethd start
 
 ### Import validator keys
 
+{% hint style="info" %}
+You will need to wait around 5 minutes from starting the ETH Docker stack before importing keys without errors.&#x20;
+{% endhint %}
+
 Change the user permissions of the folder containing your validator keys. Replace \<user> with your actual username of your VM.
 
 ```sh

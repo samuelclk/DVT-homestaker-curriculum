@@ -33,6 +33,13 @@ ssh-copy-id -i ~/.ssh/id_ed25519.pub <username>@<node_IP_address>
 ```
 
 Enter the password of your NUC device when prompted.
+
+{% hint style="info" %}
+The IP Address of your NUC device can be found via:
+
+* Running `ip a` on the terminal of your NUC device (connect a monitor & keyboard during the initial setup)
+* Logging into your home router and look for the connected NUC device. The assigned IP Address will be displayed here
+{% endhint %}
 {% endtab %}
 
 {% tab title="Transfer physically" %}
@@ -116,13 +123,13 @@ Now you will only be able to access your node remotely using your SSH private ke
 ssh <username>@<node_IP_address> -p 22 -i .ssh/id_ed25519 -v
 ```
 
-### Configure the firewall rules
+### Configure firewall rules
 
-The basic rules we will implement are as follows:
+The basic rules we will implement on your NUC device are:
 
 1. Deny all incoming traffic by default
 2. Allow all outgoing traffic by default
-3. Allow incoming traffic via port \<your\_chosen\_SSH\_port> for SSH access
+3. Allow incoming traffic via port `<your_chosen_SSH_port>` for SSH access
 4. Allow incoming traffic via port 30303 and 30304 for the execution clients to connect with other nodes
 5. Allow incoming traffic via port 9000 and 9001 for the consensus clients to connect with other nodes
 6. Allow incoming traffic via port 3000 and 3001 for Grafana to display monitoring dashboards for your node
