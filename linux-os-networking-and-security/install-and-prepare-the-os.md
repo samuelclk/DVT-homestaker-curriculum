@@ -57,11 +57,13 @@ After we download the ISO file of the latest Ubuntu version, we will need a tool
 
     <figure><img src="../.gitbook/assets/image (103).png" alt=""><figcaption></figcaption></figure>
 
-## Install Ubuntu on your NUC
+## Install Ubuntu on your NUC (Node)
 
 {% hint style="info" %}
 You will need to connect your NUC device to a keyboard and monitor for the installation process
 {% endhint %}
+
+Connect your node to your router using a LAN cable.&#x20;
 
 Plug your bootable USB drive into your NUC device and turn it on. Select `Try or Install Ubuntu` from the boot menu.&#x20;
 
@@ -70,7 +72,7 @@ Plug your bootable USB drive into your NUC device and turn it on. Select `Try or
 Choose the following options when prompted:
 
 1. Install Ubuntu (not Try)
-2. _**Connect to the WIFI network of your Node Router**_
+2. _**Connect to the WIFI network of your router**_
 3. Minimal installation + Download updates while installing Ubuntu
 4. Erase disk and install Ubuntu
 5. Set your username and password + "Require my password to login"
@@ -110,7 +112,7 @@ ip a
 
 Your NUC's IP address will be located under the `wl01` interface - e.g. 192.168.xx.xx.&#x20;
 
-Write this down as you will need to use this IP address to access your NUC remotely and we will call this the `node_IP_address` moving forward.
+**Write this down** as you will need to use this IP address to access your NUC remotely and we will call this the `node_IP_address` moving forward.
 
 You can now access your NUC (`Node`) remotely by running the following command while you are in the Node Router subnet and entering the password of the Node when prompted.
 
