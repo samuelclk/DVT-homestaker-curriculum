@@ -3,7 +3,7 @@
 ## Lido CSM Widget URLS
 
 * **Mainnet:** [https://csm.lido.fi/](https://csm.lido.fi/)
-* **Holesky:** [https://csm.testnet.fi/](https://csm.testnet.fi/)
+* **Hoodi:** [https://csm.testnet.fi/](https://csm.testnet.fi/)
 
 ## Changing Rewards & Manager Address
 

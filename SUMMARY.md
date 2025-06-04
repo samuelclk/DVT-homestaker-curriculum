@@ -152,7 +152,7 @@
 ## Useful resources
 
 * [General resources](useful-resources/general-resources.md)
-* [Holesky Faucets](useful-resources/holesky-faucets.md)
+* [Hoodi Faucets](useful-resources/hoodi-faucets.md)
 
 ## Automation/tools
 

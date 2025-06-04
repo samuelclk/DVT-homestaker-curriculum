@@ -75,10 +75,10 @@ Paste the following contents into the file.
 suggested_fee_recipient: "0x388C818CA8B9251b393131C08a736A67ccB19297"
 ```
 
-* **Holesky**
+* **Hoodi**
 
 ```
-suggested_fee_recipient: "0xE73a3602b99f1f913e72F8bdcBC235e206794Ac8"
+suggested_fee_recipient: "0x9b108015fe433F173696Af3Aa0CF7CDb3E104258"
 ```
 
 `CTRL+O`, `ENTER`, `CTRL+X` to save and exit.
@@ -114,7 +114,7 @@ Add the `--validators-proposer-config` flag and point it to the `proposer_config
 
 ```
 [Unit]
-Description=Teku Validator Client (Holesky)
+Description=Teku Validator Client
 Wants=network-online.target
 After=network-online.target
 
@@ -127,7 +127,7 @@ RestartSec=5
 Environment="JAVA_OPTS=-Xmx6g"
 Environment="TEKU_OPTS=-XX:-HeapDumpOnOutOfMemoryError"
 ExecStart=/usr/local/bin/teku/bin/teku vc \
-  --network=holesky \
+  --network=hoodi \
   --data-path=/var/lib/teku_validator \
   --validator-keys=/var/lib/teku_validator/validator_keystores:/var/lib/teku_validator/keystore_password \
   --beacon-node-api-endpoint=http://<Internal_IP_address>:5051 \
@@ -217,10 +217,10 @@ default_config:
 suggested_fee_recipient: "0x388C818CA8B9251b393131C08a736A67ccB19297"
 ```
 
-* **Holesky**
+* **Hoodi**
 
 ```
-suggested_fee_recipient: "0xE73a3602b99f1f913e72F8bdcBC235e206794Ac8"
+suggested_fee_recipient: "0x9b108015fe433F173696Af3Aa0CF7CDb3E104258"
 ```
 
 `CTRL+O`, `ENTER`, `CTRL+X` to save and exit.
@@ -289,7 +289,7 @@ services:
       - --importKeystoresPassword
       - /var/lib/lodestar_validator/keystore_password/<validator_signing_keystore_password_file_name>.txt
       - --network
-      - holesky
+      - hoodi
       - --beaconNodes
       - http://127.0.0.1:5052
       - --builder
@@ -365,10 +365,10 @@ and add the following line under each keystore as a new line. **Note:** Take not
 suggested_fee_recipient: "0x388C818CA8B9251b393131C08a736A67ccB19297"
 ```
 
-* **Holesky**
+* **Hoodi**
 
 ```
-suggested_fee_recipient: "0xE73a3602b99f1f913e72F8bdcBC235e206794Ac8"
+suggested_fee_recipient: "0x9b108015fe433F173696Af3Aa0CF7CDb3E104258"
 ```
 
 #### Example with Mainnet fee recipient:
@@ -482,10 +482,10 @@ Paste the following contents into the file.
 suggested_fee_recipient: "0x388C818CA8B9251b393131C08a736A67ccB19297"
 ```
 
-* **Holesky**
+* **Hoodi**
 
 ```
-suggested_fee_recipient: "0xE73a3602b99f1f913e72F8bdcBC235e206794Ac8"
+suggested_fee_recipient: "0x9b108015fe433F173696Af3Aa0CF7CDb3E104258"
 ```
 
 `CTRL+O`, `ENTER`, `CTRL+X` to save and exit.
@@ -521,7 +521,7 @@ Add the `--proposer-settings-file` flag and point it to the `proposer_configurat
 
 ```
 [Unit]
-Description=Prysm Validator Client (Holesky)
+Description=Prysm Validator Client
 Wants=network-online.target
 After=network-online.target
 
@@ -533,7 +533,7 @@ Restart=always
 RestartSec=5
 ExecStart=/usr/local/bin/prysmvalidator \
   --accept-terms-of-use \
-  --<holesky_or_mainnet> \
+  --<hoodi_or_mainnet> \
   --datadir=/var/lib/prysm_validator \
   --enable-builder \
   --beacon-rpc-provider=<Internal_IP_address>:4000 \

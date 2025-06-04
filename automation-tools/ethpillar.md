@@ -63,8 +63,8 @@ cat ~/staking-deposit-cli/validator_keys2024-08-23-063857/deposit*json
 
 Run through the first 3 faucets below.
 
-{% content-ref url="../useful-resources/holesky-faucets.md" %}
-[holesky-faucets.md](../useful-resources/holesky-faucets.md)
+{% content-ref url="../useful-resources/hoodi-faucets.md" %}
+[hoodi-faucets.md](../useful-resources/hoodi-faucets.md)
 {% endcontent-ref %}
 
 ### Upload deposit data & provide bond

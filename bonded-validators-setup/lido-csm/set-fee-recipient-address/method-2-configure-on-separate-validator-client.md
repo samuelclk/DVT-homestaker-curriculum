@@ -292,11 +292,11 @@ RestartSec=5
 Environment="JAVA_OPTS=-Xmx8g"
 Environment="TEKU_OPTS=-XX:-HeapDumpOnOutOfMemoryError"
 ExecStart=/usr/local/bin/teku/bin/teku vc \
-  --network=<holesky_or_mainnet> \
+  --network=<hoodi_or_mainnet> \
   --data-path=/var/lib/csm_teku_validator \
   --validator-keys=/var/lib/csm_teku_validator/validator_keystores:/var/lib/csm_teku_validator/keystore_password \
   --beacon-node-api-endpoint=http://<Internal_IP_address>:5051 \
-  --validators-proposer-default-fee-recipient=<holesky_or_mainnet_fee_recipient_address> \
+  --validators-proposer-default-fee-recipient=<hoodi_or_mainnet_fee_recipient_address> \
   --validators-builder-registration-default-enabled=true \
   --validators-graffiti="<your_graffiti>" \
   --metrics-enabled=true \
@@ -311,9 +311,9 @@ Once you're done, save with `Ctrl+O` and `Enter`, then exit with `Ctrl+X`. Under
 
 {% hint style="info" %}
 **Important:** Recall that you will have to use designated fee recipient addresses as a CSM operator.\
-&#xNAN;**- Holesky:** [`0xE73a3602b99f1f913e72F8bdcBC235e206794Ac8`](https://holesky.etherscan.io/address/0xE73a3602b99f1f913e72F8bdcBC235e206794Ac8)
+&#xNAN;**- Mainnet:** [`0x388C818CA8B9251b393131C08a736A67ccB19297`](https://etherscan.io/address/0x388C818CA8B9251b393131C08a736A67ccB19297)
 
-**- Mainnet:** [`0x388C818CA8B9251b393131C08a736A67ccB19297`](https://etherscan.io/address/0x388C818CA8B9251b393131C08a736A67ccB19297)
+**- Hoodi:** [`0x9b108015fe433F173696Af3Aa0CF7CDb3E104258`](https://hoodi.cloud.blockscout.com/address/0x9b108015fe433F173696Af3Aa0CF7CDb3E104258)&#x20;
 {% endhint %}
 
 Refer to the native Teku validator client setup section for more information on the other flags used. &#x20;
@@ -350,7 +350,7 @@ ExecStart=/usr/local/bin/nimbus_validator_client \
   --beacon-node=http://<Internal_IP_address>:5051 \
   --metrics \
   --metrics-port=8108 \
-  --suggested-fee-recipient=<holesky_or_mainnet_fee_recipient_address> \
+  --suggested-fee-recipient=<hoodi_or_mainnet_fee_recipient_address> \
   --graffiti="<your_graffiti>" \
   --doppelganger-detection
 
@@ -362,9 +362,9 @@ Once you're done, save with `Ctrl+O` and `Enter`, then exit with `Ctrl+X`. Under
 
 {% hint style="info" %}
 **Important:** Recall that you will have to use designated fee recipient addresses as a CSM operator.\
-&#xNAN;**- Holesky:** [`0xE73a3602b99f1f913e72F8bdcBC235e206794Ac8`](https://holesky.etherscan.io/address/0xE73a3602b99f1f913e72F8bdcBC235e206794Ac8)
+&#xNAN;**- Mainnet:** [`0x388C818CA8B9251b393131C08a736A67ccB19297`](https://etherscan.io/address/0x388C818CA8B9251b393131C08a736A67ccB19297)
 
-**- Mainnet:** [`0x388C818CA8B9251b393131C08a736A67ccB19297`](https://etherscan.io/address/0x388C818CA8B9251b393131C08a736A67ccB19297)
+**- Hoodi:** [`0x9b108015fe433F173696Af3Aa0CF7CDb3E104258`](https://hoodi.cloud.blockscout.com/address/0x9b108015fe433F173696Af3Aa0CF7CDb3E104258)&#x20;
 {% endhint %}
 
 Refer to the native Nimbus validator client setup section for more information on the other flags used.
@@ -409,14 +409,14 @@ services:
       - --importKeystoresPassword
       - /var/lib/csm_lodestar_validator/keystore_password/<validator_signing_keystore_password_file_name>.txt
       - --network
-      - <holesky_or_mainnet>
+      - <hoodi_or_mainnet>
       - --beaconNodes
       - http://<Internal_IP_address>:5051
       - --builder
       - --builder.boostFactor
       - 100
       - --suggestedFeeRecipient
-      - "<holesky_or_mainnet_fee_recipient_address>"
+      - "<hoodi_or_mainnet_fee_recipient_address>"
       - --doppelgangerProtection
       - --metrics
       - --metrics.port
@@ -433,9 +433,9 @@ Once you're done, save with `Ctrl+O` and `Enter`, then exit with `Ctrl+X`.&#x20;
 
 {% hint style="info" %}
 **Important:** Recall that you will have to use designated fee recipient addresses as a CSM operator.\
-&#xNAN;**- Holesky:** [`0xE73a3602b99f1f913e72F8bdcBC235e206794Ac8`](https://holesky.etherscan.io/address/0xE73a3602b99f1f913e72F8bdcBC235e206794Ac8)
+&#xNAN;**- Mainnet:** [`0x388C818CA8B9251b393131C08a736A67ccB19297`](https://etherscan.io/address/0x388C818CA8B9251b393131C08a736A67ccB19297)
 
-**- Mainnet:** [`0x388C818CA8B9251b393131C08a736A67ccB19297`](https://etherscan.io/address/0x388C818CA8B9251b393131C08a736A67ccB19297)
+**- Hoodi:** [`0x9b108015fe433F173696Af3Aa0CF7CDb3E104258`](https://hoodi.cloud.blockscout.com/address/0x9b108015fe433F173696Af3Aa0CF7CDb3E104258)
 {% endhint %}
 
 Refer to the native Lodestar validator client setup section for more information on the other flags used.
@@ -456,7 +456,7 @@ Paste the configuration parameters below into the file:
 
 ```
 [Unit]
-Description=CSM Lighthouse Validator Client (Holesky)
+Description=CSM Lighthouse Validator Client
 Wants=network-online.target
 After=network-online.target
 
@@ -467,14 +467,14 @@ Type=simple
 Restart=always
 RestartSec=5
 ExecStart=/usr/local/bin/lighthouse vc \
-  --network <holesky_or_mainnet> \
+  --network <hoodi_or_mainnet> \
   --datadir /var/lib/csm_lighthouse_validator \
   --builder-proposals \
   --builder-boost-factor 100 \
   --beacon-nodes http://<Internal_IP_address>:5051 \
   --metrics \
   --metrics-port 8108 \
-  --suggested-fee-recipient <holesky_or_mainnet_fee_recipient_address> \
+  --suggested-fee-recipient <hoodi_or_mainnet_fee_recipient_address> \
   --graffiti="<your_graffiti>" \
   --enable-doppelganger-protection
 
@@ -486,9 +486,9 @@ Once you're done, save with `Ctrl+O` and `Enter`, then exit with `Ctrl+X`. Under
 
 {% hint style="info" %}
 **Important:** Recall that you will have to use designated fee recipient addresses as a CSM operator.\
-&#xNAN;**- Holesky:** [`0xE73a3602b99f1f913e72F8bdcBC235e206794Ac8`](https://holesky.etherscan.io/address/0xE73a3602b99f1f913e72F8bdcBC235e206794Ac8)
+&#xNAN;**- Mainnet:** [`0x388C818CA8B9251b393131C08a736A67ccB19297`](https://etherscan.io/address/0x388C818CA8B9251b393131C08a736A67ccB19297)
 
-**- Mainnet:** [`0x388C818CA8B9251b393131C08a736A67ccB19297`](https://etherscan.io/address/0x388C818CA8B9251b393131C08a736A67ccB19297)
+**- Hoodi:** [`0x9b108015fe433F173696Af3Aa0CF7CDb3E104258`](https://hoodi.cloud.blockscout.com/address/0x9b108015fe433F173696Af3Aa0CF7CDb3E104258)
 {% endhint %}
 
 Refer to the native Lighthouse validator client setup section for more information on the other flags used.
@@ -509,7 +509,7 @@ Paste the configuration parameters below into the file:
 
 ```
 [Unit]
-Description=CSM Prysm Validator Client (Holesky)
+Description=CSM Prysm Validator Client
 Wants=network-online.target
 After=network-online.target
 
@@ -521,7 +521,7 @@ Restart=always
 RestartSec=5
 ExecStart=/usr/local/bin/prysmvalidator \
   --accept-terms-of-use \
-  --<holesky_or_mainnet> \
+  --<hoodi_or_mainnet> \
   --datadir=/var/lib/csm_prysm_validator \
   --enable-builder \
   --beacon-rpc-provider=<Internal_IP_address>:4000 \
@@ -529,7 +529,7 @@ ExecStart=/usr/local/bin/prysmvalidator \
   --wallet-dir=/var/lib/csm_prysm_validator \
   --wallet-password-file=/var/lib/csm_prysm_validator/password.txt \
   --monitoring-port=8108 \
-  --suggested-fee-recipient=<holesky_or_mainnet_fee_recipient_address> \
+  --suggested-fee-recipient=<hoodi_or_mainnet_fee_recipient_address> \
   --graffiti="<your_graffiti>" \
   --enable-doppelganger
 
@@ -541,9 +541,9 @@ Once you're done, save with `Ctrl+O` and `Enter`, then exit with `Ctrl+X`. Under
 
 {% hint style="info" %}
 **Important:** Recall that you will have to use designated fee recipient addresses as a CSM operator.\
-&#xNAN;**- Holesky:** [`0xE73a3602b99f1f913e72F8bdcBC235e206794Ac8`](https://holesky.etherscan.io/address/0xE73a3602b99f1f913e72F8bdcBC235e206794Ac8)
+&#xNAN;**- Mainnet:** [`0x388C818CA8B9251b393131C08a736A67ccB19297`](https://etherscan.io/address/0x388C818CA8B9251b393131C08a736A67ccB19297)
 
-**- Mainnet:** [`0x388C818CA8B9251b393131C08a736A67ccB19297`](https://etherscan.io/address/0x388C818CA8B9251b393131C08a736A67ccB19297)
+**- Hoodi:** [`0x9b108015fe433F173696Af3Aa0CF7CDb3E104258`](https://hoodi.cloud.blockscout.com/address/0x9b108015fe433F173696Af3Aa0CF7CDb3E104258)
 {% endhint %}
 
 Refer to the native Lighthouse validator client setup section for more information on the other flags used.
@@ -578,7 +578,7 @@ sudo journalctl -fu csm_tekuvalidator -o cat | ccze -A
 
 **Expected output:**
 
-<figure><img src="../../../.gitbook/assets/image (55).png" alt=""><figcaption><p>Example output of the Teku VC running on the Goerli testnet. Look out for Holesky in your output.</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (55).png" alt=""><figcaption><p>Example output of the Teku VC running on the Goerli testnet. Look out for Hoodi in your output.</p></figcaption></figure>
 
 Press `CTRL-C` to exit.
 
@@ -794,8 +794,8 @@ Enter your consensus client (beacon node) address. **Example:** http://127.0.0.1
 
 Verify the `fee_recipient` address is set to the `Lido Execution Layer Rewards Vault`.
 
-* **Holesky:** [`0xE73a3602b99f1f913e72F8bdcBC235e206794Ac8`](https://holesky.etherscan.io/address/0xE73a3602b99f1f913e72F8bdcBC235e206794Ac8)
 * **Mainnet:** [`0x388C818CA8B9251b393131C08a736A67ccB19297`](https://etherscan.io/address/0x388C818CA8B9251b393131C08a736A67ccB19297)
+* **Hoodi:** [`0x9b108015fe433F173696Af3Aa0CF7CDb3E104258`](https://hoodi.cloud.blockscout.com/address/0x9b108015fe433F173696Af3Aa0CF7CDb3E104258)
 
 Generate and import CSM validator keys.
 {% endtab %}
