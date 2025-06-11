@@ -35,13 +35,13 @@ On the other hand, if your bond falls below the required minimum, the unbonded k
 <figure><img src="../../.gitbook/assets/image (183).png" alt=""><figcaption></figcaption></figure>
 
 {% hint style="info" %}
-The required minimum bond amount is based on how many of your uploaded validator keys have been deposited by the CSM. Exiting your CSM-deposited keys will not unlock your `Locked bonds`.
+The required minimum bond amount is based on how many of your uploaded validator keys have been deposited by the CSM.
 {% endhint %}
 
 **At this point, there are 2 options you can take:**
 
 1. Top up your bond amount under the `ADD BOND` tab
-2. Wait for new rewards to replenish the bond  amount until it is back to the required level
+2. Wait for new rewards to replenish the bond amount until it is back to the required level
 
 {% hint style="info" %}
 You cannot replenish `Locked bonds` using the `ADD BOND` feature.
@@ -52,6 +52,8 @@ You cannot replenish `Locked bonds` using the `ADD BOND` feature.
 <figure><img src="../../.gitbook/assets/image (184).png" alt=""><figcaption></figcaption></figure>
 
 This tab allows you to replenish your `Locked bonds` due to MEV theft and resume the accruing of your CSM operator rewards.
+
+Exiting your CSM-deposited keys will not unlock your `Locked bonds`.
 
 ## Resources
 
