@@ -120,20 +120,6 @@ ethd config
 6. Set `Rewards Address` to an ERC-20 wallet address that you control (e.g., Metamask, hardware wallet)
 7. `use default` **Graffiti**, `yes` for **generate validator keys**
 
-### Customise ETH Docker Settings
-
-Open up the ETH Docker `.env` file for editing.
-
-```sh
-nano ~/eth-docker/.env
-```
-
-Press `CTRL+W`, type **"SSV\_NODE\_TAG"** and hit `ENTER`.&#x20;
-
-Using the arrow keys & keyboard only, change the value of **SSV\_NODE\_TAG=** from  `latest` to `v2.2.0-unstable.1`
-
-`CTRL+O, ENTER, CTRL+X` to save and exit.
-
 ### Start ETH Docker
 
 ```sh
@@ -274,8 +260,8 @@ docker run -u $(id -u):$(id -g) --rm -v "$(pwd)/:/opt/charon" obolnetwork/charon
 Set the necessary permissions to your newly generated Obol ENR private key and cluster file.
 
 ```sh
-sudo chmod 777 ~/cluster/node0/charon-enr-private-key
-sudo chmod 777 ~/cluster/node0/cluster-lock.json
+sudo chmod 644 ~/cluster/node0/charon-enr-private-key
+sudo chmod 644 ~/cluster/node0/cluster-lock.json
 ```
 
 Copy the following files from one of the cluster folders (e.g., `node0`) above into the `~/eth-docker/.eth` folder and set the necessary permissions.
@@ -317,13 +303,13 @@ Press `CTRL+W`, type **"CL\_NODE"** and hit `ENTER`.&#x20;
 ethd down && ethd up
 ```
 
-Print the generated password of your Obol validator keyshard and copy the output to your clipboard.
+Print the generated password of your Obol validator key shard and copy the output to your clipboard.
 
 ```sh
 cat ~/eth-docker/.eth/validator_keys/keystore*.txt && echo
 ```
 
-After all your services running via Docker "warmed up" for \~5 minutes, import your validator keyshard and paste the password when prompted.
+After all your services running via Docker "warmed up" for \~5 minutes, import your validator key shard and paste the password when prompted.
 
 ```sh
 ethd keys import
@@ -343,7 +329,7 @@ ethd logs validator -f --tail 20
 
 ## Lido CSM Setup
 
-Go to the [Coincashew website](https://www.coincashew.com/coins/overview-eth/ethpillar) and copy the latest 1-line installation command and paste it into your terminal.
+Go to the [Coincashew website](https://docs.coincashew.com/ethpillar) and copy the latest 1-line installation command and paste it into your terminal.
 
 ```sh
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/coincashew/EthPillar/main/install.sh)"
@@ -374,10 +360,10 @@ The links below include the referral IDs of the tools that we are using today to
 {% endhint %}
 
 * **Mainnet:** [https://csm.lido.fi/?ref=ethpillar](https://csm.lido.fi/?ref=ethpillar)
-* **Hoodi:** [https://csm.testnet.fi/?ref=ethpillar](https://csm.lido.fi/?ref=ethpillar)
+* **Hoodi:** [https://csm.testnet.fi/?ref=ethpillar](https://csm.testnet.fi/?ref=ethpillar)
 
 ```sh
-cat $(find ~/ethstaker_deposit-cli -name "deposit*.json" 2>/dev/null)
+cat $(find ~/ethstaker_deposit-cli -name "deposit*.json" 2>/dev/null) && echo
 ```
 
 **Example output:**
@@ -413,7 +399,7 @@ Find the file path of your validator keystores.
 cat $(find /var/lib -name "keystore*.json" 2>/dev/null)
 ```
 
-Copy the output file path.
+**Copy the output file path.**
 
 Run `ethpillar` and navigate to `validator client` >> `exit keys` and input the file path of your validator keystore.
 
