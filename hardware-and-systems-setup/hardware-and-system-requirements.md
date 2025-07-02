@@ -5,7 +5,7 @@ Despite being catered towards home-staking, running an ETH validator node reliab
 ## Minimum requirements
 
 1. CPU: 4 cores, 8 threads
-2. RAM: 32GB&#x20;
+2. RAM: 64 GB&#x20;
 3. Storage:&#x20;
    * 4TB NVME SSD, TLC, DRAM
    * 7000 mbps sequential read/write
