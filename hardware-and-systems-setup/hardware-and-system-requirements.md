@@ -4,9 +4,12 @@ Despite being catered towards home-staking, running an ETH validator node reliab
 
 ## Minimum requirements
 
-1. CPU: Quad core
+1. CPU: 4 cores, 8 threads
 2. RAM: 32GB&#x20;
-3. Storage: 2TB NVME SSD, >15000 read IOPS, >7000 write IOPS, TLC, DRAM
+3. Storage:&#x20;
+   * 4TB NVME SSD, TLC, DRAM
+   * 7000 mbps sequential read/write
+   * 1,000,000 random read/write
 4. Network requirements (Check with ISP):
    * **Volume**: Uncapped or at least 2 TB per month&#x20;
    * **Speeds:** At least 250mb/s shared - \*Your validator node needs dedicated internet speeds of 50 mbps download and 25 mbps upload&#x20;
