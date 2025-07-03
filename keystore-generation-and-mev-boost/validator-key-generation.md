@@ -3,6 +3,7 @@
 ## Important
 
 * It is highly recommended that you perform this step using an air-gapped machine - i.e. a device that has never connected to the public internet before. We will describe a few methods below.
+*
 * If this is not available, turn off all internet and wireless connection (e.g. Ethernet, WiFi, Bluetooth) before proceeding with the key generation step
 * In both cases above, make sure you are in a safe environment (e.g. home or office) with a trusted WiFi network for building the validator key generation tool from source. Make sure to also physically block all camera devices - e.g. laptop cameras, Webcams, people standing behind you during this process
 
@@ -33,12 +34,12 @@ Load the Linux executable file of Wagyu Keygen into a new and empty USB drive.
 {% tab title="Executable binaries" %}
 ### Downloading the executable binary file
 
-Download the latest version of the Ethereum validator deposit key generation binary file **on your working laptop** [here](https://github.com/ethereum/staking-deposit-cli/releases) and verify the checksum of the downloaded zipped file.
+Download the latest version of the Ethereum validator deposit key generation binary file **on your working laptop** [here](https://github.com/ethstaker/ethstaker-deposit-cli/releases) and verify the checksum of the downloaded zipped file.
 
 ```sh
 cd
-curl -LO https://github.com/ethereum/staking-deposit-cli/releases/download/v2.7.0/staking_deposit-cli-fdab65d-linux-amd64.tar.gz
-echo "ac3151843d681c92ae75567a88fbe0e040d53c21368cc1ed1a8c3d9fb29f2a3a staking_deposit-cli-fdab65d-linux-amd64.tar.gz" | sha256sum --check
+curl -LO https://github.com/eth-educators/ethstaker-deposit-cli/releases/download/v1.2.2/ethstaker_deposit-cli-b13dcb9-linux-amd64.tar.gz
+echo "04af3f4fd2fdccf4ae060abde47637622a31114d9f2e53e62722a694a4d5b206 ethstaker_deposit-cli-b13dcb9-linux-amd64.tar.gz" | sha256sum --check
 ```
 
 **Expected output:**
@@ -105,7 +106,7 @@ Move the `Wagyu Keygen` file into the Desktop of your _**"OS-on-a-USB"**_ and ru
 Follow the instructions on the `Wagyu Keygen` GUI to:
 
 1. Create a new secret recovery phrase
-2. Select the network (Mainnet, Holesky, Goerli)
+2. Select the network (Mainnet, Hoodi, Sepolia)
 3. Write down your secret recovery phrase
 4. Type in your secret recovery phrase manually to confirm you have written it down correctly
 5. Choose how many validator keys you want to generate
@@ -115,7 +116,7 @@ Follow the instructions on the `Wagyu Keygen` GUI to:
    2. **Diva Staking:** Skip this section. The validator key shares will be assigned to you by the Diva client.
    3. **Lido CSM:** Set your withdrawal address to the following.
       * **Mainnet:** [`0xB9D7934878B5FB9610B3fE8A5e441e8fad7E293f`](https://etherscan.io/address/0xb9d7934878b5fb9610b3fe8a5e441e8fad7e293f)
-      * **Holesky:** [`0xF0179dEC45a37423EAD4FaD5fCb136197872EAd9`](https://holesky.etherscan.io/address/0xF0179dEC45a37423EAD4FaD5fCb136197872EAd9)
+      * **Hoodi:** [`0x9b108015fe433F173696Af3Aa0CF7CDb3E104258`](https://hoodi.cloud.blockscout.com/address/0x9b108015fe433F173696Af3Aa0CF7CDb3E104258)&#x20;
    4. **RocketPool (WIP):**
    5. **Stader (WIP):**
 8. Confirm password for validator keystores
@@ -163,7 +164,7 @@ Run the following command to generate your validator keys. Replace `<number>` wi
 2. **Diva Staking:** Skip this section. The validator key shares will be assigned to you by the Diva client.
 3. **Lido CSM:** Set your withdrawal address to the following.
    * **Mainnet:** [`0xB9D7934878B5FB9610B3fE8A5e441e8fad7E293f`](https://etherscan.io/address/0xb9d7934878b5fb9610b3fe8a5e441e8fad7e293f)
-   * **Holesky:** [`0xF0179dEC45a37423EAD4FaD5fCb136197872EAd9`](https://holesky.etherscan.io/address/0xF0179dEC45a37423EAD4FaD5fCb136197872EAd9)
+   * **Hoodi:** [`0x9b108015fe433F173696Af3Aa0CF7CDb3E104258`](https://hoodi.cloud.blockscout.com/address/0x9b108015fe433F173696Af3Aa0CF7CDb3E104258)&#x20;
 4. **RocketPool (WIP):**
 5. **Stader (WIP):**
 
@@ -251,12 +252,12 @@ pip3 install -r requirements.txt
 Run the following command to generate your validator keys. Replace `<number>` with the number of validators you want to set up and `<YourWithdrawalAddress>` with the actual withdrawal address depending on your setup choice.
 
 ```bash
-python3 ./staking_deposit/deposit.py new-mnemonic --num_validators <number> --chain holesky --eth1_withdrawal_address <YourWithdrawalAddress>
+python3 ./staking_deposit/deposit.py new-mnemonic --num_validators <number> --chain hoodi --eth1_withdrawal_address <YourWithdrawalAddress>
 ```
 
 1. **Native Solo Staking Setup:** Use a secure Ethereum wallet address that you own--e.g., cold wallet address, SAFE multi-sig address
 2. **Diva Staking:** Skip this section. The validator key shares will be assigned to you by the Diva client.
-3. **Lido CSM:** On the `Holesky` testnet, set your withdrawal address to the Lido CSM contract address --[`0xF0179dEC45a37423EAD4FaD5fCb136197872EAd9`](https://holesky.etherscan.io/address/0xF0179dEC45a37423EAD4FaD5fCb136197872EAd9)&#x20;
+3. **Lido CSM:** On the `Hoodi` testnet, set your withdrawal address to the Lido CSM contract address [`0x9b108015fe433F173696Af3Aa0CF7CDb3E104258`](https://hoodi.cloud.blockscout.com/address/0x9b108015fe433F173696Af3Aa0CF7CDb3E104258)&#x20;
 4. **RocketPool (WIP):**
 5. **Stader (WIP):**
 
