@@ -17,13 +17,13 @@ Print the contents of the `deposit_data.json` file on your node machine, then co
 * Identify the actual file name of your `deposit_data.json` file on your node
 
 ```sh
-ls ~/validator_keys
+ls ~/ethstaker_deposit-cli*/validator_keys
 ```
 
 * **Print the contents:**
 
 ```sh
-sudo cat ~/validator_keys/deposit_data-<timestamp>.json
+cat ~/ethstaker_deposit-cli*/validator_keys/deposit_data-<timestamp>.json
 #replace <timestamp> with the actual numbers in your file name
 ```
 {% endtab %}
