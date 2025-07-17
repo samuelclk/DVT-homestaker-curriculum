@@ -16,10 +16,10 @@ Instead, you simply tweak the parameters of the following steps of the native so
 {% tab title="Existing Solo Stakers" %}
 1. [Generate new validator keys](generating-csm-keystores.md) while setting the `withdrawal_address` to the  [Lido withdrawal vault](https://holesky.etherscan.io/address/0xF0179dEC45a37423EAD4FaD5fCb136197872EAd9).
    * **Mainnet:** [`0xB9D7934878B5FB9610B3fE8A5e441e8fad7E293f`](https://etherscan.io/address/0xb9d7934878b5fb9610b3fe8a5e441e8fad7e293f)
-   * **Hoodi:** [`0x4473dCDDbf77679A643BdB654dbd86D67F8d32f2`](https://hoodi.cloud.blockscout.com/address/0x4473dCDDbf77679A643BdB654dbd86D67F8d32f2)&#x20;
+   * **Hoodi:** [`0x4473dCDDbf77679A643BdB654dbd86D67F8d32f2` ](https://hoodi.etherscan.io/address/0x4473dcddbf77679a643bdb654dbd86d67f8d32f2)
 2. For the validator client, set the `fee_recipient` flag to the Lido Execution Layer Rewards Vault either [on the validator key level](set-fee-recipient-address/method-1-configure-on-validator-keys.md) or [configuring a separate validator client.](set-fee-recipient-address/method-2-configure-on-separate-validator-client.md)
    * **Mainnet:** [`0x388C818CA8B9251b393131C08a736A67ccB19297`](https://etherscan.io/address/0x388C818CA8B9251b393131C08a736A67ccB19297)
-   * **Hoodi :** [`0x9b108015fe433F173696Af3Aa0CF7CDb3E104258`](https://hoodi.cloud.blockscout.com/address/0x9b108015fe433F173696Af3Aa0CF7CDb3E104258)&#x20;
+   * **Hoodi :** [`0x9b108015fe433F173696Af3Aa0CF7CDb3E104258`](https://hoodi.etherscan.io/address/0x4473dcddbf77679a643bdb654dbd86d67f8d32f2)&#x20;
 3. Import the newly generated CSM keystores1
 4. For the [MEV-Boost service](../../keystore-generation-and-mev-boost/set-up-and-configure-mev-boost.md),
    1. the`-min-bid` flag may be configured either at MEV-Boost level or at the CL client, the current acceptable maximum value for min-bid is `0.07` [based on community consensus](https://research.lido.fi/t/lido-node-operator-mev-boost-min-bid-guidance/3347) and may change.&#x20;
@@ -41,22 +41,22 @@ Instead, you simply tweak the parameters of the following steps of the native so
 1. Follow this guide from [Setup Overview](../../hardware-and-systems-setup/setup-overview.md) until you have your[ execution](../../installing-and-configuring-your-el+cl-clients/set-up-and-configure-execution-layer-client/) and [consensus client ](../../installing-and-configuring-your-el+cl-clients/set-up-and-configure-consensus-layer-client/)set up
 2. [Generate new validator keys](generating-csm-keystores.md) while setting the `withdrawal_address` to the  [Lido withdrawal vault](https://holesky.etherscan.io/address/0xF0179dEC45a37423EAD4FaD5fCb136197872EAd9).
    * **Mainnet:** [`0xB9D7934878B5FB9610B3fE8A5e441e8fad7E293f`](https://etherscan.io/address/0xb9d7934878b5fb9610b3fe8a5e441e8fad7e293f)
-   * **Holesky:** [`0xF0179dEC45a37423EAD4FaD5fCb136197872EAd9`](https://holesky.etherscan.io/address/0xF0179dEC45a37423EAD4FaD5fCb136197872EAd9)
+   * **Hoodi:** [`0x4473dCDDbf77679A643BdB654dbd86D67F8d32f2`](https://hoodi.etherscan.io/address/0x4473dcddbf77679a643bdb654dbd86d67f8d32f2#code)
 3. For the validator client,
    1. Set the `fee_recipient` flag to the Lido Execution Layer Rewards Vault either [on the validator key level](set-fee-recipient-address/method-1-configure-on-validator-keys.md) or [configuring a separate validator client.](set-fee-recipient-address/method-2-configure-on-separate-validator-client.md)
       * **Mainnet:** [`0x388C818CA8B9251b393131C08a736A67ccB19297`](https://etherscan.io/address/0x388C818CA8B9251b393131C08a736A67ccB19297)
-      * **Holesky :** [`0xE73a3602b99f1f913e72F8bdcBC235e206794Ac8`](https://holesky.etherscan.io/address/0xE73a3602b99f1f913e72F8bdcBC235e206794Ac8)
-4. Import the newly generated CSM keystores
-5. For the [MEV-Boost service](../../keystore-generation-and-mev-boost/set-up-and-configure-mev-boost.md),&#x20;
+      * **Hoodi :** [`0x4473dCDDbf77679A643BdB654dbd86D67F8d32f2`](https://hoodi.etherscan.io/address/0x4473dcddbf77679a643bdb654dbd86d67f8d32f2#code)
+   2. Import the newly generated CSM keystores
+4. For the [MEV-Boost service](../../keystore-generation-and-mev-boost/set-up-and-configure-mev-boost.md),&#x20;
    1. the`-min-bid` flag may be configured either at MEV-Boost level or at the CL client, the current acceptable maximum value for min-bid is `0.07` [based on community consensus](https://research.lido.fi/t/lido-node-operator-mev-boost-min-bid-guidance/3347) and may change.&#x20;
    2. On the consensus layer client, set the `builder-boost-factor` (or equivalent flags) to `100%.` i.e., local and builder payloads should be treated with equal weights.&#x20;
    3. The `-relay` flags should be set to a list of values only using relays from the the [list of Vetted MEV-Boost Relays for Lido CSM](https://enchanted-direction-844.notion.site/6d369eb33f664487800b0dedfe32171e?v=8e5d1f1276b0493caea8a2aa1517ed65) (refer to "_**Key settings to note**_" section).
       1. **Mainnet:** Select **"Mainnet Active + Vetted"** tab. _You can choose only from relays tagged with `(must use some)` and `(may use)`, and must choose at least one tagged with `(must use some)`._&#x20;
-      2. **Holesky :** Select **"Holesky Only"** tab
-6. [Upload the newly generated deposit data file](upload-remove-view-validator-keys.md) pertaining to your CSM keystores onto the Lido CSM Widget and provide the required bond amount in ETH/stETH/wstETH
+      2. **Hoodi :** Select **"Hoodi Only"** tab
+5. [Upload the newly generated deposit data file](upload-remove-view-validator-keys.md) pertaining to your CSM keystores onto the Lido CSM Widget and provide the required bond amount in ETH/stETH/wstETH
    * **Mainnet:** [https://csm.lido.fi/](https://csm.lido.fi/)
-   * **Holesky :** [https://csm.testnet.fi/](https://csm.testnet.fi/)
-7. Wait for your CSM validator keys to be deposited by Lido and make sure your node remains online in the meantime!
+   * **Hoodi:** [https://csm.testnet.fi/](https://csm.testnet.fi/)
+6. Wait for your CSM validator keys to be deposited by Lido and make sure your node remains online in the meantime!
 
 {% hint style="info" %}
 **DO NOT DEPOSIT 32 ETH** using the deposit data file generated this way as the Lido CSM will make the deposit for you. _**Doing so will result in a loss of funds.**_
