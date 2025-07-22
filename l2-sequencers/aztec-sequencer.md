@@ -2,7 +2,7 @@
 
 ## Install dependencies
 
-General updates, git, docker.&#x20;
+General updates, curl, git, docker.&#x20;
 
 ```
 sudo apt update -y && sudo apt upgrade -y
@@ -164,7 +164,7 @@ L1_CHAIN_ID="11155111"
 
 ### Wait for ETH Sepolia Execution Client to fully sync
 
-Takes \~3 hours to sync. Check with this command.
+Takes \~6 hours to sync. Check with this command.
 
 ```
 curl -X POST -H "Content-Type: application/json" --data '{"jsonrpc":"2.0","method":"eth_syncing","params":[],"id":1}' http://localhost:8545
@@ -184,7 +184,7 @@ curl -X POST -H "Content-Type: application/json" --data '{"jsonrpc":"2.0","metho
 
 </details>
 
-### Start Aztec Sequencer
+## Start Aztec Sequencer
 
 Start command.
 
@@ -209,3 +209,17 @@ Add your address as an L1 validator.
   --attester $VALIDATOR_PUBLIC_KEY \
   --proposer-eoa $VALIDATOR_PUBLIC_KEY
 </code></pre>
+
+## Open Ports
+
+Open port 40400 on your device.
+
+```
+sudo ufw allow 40400
+```
+
+Forward port 40400 on your router to your node. Refer to the page below for **Port Forwarding** steps.
+
+{% content-ref url="../tips/advanced-networking.md" %}
+[advanced-networking.md](../tips/advanced-networking.md)
+{% endcontent-ref %}
