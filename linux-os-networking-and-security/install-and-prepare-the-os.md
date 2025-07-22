@@ -9,7 +9,7 @@ Now that you have assembled your hardware, you will need to install the Ubuntu O
 1. Prepare a new USB drive of at least 8GB
 2. On your working laptop, download the latest version of Ubuntu here (this might take around 30 minute&#x73;**)** - [https://ubuntu.com/download/desktop](https://ubuntu.com/download/desktop) -&#x20;
 
-<figure><img src="../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
 
 1. Once the download is complete, you will need to verify the checksum of the downloaded file to ensure it has not been tampered with during the download&#x20;
 
@@ -17,7 +17,7 @@ Now that you have assembled your hardware, you will need to install the Ubuntu O
 
 Click on "verify your download" and you should see a window appearing.
 
-<figure><img src="../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 Open up your terminal (Mac) or Windows Power Shell (Windows) and run the following commands.
 

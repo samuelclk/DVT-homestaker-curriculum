@@ -135,7 +135,6 @@
 ## Mainnet
 
 * [Mainnet Deployment](mainnet/mainnet-deployment.md)
-* [Heroglpyhs (WIP)](mainnet/heroglpyhs-wip.md)
 
 ## Best practices
 
@@ -167,3 +166,7 @@
 ## Solo Stakers Guild
 
 * [Lido CSM+SSV+Obol (Testnet)](solo-stakers-guild/lido-csm+ssv+obol-testnet.md)
+
+## L2 Sequencers
+
+* [Aztec Sequencer](l2-sequencers/aztec-sequencer.md)
