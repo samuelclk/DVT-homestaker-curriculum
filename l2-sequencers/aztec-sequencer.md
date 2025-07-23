@@ -1,5 +1,9 @@
 # Aztec Sequencer
 
+{% hint style="success" %}
+Both new and existing Ethereum node operators can use the exact same flow on this page.
+{% endhint %}
+
 ## Hardware Requirements
 
 <table><thead><tr><th width="128">Component</th><th>ETH Sepolia</th><th>Aztec Sequencer</th><th>Total</th></tr></thead><tbody><tr><td><strong>CPU</strong></td><td>8 cores</td><td>4 cores</td><td>12 cores</td></tr><tr><td><strong>RAM</strong></td><td>16GB</td><td>16GB</td><td>32GB</td></tr><tr><td><strong>Disk</strong></td><td>1TB</td><td>1TB</td><td>2TB</td></tr><tr><td><strong>Networking</strong></td><td>-</td><td>-</td><td>25Mbps up/down</td></tr></tbody></table>
