@@ -8,7 +8,7 @@
 
 General updates, curl, git, docker.&#x20;
 
-```
+```sh
 sudo apt update -y && sudo apt upgrade -y
 sudo apt install git curl -y
 curl -fsSL https://get.docker.com -o get-docker.sh
@@ -17,7 +17,7 @@ sh get-docker.sh
 
 Add your current user to the docker group, then restart your device to apply the change.&#x20;
 
-```
+```sh
 sudo usermod -aG docker $USER
 sudo reboot 0
 ```
@@ -26,26 +26,26 @@ sudo reboot 0
 
 Download a copy of Eth Docker and name it `sepolia-eth-docker` to avoid conflicting with any existing mainnet versions.&#x20;
 
-```
+```sh
 cd ~ && git clone https://github.com/eth-educators/eth-docker.git sepolia-eth-docker && cd sepolia-eth-docker
 ```
 
 Install Eth Docker if you have not done so previously.
 
-```
+```sh
 cd ~/sepolia-eth-docker
 ./ethd install
 ```
 
 Call this shortcut `sepethd` and enable running it from anywhere in your terminal.
 
-```
+```sh
 echo 'alias sepethd="~/sepolia-eth-docker/ethd"' >> ~/.bash_profile && source ~/.bash_profile
 ```
 
 Configure Eth Docker.
 
-```
+```sh
 sepethd config
 ```
 
@@ -69,7 +69,7 @@ sepethd config
 
 Expose RPC and REST endpoints of your Execution and Consensus clients.
 
-```
+```sh
 nano ~/sepolia-eth-docker/.env
 ```
 
@@ -81,7 +81,7 @@ nano ~/sepolia-eth-docker/.env
 
 Start Eth Docker.
 
-```
+```sh
 sepethd up
 ```
 
@@ -107,19 +107,19 @@ sepethd logs consensus -f -tail 20
 
 Download installer script.
 
-```
+```sh
 bash -i <(curl -s https://install.aztec.network)
 ```
 
 Enable running `aztec` from anywhere in your terminal.
 
-```
+```sh
 echo 'export PATH="$HOME/.aztec/bin:$PATH"' >> ~/.bash_profile && source ~/.bash_profile
 ```
 
 Install the latest testnet version of aztec.
 
-```
+```sh
 aztec-up -v 1.1.2
 ```
 
@@ -129,7 +129,7 @@ aztec-up -v 1.1.2
 
 1\) Get the public IP address of your device
 
-```
+```sh
 curl api.ipify.org
 ```
 
@@ -151,7 +151,7 @@ Get at least 0.01 Sepolia ETH sent to `Wallet #2` from the following faucets.
 
 Create a new `aztec` folder and an environment variables file.
 
-```
+```sh
 cd
 mkdir aztec
 cd aztec
@@ -188,7 +188,7 @@ L1_CHAIN_ID="11155111"
 
 Takes \~6 hours to sync. Check with this command.
 
-```
+```sh
 curl -X POST -H "Content-Type: application/json" --data '{"jsonrpc":"2.0","method":"eth_syncing","params":[],"id":1}' http://localhost:8545
 ```
 
@@ -210,7 +210,7 @@ curl -X POST -H "Content-Type: application/json" --data '{"jsonrpc":"2.0","metho
 
 Open port 5052, 8545, 40400 on your device.
 
-```
+```sh
 sudo ufw allow 5052
 sudo ufw allow 8545
 sudo ufw allow 40400
@@ -218,13 +218,13 @@ sudo ufw allow 40400
 
 Create docker compose file.
 
-```
+```sh
 nano ~/aztec/docker-compose.yml
 ```
 
 Paste the following contents.
 
-```
+```yaml
 name: aztec-node
 services:
   node:
@@ -253,7 +253,7 @@ services:
 
 Start command.
 
-```
+```sh
 cd ~/aztec
 source .env
 docker compose up -d
@@ -261,7 +261,7 @@ docker compose up -d
 
 Monitor for errors. `CTRL+C` to exit monitoring view.
 
-```
+```sh
 docker logs aztec-node-node-1 -f --tail 20
 ```
 
