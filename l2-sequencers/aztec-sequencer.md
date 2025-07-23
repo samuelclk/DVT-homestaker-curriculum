@@ -247,6 +247,7 @@ services:
       VALIDATOR_PRIVATE_KEY: $VALIDATOR_PRIVATE_KEY
       COINBASE: $COINBASE
       P2P_IP: $P2P_IP
+      SYNC_MODE: "full" #Sync via L1
       LOG_LEVEL: info
     entrypoint: >
       sh -c 'node --no-warnings /usr/src/yarn-project/aztec/dest/bin/index.js start --network alpha-testnet start --node --archiver --sequencer'
