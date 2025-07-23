@@ -2,11 +2,11 @@
 description: Complete end-to-end guide for new and existing Ethereum node operators
 ---
 
-# Aztec Validator
+# Aztec Sequencer
 
 ## Hardware Requirements
 
-<table><thead><tr><th width="128">Component</th><th>ETH Sepolia</th><th>Aztec validator</th><th>Total</th></tr></thead><tbody><tr><td><strong>CPU</strong></td><td>8 cores</td><td>4 cores</td><td>12 cores</td></tr><tr><td><strong>RAM</strong></td><td>16GB</td><td>16GB</td><td>32GB</td></tr><tr><td><strong>Disk</strong></td><td>1TB</td><td>1TB</td><td>2TB</td></tr><tr><td><strong>Networking</strong></td><td>-</td><td>-</td><td>25Mbps up/down</td></tr></tbody></table>
+<table><thead><tr><th width="128">Component</th><th>ETH Sepolia</th><th>Aztec sequencer</th><th>Total</th></tr></thead><tbody><tr><td><strong>CPU</strong></td><td>8 cores</td><td>4 cores</td><td>12 cores</td></tr><tr><td><strong>RAM</strong></td><td>16GB</td><td>16GB</td><td>32GB</td></tr><tr><td><strong>Disk</strong></td><td>1TB</td><td>1TB</td><td>2TB</td></tr><tr><td><strong>Networking</strong></td><td>-</td><td>-</td><td>25Mbps up/down</td></tr></tbody></table>
 
 Procure & assemble your hardware **(open in new tab).**
 
@@ -113,7 +113,7 @@ sepethd logs consensus -f -tail 20
 
 </details>
 
-## Install Aztec validator service
+## Install Aztec sequencer service
 
 Download installer script.
 
@@ -216,7 +216,7 @@ curl -X POST -H "Content-Type: application/json" --data '{"jsonrpc":"2.0","metho
 
 </details>
 
-## Start Aztec Validator
+## Start Aztec Sequencer
 
 Open port 5052, 8545, 40400 on your device.
 
@@ -291,7 +291,7 @@ In this case, **3267** is the latest block number of your Aztec validator.
 
 </details>
 
-## Register your Aztec validator
+## Register your Aztec Validator (Sequencer)
 
 ### Complete ZK-KYC
 

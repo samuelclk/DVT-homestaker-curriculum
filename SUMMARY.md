@@ -169,4 +169,4 @@
 
 ## L2 Sequencers
 
-* [Aztec Validator](l2-sequencers/aztec-validator.md)
+* [Aztec Sequencer](l2-sequencers/aztec-sequencer.md)
