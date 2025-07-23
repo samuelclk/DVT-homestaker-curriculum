@@ -1,5 +1,9 @@
 # Aztec Sequencer
 
+## Hardware Requirements
+
+<table><thead><tr><th width="128">Component</th><th>ETH Sepolia</th><th>Aztec Sequencer</th><th>Total</th></tr></thead><tbody><tr><td><strong>CPU</strong></td><td>8 cores</td><td>4 cores</td><td>12 cores</td></tr><tr><td><strong>RAM</strong></td><td>16GB</td><td>16GB</td><td>32GB</td></tr><tr><td><strong>Disk</strong></td><td>1TB</td><td>1TB</td><td>2TB</td></tr><tr><td><strong>Networking</strong></td><td>-</td><td>-</td><td>25Mbps up/down</td></tr></tbody></table>
+
 ## Install dependencies
 
 General updates, curl, git, docker.&#x20;
@@ -20,29 +24,29 @@ sudo reboot 0
 
 ## Prepare ETH Sepolia Node
 
-Download Eth Docker.
+Download a copy of Eth Docker and name it `sepolia-eth-docker` to avoid conflicting with any existing mainnet versions.&#x20;
 
 ```
-cd ~ && git clone https://github.com/eth-educators/eth-docker.git && cd eth-docker
+cd ~ && git clone https://github.com/eth-educators/eth-docker.git sepolia-eth-docker && cd sepolia-eth-docker
 ```
 
-Install Eth Docker.
+Install Eth Docker if you have not done so previously.
 
 ```
-cd ~/eth-docker
+cd ~/sepolia-eth-docker
 ./ethd install
 ```
 
-Enable running ethd from anywhere in your terminal.
+Call this shortcut `sepethd` and enable running it from anywhere in your terminal.
 
 ```
-source ~/.profile
+echo 'alias sepethd="~/sepolia-eth-docker/ethd"' >> ~/.bash_profile && source ~/.bash_profile
 ```
 
 Configure Eth Docker.
 
 ```
-ethd config
+sepethd config
 ```
 
 **Main options:**
@@ -66,7 +70,7 @@ ethd config
 Expose RPC and REST endpoints of your Execution and Consensus clients.
 
 ```
-nano ~/eth-docker/.env
+nano ~/sepolia-eth-docker/.env
 ```
 
 * Append `:el-shared.yml:cl-shared.yml` in the `COMPOSE_FILE` line.
@@ -78,8 +82,26 @@ nano ~/eth-docker/.env
 Start Eth Docker.
 
 ```
-ethd up
+sepethd up
 ```
+
+<details>
+
+<summary>Monitor logs</summary>
+
+Execution client. `CTRL+C` to exit monitoring view.
+
+```
+sepethd logs execution -f -tail 20
+```
+
+Consensus client. `CTRL+C` to exit monitoring view.
+
+```
+sepethd logs consensus -f -tail 20
+```
+
+</details>
 
 ## Install Aztec Sequencer service
 
@@ -98,7 +120,7 @@ echo 'export PATH="$HOME/.aztec/bin:$PATH"' >> ~/.bash_profile && source ~/.bash
 Install the latest testnet version of aztec.
 
 ```
-aztec-up -v 0.87.9
+aztec-up -v 1.1.2
 ```
 
 ## Prepare your Aztec sequencer paramaters&#x20;
@@ -111,19 +133,19 @@ aztec-up -v 0.87.9
 curl api.ipify.org
 ```
 
-2\) Wallet #1 public address to receive block rewards: `Copy from your wallet interface.`
+2\) `Wallet #1` public address to receive block rewards: `Copy from your wallet interface.`
 
-3\) Wallet #2 public address to register as an Aztec validator: `Copy from your wallet interface.`
+3\) `Wallet #2` public address to register as an Aztec validator: `Copy from your wallet interface.`
 
-4\) Wallet #2 private key to use with Aztec validator: `On Metamask, select a hot wallet address >> click on the "three lines" menu >> Account details >> Details >> Show private key`
+4\) `Wallet #2` private key to use with Aztec validator: `On Metamask, select a hot wallet address >> click on the "three lines" menu >> Account details >> Details >> Show private key`
 
 ### Get Sepolia Testnet ETH
 
 Get at least 0.01 Sepolia ETH sent to `Wallet #2` from the following faucets.
 
-1\) Google Faucet: [https://cloud.google.com/application/web3/faucet/ethereum/sepolia](https://cloud.google.com/application/web3/faucet/ethereum/sepolia)
+**1) Google Faucet:** [https://cloud.google.com/application/web3/faucet/ethereum/sepolia](https://cloud.google.com/application/web3/faucet/ethereum/sepolia)
 
-2\) PK910 POW Faucet: [https://sepolia-faucet.pk910.de/](https://sepolia-faucet.pk910.de/)
+**2) PK910 POW Faucet:** [https://sepolia-faucet.pk910.de/](https://sepolia-faucet.pk910.de/)
 
 ### Set the environment variables
 
@@ -176,7 +198,7 @@ curl -X POST -H "Content-Type: application/json" --data '{"jsonrpc":"2.0","metho
 
 **Synced:**
 
-`"False"`
+`{"jsonrpc":"2.0","result":false,"id":1}`
 
 **Still syncing:**
 
@@ -186,39 +208,79 @@ curl -X POST -H "Content-Type: application/json" --data '{"jsonrpc":"2.0","metho
 
 ## Start Aztec Sequencer
 
-Start command.
+Open port 5052, 8545, 40400 on your device.
 
 ```
-source .env
-aztec start --node --archiver --sequencer \
-  --network alpha-testnet \
-  --l1-rpc-urls $ETHEREUM_HOSTS \
-  --l1-consensus-host-urls $L1_CONSENSUS_HOST_URLS \
-  --sequencer.validatorPrivateKey $VALIDATOR_PRIVATE_KEY \
-  --sequencer.coinbase $COINBASE \
-  --p2p.p2pIp $P2P_IP
-```
-
-Add your address as an L1 validator.
-
-<pre><code><strong>aztec add-l1-validator \
-</strong>  --staking-asset-handler=$STAKING_ASSET_HANDLER \
-  --l1-rpc-urls $ETHEREUM_HOSTS \
-  --l1-chain-id $L1_CHAIN_ID \
-  --private-key $VALIDATOR_PRIVATE_KEY \
-  --attester $VALIDATOR_PUBLIC_KEY \
-  --proposer-eoa $VALIDATOR_PUBLIC_KEY
-</code></pre>
-
-## Open Ports
-
-Open port 40400 on your device.
-
-```
+sudo ufw allow 5052
+sudo ufw allow 8545
 sudo ufw allow 40400
 ```
 
-Forward port 40400 on your router to your node. Refer to the page below for **Port Forwarding** steps.
+Create docker compose file.
+
+```
+nano ~/aztec/docker-compose.yml
+```
+
+Paste the following contents.
+
+```
+name: aztec-node
+services:
+  node:
+    network_mode: host # Optional, run with host networking
+    image: aztecprotocol/aztec:1.1.2
+    environment:
+      ETHEREUM_HOSTS: $ETHEREUM_HOSTS
+      L1_CONSENSUS_HOST_URLS: $L1_CONSENSUS_HOST_URLS
+      DATA_DIRECTORY: /data
+      VALIDATOR_PRIVATE_KEY: $VALIDATOR_PRIVATE_KEY
+      COINBASE: $COINBASE
+      P2P_IP: $P2P_IP
+      LOG_LEVEL: info
+    entrypoint: >
+      sh -c 'node --no-warnings /usr/src/yarn-project/aztec/dest/bin/index.js start --network alpha-testnet start --node --archiver --sequencer'
+    ports:
+      - 40400:40400/tcp
+      - 40400:40400/udp
+      - 8080:8080
+
+    volumes:
+      - /home/my-node/node:/data # Local directory
+```
+
+`CTRL+O`, `ENTER`, `CTRL+X` to save and exit.
+
+Start command.
+
+```
+cd ~/aztec
+source .env
+docker compose up -d
+```
+
+Monitor for errors. `CTRL+C` to exit monitoring view.
+
+```
+docker logs aztec-node-node-1 -f --tail 20
+```
+
+## Register your Aztec validator
+
+### Complete ZK-KYC
+
+* Join [Aztec Discord](https://discord.com/invite/aztec)
+* Download [zkPassport](https://zkpassport.id/) on mobile and register your zkID
+* Go to [https://testnet.aztec.network/add-validator](https://testnet.aztec.network/add-validator) and input your Passport's issuing country, issue date, and expiry date&#x20;
+* Connect the wallet you used as your Aztec validator earlier (`Wallet #2`)
+* Verify proof of humanity by scanning the QR code with the zkPassport app mobile app
+* Register your validator and sign the transaction
+* Input your discord handle to claim the `Explorer` role.
+* Hit **Submit**. View your FIFO validator queue by searching for your address: [https://dashtec.xyz/](https://dashtec.xyz/)
+
+## Port Forwarding
+
+Forward port 40400 on your home/office router to your node. Refer to the page below for **Port Forwarding** steps.
 
 {% content-ref url="../tips/advanced-networking.md" %}
 [advanced-networking.md](../tips/advanced-networking.md)
