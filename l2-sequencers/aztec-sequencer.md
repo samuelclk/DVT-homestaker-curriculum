@@ -4,15 +4,25 @@ description: Complete end-to-end guide for new and existing Ethereum node operat
 
 # Aztec Sequencer
 
-## Hardware Requirements
+## Hardware Requirements (Testnet)
+
+* CPU: 8 cores
+* RAM: 16GB
+* SSD: 1TB
+
+{% hint style="success" %}
+You can set this up using the same machine as your Mainnet Ethereum node if you have 32GB of RAM & 4TB SSD
+{% endhint %}
+
+<details>
+
+<summary>Proposed hardware requirements for Mainnet</summary>
 
 <table><thead><tr><th width="128">Component</th><th>ETH Sepolia</th><th>Aztec sequencer</th><th>Total</th></tr></thead><tbody><tr><td><strong>CPU</strong></td><td>8 cores</td><td>4 cores</td><td>12 cores</td></tr><tr><td><strong>RAM</strong></td><td>16GB</td><td>16GB</td><td>32GB</td></tr><tr><td><strong>Disk</strong></td><td>1TB</td><td>1TB</td><td>2TB</td></tr><tr><td><strong>Networking</strong></td><td>-</td><td>-</td><td>25Mbps up/down</td></tr></tbody></table>
 
-Procure & assemble your hardware **(open in new tab).**
+[Guide to procure & assemble your hardware](../hardware-and-systems-setup/procuring-your-hardware.md) **(open in new tab).**
 
-{% content-ref url="../hardware-and-systems-setup/procuring-your-hardware.md" %}
-[procuring-your-hardware.md](../hardware-and-systems-setup/procuring-your-hardware.md)
-{% endcontent-ref %}
+</details>
 
 ## Install dependencies
 
@@ -86,6 +96,22 @@ nano ~/sepolia-eth-docker/.env
 * Append `:el-shared.yml:cl-shared.yml` in the `COMPOSE_FILE` line.
 
 <figure><img src="../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+
+<details>
+
+<summary>Additional edits for those who are already running a Mainnet or Hoodi Ethereum node on the same machine</summary>
+
+* Press `CTRL+W` and search for **EL\_P2P\_PORT.** Then, replace the value with `30305`
+
+- Press `CTRL+W` and search for **CL\_P2P\_PORT.** Then, replace the value with `9001`
+
+* Press `CTRL+W` and search for **EL\_RPC\_PORT.** Then, replace the value with `8547`
+
+- Press `CTRL+W` and search for **CL\_REST\_PORT.** Then, replace the value with `5053`
+
+Scroll and search manually if `CTRL+W` does not work for you. This avoid port conflicts with your existing setup.&#x20;
+
+</details>
 
 &#x20;`CTRL+O`, `ENTER`, `CTRL+X` to save and exit.
 
