@@ -1,8 +1,8 @@
-# Aztec Validator
+---
+description: Complete end-to-end guide for new and existing Ethereum node operators
+---
 
-{% hint style="success" %}
-Both new and existing Ethereum node operators can use the exact same flow on this page.
-{% endhint %}
+# Aztec Validator
 
 ## Hardware Requirements
 
