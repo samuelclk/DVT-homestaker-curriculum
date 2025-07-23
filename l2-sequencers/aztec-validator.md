@@ -1,4 +1,4 @@
-# Aztec Sequencer
+# Aztec Validator
 
 {% hint style="success" %}
 Both new and existing Ethereum node operators can use the exact same flow on this page.
@@ -6,7 +6,7 @@ Both new and existing Ethereum node operators can use the exact same flow on thi
 
 ## Hardware Requirements
 
-<table><thead><tr><th width="128">Component</th><th>ETH Sepolia</th><th>Aztec Sequencer</th><th>Total</th></tr></thead><tbody><tr><td><strong>CPU</strong></td><td>8 cores</td><td>4 cores</td><td>12 cores</td></tr><tr><td><strong>RAM</strong></td><td>16GB</td><td>16GB</td><td>32GB</td></tr><tr><td><strong>Disk</strong></td><td>1TB</td><td>1TB</td><td>2TB</td></tr><tr><td><strong>Networking</strong></td><td>-</td><td>-</td><td>25Mbps up/down</td></tr></tbody></table>
+<table><thead><tr><th width="128">Component</th><th>ETH Sepolia</th><th>Aztec validator</th><th>Total</th></tr></thead><tbody><tr><td><strong>CPU</strong></td><td>8 cores</td><td>4 cores</td><td>12 cores</td></tr><tr><td><strong>RAM</strong></td><td>16GB</td><td>16GB</td><td>32GB</td></tr><tr><td><strong>Disk</strong></td><td>1TB</td><td>1TB</td><td>2TB</td></tr><tr><td><strong>Networking</strong></td><td>-</td><td>-</td><td>25Mbps up/down</td></tr></tbody></table>
 
 Procure & assemble your hardware **(open in new tab).**
 
@@ -113,7 +113,7 @@ sepethd logs consensus -f -tail 20
 
 </details>
 
-## Install Aztec Sequencer service
+## Install Aztec validator service
 
 Download installer script.
 
@@ -133,7 +133,7 @@ Install the latest testnet version of aztec.
 aztec-up -v 1.1.2
 ```
 
-## Prepare your Aztec sequencer paramaters&#x20;
+## Prepare your Aztec paramaters&#x20;
 
 ### Open up a notepad file to paste the following information.
 
@@ -216,7 +216,7 @@ curl -X POST -H "Content-Type: application/json" --data '{"jsonrpc":"2.0","metho
 
 </details>
 
-## Start Aztec Sequencer
+## Start Aztec Validator
 
 Open port 5052, 8545, 40400 on your device.
 
@@ -247,7 +247,7 @@ services:
       VALIDATOR_PRIVATE_KEY: $VALIDATOR_PRIVATE_KEY
       COINBASE: $COINBASE
       P2P_IP: $P2P_IP
-      LOG_LEVEL: info
+      LOG_LEVEL: debug
     entrypoint: >
       sh -c 'node --no-warnings /usr/src/yarn-project/aztec/dest/bin/index.js start --network alpha-testnet start --node --archiver --sequencer'
     ports:
@@ -274,6 +274,22 @@ Monitor for errors. `CTRL+C` to exit monitoring view.
 ```sh
 docker logs aztec-node-node-1 -f --tail 20
 ```
+
+<details>
+
+<summary>Example outputs</summary>
+
+**Working:**
+
+`[14:14:45.496] DEBUG: sequencer Sequencer sync check succeeded {"worldState":{"number":3267,"hash":"0x16cefa4a7fbdf0ecc1e5c93c45f402f89dd3b2f41c4714e780c17bd39e2d86aa"},"l2BlockSource":{"number":3267,"hash":"0x16cefa4a7fbdf0ecc1e5c93c45f402f89dd3b2f41c4714e780c17bd39e2d86aa"},"p2p":{"number":3267,"hash":"0x16cefa4a7fbdf0ecc1e5c93c45f402f89dd3b2f41c4714e780c17bd39e2d86aa"},"l1ToL2MessageSource":{"number":3267,"hash":"0x16cefa4a7fbdf0ecc1e5c93c45f402f89dd3b2f41c4714e780c17bd39e2d86aa"}}`
+
+In this case, **3267** is the latest block number of your Aztec validator.
+
+**Not working:**
+
+<mark style="color:red;">WIP</mark>
+
+</details>
 
 ## Register your Aztec validator
 
