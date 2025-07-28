@@ -317,6 +317,28 @@ In this case, **3267** is the latest block number of your Aztec validator.
 
 </details>
 
+### Check Aztec node sync status
+
+> Credits: [ceberus-node](https://x.com/CerberusNode)
+
+```sh
+bash <(curl -s https://raw.githubusercontent.com/cerberus-node/aztec-network/refs/heads/main/sync-check.sh)
+```
+
+Press `Enter` when prompted.
+
+<figure><img src="../.gitbook/assets/image (221).png" alt=""><figcaption></figcaption></figure>
+
+<details>
+
+<summary>Fully synced output</summary>
+
+<figure><img src="../.gitbook/assets/image (222).png" alt=""><figcaption></figcaption></figure>
+
+</details>
+
+
+
 ## Register your Aztec Validator (Sequencer)
 
 ### Complete ZK-KYC
