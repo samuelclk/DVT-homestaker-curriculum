@@ -128,9 +128,10 @@
 * [Stader (WIP)](bonded-validators-setup/stader-wip.md)
 * [Rocketpool (WIP)](bonded-validators-setup/rocketpool-wip.md)
 
-## Liquid Staking Vaults
+## Delegation Programmes/Vaults
 
-* [Stakewise V3](liquid-staking-vaults/stakewise-v3.md)
+* [Stakewise V3](delegation-programmes-vaults/stakewise-v3.md)
+* [Nodeset Hyperdrive](delegation-programmes-vaults/nodeset-hyperdrive.md)
 
 ## Mainnet
 
