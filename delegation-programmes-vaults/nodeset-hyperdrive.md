@@ -12,11 +12,12 @@ This guide assumes you have an existing Ethereum Mainnet execution and consensus
 
 ## Pre-requisites
 
-1. Install, configure, and sync an Ethereum mainnet full node. Refer to the [ETH Docker](../automation-tools/eth-docker.md) or [ETHPillar](../automation-tools/ethpillar.md) setup segments if you do not have this yet.
-2. Expose HTTP & Websocket ports on your execution client and the REST port on your consensus client. _Note down all 3 port numbers. We will refer to them as `PORT_1`, `PORT_2`, and `PORT_3`_
+1. Go through the Nodeset on-boarding process. Apply under **"I am a Node Operator"** [here](https://nodeset.io/).
+2. Install, configure, and sync an Ethereum mainnet full node. Refer to the [ETH Docker](../automation-tools/eth-docker.md) or [ETHPillar](../automation-tools/ethpillar.md) setup segments if you do not have this yet.
+3. Expose HTTP & Websocket ports on your execution client and the REST port on your consensus client. _Note down all 3 port numbers. We will refer to them as `PORT_1`, `PORT_2`, and `PORT_3`_
    1. [ETH Docker example](https://dvt-homestaker.stakesaurus.com/automation-tools/eth-docker#optional-make-el-and-cl-endpoints-accessible-on-host)
    2. ETHPillar example (WIP)
-3. Identify the private IP address of your node by running `ip a | grep enp`. You are looking for a number that looks like this: `192.168.xx.xx`. _Note down this number. We will refer to this as `PRIVATE_IP_ADDRESS`_
+4. Identify the private IP address of your node by running `ip a | grep enp`. You are looking for a number that looks like this: `192.168.xx.xx`. _Note down this number. We will refer to this as `PRIVATE_IP_ADDRESS`_
 
 ## Install dependencies
 
