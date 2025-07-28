@@ -328,7 +328,7 @@ In this case, **3267** is the latest block number of your Aztec validator.
 * Verify proof of humanity by scanning the QR code with the zkPassport app mobile app
 * Register your validator and sign the transaction
 * Input your discord handle to claim the `Explorer` role.
-* Hit **Submit**. View your FIFO validator queue by searching for your address: [https://dashtec.xyz/](https://dashtec.xyz/)
+* Hit **Submit**. View your FIFO validator queue by searching for your address: [https://dashtec.xyz/queue](https://dashtec.xyz/queue)
 
 ## Port Forwarding
 
