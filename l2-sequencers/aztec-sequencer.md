@@ -156,7 +156,7 @@ echo 'export PATH="$HOME/.aztec/bin:$PATH"' >> ~/.bash_profile && source ~/.bash
 Install the latest testnet version of aztec.
 
 ```sh
-aztec-up -v 1.1.2
+aztec-up -v latest
 ```
 
 ## Prepare your Aztec paramaters&#x20;
@@ -265,7 +265,7 @@ name: aztec-node
 services:
   node:
     network_mode: host # Optional, run with host networking
-    image: aztecprotocol/aztec:1.1.2
+    image: aztecprotocol/aztec:latest
     environment:
       ETHEREUM_HOSTS: $ETHEREUM_HOSTS
       L1_CONSENSUS_HOST_URLS: $L1_CONSENSUS_HOST_URLS
@@ -398,3 +398,10 @@ Forward port 40400 on your home/office router to your node. Refer to the page be
 {% content-ref url="../tips/advanced-networking.md" %}
 [advanced-networking.md](../tips/advanced-networking.md)
 {% endcontent-ref %}
+
+## Updating your Aztec sequencer
+
+```sh
+cd ~/aztec
+docker compose down && docker compose pull && docker compose up -d
+```
