@@ -337,7 +337,46 @@ Press `Enter` when prompted.
 
 </details>
 
+### Check for config errors
 
+Install the `gawk` package.
+
+```sh
+sudo apt update && sudo apt install gawk
+```
+
+Run this checker script.
+
+> **Credits:** [DeepPatel2412](https://github.com/DeepPatel2412)
+
+```sh
+bash <(curl -Ls https://raw.githubusercontent.com/DeepPatel2412/Aztec-Tools/refs/heads/main/ConfigChecker)
+```
+
+**Expected output:**
+
+```
+==================================================
+               Aztec Node Addresses
+==================================================
+● Node
+  └── Status: Correct Setup ✓
+● Validator Addresses
+  └── 0x3208c6e0d44439f3ba9a605deec1f980f29e3928 ✓
+  └── 0x3208c6e0d44439f3ba9a605deec1f980f29e3928 ✓
+● Sequencer Address
+  └── 0x3208c6e0d44439f3ba9a605deec1f980f29e3928 ✓
+==================================================
+              Aztec Directory Check
+==================================================
+● Directory Path
+  └── Current/parent is: /home/slutnode/aztec ✓
+● docker-compose.yml
+  └── Status: Correct Setup ✓
+● .env
+  └── Status: Correct Setup ✓
+==================================================
+```
 
 ## Register your Aztec Validator (Sequencer)
 
