@@ -141,12 +141,12 @@ ethd keys import
 ### Whitelist your wallet address
 
 {% hint style="info" %}
-This section only applies to the Holeksy testnet
+This section only applies to the Hoodi testnet
 {% endhint %}
 
 1. Join the discord server here - [https://discord.gg/ethstaker](https://discord.gg/ethstaker)
-2. Join the #cheap-holesky-validator channel
-3. Type “/cheap-holesky-deposit `<your ETH address>` ” in the text box and press enter
+2. Join the #cheap-hoodi-validator channel
+3. Type “/cheap-hoodi-deposit `<your ETH address>` ” in the text box and press enter
 4.  Click on the link generated (ie. the [**Signer.is**](http://signer.is) text shown below)&#x20;
 
     <figure><img src="../.gitbook/assets/image (144).png" alt=""><figcaption></figcaption></figure>
@@ -164,10 +164,10 @@ cat ~/eth-docker/.eth/validator_keys/deposit*json
 **Example:**
 
 {% hint style="success" %}
-\[{"pubkey": "b72e61268081e28b583d78876cc1687d72be4c3592de1f9d585c96b4c64b25b49174f04ae6e55eb1e59247cb575c0157", "withdrawal\_credentials": "010000000000000000000000f0179dec45a37423ead4fad5fcb136197872ead9", "amount": 32000000000, "signature": "8bb6e8838d15ea0ea23ed5151436ea07b65a0530ccfa9f5154b1fa394827df5add81510cf3463b79a387b0dffbe43ae417ea53b844b43d6a249fbc153fa1deda9fc089f218a845e382aa7455d804650e0e03232d3dad36b180bbdacd908f286c", "deposit\_message\_root": "8dbda15641eb7be3573f7377d10634c93c2b1dceb9fb6e519ec54ae0286d04c7", "deposit\_data\_root": "43f215ce19df49591db322bd4966667afc2a226a0a9812e5d60e31c60223991c", "fork\_version": "01017000", "network\_name": "holesky", "deposit\_cli\_version": "2.7.0"}]
+\[{"pubkey": "b72e61268081e28b583d78876cc1687d72be4c3592de1f9d585c96b4c64b25b49174f04ae6e55eb1e59247cb575c0157", "withdrawal\_credentials": "010000000000000000000000f0179dec45a37423ead4fad5fcb136197872ead9", "amount": 32000000000, "signature": "8bb6e8838d15ea0ea23ed5151436ea07b65a0530ccfa9f5154b1fa394827df5add81510cf3463b79a387b0dffbe43ae417ea53b844b43d6a249fbc153fa1deda9fc089f218a845e382aa7455d804650e0e03232d3dad36b180bbdacd908f286c", "deposit\_message\_root": "8dbda15641eb7be3573f7377d10634c93c2b1dceb9fb6e519ec54ae0286d04c7", "deposit\_data\_root": "43f215ce19df49591db322bd4966667afc2a226a0a9812e5d60e31c60223991c", "fork\_version": "01017000", "network\_name": "hoodi", "deposit\_cli\_version": "2.7.0"}]
 {% endhint %}
 
-Go to the [Holesky Ethereum Staking Launchpad](https://holesky.launchpad.ethereum.org/en/upload-deposit-data) and select **"Become a Validator".**
+Go to the [Hoodi Ethereum Staking Launchpad](https://hoodi.launchpad.ethereum.org/) and select **"Become a Validator".**
 
 Scroll down and skip through until you see this page. Then, upload your `deposit_data_001.json` file here and sign the transaction on your wallet.
 
