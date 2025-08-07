@@ -71,7 +71,7 @@ ethd config
 
 **Follow along the prompts in the terminal UI (TUI) to:**
 
-1. Choose `Holešovice Testnet` >> `Ethereum node - consensus, execution and validator client`
+1. Choose `Hoodi Testnet` >> `Ethereum node - consensus, execution and validator client`
 2. Select the **consensus + validator client** and **execution client** and  of your choice
 3. Use the `provided URL` for **Checkpoint Sync**, select `yes` for **MEV Boost**, `use default` **relay**, `yes` for **Grafana dashboards**
 4. Set `Rewards Address` to an ERC-20 wallet address that you control (e.g., Metamask, hardware wallet)
