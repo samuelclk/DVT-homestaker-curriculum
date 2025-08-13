@@ -26,7 +26,7 @@ Create a VM on the Google Cloud Console (or any other cloud provider) with the f
 
 * **CPU:** 2 vCPU
 * **RAM:** 8GB
-* **Boot Disk:** Ubuntu 24.04 LTS, Balanced persistent disk, 350GB SSD,
+* **Boot Disk:** Ubuntu 24.04 LTS, Balanced persistent disk, 250GB SSD,
 * **Identity & API access:** No service account
 * **Firewall:** Enable HTTP & HTTPS traffic
 
