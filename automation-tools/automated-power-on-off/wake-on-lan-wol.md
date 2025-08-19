@@ -418,7 +418,7 @@ Use `CTRL+C` to exit the monitoring/logging view.
 
 This tells the network manager of your Raspberry Pi (`systemd-resolved`) to ALWAYS use these DNS servers.
 
-```
+```sh
 sudo mkdir -p /etc/systemd/resolved.conf.d
 echo -e "[Resolve]\nDNS=8.8.8.8 8.8.4.4" | sudo tee /etc/systemd/resolved.conf.d/custom-dns.conf
 sudo systemctl restart systemd-resolved
