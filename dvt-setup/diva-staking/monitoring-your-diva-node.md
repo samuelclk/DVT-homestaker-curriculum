@@ -58,7 +58,7 @@ Although it may not be practical to do this for large amounts of key shares, it 
 
 #### Beaconcha.in
 
-1\) Go to [https://holesky.beaconcha.in/](https://beaconcha.in/) and search for the validator pubkey you want to inspect. The validator pubkey can be found using Divascan (see above section)
+1\) Go to [https://holesky.beaconcha.in/](https://holesky.beaconcha.in/) and search for the validator pubkey you want to inspect. The validator pubkey can be found using Divascan (see above section)
 
 <figure><img src="../../.gitbook/assets/image (119).png" alt=""><figcaption></figcaption></figure>
 
@@ -150,7 +150,7 @@ docker logs <CONTAINER_ID> -f --tail 5
 
 This prints out the last 5 lines of the monitoring logs and new lines as they appear. You can change the number of lines as needed. Check the output for warnings or errors and troubleshoot them against the list of common errors in the next section.
 
-If none of the scenarios matches your issue, you can raise them in the [Diva Staking discord channel](https://discord.gg/A4tfy6t3) for targeted support.
+If none of the scenarios matches your issue, you can raise them in the [Diva Staking discord channel](https://discord.gg/diva) for targeted support.
 
 ### Expected outputs
 
