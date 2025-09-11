@@ -112,7 +112,7 @@ ls
 
 **Example:**
 
-<figure><img src="../../../.gitbook/assets/image (1) (1) (1) (1) (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (1) (1) (1) (1) (1) (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 Generate the validator exit message for each of that key.
 
@@ -144,7 +144,7 @@ cat exit_message.json
 
 **Example:**
 
-<figure><img src="../../../.gitbook/assets/image (2) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (2) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 Copy the entire output and go to the [message broadcasting tool of hoodi.beaconcha.in](https://hoodi.beaconcha.in/tools/broadcast) to broadcast your exit message.
 

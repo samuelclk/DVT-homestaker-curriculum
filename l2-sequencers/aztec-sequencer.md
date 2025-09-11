@@ -95,7 +95,7 @@ nano ~/sepolia-eth-docker/.env
 
 * Append `:el-shared.yml:cl-shared.yml` in the `COMPOSE_FILE` line.
 
-<figure><img src="../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (2).png" alt=""><figcaption></figcaption></figure>
 
 <details>
 

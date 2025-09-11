@@ -22,13 +22,13 @@ This process helps Node Operators to avoid incorrect changes to the non-existing
 
 Node operators can view their Address assignments in the `INBOX REQUESTS` tab under the `ROLES` header of the [CSM Widget](https://csm.testnet.fi/).
 
-<figure><img src="../../.gitbook/assets/image (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 ### Reset Reward/Manager Address Change
 
 There will also be a method to reset Manager address to Reward Address from the Rewards address in case the Manager Address was compromised or lost.
 
-<figure><img src="../../.gitbook/assets/image (2) (1) (1) (1) (1) (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (2) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 {% hint style="info" %}
 More details on Rewards vs Manager addresses [here](https://operatorportal.lido.fi/modules/community-staking-module#block-268ecefc0b37498badc1bf0baab04e0b).
@@ -42,7 +42,7 @@ More details on Rewards vs Manager addresses [here](https://operatorportal.lido.
    2. Paste your new addresses for the change
    3.  Submit the onchain transaction
 
-       <figure><img src="../../.gitbook/assets/image (1) (1) (1) (1) (1).png" alt="" width="563"><figcaption></figcaption></figure>
+       <figure><img src="../../.gitbook/assets/image (1) (1) (1) (1) (1) (1).png" alt="" width="563"><figcaption></figcaption></figure>
 3. &#x20;Disconnect your current Rewards Address from the Lido CSM Widget
 4. Connect your new Rewards or Manager Address to the Lido CSM Widget
 5.  &#x20;Accept the Rewards or Manager Address assignment
@@ -51,7 +51,7 @@ More details on Rewards vs Manager addresses [here](https://operatorportal.lido.
     2. Select the address assignments you want to accept&#x20;
     3. Submit the onchain transaction
 
-    <figure><img src="../../.gitbook/assets/image (2) (1).png" alt="" width="563"><figcaption></figcaption></figure>
+    <figure><img src="../../.gitbook/assets/image (2) (1) (1).png" alt="" width="563"><figcaption></figcaption></figure>
 
 {% hint style="danger" %}
 **Changing the Rewards Address:** All of your uploaded validator keys, deposited bond, and accrued rewards will now be owned by the new Rewards Address after the change
