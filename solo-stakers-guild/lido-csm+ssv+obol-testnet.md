@@ -401,7 +401,8 @@ cat $(find /var/lib -name "keystore*.json" 2>/dev/null)
 
 **Copy the output file path.**
 
-Run `ethpillar` and navigate to `validator client` >> `exit keys` and input the file path of your validator keystore.
+* Run `ethpillar` and navigate to `validator client` >> `20 Generate Voluntary Exit Messages (VEM)` and input the file path of your validator keystore.
+* Then, run `ethpillar` and navigate to `validator client` >> `21 Broadcast Voluntary Exit Messages (VEM)` and input the file path of your validator keystore.
 
 Enter the password set for your validator keystore when prompted.
 
