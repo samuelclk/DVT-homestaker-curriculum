@@ -45,7 +45,7 @@ echo "04af3f4fd2fdccf4ae060abde47637622a31114d9f2e53e62722a694a4d5b206 ethstaker
 **Expected output:**
 
 ```
-staking_deposit-cli-fdab65d-linux-amd64.tar.gz: OK
+ethstaker_deposit-cli-b13dcb9-linux-amd64.tar.gz: OK
 ```
 
 After the checksum verification, move the zipped file into a new and empty USB drive.
@@ -141,8 +141,8 @@ Press `ALT+T`, then extract the contents of the zipped file and change directory
 
 ```sh
 cd Desktop
-tar xvf staking_deposit-cli-fdab65d-linux-amd64.tar.gz
-cd staking_deposit-cli-fdab65d-linux-amd64
+tar xvf ethstaker_deposit-cli-b13dcb9-linux-amd64.tar.gz
+cd ethstaker_deposit-cli-b13dcb9-linux-amd64
 ```
 
 ## Generate your validator signing keys
@@ -225,12 +225,6 @@ virtualenv venv
 source venv/bin/activate
 ```
 
-Download the git repository of the tool by running. Reference and verify the URL of the git repository [here](https://github.com/ethereum/staking-deposit-cli).
-
-```bash
-git clone -b master --single-branch https://github.com/ethereum/staking-deposit-cli.git
-```
-
 Install the dependency packages for running the tool:
 
 ```bash
@@ -252,12 +246,14 @@ pip3 install -r requirements.txt
 Run the following command to generate your validator keys. Replace `<number>` with the number of validators you want to set up and `<YourWithdrawalAddress>` with the actual withdrawal address depending on your setup choice.
 
 ```bash
-python3 ./staking_deposit/deposit.py new-mnemonic --num_validators <number> --chain hoodi --eth1_withdrawal_address <YourWithdrawalAddress>
+python -m ethstaker_deposit new-mnemonic --num_validators=<NUM_VALIDATORS> --mnemonic_language=english --chain=<CHAIN_NAME> --folder=<YOUR_FOLDER_PATH>
 ```
 
 1. **Native Solo Staking Setup:** Use a secure Ethereum wallet address that you own--e.g., cold wallet address, SAFE multi-sig address
 2. **Diva Staking:** Skip this section. The validator key shares will be assigned to you by the Diva client.
-3. **Lido CSM:** On the `Hoodi` testnet, set your withdrawal address to the Lido CSM contract address [`0x9b108015fe433F173696Af3Aa0CF7CDb3E104258`](https://hoodi.cloud.blockscout.com/address/0x9b108015fe433F173696Af3Aa0CF7CDb3E104258)&#x20;
+3. **Lido CSM:**&#x20;
+   1. On `mainnet`, set your withdrawal address to the Lido CSM contract address [`0xB9D7934878B5FB9610B3fE8A5e441e8fad7E293f`](https://etherscan.io/address/0xb9d7934878b5fb9610b3fe8a5e441e8fad7e293f)&#x20;
+   2. On the `Hoodi` testnet, set your withdrawal address to the Lido CSM contract address [`0x4473dCDDbf77679A643BdB654dbd86D67F8d32f2`](https://hoodi.cloud.blockscout.com/address/0x4473dCDDbf77679A643BdB654dbd86D67F8d32f2)
 4. **RocketPool (WIP):**
 5. **Stader (WIP):**
 
@@ -329,7 +325,7 @@ You will now be able to access your USB drive via the terminal by going into the
 Go into your USB drive and copy your validator signing keystore into the HOME directory of your node.
 
 ```sh
-cd /media/staking-deposit-cli
+cd /media/ethstaker_deposit-cli-b13dcb9-linux-amd64
 sudo cp -r validator_keys ~
 ```
 
