@@ -106,8 +106,11 @@ nano ~/sepolia-eth-docker/.env
 - Press `CTRL+W` and search for **CL\_P2P\_PORT.** Then, replace the value with `9001`
 
 * Press `CTRL+W` and search for **EL\_RPC\_PORT.** Then, replace the value with `8547`
+* Press `CTRL+W` and search for **EL\_WS\_PORT.** Then, replace the value with `8548`
 
 - Press `CTRL+W` and search for **CL\_REST\_PORT.** Then, replace the value with `5053`
+- Press `CTRL+W` and search for **GRAFANA\_PORT.** Then, replace the value with `3001`
+- Press `CTRL+W` and search for **PROMETHEUS\_PORT.** Then, replace the value with `9091`
 
 Scroll and search manually if `CTRL+W` does not work for you. This avoid port conflicts with your existing setup.&#x20;
 
@@ -143,9 +146,9 @@ sepethd logs consensus -f -tail 20
 
 Download installer script.
 
-```sh
-bash -i <(curl -s https://install.aztec.network)
-```
+<pre class="language-sh"><code class="lang-sh"><strong>cd
+</strong><strong>bash -i &#x3C;(curl -s https://install.aztec.network)
+</strong></code></pre>
 
 Enable running `aztec` from anywhere in your terminal.
 
@@ -250,6 +253,7 @@ Open port 5052, 8545, 40400 on your device.
 sudo ufw allow 5052
 sudo ufw allow 8545
 sudo ufw allow 40400
+sudo ufw enable
 ```
 
 Create docker compose file.
@@ -270,7 +274,7 @@ services:
       ETHEREUM_HOSTS: $ETHEREUM_HOSTS
       L1_CONSENSUS_HOST_URLS: $L1_CONSENSUS_HOST_URLS
       DATA_DIRECTORY: /data
-      VALIDATOR_PRIVATE_KEY: $VALIDATOR_PRIVATE_KEY
+      VALIDATOR_PRIVATE_KEY: ${VALIDATOR_PRIVATE_KEY}
       COINBASE: $COINBASE
       P2P_IP: $P2P_IP
       LOG_LEVEL: debug
