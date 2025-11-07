@@ -34,13 +34,25 @@ Create a VM on the Google Cloud Console (or any other cloud provider) with the f
 Estimated cost per month on Google Cloud = $84, or _**3.5 months of free practice time**_ with $300 of cloud credits&#x20;
 {% endhint %}
 
-### Download & configure ETH Docker
+### SSH into your machine
 
 **SSH into your VM/hardware:** Click on the dropdown beside the **"SSH"** column and select **"Open in browser window".** Click on **"Authorize"** when prompted.
 
 <figure><img src="../../../.gitbook/assets/Screenshot 2024-09-03 at 1.50.18 PM.png" alt=""><figcaption></figcaption></figure>
 
-Go to [Lido's ETH Docker repository ](https://github.com/lidofinance/eth-docker)and to get and run the installation commands. Run the next 2 commands in sequence.
+### Install Docker
+
+```sh
+curl -fsSL https://get.docker.com -o get-docker.sh
+sudo sh get-docker.sh
+
+sudo groupadd docker
+sudo usermod -aG docker $USER
+```
+
+### Download & configure ETH Docker
+
+Go to the [ETH Docker repository ](https://github.com/lidofinance/eth-docker)and to get and run the installation commands. Run the next 2 commands in sequence.
 
 ```sh
 cd ~ && git clone https://github.com/eth-educators/eth-docker.git && cd eth-docker
