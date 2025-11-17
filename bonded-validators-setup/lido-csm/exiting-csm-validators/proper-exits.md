@@ -6,7 +6,7 @@ Exiting CSM-deposited validator keys works the same way as exiting solo staking 
 
 Refer to this dedicated guide for exiting validators put together by Remy Roy.
 
-{% embed url="https://github.com/eth-educators/ethstaker-guides/blob/main/voluntary-exit.md" %}
+{% embed url="https://github.com/ethstaker/ethstaker-guides/blob/main/docs/voluntary-exit.md" %}
 
 You can also follow the steps extracted from Remy's guide below (Linux only).
 
