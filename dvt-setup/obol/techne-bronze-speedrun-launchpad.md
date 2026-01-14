@@ -34,7 +34,7 @@ exit
 ```sh
 cd
 # Use docker to create an ENR. Backup the file `.charon/charon-enr-private-key`.
-docker run --rm -v "$(pwd):/opt/charon" -u $(id -u):$(id -g) obolnetwork/charon:v1.5.1 create enr
+docker run --rm -v "$(pwd):/opt/charon" -u $(id -u):$(id -g) obolnetwork/charon:v1.8.1 create enr
 ```
 
 You should expect to see a console output like this:
