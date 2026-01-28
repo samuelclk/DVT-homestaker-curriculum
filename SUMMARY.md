@@ -171,3 +171,7 @@
 ## L2 Sequencers
 
 * [Aztec Sequencer](l2-sequencers/aztec-sequencer.md)
+
+## Staking Vaults
+
+* [Lido v3 stVaults (WIP)](staking-vaults/lido-v3-stvaults-wip.md)
