@@ -67,3 +67,5 @@ Stakesaurus is also a grantee of the [Lido Community Lifeguards Initiative](http
 3. [Stakesaurus public Telegram group](https://t.me/stakesaurus)
    * For those who feel shy about the options above
    * **Note:** It is best practice to get help from highly public channels such as the main curriculum  & client-specific support channel above, especially when setting up for the Mainnet&#x20;
+
+<figure><img src=".gitbook/assets/stakesaurus logo dark.png" alt=""><figcaption></figcaption></figure>

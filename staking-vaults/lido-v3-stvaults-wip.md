@@ -11,13 +11,13 @@ sudo apt remove -y nodejs
 Install the correct `yarn` package.
 
 ```
-nvm install 20
-nvm use 20
-nvm alias default 20
+nvm install 22
+nvm use 22
+nvm alias default 22
 node --version
 ```
 
-Enable Corepack under `Node 20` and activate `yarn`.
+Enable Corepack under `Node 22` and activate `yarn`.
 
 ```
 corepack enable
@@ -75,3 +75,49 @@ ACCOUNT_FILE_PASSWORD=your_secure_password
 WALLET_CONNECT_PROJECT_ID=ee928c025792b10a6daa97d85328c433
 ```
 
+
+
+## Run the DeFi Wrapper Webapp
+
+Clone the DeFi Wrapper Github repository and enter it's directory.
+
+```
+git clone https://github.com/lidofinance/defi-wrapper-widget.git
+cd defi-wrapper-widget
+```
+
+Verify that you are using Node 22
+
+```
+node --version
+# should be v22.x.x (or higher)
+corepack enable
+yarn --version
+```
+
+If not Node is not at least version 22 or higher,
+
+```
+nvm install 22
+nvm use 22
+corepack enable
+```
+
+Install dependencies
+
+```
+yarn install
+```
+
+Create `.env` from `.env.example` and fill it up
+
+```
+cp .env.example .env
+nano .env
+```
+
+Run a preview of your webapp
+
+```
+yarn build:preview
+```

@@ -40,8 +40,8 @@ Provides details on blocks proposed by the validators under your CSM Operator ov
 
 For more detailed monitoring, refer to the section below.
 
-{% content-ref url="broken-reference" %}
-[Broken link](broken-reference)
+{% content-ref url="/broken/pages/4ka9wydEySjR92LGWG7F" %}
+[Broken link](/broken/pages/4ka9wydEySjR92LGWG7F)
 {% endcontent-ref %}
 
 ## CSM Performance Threshold
