@@ -19,7 +19,7 @@ Instead, you simply tweak the parameters of the following steps of the native so
    * **Hoodi:** [`0x4473dCDDbf77679A643BdB654dbd86D67F8d32f2` ](https://hoodi.etherscan.io/address/0x4473dcddbf77679a643bdb654dbd86d67f8d32f2)
 2. For the validator client, set the `fee_recipient` flag to the Lido Execution Layer Rewards Vault either [on the validator key level](set-fee-recipient-address/method-1-configure-on-validator-keys.md) or [configuring a separate validator client.](set-fee-recipient-address/method-2-configure-on-separate-validator-client.md)
    * **Mainnet:** [`0x388C818CA8B9251b393131C08a736A67ccB19297`](https://etherscan.io/address/0x388C818CA8B9251b393131C08a736A67ccB19297)
-   * **Hoodi :** [`0x9b108015fe433F173696Af3Aa0CF7CDb3E104258`](https://hoodi.etherscan.io/address/0x4473dcddbf77679a643bdb654dbd86d67f8d32f2)&#x20;
+   * **Hoodi :** [`0x9b108015fe433F173696Af3Aa0CF7CDb3E104258`](https://hoodi.etherscan.io/address/0x9b108015fe433F173696Af3Aa0CF7CDb3E104258)&#x20;
 3. Import the newly generated CSM keystores
 4. For the [MEV-Boost service](../../keystore-generation-and-mev-boost/set-up-and-configure-mev-boost.md),
    1. the`-min-bid` flag may be configured either at MEV-Boost level or at the CL client, the current acceptable maximum value for min-bid is `0.07` [based on community consensus](https://research.lido.fi/t/lido-node-operator-mev-boost-min-bid-guidance/3347) and may change.&#x20;
@@ -45,7 +45,7 @@ Instead, you simply tweak the parameters of the following steps of the native so
 3. For the validator client,
    1. Set the `fee_recipient` flag to the Lido Execution Layer Rewards Vault either [on the validator key level](set-fee-recipient-address/method-1-configure-on-validator-keys.md) or [configuring a separate validator client.](set-fee-recipient-address/method-2-configure-on-separate-validator-client.md)
       * **Mainnet:** [`0x388C818CA8B9251b393131C08a736A67ccB19297`](https://etherscan.io/address/0x388C818CA8B9251b393131C08a736A67ccB19297)
-      * **Hoodi :** [`0x9b108015fe433F173696Af3Aa0CF7CDb3E104258`](https://hoodi.etherscan.io/address/0x4473dcddbf77679a643bdb654dbd86d67f8d32f2)&#x20;
+      * **Hoodi :** [`0x9b108015fe433F173696Af3Aa0CF7CDb3E104258`](https://hoodi.etherscan.io/address/0x9b108015fe433F173696Af3Aa0CF7CDb3E104258)
    2. Import the newly generated CSM keystores
 4. For the [MEV-Boost service](../../keystore-generation-and-mev-boost/set-up-and-configure-mev-boost.md),&#x20;
    1. the`-min-bid` flag may be configured either at MEV-Boost level or at the CL client, the current acceptable maximum value for min-bid is `0.07` [based on community consensus](https://research.lido.fi/t/lido-node-operator-mev-boost-min-bid-guidance/3347) and may change.&#x20;
